@@ -1,0 +1,4 @@
+enum Operation {
+  createNotification,
+  updateNotification
+}
