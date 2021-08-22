@@ -1,7 +1,6 @@
 import 'package:HIVApp/components/custom_appbar.dart';
 import 'package:HIVApp/model/user.dart';
 import 'package:HIVApp/model/user_registrations.dart';
-import 'package:HIVApp/pages/settings/widgets/reset_password.dart';
 import 'package:HIVApp/routes/routes.dart';
 import 'package:connectivity/connectivity.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -134,6 +133,13 @@ class _WidgetForgotState extends State<WidgetForgot> {
     super.initState();
   }
 
+  void getUserData (String name) async {
+    await _user.getIdByUserName(name).then((value) {
+      _user.pin_code = value.pin_code;
+      _user.user_id = value.user_id;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -178,16 +184,20 @@ class _WidgetForgotState extends State<WidgetForgot> {
             height: 56,
             child: CustomButton(
               fillColor: kDesaturatedBlue,
-              onPressed: () {
+              onPressed: () async {
                 if(_formKey.currentState.validate()) {
                   _user.username = _emailController.text;
 
                   // Navigator.push(context, MaterialPageRoute(
                   //   builder: (context) => ResetPasswordPage(userName: _user.username, fromChangePassword: false),
+                  await _user.getIdByUserName(_emailController.text).then((value) {
+                    _user.pin_code = value.pin_code;
+                    _user.user_id = value.user_id;
+                    Navigator.push(context, MaterialPageRoute(
+                      builder: (context) => PinCode(userName: _emailController.text, pin: value.pin_code),
+                    ));
+                  });
                   // ));
-                  Navigator.push(context, MaterialPageRoute(
-                    builder: (context) => PinCode(),
-                  ));
                 }
               },
               text: 'confirm'.tr().toUpperCase(),

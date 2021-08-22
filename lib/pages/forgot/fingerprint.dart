@@ -1,10 +1,19 @@
+import 'package:HIVApp/model/user.dart';
+import 'package:HIVApp/model/user_registrations.dart';
+import 'package:HIVApp/pages/settings/widgets/change_password.dart';
+import 'package:HIVApp/pages/settings/widgets/reset_password.dart';
+import 'package:HIVApp/routes/routes.dart';
 import 'package:HIVApp/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:local_auth/local_auth.dart';
+import 'package:provider/provider.dart';
 
 class PinCode extends StatefulWidget {
-  const PinCode({Key key}) : super(key: key);
+  const PinCode({Key key, this.userName, this.pin}) : super(key: key);
+
+  final String userName;
+  final String pin;
 
   @override
   _PinCodeState createState() => _PinCodeState();
@@ -15,14 +24,16 @@ class _PinCodeState extends State<PinCode> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        child: OTPScreen(),
+        child: OTPScreen(userName: widget.userName, pin: widget.pin),
       ),
     );
   }
 }
 
 class OTPScreen extends StatefulWidget {
-  const OTPScreen({Key key}) : super(key: key);
+  const OTPScreen({Key key, this.userName, this.pin}) : super(key: key);
+  final String userName;
+  final String pin;
 
   @override
   _OTPScreenState createState() => _OTPScreenState();
@@ -47,10 +58,13 @@ class _OTPScreenState extends State<OTPScreen> {
   int pinIndex = 0;
   bool fingerprintPressed = false;
   bool deletePressed = false;
+  String pin;
 
   @override
   void initState() {
     super.initState();
+    Provider.of<UserRegistration>(context, listen: false).getList();
+    pin = widget.pin;
     _checkBiometrics();
     _getAvailableBiometrics();
   }
@@ -87,12 +101,25 @@ class _OTPScreenState extends State<OTPScreen> {
             flex: 1,
             child: Container(
               alignment: Alignment.topCenter,
-              child: Text(
-                "Забыли Пин-Код?",
-                style: TextStyle(
-                    color: kBrightBlue,
-                    fontWeight: FontWeight.w700,
-                    fontSize: 16),
+              child: InkWell(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ResetPasswordPage(
+                        userName: widget.userName,
+                        fromChangePassword: false,
+                      ),
+                    ),
+                  );
+                },
+                child: Text(
+                  "Забыли Пин-Код?",
+                  style: TextStyle(
+                      color: kBrightBlue,
+                      fontWeight: FontWeight.w700,
+                      fontSize: 16),
+                ),
               ),
             ),
           ),
@@ -242,10 +269,19 @@ class _OTPScreenState extends State<OTPScreen> {
                 _iconsWidget(
                   path: 'assets/images/Touch ID.png',
                   onPressed: () {
-
-                    // _checkBiometrics();
-                    // _getAvailableBiometrics();
-                    _authenticate();
+                    _authenticate().then((value) {
+                      print(pin);
+                      if (_authorized == 'Authorized') {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => ChangePasswordPage(
+                                false,
+                                userName: widget.userName,
+                              ),
+                            ));
+                      }
+                    });
                   },
                   height: 49,
                   width: 49,
@@ -271,12 +307,6 @@ class _OTPScreenState extends State<OTPScreen> {
                   boxColor: deletePressed ? kModerateBlue : kColorWhite,
                   selectWidget: 1,
                 ),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[
-                Text(_isAuthenticating ? "Hello" : "yeas")
               ],
             ),
           ],
@@ -368,7 +398,12 @@ class _OTPScreenState extends State<OTPScreen> {
       currentPin.forEach((e) {
         strPin += e;
       });
-      if (pinIndex == 4) print(pinIndex);
+      if (pinIndex == 4 && pin != null) {
+        if(currentPin.join() == pin)
+          Navigator.push(context, MaterialPageRoute(
+            builder: (context) => ChangePasswordPage(false, userName: widget.userName),
+          ));
+      }
     });
   }
 

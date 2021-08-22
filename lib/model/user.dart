@@ -167,7 +167,6 @@ class User extends ChangeNotifier{
     }
   }
 
-
   Future<void> login(String email, String password) async {
     return _authenticate(email, password);
   }
@@ -205,7 +204,7 @@ class User extends ChangeNotifier{
     }
   }
 
-  static Future<int> getIdByUserName(String username) async {
+  Future<User> getIdByUserName(String username) async {
     final url =
         Configs.ip+'api/get_id_by_username/' + username;
 
@@ -222,13 +221,16 @@ class User extends ChangeNotifier{
         throw HttpException("User is not found");
       }
       else if(responseData['success'] == true) {
+        this.user_id = responseData['id'];
+        this.pin_code = responseData['pin'];
         user.user_id = responseData['id'];
+        user.pin_code = responseData['pin'];
       }
     }
     catch (error) {
       throw error;
     }
-    return user.user_id;
+    return user;
   }
 
   Future<void> setPassword(String password, bool fromChangePassword, int userId) async {
@@ -256,7 +258,7 @@ class User extends ChangeNotifier{
         this.password = password;
         if(fromChangePassword){
           DbUser dbUser = await DBProvider.db.getUser();
-          dbUser.username = 'admin123';
+          dbUser.username = username;
           dbUser.token = responseData['token'];
           dbUser.password = password;
           await DBProvider.db.updateUser(dbUser);
@@ -315,10 +317,10 @@ class User extends ChangeNotifier{
     }
   }
 
-  void logout() async{
+  void logout() async {
     var userId=0;
     await DBProvider.db.getUser().then((value) async {
-      if(value != null){
+      if(value != null) {
         userId = value.id;
         final url =
             Configs.ip+'api/logged';

@@ -35,6 +35,11 @@ class _GeneralWidgetState extends State<GeneralWidget> {
     super.initState();
   }
 
+  Future<void> logout() async {
+    Provider.of<User>(context, listen: false).logout();
+    return null;
+  }
+
   @override
   Widget build(BuildContext context) {
     void _showErrorDialog(String message) {
@@ -128,8 +133,9 @@ class _GeneralWidgetState extends State<GeneralWidget> {
             if (Prefs.USER_ID != null)
               _checkInternetConnection().then((value) {
                 if (value) {
-                  Provider.of<User>(context, listen: false).logout();
-                  Navigator.pushAndRemoveUntil<void>(context, MaterialPageRoute(builder: (context) => LoginPage()), ModalRoute.withName('/'));
+                  logout().then((value) {
+                    Navigator.pushAndRemoveUntil<void>(context, MaterialPageRoute(builder: (context) => LoginPage()), ModalRoute.withName('/'));
+                  });
                 } else {
                   _showErrorDialog('connect_to_internet_to_logout'.tr());
                 }

@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:HIVApp/pages/home/home_new.dart';
 import 'package:connectivity/connectivity.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -146,7 +147,11 @@ class _WidgetSignInState extends State<WidgetSignIn> {
                 _authData['username'],
                 _authData['password'],
               )
-              .then((value) => Navigator.of(context).pushNamed(Routes.home));
+              .then((value) {
+            Navigator.push(context, MaterialPageRoute(
+              builder: (context) => HomeNew(index: 0),
+            ));
+          });
         } on HttpException catch (error) {
           var errorMessage = 'Аутентификация не выполнено!';
           if (error.toString().contains('INVALID_EMAIL')) {

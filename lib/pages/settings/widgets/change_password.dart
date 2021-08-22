@@ -30,6 +30,9 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
   bool _fromChangePassword = true;
   String userName = "";
   int userId;
+  String prefsUserName = '';
+
+  User _user = User();
 
   void _checkOldPassword(String oldPassword) {
     setState(() {
@@ -41,16 +44,17 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
   void initState() {
     _fromChangePassword = widget.fromChangePassword;
     super.initState();
-    userName = widget.userName;
+    prefsUserName = Prefs.getString("username");
+    userName = prefsUserName != null ? prefsUserName : widget.userName;
     getUserId(userName);
   }
 
-  void getUserId (String name) async {
-      await User.getIdByUserName(name).then((value) {
-          setState(() {
-            userId = value;
-          });
+  void getUserId(String name) {
+    _user.getIdByUserName(name).then((value) {
+      setState(() {
+        userId = value.user_id;
       });
+    });
   }
 
   showAlertDialog(BuildContext context) {
