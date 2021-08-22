@@ -1,8 +1,6 @@
-import 'package:HIVApp/model/user.dart';
 import 'package:HIVApp/model/user_registrations.dart';
 import 'package:HIVApp/pages/settings/widgets/change_password.dart';
 import 'package:HIVApp/pages/settings/widgets/reset_password.dart';
-import 'package:HIVApp/routes/routes.dart';
 import 'package:HIVApp/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';

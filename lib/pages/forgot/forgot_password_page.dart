@@ -10,7 +10,7 @@ import 'package:provider/provider.dart';
 import '../../components/custom_button.dart';
 import '../../components/text_form_field.dart';
 import '../../utils/constants.dart';
-import 'fingerprint.dart';
+import 'PinCodePage.dart';
 
 /// Страница сброса пароля
 class ForgotPasswordPage extends StatelessWidget {
