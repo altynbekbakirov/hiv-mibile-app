@@ -4,6 +4,8 @@ import 'package:HIVApp/pages/settings/widgets/reset_password.dart';
 import 'package:HIVApp/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:easy_localization/easy_localization.dart';
+import 'package:local_auth/auth_strings.dart';
 import 'package:local_auth/local_auth.dart';
 import 'package:provider/provider.dart';
 
@@ -112,7 +114,7 @@ class _OTPScreenState extends State<OTPScreen> {
                   );
                 },
                 child: Text(
-                  "Забыли Пин-Код?",
+                  "forgot_pin_code".tr(),
                   style: TextStyle(
                       color: kBrightBlue,
                       fontWeight: FontWeight.w700,
@@ -162,7 +164,15 @@ class _OTPScreenState extends State<OTPScreen> {
         _authorized = 'Authenticating';
       });
       authenticated = await auth.authenticateWithBiometrics(
-          localizedReason: 'Scan your fingerprint to authenticate',
+          localizedReason: 'fingerprint_scan'.tr(),
+          androidAuthStrings: AndroidAuthMessages(
+            signInTitle: "fingerprint_auth".tr(),
+            fingerprintHint: "",
+            cancelButton:  "cancel".tr(),
+          ),
+          iOSAuthStrings: IOSAuthMessages(
+            cancelButton: "cancel".tr(),
+          ),
           useErrorDialogs: true,
           stickyAuth: true);
       setState(() {
@@ -397,10 +407,13 @@ class _OTPScreenState extends State<OTPScreen> {
         strPin += e;
       });
       if (pinIndex == 4 && pin != null) {
-        if(currentPin.join() == pin)
-          Navigator.push(context, MaterialPageRoute(
-            builder: (context) => ChangePasswordPage(false, userName: widget.userName),
-          ));
+        if (currentPin.join() == pin)
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) =>
+                    ChangePasswordPage(false, userName: widget.userName),
+              ));
       }
     });
   }

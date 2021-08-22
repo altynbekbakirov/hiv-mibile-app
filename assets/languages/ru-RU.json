@@ -261,5 +261,8 @@
   "login_not_exists_error": "Такой логин не существует",
   "login_with_new_password": "Ввести новый пароль",
   "password_successfully_reset": "Пароль успешно сброшен",
-  "hello_user": "Приветствуем Вас"
+  "hello_user": "Приветствуем Вас",
+  "forgot_pin_code": "Забыли Пин-Код?",
+  "fingerprint_scan": "Отсканируйте свой отпечаток пальца для аутентификации",
+  "fingerprint_auth": "Аутентификация по отпечатку пальца"
 }

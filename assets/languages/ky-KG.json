@@ -262,5 +262,8 @@
   "login_not_exists_error": "Мындай логин жок",
   "login_with_new_password": "Жаңы сырсөздү киргизиңиз",
   "password_successfully_reset": "Сырсөз ийгиликтүү калыбына келтирилди",
-  "hello_user": "Кош келдиңиз"
+  "hello_user": "Кош келдиңиз",
+  "forgot_pin_code": "ПИН кодунузду унутуп калдыңызбы?",
+  "fingerprint_scan": "Аныктыгын текшерүү үчүн манжа изиңизди сканерлеңиз",
+  "fingerprint_auth": "Манжа изинин аныктыгы"
 }
