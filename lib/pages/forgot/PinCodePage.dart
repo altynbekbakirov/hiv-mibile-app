@@ -168,7 +168,7 @@ class _OTPScreenState extends State<OTPScreen> {
           androidAuthStrings: AndroidAuthMessages(
             signInTitle: "fingerprint_auth".tr(),
             fingerprintHint: "",
-            cancelButton:  "cancel".tr(),
+            cancelButton: "cancel".tr(),
           ),
           iOSAuthStrings: IOSAuthMessages(
             cancelButton: "cancel".tr(),
@@ -407,14 +407,27 @@ class _OTPScreenState extends State<OTPScreen> {
         strPin += e;
       });
       if (pinIndex == 4 && pin != null) {
-        if (currentPin.join() == pin)
-          Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) =>
-                    ChangePasswordPage(false, userName: widget.userName),
-              ));
+        currentPin.join() == pin
+            ? Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) =>
+                      ChangePasswordPage(false, userName: widget.userName),
+                ))
+            : _clearRow();
+      } else {
+        _clearRow();
       }
+    });
+  }
+
+  _clearRow() {
+    setState(() {
+      pinIndex = 0;
+      pinOneController.text = "";
+      pinTwoController.text = "";
+      pinThreeController.text = "";
+      pinFourController.text = "";
     });
   }
 
