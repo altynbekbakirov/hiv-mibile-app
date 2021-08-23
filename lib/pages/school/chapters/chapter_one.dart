@@ -1,6 +1,7 @@
 import 'package:HIVApp/components/bottom_slider.dart';
 import 'package:HIVApp/components/bullet.dart';
 import 'package:HIVApp/components/number_bullet.dart';
+import 'package:HIVApp/data/pref_manager.dart';
 import 'package:HIVApp/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -16,10 +17,12 @@ class ChapterOne extends StatefulWidget {
   _ChapterOneState createState() => _ChapterOneState();
 }
 
-class _ChapterOneState extends State<ChapterOne>  with AutomaticKeepAliveClientMixin {
+class _ChapterOneState extends State<ChapterOne>
+    with AutomaticKeepAliveClientMixin {
   double fontSize = 18.0;
   bool showSlider = false;
   PageController pageController = PageController();
+  int showDialogs;
 
   //region Pages
   /// Страниа 1
@@ -77,6 +80,7 @@ class _ChapterOneState extends State<ChapterOne>  with AutomaticKeepAliveClientM
       ),
     );
   }
+
   /// Страниа 2
   Widget _page2(BuildContext context, TextStyle style) {
     return ListTile(
@@ -158,6 +162,7 @@ class _ChapterOneState extends State<ChapterOne>  with AutomaticKeepAliveClientM
       ),
     );
   }
+
   /// Страниа 3
   Widget _page3(BuildContext context, TextStyle style) {
     return ListTile(
@@ -254,6 +259,7 @@ class _ChapterOneState extends State<ChapterOne>  with AutomaticKeepAliveClientM
       ),
     );
   }
+
   /// Страниа 4
   Widget _page4(BuildContext context, TextStyle style) {
     return ListTile(
@@ -313,6 +319,7 @@ class _ChapterOneState extends State<ChapterOne>  with AutomaticKeepAliveClientM
       ),
     );
   }
+
   /// Страниа 5 Что такое ВИЧ и СПИД
   Widget _page5(BuildContext context, TextStyle style) {
     return ListTile(
@@ -414,6 +421,7 @@ class _ChapterOneState extends State<ChapterOne>  with AutomaticKeepAliveClientM
       ),
     );
   }
+
   /// Страниа 6 Что такое ВИЧ и СПИД
   Widget _page6(BuildContext context, TextStyle style) {
     return ListTile(
@@ -552,6 +560,7 @@ class _ChapterOneState extends State<ChapterOne>  with AutomaticKeepAliveClientM
       ),
     );
   }
+
   /// Страниа 7 Что такое ВИЧ и СПИД
   Widget _page7(BuildContext context, TextStyle style) {
     return ListTile(
@@ -708,6 +717,7 @@ class _ChapterOneState extends State<ChapterOne>  with AutomaticKeepAliveClientM
       ),
     );
   }
+
   /// Страниа 8 Что такое ВИЧ и СПИД
   Widget _page8(BuildContext context, TextStyle style) {
     return ListTile(
@@ -805,6 +815,7 @@ class _ChapterOneState extends State<ChapterOne>  with AutomaticKeepAliveClientM
       ),
     );
   }
+
   /// Страниа 9 ЧТО ТАКОЕ ИММУНИТЕТ?
   Widget _page9(BuildContext context, TextStyle style) {
     return ListTile(
@@ -909,6 +920,7 @@ class _ChapterOneState extends State<ChapterOne>  with AutomaticKeepAliveClientM
       ),
     );
   }
+
   /// Страниа 10 ЧТО ТАКОЕ ИММУНИТЕТ?
   Widget _page10(BuildContext context, TextStyle style) {
     return ListTile(
@@ -944,6 +956,7 @@ class _ChapterOneState extends State<ChapterOne>  with AutomaticKeepAliveClientM
       ),
     );
   }
+
   /// Страниа 11 ЧТО ТАКОЕ ИММУНИТЕТ?
   Widget _page11(BuildContext context, TextStyle style) {
     return ListTile(
@@ -974,6 +987,7 @@ class _ChapterOneState extends State<ChapterOne>  with AutomaticKeepAliveClientM
       ),
     );
   }
+
   /// Страниа 12 Как ВИЧ передается
   Widget _page12(BuildContext context, TextStyle style) {
     return ListTile(
@@ -1081,6 +1095,7 @@ class _ChapterOneState extends State<ChapterOne>  with AutomaticKeepAliveClientM
       ),
     );
   }
+
   /// Страниа 13 Как вирус попадает в организм человека
   Widget _page13(BuildContext context, TextStyle style) {
     return ListTile(
@@ -1160,6 +1175,7 @@ class _ChapterOneState extends State<ChapterOne>  with AutomaticKeepAliveClientM
       ),
     );
   }
+
   /// Страниа 14 Как вирус попадает в организм человека
   Widget _page14(BuildContext context, TextStyle style) {
     return ListTile(
@@ -1235,6 +1251,7 @@ class _ChapterOneState extends State<ChapterOne>  with AutomaticKeepAliveClientM
       ),
     );
   }
+
   /// Страниа 15 Как вирус попадает в организм человека
   Widget _page15(BuildContext context, TextStyle style) {
     return ListTile(
@@ -1309,6 +1326,7 @@ class _ChapterOneState extends State<ChapterOne>  with AutomaticKeepAliveClientM
       ),
     );
   }
+
   /// Страниа 16 Как вирус попадает в организм человека
   Widget _page16(BuildContext context, TextStyle style) {
     return ListTile(
@@ -1472,6 +1490,7 @@ class _ChapterOneState extends State<ChapterOne>  with AutomaticKeepAliveClientM
       ),
     );
   }
+
   /// Страниа 17 Как вирус попадает в организм человека
   Widget _page17(BuildContext context, TextStyle style) {
     return ListTile(
@@ -1601,6 +1620,7 @@ class _ChapterOneState extends State<ChapterOne>  with AutomaticKeepAliveClientM
       ),
     );
   }
+
   /// Страниа 18 Как вирус попадает в организм человека
   Widget _page18(BuildContext context, TextStyle style) {
     return ListTile(
@@ -1682,6 +1702,7 @@ class _ChapterOneState extends State<ChapterOne>  with AutomaticKeepAliveClientM
       ),
     );
   }
+
   /// Страниа 19 СТАДИИ И ПРОЯВЛЕНИЯ ВИЧ-ИНФЕКЦИИ
   Widget _page19(BuildContext context, TextStyle style) {
     return ListTile(
@@ -1761,6 +1782,7 @@ class _ChapterOneState extends State<ChapterOne>  with AutomaticKeepAliveClientM
       ),
     );
   }
+
   /// Страниа 20 СТАДИИ И ПРОЯВЛЕНИЯ ВИЧ-ИНФЕКЦИИ
   Widget _page20(BuildContext context, TextStyle style) {
     return ListTile(
@@ -1802,6 +1824,7 @@ class _ChapterOneState extends State<ChapterOne>  with AutomaticKeepAliveClientM
       ),
     );
   }
+
   /// Страниа 21 ЧТО ПРОИСХОДИТ, КОГДА ВИЧ ПОПАДАЕТ В ОРГАНИЗМ ЧЕЛОВЕКА?
   Widget _page21(BuildContext context, TextStyle style) {
     return ListTile(
@@ -1871,6 +1894,7 @@ class _ChapterOneState extends State<ChapterOne>  with AutomaticKeepAliveClientM
       ),
     );
   }
+
   /// Страниа 22 ЧТО ПРОИСХОДИТ, КОГДА ВИЧ ПОПАДАЕТ В ОРГАНИЗМ ЧЕЛОВЕКА?
   Widget _page22(BuildContext context, TextStyle style) {
     return ListTile(
@@ -1908,6 +1932,7 @@ class _ChapterOneState extends State<ChapterOne>  with AutomaticKeepAliveClientM
       ),
     );
   }
+
   /// Страниа 23 Как ВИЧ-не передается
   Widget _page23(BuildContext context, TextStyle style) {
     return ListTile(
@@ -1970,6 +1995,7 @@ class _ChapterOneState extends State<ChapterOne>  with AutomaticKeepAliveClientM
       ),
     );
   }
+
   /// Страниа 24 Как ВИЧ-не передается
   Widget _page24(BuildContext context, TextStyle style) {
     return ListTile(
@@ -2025,6 +2051,7 @@ class _ChapterOneState extends State<ChapterOne>  with AutomaticKeepAliveClientM
       ),
     );
   }
+
   /// Страниа 25 Как ВИЧ-не передается
   Widget _page25(BuildContext context, TextStyle style) {
     return ListTile(
@@ -2056,6 +2083,7 @@ class _ChapterOneState extends State<ChapterOne>  with AutomaticKeepAliveClientM
       ),
     );
   }
+
   /// Страниа 26 Как ВИЧ-не передается
   Widget _page26(BuildContext context, TextStyle style) {
     return ListTile(
@@ -2098,6 +2126,7 @@ class _ChapterOneState extends State<ChapterOne>  with AutomaticKeepAliveClientM
       ),
     );
   }
+
   /// Страниа 27 Что делать, если мне сообщили о положительном ВИЧ-статусе?
   Widget _page27(BuildContext context, TextStyle style) {
     return ListTile(
@@ -2180,6 +2209,7 @@ class _ChapterOneState extends State<ChapterOne>  with AutomaticKeepAliveClientM
       ),
     );
   }
+
   /// Страниа 28 Что делать, если мне сообщили о положительном ВИЧ-статусе?
   Widget _page28(BuildContext context, TextStyle style) {
     return ListTile(
@@ -2382,6 +2412,7 @@ class _ChapterOneState extends State<ChapterOne>  with AutomaticKeepAliveClientM
       ),
     );
   }
+
   /// Страниа 29 Что делать, если мне сообщили о положительном ВИЧ-статусе?
   Widget _page29(BuildContext context, TextStyle style) {
     return ListTile(
@@ -2521,6 +2552,7 @@ class _ChapterOneState extends State<ChapterOne>  with AutomaticKeepAliveClientM
       ),
     );
   }
+
   /// Страниа 30 Что делать, если мне сообщили о положительном ВИЧ-статусе?
   Widget _page30(BuildContext context, TextStyle style) {
     return ListTile(
@@ -2591,11 +2623,13 @@ class _ChapterOneState extends State<ChapterOne>  with AutomaticKeepAliveClientM
       ),
     );
   }
+
   //endregion
 
   @override
   void initState() {
     super.initState();
+    showDialogs = Prefs.getInt("show_dialogs");
     show();
   }
 
@@ -2603,7 +2637,8 @@ class _ChapterOneState extends State<ChapterOne>  with AutomaticKeepAliveClientM
   String drAzamat = 'Здравствуйте!\nя – доктор Азамат';
   String firstDialog =
       "Сегодня мы поговорим с Вами о ВИЧ и СПИДе. Мы расскажем о том, что такое ВИЧ и СПИД, как ВИЧ передается, почему важно тестирование на ВИЧ и что нужно делать, когда тест на ВИЧ оказывается\n положительным.";
-  String lastDialog = "Первые случаи ВИЧ-инфекции в Кыргызстане среди иностранцев были выявлены в 1987 году, "
+  String lastDialog =
+      "Первые случаи ВИЧ-инфекции в Кыргызстане среди иностранцев были выявлены в 1987 году, "
       "а среди граждан Кыргызской Республики первый случай был выявлен в 1996 году. "
       "На 1 января 2017 года в Кыргызстане выявлено 7117 людей с ВИЧ. По оценкам, в "
       "стране проживает 8307 ЛЖВ, то есть многие люди с ВИЧеще не прошли тестирование на ВИЧ и не знают "
@@ -2612,19 +2647,23 @@ class _ChapterOneState extends State<ChapterOne>  with AutomaticKeepAliveClientM
   show() async {
     await Future.delayed(
       const Duration(seconds: 1),
-      () => Doctor.showDialogFunc(
-        context: context,
-        text: drNadezhda,
-        doctor: Doctors.Nadezhda,
-        fontSize: 20,
-      ),
+      () => showDialogs == null
+          ? Doctor.showDialogFunc(
+              context: context,
+              text: drNadezhda,
+              doctor: Doctors.Nadezhda,
+              fontSize: 20,
+            )
+          : Container(),
     ).then((value) async {
-      await Doctor.showDialogFunc(
-        context: context,
-        text: drAzamat,
-        doctor: Doctors.Azamat,
-        fontSize: 20,
-      );
+      showDialogs == null
+          ? await Doctor.showDialogFunc(
+              context: context,
+              text: drAzamat,
+              doctor: Doctors.Azamat,
+              fontSize: 20,
+            )
+          : Container();
 
       await Doctor.showDialogFunc(
         context: context,
@@ -2632,6 +2671,7 @@ class _ChapterOneState extends State<ChapterOne>  with AutomaticKeepAliveClientM
         doctor: Doctors.Nadezhda,
         fontSize: 20,
       );
+      Prefs.setInt('show_dialogs', 1);
     });
   }
 
@@ -2668,7 +2708,7 @@ class _ChapterOneState extends State<ChapterOne>  with AutomaticKeepAliveClientM
       body: PageView(
         controller: pageController,
         onPageChanged: (value) async {
-          if(value == hivStagesPage) {
+          if (value == hivStagesPage) {
             await Doctor.showDialogFunc(
               context: context,
               text: lastDialog,
