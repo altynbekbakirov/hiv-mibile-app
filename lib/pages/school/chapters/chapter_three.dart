@@ -29,6 +29,7 @@ class _ChapterThreeState extends State<ChapterThree> {
           color: Colors.black),
     );
   }
+
   boldText(String text) {
     return TextSpan(
       text: '$text',
@@ -36,12 +37,14 @@ class _ChapterThreeState extends State<ChapterThree> {
           fontWeight: FontWeight.w600, fontSize: fontSize, color: Colors.black),
     );
   }
+
   normalText(String text) {
     return TextSpan(
       text: '$text',
       style: TextStyle(fontSize: fontSize, color: Colors.black),
     );
   }
+
   italicText(String text) {
     return TextSpan(
       text: '$text',
@@ -56,26 +59,18 @@ class _ChapterThreeState extends State<ChapterThree> {
     show();
   }
 
-  String hello = "Здравствуйте, c Вами вновь доктор Надежда";
   String text = 'В 2019 году было зарегистрировано 28 детей до 15 лет с ВИЧ';
 
   show() async {
     await Future.delayed(
       const Duration(seconds: 1),
-          () => Doctor.showDialogFunc(
-        context: context,
-        text: hello,
-        doctor: Doctors.Nadezhda,
-        fontSize: 20,
-      ),
-    ).then((value) async {
-      await Doctor.showDialogFunc(
+      () => Doctor.showDialogFunc(
         context: context,
         text: text,
         doctor: Doctors.Nadezhda,
         fontSize: 20,
-      );
-    });
+      ),
+    );
   }
 
   //region Pages
@@ -114,6 +109,7 @@ class _ChapterThreeState extends State<ChapterThree> {
       ),
     );
   }
+
   /// Страница 2 Планирование беременности в семьях, живущих с ВИЧ
   Widget _page2(BuildContext context) {
     return ListTile(
@@ -176,6 +172,7 @@ class _ChapterThreeState extends State<ChapterThree> {
       ),
     );
   }
+
   /// Страница 3 Планирование беременности в семьях, живущих с ВИЧ
   Widget _page3(BuildContext context) {
     return ListTile(
@@ -213,6 +210,7 @@ class _ChapterThreeState extends State<ChapterThree> {
       ),
     );
   }
+
   /// Страница 4 Планирование беременности в семьях, живущих с ВИЧ
   Widget _page4(BuildContext context) {
     return ListTile(
@@ -237,6 +235,7 @@ class _ChapterThreeState extends State<ChapterThree> {
       ),
     );
   }
+
   /// Страница 5 Планирование беременности в семьях, живущих с ВИЧ
   Widget _page5(BuildContext context) {
     return ListTile(
@@ -266,6 +265,7 @@ class _ChapterThreeState extends State<ChapterThree> {
       ),
     );
   }
+
   /// Страница 6 Планирование беременности в семьях, живущих с ВИЧ
   Widget _page6(BuildContext context) {
     return ListTile(
@@ -323,6 +323,7 @@ class _ChapterThreeState extends State<ChapterThree> {
       ),
     );
   }
+
   /// Страница 7 Планирование беременности в семьях, живущих с ВИЧ
   Widget _page7(BuildContext context) {
     return ListTile(
@@ -347,6 +348,7 @@ class _ChapterThreeState extends State<ChapterThree> {
       ),
     );
   }
+
   /// Страница 8 Планирование беременности в семьях, живущих с ВИЧ
   Widget _page8(BuildContext context) {
     return ListTile(
@@ -369,6 +371,7 @@ class _ChapterThreeState extends State<ChapterThree> {
       ),
     );
   }
+
   /// Страница 9 Планирование беременности в семьях, живущих с ВИЧ
   Widget _page9(BuildContext context) {
     return ListTile(
@@ -405,6 +408,7 @@ class _ChapterThreeState extends State<ChapterThree> {
       ),
     );
   }
+
   //endregion
 
   Widget _appBar() {

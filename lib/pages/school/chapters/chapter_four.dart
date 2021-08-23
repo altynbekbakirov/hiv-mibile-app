@@ -28,6 +28,7 @@ class _ChapterFourState extends State<ChapterFour> {
           color: Colors.black),
     );
   }
+
   boldText(String text) {
     return TextSpan(
       text: '$text',
@@ -35,12 +36,14 @@ class _ChapterFourState extends State<ChapterFour> {
           fontWeight: FontWeight.w600, fontSize: fontSize, color: Colors.black),
     );
   }
+
   normalText(String text) {
     return TextSpan(
       text: '$text',
       style: TextStyle(fontSize: fontSize, color: Colors.black),
     );
   }
+
   italicText(String text) {
     return TextSpan(
       text: '$text',
@@ -50,32 +53,25 @@ class _ChapterFourState extends State<ChapterFour> {
   }
 
   @override
-  void initState(){
+  void initState() {
     super.initState();
     show();
   }
 
-  String aza = 'Здравствуйте, c Вами вновь доктор Азамат';
-  String textAza = 'Специфические инфекционные заболевания у людей с ВИЧ называют оппортунистическими инфекциями (ОИ).';
-  String textNadya = 'Важно помнить, что специалистам, вовлеченным в процесс оказания услуг по вопросам лечения и ухода для ЛЖВ, следует предлагать все усилия для максимально раннего начала АРТ, как только в этом возникнет необходимость (при числе лимфоцитов CД4 менее 500 клеток/мкл). Раннее начало АРТ позволяет избежать возникновения таких серьезных ОИ, как ПЦП, а также таких дополнительных вмешательств, как профилактическое лечение котримоксазолом.';
+  String textAza =
+      'Специфические инфекционные заболевания у людей с ВИЧ называют оппортунистическими инфекциями (ОИ).';
+  String textNadya =
+      'Важно помнить, что специалистам, вовлеченным в процесс оказания услуг по вопросам лечения и ухода для ЛЖВ, следует предлагать все усилия для максимально раннего начала АРТ, как только в этом возникнет необходимость (при числе лимфоцитов CД4 менее 500 клеток/мкл). Раннее начало АРТ позволяет избежать возникновения таких серьезных ОИ, как ПЦП, а также таких дополнительных вмешательств, как профилактическое лечение котримоксазолом.';
 
   show() async {
     await Future.delayed(
-      const Duration(seconds: 1),
-          () => Doctor.showDialogFunc(
-        context: context,
-        text: aza,
-        doctor: Doctors.Azamat,
-        fontSize: 20,
-      ),
-    ).then((value) async {
-      await Doctor.showDialogFunc(
-        context: context,
-        text: textAza,
-        doctor: Doctors.Azamat,
-        fontSize: 20,
-      );
-    });
+        const Duration(seconds: 1),
+        () => Doctor.showDialogFunc(
+              context: context,
+              text: textAza,
+              doctor: Doctors.Azamat,
+              fontSize: 20,
+            ));
   }
 
   //region Pages
@@ -102,6 +98,7 @@ class _ChapterFourState extends State<ChapterFour> {
       ),
     );
   }
+
   /// Страница 2 Оппортунистические инфекции (ОИ)
   Widget _page2(BuildContext context) {
     return ListTile(
@@ -136,6 +133,7 @@ class _ChapterFourState extends State<ChapterFour> {
       ),
     );
   }
+
   /// Страница 3 Оппортунистические инфекции (ОИ)
   Widget _page3(BuildContext context) {
     return ListTile(
@@ -159,6 +157,7 @@ class _ChapterFourState extends State<ChapterFour> {
       ),
     );
   }
+
   /// Страница 4 Оппортунистические инфекции (ОИ)
   Widget _page4(BuildContext context) {
     return ListTile(
@@ -182,6 +181,7 @@ class _ChapterFourState extends State<ChapterFour> {
       ),
     );
   }
+
   /// Страница 5 Оппортунистические инфекции (ОИ)
   Widget _page5(BuildContext context) {
     return ListTile(
@@ -217,6 +217,7 @@ class _ChapterFourState extends State<ChapterFour> {
       ),
     );
   }
+
   /// Страница 6 Туберкулез у людей с ВИЧ
   Widget _page6(BuildContext context) {
     return ListTile(
@@ -240,6 +241,7 @@ class _ChapterFourState extends State<ChapterFour> {
       ),
     );
   }
+
   /// Страница 7 Туберкулез у людей с ВИЧ
   Widget _page7(BuildContext context) {
     return ListTile(
@@ -271,6 +273,7 @@ class _ChapterFourState extends State<ChapterFour> {
       ),
     );
   }
+
   /// Страница 8 Туберкулез у людей с ВИЧ
   Widget _page8(BuildContext context) {
     return ListTile(
@@ -290,13 +293,17 @@ class _ChapterFourState extends State<ChapterFour> {
                     fontWeight: FontWeight.w600,
                   ),
                 ),
-                normalText("При соблюдении режима лечения с момента выявления заболевания и до полного излечения,"
-                'необходимо быть в контакте с врачом, вовремя проходить лабораторные исследования и '
+                normalText(
+                    "При соблюдении режима лечения с момента выявления заболевания и до полного излечения,"
+                    'необходимо быть в контакте с врачом, вовремя проходить лабораторные исследования и '
                     'ограничить контакты, чтобы не заразить близких при бытовом общении. '),
-                normalText("\n    При выявлении ТБ сначала начинают лечить туберкулез, затем (в течение 2 недель) подключают АРВ терапию. "),
-                normalText("\n    У людей с ВИЧ повышен риск заболеть туберкулезом и, чтобы избежать заражения, всем ЛЖВ назначается профилактическое лечение изониазидом, которое нужно принимать 6 месяцев. "),
+                normalText(
+                    "\n    При выявлении ТБ сначала начинают лечить туберкулез, затем (в течение 2 недель) подключают АРВ терапию. "),
+                normalText(
+                    "\n    У людей с ВИЧ повышен риск заболеть туберкулезом и, чтобы избежать заражения, всем ЛЖВ назначается профилактическое лечение изониазидом, которое нужно принимать 6 месяцев. "),
                 boldText("\n\nДля чего нужно принимать котримаксазол"),
-                normalText("\n\nПри сочетании туберкулеза с ВИЧ-инфекцией пациентам также назначают котримаксазол. Это препятствует "
+                normalText(
+                    "\n\nПри сочетании туберкулеза с ВИЧ-инфекцией пациентам также назначают котримаксазол. Это препятствует "
                     "развитию одной из часто встречающейся оппортунистической инфекции – пневмоцистной пневмонии. ")
               ], style: TextStyle(fontSize: fontSize)),
             ),
@@ -306,6 +313,7 @@ class _ChapterFourState extends State<ChapterFour> {
       ),
     );
   }
+
   /// Страница 9 Что такое вирусные гепатиты?
   Widget _page9(BuildContext context) {
     return ListTile(
@@ -317,13 +325,16 @@ class _ChapterFourState extends State<ChapterFour> {
                 boldText("Что такое вирусные гепатиты?"),
                 normalText(
                     "\n\nПечень выполняет важные функции в организме. Гепатит – это воспаление печени в результате действия вирусов, химических веществ, алкоголя. "),
-                normalText("\n\nНаиболее опасны вирусные гепатиты В и С. Их основные проявления – желтуха "
+                normalText(
+                    "\n\nНаиболее опасны вирусные гепатиты В и С. Их основные проявления – желтуха "
                     "(пожелтение кожи, белков глаз, мочи), увеличение печени, боли в животе, плохой сон, "
                     "быстрая утомляемость, снижение веса, плохой аппетит, тошнота. Гепатит С может протекать "
                     "незаметно, но приводит к тяжелым последствиям (его еще называют «ласковый убийца»)."),
-                normalText("\n\nЛюди заражаются гепатитами В и С, также как ВИЧ, через кровь (часто при использовании загрязненных игл и шприцев). "
+                normalText(
+                    "\n\nЛюди заражаются гепатитами В и С, также как ВИЧ, через кровь (часто при использовании загрязненных игл и шприцев). "
                     "Поэтому многие ЛЖВ инфицированы также гепатитами В и С. "),
-                normalText("\n\nРиск заражения гепатитом В значительно выше, чем ВИЧ. Вирус гепатита В очень устойчив во внешней среде. Им можно также заразиться "
+                normalText(
+                    "\n\nРиск заражения гепатитом В значительно выше, чем ВИЧ. Вирус гепатита В очень устойчив во внешней среде. Им можно также заразиться "
                     "бытовым путем при пользовании общим полотенцем, бритвенным прибором или половым путем. ")
               ], style: TextStyle(fontSize: fontSize)),
             ),
@@ -333,6 +344,7 @@ class _ChapterFourState extends State<ChapterFour> {
       ),
     );
   }
+
   /// Страница 10 Что такое вирусные гепатиты?
   Widget _page10(BuildContext context) {
     return ListTile(
@@ -344,12 +356,16 @@ class _ChapterFourState extends State<ChapterFour> {
                 boldText("Как выявить вирусный гепатит?"),
                 normalText(
                     "\n\nОбследование на гепатиты В и С проводится сразу после выявления ВИЧ-инфекции. "),
-                normalText("\n\nЕсли у человека с ВИЧ сохраняется опасное поведение (секс без презерватива с "
+                normalText(
+                    "\n\nЕсли у человека с ВИЧ сохраняется опасное поведение (секс без презерватива с "
                     "разными половыми партнерами, совместное использование шприцев), то обследование проводят ежегодно."),
-                italicText("\n\nВ случае появления признаков вирусного гепатита, сразу обратитесь к врачу, пройдите обследование и лечение."),
+                italicText(
+                    "\n\nВ случае появления признаков вирусного гепатита, сразу обратитесь к врачу, пройдите обследование и лечение."),
                 boldText("\n\nКак защитить себя от вирусных гепатитов?\n\n"),
-                normalText("Профилактика вирусных гепатитов В и С такая же, как и для ВИЧ-инфекции. "),
-                normalText("\n- При употреблении наркотиков, откажитесь от внутривенного использования или пользуйтесь только своим шприцом и приспособлениями для изготовления наркотика.")
+                normalText(
+                    "Профилактика вирусных гепатитов В и С такая же, как и для ВИЧ-инфекции. "),
+                normalText(
+                    "\n- При употреблении наркотиков, откажитесь от внутривенного использования или пользуйтесь только своим шприцом и приспособлениями для изготовления наркотика.")
               ], style: TextStyle(fontSize: fontSize)),
             ),
             SizedBox(height: 90),
@@ -358,6 +374,7 @@ class _ChapterFourState extends State<ChapterFour> {
       ),
     );
   }
+
   /// Страница 11 Что такое вирусные гепатиты?
   Widget _page11(BuildContext context) {
     return ListTile(
@@ -366,15 +383,23 @@ class _ChapterFourState extends State<ChapterFour> {
           children: [
             RichText(
               text: TextSpan(children: [
-                normalText("\n- При половых контактах всегда и правильно используйте презерватив."),
-                normalText("\n- Пользуйтесь индивидуальными предметами личной гигиены (зубной щеткой, бритвенным станком, полотенцем и др.)."),
-                normalText("\n- При проведении татуировки или пирсинга, используйте одноразовые (стерильные) инструменты."),
-                normalText("\n- От гепатита В защищает прививка, которую ЛЖВ могут получить бесплатно. "),
+                normalText(
+                    "\n- При половых контактах всегда и правильно используйте презерватив."),
+                normalText(
+                    "\n- Пользуйтесь индивидуальными предметами личной гигиены (зубной щеткой, бритвенным станком, полотенцем и др.)."),
+                normalText(
+                    "\n- При проведении татуировки или пирсинга, используйте одноразовые (стерильные) инструменты."),
+                normalText(
+                    "\n- От гепатита В защищает прививка, которую ЛЖВ могут получить бесплатно. "),
                 boldText("\n\nКак жить с вирусными гепатитами?"),
-                normalText("\nВирусные гепатиты В и С нужно обязательно лечить – без лечения развиаются тяжелые осложнения (цирроз или рак печени)."),
-                boldText("\n\nЛЖВ могут бесплатно получить лечение гепатита С, "),
-                normalText("и более 90% людей излечиваются от него.  Курс лечения длится 3-6 месяцев."),
-                normalText("\n\nДля гепатита В также существует лечение, но оно длительное. Некоторые АРВ-препараты (тенофовир, ламивудин, эмтрицитабин) помогают в лечении гепатита В."),
+                normalText(
+                    "\nВирусные гепатиты В и С нужно обязательно лечить – без лечения развиаются тяжелые осложнения (цирроз или рак печени)."),
+                boldText(
+                    "\n\nЛЖВ могут бесплатно получить лечение гепатита С, "),
+                normalText(
+                    "и более 90% людей излечиваются от него.  Курс лечения длится 3-6 месяцев."),
+                normalText(
+                    "\n\nДля гепатита В также существует лечение, но оно длительное. Некоторые АРВ-препараты (тенофовир, ламивудин, эмтрицитабин) помогают в лечении гепатита В."),
               ], style: TextStyle(fontSize: fontSize)),
             ),
             SizedBox(height: 90),
@@ -383,6 +408,7 @@ class _ChapterFourState extends State<ChapterFour> {
       ),
     );
   }
+
   /// Страница 12 Что такое вирусные гепатиты?
   Widget _page12(BuildContext context) {
     return ListTile(
@@ -392,11 +418,16 @@ class _ChapterFourState extends State<ChapterFour> {
             RichText(
               text: TextSpan(children: [
                 boldText("Рекомендации для больных гепатитами:"),
-                normalText("\n- ограничить чрезмерные физические нагрузки, соблюдать режим дня;"),
-                normalText("\n- не употреблять (или сильно ограничить) наркотики, алкоголь, курение;"),
-                normalText("\n- отказаться от некоторых продуктов (жирного, жаренного, острого);"),
-                normalText("\n- сообщить половому партнеру и членам семьи о своем заболевании, а также о мерах безопасности и соблюдать их."),
-                normalText("\n- дополнительную информацию, вопросы обследования, профилактики и лечения обсуждать с врачом."),
+                normalText(
+                    "\n- ограничить чрезмерные физические нагрузки, соблюдать режим дня;"),
+                normalText(
+                    "\n- не употреблять (или сильно ограничить) наркотики, алкоголь, курение;"),
+                normalText(
+                    "\n- отказаться от некоторых продуктов (жирного, жаренного, острого);"),
+                normalText(
+                    "\n- сообщить половому партнеру и членам семьи о своем заболевании, а также о мерах безопасности и соблюдать их."),
+                normalText(
+                    "\n- дополнительную информацию, вопросы обследования, профилактики и лечения обсуждать с врачом."),
               ], style: TextStyle(fontSize: fontSize)),
             ),
             SizedBox(height: 90),
@@ -405,6 +436,7 @@ class _ChapterFourState extends State<ChapterFour> {
       ),
     );
   }
+
   //endregion
 
   Widget _appBar() {
@@ -431,13 +463,14 @@ class _ChapterFourState extends State<ChapterFour> {
   }
 
   int lastPage = 11;
+
   Widget _chapters(BuildContext context, List pages) {
     return Scaffold(
       appBar: showSlider ? _appBar() : null,
       body: PageView(
         controller: pageController,
         onPageChanged: (value) async {
-          if(value == lastPage)
+          if (value == lastPage)
             await Doctor.showDialogFunc(
               context: context,
               text: textNadya,
@@ -499,7 +532,8 @@ class _ChapterFourState extends State<ChapterFour> {
             ),
           )
         ],
-        title: Text('opportunistic_infections'.tr(), style: TextStyle(color: Colors.black, fontSize: 18)),
+        title: Text('opportunistic_infections'.tr(),
+            style: TextStyle(color: Colors.black, fontSize: 18)),
       ),
       body: Container(
         child: Stack(

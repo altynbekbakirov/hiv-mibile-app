@@ -21,7 +21,6 @@ class _ChapterTwoState extends State<ChapterTwo> {
   bool showSlider = false;
   PageController pageController = PageController();
 
-  String drAzamat = 'Здравствуйте, c Вами снова доктор Азамат';
   String textAza = 'Однако до настоящего '
       "времени не разработано "
       "лекарство, которое могло "
@@ -33,7 +32,9 @@ class _ChapterTwoState extends State<ChapterTwo> {
       "человек с ВИЧ должен "
       "постоянно получать "
       "лечение.";
-  String textNadya = 'Когда дети вступают в подростковый возраст, они начинают осознавать свою непохожесть на других детей. В этот период очень важна поддержка со стороны близких и сообщества для открытия статуса и поддержки приверженности к терапии.';
+  String textNadya =
+      'Когда дети вступают в подростковый возраст, они начинают осознавать свою непохожесть на других детей. В этот период очень важна поддержка со стороны близких и сообщества для открытия статуса и поддержки приверженности к терапии.';
+
   @override
   void initState() {
     super.initState();
@@ -42,21 +43,13 @@ class _ChapterTwoState extends State<ChapterTwo> {
 
   show() async {
     await Future.delayed(
-      const Duration(seconds: 1),
-      () => Doctor.showDialogFunc(
-        context: context,
-        text: drAzamat,
-        doctor: Doctors.Azamat,
-        fontSize: 20,
-      ),
-    ).then((value) async {
-      await Doctor.showDialogFunc(
-        context: context,
-        text: textAza,
-        doctor: Doctors.Azamat,
-        fontSize: 18,
-      );
-    });
+        const Duration(seconds: 1),
+        () => Doctor.showDialogFunc(
+              context: context,
+              text: textAza,
+              doctor: Doctors.Azamat,
+              fontSize: 18,
+            ));
   }
 
   header(String header) {
@@ -1795,13 +1788,14 @@ class _ChapterTwoState extends State<ChapterTwo> {
 
   double currentPage = 0;
   int lastPage = 24;
+
   Widget _chapters(BuildContext context, List pages) {
     return Scaffold(
       appBar: showSlider ? _appBar() : null,
       body: PageView(
         controller: pageController,
         onPageChanged: (value) async {
-          if(value == lastPage)
+          if (value == lastPage)
             await Doctor.showDialogFunc(
               context: context,
               text: textNadya,

@@ -22,32 +22,25 @@ class _ChapterFiveState extends State<ChapterFive> {
   double currentPage = 0;
 
   @override
-  void initState(){
+  void initState() {
     show();
     super.initState();
   }
 
-  String drNadya = 'Здравствуйте, с вами снова доктор Надежда';
-  String first = 'Сегодня мы поговорим об инфекциях, передаваемых половым путем, – мы их кратко называем ИППП, а также об основах планирования семьи – о сексуальном и репродуктивном здоровье.';
-  String second = 'Следует помнить, что только использование презерватива защищает от заражения ВИЧ/ ИППП. Другие барьерные методы снижают риск, а прочие методы контрацепции не защищают от заражения ВИЧ. Для обеспечения эффективной защиты нужно: пользоваться презервативом всегда, пользоваться правильно, дополнять использование презерватива спермицидами/ микробицидами; использовать двойной метод защиты.';
+  String first =
+      'Сегодня мы поговорим об инфекциях, передаваемых половым путем, – мы их кратко называем ИППП, а также об основах планирования семьи – о сексуальном и репродуктивном здоровье.';
+  String second =
+      'Следует помнить, что только использование презерватива защищает от заражения ВИЧ/ ИППП. Другие барьерные методы снижают риск, а прочие методы контрацепции не защищают от заражения ВИЧ. Для обеспечения эффективной защиты нужно: пользоваться презервативом всегда, пользоваться правильно, дополнять использование презерватива спермицидами/ микробицидами; использовать двойной метод защиты.';
 
   show() async {
     await Future.delayed(
-      const Duration(seconds: 1),
-          () => Doctor.showDialogFunc(
-        context: context,
-        text: drNadya,
-        doctor: Doctors.Nadezhda,
-        fontSize: 20,
-      ),
-    ).then((value) async {
-      await Doctor.showDialogFunc(
-        context: context,
-        text: first,
-        doctor: Doctors.Nadezhda,
-        fontSize: 20,
-      );
-    });
+        const Duration(seconds: 1),
+        () => Doctor.showDialogFunc(
+              context: context,
+              text: first,
+              doctor: Doctors.Nadezhda,
+              fontSize: 20,
+            ));
   }
 
   header(String header) {
@@ -170,6 +163,7 @@ class _ChapterFiveState extends State<ChapterFive> {
       ),
     );
   }
+
   Widget _page2(BuildContext context) {
     return ListTile(
       title: SingleChildScrollView(
@@ -303,6 +297,7 @@ class _ChapterFiveState extends State<ChapterFive> {
       ),
     );
   }
+
   Widget _page3(BuildContext context) {
     return ListTile(
       title: SingleChildScrollView(
@@ -392,6 +387,7 @@ class _ChapterFiveState extends State<ChapterFive> {
       ),
     );
   }
+
   Widget _page4(BuildContext context) {
     return ListTile(
       title: SingleChildScrollView(
@@ -425,6 +421,7 @@ class _ChapterFiveState extends State<ChapterFive> {
       ),
     );
   }
+
   ///2. Инфекции, передаваемые половым путем
   Widget _page5(BuildContext context) {
     return ListTile(
@@ -519,6 +516,7 @@ class _ChapterFiveState extends State<ChapterFive> {
       ),
     );
   }
+
   Widget _page6(BuildContext context) {
     return ListTile(
       title: SingleChildScrollView(
@@ -702,6 +700,7 @@ class _ChapterFiveState extends State<ChapterFive> {
       ),
     );
   }
+
   Widget _page7(BuildContext context) {
     return ListTile(
       title: SingleChildScrollView(
@@ -942,6 +941,7 @@ class _ChapterFiveState extends State<ChapterFive> {
       ),
     );
   }
+
   Widget _page8(BuildContext context) {
     return ListTile(
       title: SingleChildScrollView(
@@ -1034,6 +1034,7 @@ class _ChapterFiveState extends State<ChapterFive> {
       ),
     );
   }
+
   ///Инструкция по использованию презерватива
   Widget _page9(BuildContext context) {
     return ListTile(
@@ -1123,6 +1124,7 @@ class _ChapterFiveState extends State<ChapterFive> {
       ),
     );
   }
+
   Widget _page10(BuildContext context) {
     return ListTile(
       title: SingleChildScrollView(
@@ -1202,6 +1204,7 @@ class _ChapterFiveState extends State<ChapterFive> {
       ),
     );
   }
+
   Widget _page11(BuildContext context) {
     return ListTile(
       title: SingleChildScrollView(
@@ -1302,6 +1305,7 @@ class _ChapterFiveState extends State<ChapterFive> {
       ),
     );
   }
+
   Widget _page12(BuildContext context) {
     return ListTile(
       title: SingleChildScrollView(
@@ -1348,16 +1352,16 @@ class _ChapterFiveState extends State<ChapterFive> {
               children: <Widget>[
                 Expanded(
                     child: Padding(
-                      padding: const EdgeInsets.only(top: 10),
-                      child: MyBullet(),
-                    )),
+                  padding: const EdgeInsets.only(top: 10),
+                  child: MyBullet(),
+                )),
                 Expanded(
                   flex: 5,
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
                           text:
-                          "открытие упаковки острыми предметами или зубами;",
+                              "открытие упаковки острыми предметами или зубами;",
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -1370,16 +1374,16 @@ class _ChapterFiveState extends State<ChapterFive> {
               children: <Widget>[
                 Expanded(
                     child: Padding(
-                      padding: const EdgeInsets.only(top: 10),
-                      child: MyBullet(),
-                    )),
+                  padding: const EdgeInsets.only(top: 10),
+                  child: MyBullet(),
+                )),
                 Expanded(
                   flex: 5,
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
                           text:
-                          "невнимательность при проверке продукции на целостность;",
+                              "невнимательность при проверке продукции на целостность;",
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -1392,16 +1396,16 @@ class _ChapterFiveState extends State<ChapterFive> {
               children: <Widget>[
                 Expanded(
                     child: Padding(
-                      padding: const EdgeInsets.only(top: 10),
-                      child: MyBullet(),
-                    )),
+                  padding: const EdgeInsets.only(top: 10),
+                  child: MyBullet(),
+                )),
                 Expanded(
                   flex: 5,
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
                           text:
-                          "надевание в процессе полового акта, а не перед его началом;",
+                              "надевание в процессе полового акта, а не перед его началом;",
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -1414,16 +1418,16 @@ class _ChapterFiveState extends State<ChapterFive> {
               children: <Widget>[
                 Expanded(
                     child: Padding(
-                      padding: const EdgeInsets.only(top: 10),
-                      child: MyBullet(),
-                    )),
+                  padding: const EdgeInsets.only(top: 10),
+                  child: MyBullet(),
+                )),
                 Expanded(
                   flex: 5,
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
                           text:
-                          "отсутствие свободного места или воздуха на накопителе (на кончике презерватива);",
+                              "отсутствие свободного места или воздуха на накопителе (на кончике презерватива);",
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -1436,16 +1440,15 @@ class _ChapterFiveState extends State<ChapterFive> {
               children: <Widget>[
                 Expanded(
                     child: Padding(
-                      padding: const EdgeInsets.only(top: 10),
-                      child: MyBullet(),
-                    )),
+                  padding: const EdgeInsets.only(top: 10),
+                  child: MyBullet(),
+                )),
                 Expanded(
                   flex: 5,
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text:
-                          "надевание изнаночной стороной наружу;",
+                          text: "надевание изнаночной стороной наружу;",
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -1458,16 +1461,16 @@ class _ChapterFiveState extends State<ChapterFive> {
               children: <Widget>[
                 Expanded(
                     child: Padding(
-                      padding: const EdgeInsets.only(top: 10),
-                      child: MyBullet(),
-                    )),
+                  padding: const EdgeInsets.only(top: 10),
+                  child: MyBullet(),
+                )),
                 Expanded(
                   flex: 5,
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
                           text:
-                          "неполное разворачивание презерватива на половом члене;",
+                              "неполное разворачивание презерватива на половом члене;",
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -1480,16 +1483,16 @@ class _ChapterFiveState extends State<ChapterFive> {
               children: <Widget>[
                 Expanded(
                     child: Padding(
-                      padding: const EdgeInsets.only(top: 10),
-                      child: MyBullet(),
-                    )),
+                  padding: const EdgeInsets.only(top: 10),
+                  child: MyBullet(),
+                )),
                 Expanded(
                   flex: 5,
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
                           text:
-                          "использование двух презервативов, надетых один на другой;",
+                              "использование двух презервативов, надетых один на другой;",
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -1502,16 +1505,16 @@ class _ChapterFiveState extends State<ChapterFive> {
               children: <Widget>[
                 Expanded(
                     child: Padding(
-                      padding: const EdgeInsets.only(top: 10),
-                      child: MyBullet(),
-                    )),
+                  padding: const EdgeInsets.only(top: 10),
+                  child: MyBullet(),
+                )),
                 Expanded(
                   flex: 5,
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
                           text:
-                          "использование жировых смазок (вазелин, глицерин, растительное масло и др).",
+                              "использование жировых смазок (вазелин, глицерин, растительное масло и др).",
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -1525,6 +1528,7 @@ class _ChapterFiveState extends State<ChapterFive> {
       ),
     );
   }
+
   Widget _page13(BuildContext context) {
     return ListTile(
       title: SingleChildScrollView(
@@ -1535,16 +1539,16 @@ class _ChapterFiveState extends State<ChapterFive> {
               children: <Widget>[
                 Expanded(
                     child: Padding(
-                      padding: const EdgeInsets.only(top: 10),
-                      child: MyBullet(),
-                    )),
+                  padding: const EdgeInsets.only(top: 10),
+                  child: MyBullet(),
+                )),
                 Expanded(
                   flex: 5,
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
                           text:
-                          "Покупайте презерватив только в надежном месте – лучше в аптеке или в супермаркете. Избегайте покупать в киосках, где может нарушаться температурный режим.",
+                              "Покупайте презерватив только в надежном месте – лучше в аптеке или в супермаркете. Избегайте покупать в киосках, где может нарушаться температурный режим.",
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -1557,16 +1561,16 @@ class _ChapterFiveState extends State<ChapterFive> {
               children: <Widget>[
                 Expanded(
                     child: Padding(
-                      padding: const EdgeInsets.only(top: 10),
-                      child: MyBullet(),
-                    )),
+                  padding: const EdgeInsets.only(top: 10),
+                  child: MyBullet(),
+                )),
                 Expanded(
                   flex: 5,
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
                           text:
-                          "Не пользуйтесь презервативом, если его упаковка повреждена. Убедитесь, что презерватив в упаковке упругий и "
+                              "Не пользуйтесь презервативом, если его упаковка повреждена. Убедитесь, что презерватив в упаковке упругий и "
                               "свободно перемещается при нажатии на упаковку. ",
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
@@ -1580,16 +1584,16 @@ class _ChapterFiveState extends State<ChapterFive> {
               children: <Widget>[
                 Expanded(
                     child: Padding(
-                      padding: const EdgeInsets.only(top: 10),
-                      child: MyBullet(),
-                    )),
+                  padding: const EdgeInsets.only(top: 10),
+                  child: MyBullet(),
+                )),
                 Expanded(
                   flex: 5,
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
                           text:
-                          "Бережно храните презерватив до его использования. Нельзя хранить презерватив на солнце, на свету, "
+                              "Бережно храните презерватив до его использования. Нельзя хранить презерватив на солнце, на свету, "
                               "вблизи источников тепла, в сырости, "
                               "а также постоянно носить в кармане брюк, где он также долго подвергается воздействию тепла.",
                           style: TextStyle(
@@ -1604,16 +1608,16 @@ class _ChapterFiveState extends State<ChapterFive> {
               children: <Widget>[
                 Expanded(
                     child: Padding(
-                      padding: const EdgeInsets.only(top: 10),
-                      child: MyBullet(),
-                    )),
+                  padding: const EdgeInsets.only(top: 10),
+                  child: MyBullet(),
+                )),
                 Expanded(
                   flex: 5,
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
                           text:
-                          "Если Вы вскрыли презерватив, а он липкий и легко рвется (расползается в руках)  – его использовать нельзя.",
+                              "Если Вы вскрыли презерватив, а он липкий и легко рвется (расползается в руках)  – его использовать нельзя.",
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -1627,6 +1631,7 @@ class _ChapterFiveState extends State<ChapterFive> {
       ),
     );
   }
+
   Widget _page14(BuildContext context) {
     return ListTile(
       title: SingleChildScrollView(
@@ -1637,16 +1642,16 @@ class _ChapterFiveState extends State<ChapterFive> {
               children: <Widget>[
                 Expanded(
                     child: Padding(
-                      padding: const EdgeInsets.only(top: 10),
-                      child: MyBullet(),
-                    )),
+                  padding: const EdgeInsets.only(top: 10),
+                  child: MyBullet(),
+                )),
                 Expanded(
                   flex: 5,
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
                           text:
-                          "Презервативы обычно имеют смазку (кроме некоторых специальных презервативов), но для снижения риска повреждения во время половых контактов следует использовать дополнительно специальную смазку на водной основе. Нельзя использовать для смазки жирные кремы, вазелин или бытовые жиры, поскольку жир растворяет латекс, из которого сделан презерватив, что может привести к нарушению его целостности. ",
+                              "Презервативы обычно имеют смазку (кроме некоторых специальных презервативов), но для снижения риска повреждения во время половых контактов следует использовать дополнительно специальную смазку на водной основе. Нельзя использовать для смазки жирные кремы, вазелин или бытовые жиры, поскольку жир растворяет латекс, из которого сделан презерватив, что может привести к нарушению его целостности. ",
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -1659,16 +1664,16 @@ class _ChapterFiveState extends State<ChapterFive> {
               children: <Widget>[
                 Expanded(
                     child: Padding(
-                      padding: const EdgeInsets.only(top: 10),
-                      child: MyBullet(),
-                    )),
+                  padding: const EdgeInsets.only(top: 10),
+                  child: MyBullet(),
+                )),
                 Expanded(
                   flex: 5,
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
                           text:
-                          "Аккуратно разорвите упаковку, потянув за насечки в упаковке. Будьте осторожны с ногтями, не открывайте упаковку презерватива ножницами. Презерватив изготавливается из очень прочного латекса, но его можно легко повредить при воздействии острых предметов (ножницы, ногти).",
+                              "Аккуратно разорвите упаковку, потянув за насечки в упаковке. Будьте осторожны с ногтями, не открывайте упаковку презерватива ножницами. Презерватив изготавливается из очень прочного латекса, но его можно легко повредить при воздействии острых предметов (ножницы, ногти).",
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -1681,16 +1686,16 @@ class _ChapterFiveState extends State<ChapterFive> {
               children: <Widget>[
                 Expanded(
                     child: Padding(
-                      padding: const EdgeInsets.only(top: 10),
-                      child: MyBullet(),
-                    )),
+                  padding: const EdgeInsets.only(top: 10),
+                  child: MyBullet(),
+                )),
                 Expanded(
                   flex: 5,
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
                           text:
-                          "Не разворачивайте презерватив заранее и не надувайте его.",
+                              "Не разворачивайте презерватив заранее и не надувайте его.",
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -1704,6 +1709,7 @@ class _ChapterFiveState extends State<ChapterFive> {
       ),
     );
   }
+
   Widget _page15(BuildContext context) {
     return ListTile(
       title: SingleChildScrollView(
@@ -1714,16 +1720,16 @@ class _ChapterFiveState extends State<ChapterFive> {
               children: <Widget>[
                 Expanded(
                     child: Padding(
-                      padding: const EdgeInsets.only(top: 10),
-                      child: MyBullet(),
-                    )),
+                  padding: const EdgeInsets.only(top: 10),
+                  child: MyBullet(),
+                )),
                 Expanded(
                   flex: 5,
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
                           text:
-                          "Надевайте презерватив с самого начала полового акта лишь при полной эрекции, т.е. когда половой член стал твердым.",
+                              "Надевайте презерватив с самого начала полового акта лишь при полной эрекции, т.е. когда половой член стал твердым.",
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -1736,16 +1742,16 @@ class _ChapterFiveState extends State<ChapterFive> {
               children: <Widget>[
                 Expanded(
                     child: Padding(
-                      padding: const EdgeInsets.only(top: 10),
-                      child: MyBullet(),
-                    )),
+                  padding: const EdgeInsets.only(top: 10),
+                  child: MyBullet(),
+                )),
                 Expanded(
                   flex: 5,
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
                           text:
-                          "Сожмите верхушку презерватива большим и указательными пальцами, чтобы в ней не было воздуха.",
+                              "Сожмите верхушку презерватива большим и указательными пальцами, чтобы в ней не было воздуха.",
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -1758,16 +1764,16 @@ class _ChapterFiveState extends State<ChapterFive> {
               children: <Widget>[
                 Expanded(
                     child: Padding(
-                      padding: const EdgeInsets.only(top: 10),
-                      child: MyBullet(),
-                    )),
+                  padding: const EdgeInsets.only(top: 10),
+                  child: MyBullet(),
+                )),
                 Expanded(
                   flex: 5,
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
                           text:
-                          "Приложите свернутый презерватив к головке члена и разверните другой рукой по всей длине полового члена.",
+                              "Приложите свернутый презерватив к головке члена и разверните другой рукой по всей длине полового члена.",
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -1780,16 +1786,16 @@ class _ChapterFiveState extends State<ChapterFive> {
               children: <Widget>[
                 Expanded(
                     child: Padding(
-                      padding: const EdgeInsets.only(top: 10),
-                      child: MyBullet(),
-                    )),
+                  padding: const EdgeInsets.only(top: 10),
+                  child: MyBullet(),
+                )),
                 Expanded(
                   flex: 5,
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
                           text:
-                          "После окончания полового акта, придерживая презерватив за кольцо, выньте член из влагалища, пока он не расслабился.",
+                              "После окончания полового акта, придерживая презерватив за кольцо, выньте член из влагалища, пока он не расслабился.",
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -1802,16 +1808,16 @@ class _ChapterFiveState extends State<ChapterFive> {
               children: <Widget>[
                 Expanded(
                     child: Padding(
-                      padding: const EdgeInsets.only(top: 10),
-                      child: MyBullet(),
-                    )),
+                  padding: const EdgeInsets.only(top: 10),
+                  child: MyBullet(),
+                )),
                 Expanded(
                   flex: 5,
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
                           text:
-                          "После использования презерватива, завяжите его и выбросите в мусорное ведро.",
+                              "После использования презерватива, завяжите его и выбросите в мусорное ведро.",
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -1824,16 +1830,15 @@ class _ChapterFiveState extends State<ChapterFive> {
               children: <Widget>[
                 Expanded(
                     child: Padding(
-                      padding: const EdgeInsets.only(top: 10),
-                      child: MyBullet(),
-                    )),
+                  padding: const EdgeInsets.only(top: 10),
+                  child: MyBullet(),
+                )),
                 Expanded(
                   flex: 5,
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text:
-                          "Используйте презерватив только один раз.",
+                          text: "Используйте презерватив только один раз.",
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -1846,16 +1851,16 @@ class _ChapterFiveState extends State<ChapterFive> {
               children: <Widget>[
                 Expanded(
                     child: Padding(
-                      padding: const EdgeInsets.only(top: 10),
-                      child: MyBullet(),
-                    )),
+                  padding: const EdgeInsets.only(top: 10),
+                  child: MyBullet(),
+                )),
                 Expanded(
                   flex: 5,
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
                           text:
-                          "Если во время полового акта произошел разрыв презерватива, необходимо использовать методы экстренной контрацепции и постконтактную профилактику ВИЧ и ИППП.",
+                              "Если во время полового акта произошел разрыв презерватива, необходимо использовать методы экстренной контрацепции и постконтактную профилактику ВИЧ и ИППП.",
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -1894,19 +1899,20 @@ class _ChapterFiveState extends State<ChapterFive> {
   }
 
   int lastPage = 14;
+
   Widget _chapters(BuildContext context, List pages) {
     return Scaffold(
       appBar: showSlider ? _appBar() : null,
       body: PageView(
         controller: pageController,
         onPageChanged: (value) async {
-          if(value == lastPage)
+          if (value == lastPage)
             await Doctor.showDialogFunc(
               context: context,
               text: second,
               doctor: Doctors.Azamat,
               fontSize: 14,
-          );
+            );
           setState(() {
             currentPage = value.toDouble();
           });
