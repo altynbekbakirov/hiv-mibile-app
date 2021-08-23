@@ -16,7 +16,8 @@ class ResetPasswordPage extends StatefulWidget {
   final String userName;
   final bool fromChangePassword;
 
-  const ResetPasswordPage({Key key, this.userName, this.fromChangePassword}) : super(key: key);
+  const ResetPasswordPage({Key key, this.userName, this.fromChangePassword})
+      : super(key: key);
 
   @override
   _ResetPasswordPageState createState() => _ResetPasswordPageState();
@@ -141,8 +142,14 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
                                       height: 20,
                                     ),
                                     QuestionDropDownList(
-                                        question: _question1,
-                                        questions: _questions),
+                                      question: _question1,
+                                      questions: _questions,
+                                      callback: (value) {
+                                        setState(() {
+                                          _question1 = value;
+                                        });
+                                      },
+                                    ),
                                   ],
                                 ),
                                 SizedBox(height: 20),
@@ -166,8 +173,14 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
                                   height: 20,
                                 ),
                                 QuestionDropDownList(
-                                    question: _question2,
-                                    questions: _questions),
+                                  question: _question2,
+                                  questions: _questions,
+                                  callback: (value){
+                                    setState(() {
+                                      _question2 = value;
+                                    });
+                                  },
+                                ),
                                 SizedBox(height: 20),
                                 CustomTextFormField(
                                   fillColor: kLightGrayishBlue,
@@ -212,7 +225,11 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
                                                 context,
                                                 MaterialPageRoute(
                                                   builder: (context) =>
-                                                      ChangePasswordPage(widget.fromChangePassword, userName: _user.username),
+                                                      ChangePasswordPage(
+                                                          widget
+                                                              .fromChangePassword,
+                                                          userName:
+                                                              _user.username),
                                                 ),
                                               );
                                             });

@@ -47,15 +47,14 @@ class _QuestionnairePageState extends State<QuestionnairePage> {
     _question2 = _questions[1];
   }
 
-  void _nextButtonFunc(){
+  void _nextButtonFunc() {
     if (!_formKey.currentState.validate()) {
       return;
     } else {
       _user.first_question = _question1.id;
       _user.second_question = _question2.id;
       _user.first_question_answer = _firstQuestionAnswerController.text;
-      _user.second_question_answer =
-          _secondQuestionAnswerController.text;
+      _user.second_question_answer = _secondQuestionAnswerController.text;
 
       Navigator.push(
         context,
@@ -99,7 +98,15 @@ class _QuestionnairePageState extends State<QuestionnairePage> {
         children: <Widget>[
           Padding(
             padding: EdgeInsets.only(top: 20),
-            child: QuestionDropDownList(question: _question1, questions: _questions),
+            child: QuestionDropDownList(
+              question: _question1,
+              questions: _questions,
+              callback: (value) {
+                setState(() {
+                  _question1 = value;
+                });
+              },
+            ),
           ),
           Padding(
             padding: EdgeInsets.only(bottom: 10),
@@ -107,7 +114,15 @@ class _QuestionnairePageState extends State<QuestionnairePage> {
           ),
           Padding(
             padding: EdgeInsets.only(top: 10),
-            child: QuestionDropDownList(question: _question2, questions: _questions),
+            child: QuestionDropDownList(
+              question: _question2,
+              questions: _questions,
+              callback: (value){
+                setState(() {
+                  _question2 = value;
+                });
+              },
+            ),
           ),
           Padding(
             padding: EdgeInsets.only(bottom: 10),

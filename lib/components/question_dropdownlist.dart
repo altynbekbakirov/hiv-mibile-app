@@ -7,14 +7,23 @@ import 'package:flutter/material.dart';
 class QuestionDropDownList extends StatefulWidget {
   final UserQuestion question;
   final List<UserQuestion> questions;
+  Function(UserQuestion) callback;
 
-  QuestionDropDownList({this.question, this.questions});
+  QuestionDropDownList({this.question, this.questions, this.callback});
 
   @override
   _QuestionDropDownListState createState() => _QuestionDropDownListState();
 }
 
 class _QuestionDropDownListState extends State<QuestionDropDownList> {
+  UserQuestion userQuestion;
+
+  @override
+  initState(){
+    super.initState();
+    userQuestion = widget.question;
+  }
+
   /// Выпадающий список
   Widget _questionDropDownList(
       UserQuestion question, List<UserQuestion> questions) {
@@ -28,7 +37,7 @@ class _QuestionDropDownListState extends State<QuestionDropDownList> {
               borderRadius: BorderRadius.circular(8.0),
             ),
             child: DropdownButton<UserQuestion>(
-              value: question,
+              value: userQuestion,
               hint: Text(
                 "first_question".tr(),
               ),
@@ -39,7 +48,8 @@ class _QuestionDropDownListState extends State<QuestionDropDownList> {
               icon: Icon(Icons.arrow_drop_down_outlined),
               onChanged: (newValue) {
                 setState(() {
-                  question = newValue;
+                  widget.callback(newValue);
+                  userQuestion = newValue;
                 });
               },
               items: questions != null
