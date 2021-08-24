@@ -89,6 +89,8 @@ class PinCodeState extends State<PinCode> {
             validator: (value) {
               if (value.isEmpty) {
                 return 'fillThisField'.tr();
+              } else if (value.length > 4) {
+                return 'pin_code_length'.tr();
               }
             },
           ),
