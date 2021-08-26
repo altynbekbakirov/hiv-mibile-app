@@ -30,7 +30,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                   children: [
                     HomeMenuCard(
                       height: 104,
-                      imagePath: "assets/images/icons/School/Regular.png",
+                      imagePath: "assets/images/icons/School/card_regular.png",
                       imageHeight: 40,
                       imageWidth: 40,
                       cardName: "patient_school".tr().toUpperCase(),
