@@ -2,10 +2,11 @@ import 'package:HIVApp/utils/constants.dart';
 import 'package:flutter/material.dart';
 
 class BottomSlider extends StatefulWidget {
-  const BottomSlider({Key key, this.maxPage, this.currentPage}) : super(key: key);
+  const BottomSlider({Key key, this.maxPage, this.currentPage, this.currentPageCallback}) : super(key: key);
 
   final int maxPage;
   final double currentPage;
+  final Function(double) currentPageCallback;
 
   @override
   _BottomSliderState createState() => _BottomSliderState();
@@ -57,7 +58,9 @@ class _BottomSliderState extends State<BottomSlider> {
                     value: widget.currentPage,
                     min: 0,
                     max: widget.maxPage.toDouble(),
-                    onChanged: (value) {},
+                    onChanged: (value) {
+                      widget.currentPageCallback(value.roundToDouble());
+                    },
                   ),
                 ) : Container(),
               ],

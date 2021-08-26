@@ -1072,9 +1072,39 @@ class _ChapterSevenState extends State<ChapterSeven> {
         child: Stack(
           children: [
             _chapters(context, pages),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                GestureDetector(
+                  onTap: () => pageController.previousPage(
+                    duration: Duration(milliseconds: 500),
+                    curve: Curves.ease,
+                  ),
+                  child: Container(
+                    height: MediaQuery.of(context).size.height,
+                    width: MediaQuery.of(context).size.width * 0.2,
+                    color: Colors.transparent,
+                  ),
+                ),
+                GestureDetector(
+                  onTap: () => pageController.nextPage(
+                    duration: Duration(milliseconds: 500),
+                    curve: Curves.ease,
+                  ),
+                  child: Container(
+                    height: MediaQuery.of(context).size.height,
+                    width: MediaQuery.of(context).size.width * 0.2,
+                    color: Colors.transparent,
+                  ),
+                ),
+              ],
+            ),
             BottomSlider(
               currentPage: currentPage + 1,
               maxPage: pages.length,
+              currentPageCallback: (value) {
+                pageController.jumpToPage(value.toInt());
+              },
             ),
           ],
         ),
