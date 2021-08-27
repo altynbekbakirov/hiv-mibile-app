@@ -106,49 +106,48 @@ class _MethadoneTherapyScreenState extends State<MethadoneTherapyScreen> {
               children: [
                 CarouselPage(
                   list: list[0],
-                  height: fontSize.toInt() == 24 ? 225 : fontSize.toInt() == 22 ? 220 : fontSize.toInt() == 20 ? 185 : 180,
+                  height: fontSize.toInt() == 24 ? 225 : fontSize.toInt() == 22 ? 220 : fontSize.toInt() == 20 ? 210 : 180,
                   fontSize: fontSize,
                   textStyle: contentNormal,
                 ),
                 CarouselPage(
                   list: list[1],
-                  height: fontSize.toInt() == 24 ? 255 : fontSize.toInt() == 22 ? 220 : fontSize.toInt() == 20 ? 210 : 205,
+                  height: fontSize.toInt() == 24 ? 255 : fontSize.toInt() == 22 ? 250 : fontSize.toInt() == 20 ? 210 : 205,
                   fontSize: fontSize,
                   textStyle: contentNormal,
                 ),
                 CarouselPage(
                   list: list[2],
-                  height: fontSize.toInt() == 24 ? 255 : fontSize.toInt() == 22 ? 250 : fontSize.toInt() == 20 ? 240 : 205,
+                  height: fontSize.toInt() == 24 ? 320 : fontSize.toInt() == 22 ? 250 : fontSize.toInt() == 20 ? 240 : 230,
                   fontSize: fontSize,
                   textStyle: contentNormal,
                 ),
                 CarouselPage(
                   list: list[3],
-                  height: fontSize.toInt() == 24 ? 255 : fontSize.toInt() == 22 ? 245 : fontSize.toInt() == 20 ? 240 : 225,
+                  height: fontSize.toInt() == 24 ? 280 : fontSize.toInt() == 22 ? 245 : fontSize.toInt() == 20 ? 240 : 225,
                   fontSize: fontSize,
                   textStyle: contentNormal,
                 ),
                 CarouselPage(
                   list: list[4],
-                  height: fontSize.toInt() == 24 ? 255 : fontSize.toInt() == 22 ? 220 : fontSize.toInt() == 20 ? 210 : 205,
+                  height: fontSize.toInt() == 24 ? 255 : fontSize.toInt() == 22 ? 250 : fontSize.toInt() == 20 ? 210 : 205,
                   fontSize: fontSize,
                   textStyle: contentNormal,
                 ),
                 CarouselPage(
                   list: list[5],
-                  height: fontSize.toInt() == 24 ? 230 : fontSize.toInt() == 22 ? 220 : fontSize.toInt() == 20 ? 210 : 205,
+                  height: fontSize.toInt() == 24 ? 250 : fontSize.toInt() == 22 ? 220 : fontSize.toInt() == 20 ? 210 : 205,
                   fontSize: fontSize,
                   textStyle: contentNormal,
                 ),
                 CarouselPage(
                   list: list[6],
-                  height: fontSize.toInt() == 24 ? 315 : fontSize.toInt() == 22 ? 300 : fontSize.toInt() == 20 ? 265 : 250,
+                  height: fontSize.toInt() == 24 ? 350 : fontSize.toInt() == 22 ? 300 : fontSize.toInt() == 20 ? 290 : 250,
                   fontSize: fontSize,
                   textStyle: contentNormal,
                 ),
               ],
               onPageChanged: (value) {
-                print(fontSize.toInt());
                 setState(() {
                   _current = value;
                 });
@@ -242,13 +241,10 @@ class _MethadoneTherapyScreenState extends State<MethadoneTherapyScreen> {
             return Container(
               width: 10.0,
               height: 10.0,
-              margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 3.0),
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                color: _current == index
-                    ? Colors.grey
-                    : Color.fromRGBO(200, 200, 200, 1),
-              ),
+              margin: EdgeInsets.only(bottom: 16, right: 10),
+              child: Icon(Icons.arrow_forward, color: _current == index
+                  ? Colors.grey
+                  : Color.fromRGBO(200, 200, 200, 1)),
             );
           }),
         ),
