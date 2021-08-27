@@ -1,5 +1,4 @@
 import 'package:HIVApp/utils/constants.dart';
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:expandable_page_view/expandable_page_view.dart';
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -112,31 +111,30 @@ class _PrePostExposureTherapyScreenState extends State<PrePostExposureTherapyScr
                 ),
                 CarouselPage(
                   list: list[1],
-                  height: fontSize.toInt() == 24 ? 225 : fontSize.toInt() == 22 ? 220 : fontSize.toInt() == 20 ? 210 : 180,
+                  height: fontSize.toInt() == 24 ? 230 : fontSize.toInt() == 22 ? 225 : fontSize.toInt() == 20 ? 215 : 205,
                   fontSize: fontSize,
                   textStyle: contentNormal,
                 ),
                 CarouselPage(
                   list: list[2],
-                  height: fontSize.toInt() == 24 ? 200 : fontSize.toInt() == 22 ? 190 : fontSize.toInt() == 20 ? 185 : 180,
+                  height: fontSize.toInt() == 24 ? 220 : fontSize.toInt() == 22 ? 190 : fontSize.toInt() == 20 ? 185 : 180,
                   fontSize: fontSize,
                   textStyle: contentNormal,
                 ),
                 CarouselPage(
                   list: list[3],
-                  height: fontSize.toInt() == 24 ? 200 : fontSize.toInt() == 22 ? 190 : fontSize.toInt() == 20 ? 185 : 180,
+                  height: fontSize.toInt() == 24 ? 230 : fontSize.toInt() == 22 ? 190 : fontSize.toInt() == 20 ? 185 : 180,
                   fontSize: fontSize,
                   textStyle: contentNormal,
                 ),
                 CarouselPage(
                   list: list[4],
-                  height: fontSize.toInt() == 24 ? 230 : fontSize.toInt() == 22 ? 225 : fontSize.toInt() == 20 ? 220 : 180,
+                  height: fontSize.toInt() == 24 ? 235 : fontSize.toInt() == 22 ? 230 : fontSize.toInt() == 20 ? 225 : 205,
                   fontSize: fontSize,
                   textStyle: contentNormal,
                 ),
               ],
               onPageChanged: (value) {
-                print(fontSize.toInt());
                 setState(() {
                   _current = value;
                 });
@@ -179,12 +177,27 @@ class _PrePostExposureTherapyScreenState extends State<PrePostExposureTherapyScr
                   style: normalBoldForChapter),
               TextSpan(
                   text:
-                  "Рекомендации по доконтактной профилактике: Следует получить полную информацию о ДКП в Центре СПИД "
-                      "или в НПО. Существует два способа приема ДКП. Ежедневный (постоянный) прием нужно осуществлять "
-                      "очень аккуратно, ежедневно в установленное время весь период, когда существует риск. При таком "
-                      "приеме эффект достигается в течение 4-7 дней после начала ДКП. Если у Вас бывают редкие опасные "
-                      "контакты, рекомендуется ситуативный прием ДКП – когда препараты принимают в течение 3 дней до и 3"
-                      " дней после контакта. Такой прием рекомендуется при редких ситуациях опасного поведения.",
+                  "Следует получить полную информацию о ДКП в Центре СПИД или в НПО. Существует два способа приема ДКП. \n\n",
+                  style: contentNormal),
+              TextSpan(
+                  text:
+                  "Ежедневный (постоянный) прием ДКП ",
+                  style: normalBold),
+              TextSpan(
+                  text:
+                  "нужно осуществлять очень аккуратно, ежедневно в установленное время весь период, когда существует риск. При таком приеме эффект достигается в течение 4-7 дней после начала ДКП.\n\n",
+                  style: contentNormal),
+              TextSpan(
+                  text:
+                  "Если у Вас бывают редкие опасные контакты, рекомендуется ",
+                  style: contentNormal),
+              TextSpan(
+                  text:
+                  "ситуативный прием ДКП",
+                  style: normalBold),
+              TextSpan(
+                  text:
+                  " – когда препараты принимают в течение 3 дней до и 3 дней после контакта. Такой прием рекомендуется при редких ситуациях опасного поведения.",
                   style: contentNormal),
             ]),
           ),
@@ -216,13 +229,10 @@ class _PrePostExposureTherapyScreenState extends State<PrePostExposureTherapyScr
             return Container(
               width: 10.0,
               height: 10.0,
-              margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 3.0),
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                color: _current == index
-                    ? Colors.grey
-                    : Color.fromRGBO(200, 200, 200, 1),
-              ),
+              margin: EdgeInsets.only(bottom: 16, right: 10),
+              child: Icon(Icons.arrow_forward, color: _current == index
+                  ? Colors.grey
+                  : Color.fromRGBO(200, 200, 200, 1)),
             );
           }),
         ),

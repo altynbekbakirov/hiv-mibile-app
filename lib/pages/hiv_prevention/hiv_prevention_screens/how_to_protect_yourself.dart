@@ -11,7 +11,7 @@ class SelfProtectInfoScreen extends StatefulWidget {
 }
 
 class _SelfProtectInfoScreenState extends State<SelfProtectInfoScreen> {
-  double fontSize = 14;
+  double fontSize = 18;
   bool showSlider = false;
   int selectedImageIndex = 0;
   double height = 0;
@@ -44,7 +44,7 @@ class _SelfProtectInfoScreenState extends State<SelfProtectInfoScreen> {
         data: SliderTheme.of(context).copyWith(trackHeight: 15),
         child: Slider(
           value: fontSize,
-          min: 14,
+          min: 18,
           max: 24,
           divisions: 3,
           label: fontSize.round().toString(),
@@ -145,25 +145,25 @@ class _SelfProtectInfoScreenState extends State<SelfProtectInfoScreen> {
               children: [
                 CarouselPage(
                   list: list[0],
-                  height: fontSize.toInt() == 24 ? 200 : fontSize.toInt() == 20 ? 190 : fontSize.toInt() == 17 ? 180 : 160,
+                  height: fontSize.toInt() == 24 ? 200 : fontSize.toInt() == 20 ? 190 : fontSize.toInt() == 18 ? 180 : 200,
                   fontSize: fontSize,
                   textStyle: contentNormal,
                 ),
                 CarouselPage(
                   list: list[1],
-                  height: fontSize.toInt() == 24 ? 420 : fontSize.toInt() == 20 ? 360 : fontSize.toInt() == 17 ? 290 : 270,
+                  height: fontSize.toInt() == 24 ? 420 : fontSize.toInt() == 20 ? 360 : fontSize.toInt() == 18 ? 290 : 400,
                   fontSize: fontSize,
                   textStyle: contentNormal,
                 ),
                 CarouselPage(
                   list: list[2],
-                  height: fontSize.toInt() == 24 ? 260 : fontSize.toInt() == 20 ? 240 : fontSize.toInt() == 17 ? 210 : 190,
+                  height: fontSize.toInt() == 24 ? 260 : fontSize.toInt() == 20 ? 240 : fontSize.toInt() == 18 ? 210 : 260,
                   fontSize: fontSize,
                   textStyle: contentNormal,
                 ),
                 CarouselPage(
                   list: list[3],
-                  height: fontSize.toInt() == 24 ? 230 : fontSize.toInt() == 20 ? 190 : fontSize.toInt() == 17 ? 180 : 170,
+                  height: fontSize.toInt() == 24 ? 230 : fontSize.toInt() == 20 ? 190 : fontSize.toInt() == 18 ? 180 : 230,
                   fontSize: fontSize,
                   textStyle: contentNormal,
                 ),
@@ -188,25 +188,25 @@ class _SelfProtectInfoScreenState extends State<SelfProtectInfoScreen> {
               children: [
                 CarouselPage(
                   list: list[0],
-                  height: fontSize.toInt() == 24 ? 195 : fontSize.toInt() == 20 ? 160 : 155,
+                  height: fontSize.toInt() == 24 ? 195 : fontSize.toInt() == 20 ? 160 : fontSize.toInt() == 22 ? 195 : 155,
                   fontSize: fontSize,
                   textStyle: contentNormal,
                 ),
                 CarouselPage(
                   list: list[1],
-                  height: fontSize.toInt() == 24 ? 505 : fontSize.toInt() == 20 ? 430 : fontSize.toInt() == 17 ? 370 : 305,
+                  height: fontSize.toInt() == 24 ? 505 : fontSize.toInt() == 20 ? 430 : fontSize.toInt() == 18 ? 370 : 490,
                   fontSize: fontSize,
                   textStyle: contentNormal,
                 ),
                 CarouselPage(
                   list: list[2],
-                  height: fontSize.toInt() == 24 ? 260 : fontSize.toInt() == 20 ? 220 : fontSize.toInt() == 17 ? 210 : 170,
+                  height: fontSize.toInt() == 24 ? 260 : fontSize.toInt() == 20 ? 220 : fontSize.toInt() == 18 ? 210 : 230,
                   fontSize: fontSize,
                   textStyle: contentNormal,
                 ),
                 CarouselPage(
                   list: list[3],
-                  height: fontSize.toInt() == 24 ? 335 : fontSize.toInt() == 20 ? 260 : fontSize.toInt() == 17 ? 240 : 205,
+                  height: fontSize.toInt() == 24 ? 335 : fontSize.toInt() == 20 ? 260 : fontSize.toInt() == 18 ? 250 : 335,
                   fontSize: fontSize,
                   textStyle: contentNormal,
                 ),
@@ -231,25 +231,25 @@ class _SelfProtectInfoScreenState extends State<SelfProtectInfoScreen> {
               children: [
                 CarouselPage(
                   list: list[0],
-                  height: fontSize.toInt() == 24 ? 255 : fontSize.toInt() == 20 ? 240 : fontSize.toInt() == 17 ? 205 : 190,
+                  height: fontSize.toInt() == 24 ? 255 : fontSize.toInt() == 20 ? 240 : fontSize.toInt() == 18 ? 205 : 250,
                   fontSize: fontSize,
                   textStyle: contentNormal,
                 ),
                 CarouselPage(
                   list: list[1],
-                  height: fontSize.toInt() == 24 ? 285 : fontSize.toInt() == 20 ? 240 : fontSize.toInt() == 17 ? 230 : 190,
+                  height: fontSize.toInt() == 24 ? 285 : fontSize.toInt() == 20 ? 240 : fontSize.toInt() == 18 ? 230 : 285,
                   fontSize: fontSize,
                   textStyle: contentNormal,
                 ),
                 CarouselPage(
                   list: list[2],
-                  height: fontSize.toInt() == 24 ? 255 : fontSize.toInt() == 20 ? 240 : fontSize.toInt() == 17 ? 205 : 195,
+                  height: fontSize.toInt() == 24 ? 255 : fontSize.toInt() == 20 ? 240 : fontSize.toInt() == 18 ? 205 : 255,
                   fontSize: fontSize,
                   textStyle: contentNormal,
                 ),
                 CarouselPage(
                   list: list[3],
-                  height: fontSize.toInt() == 24 ? 230 : fontSize.toInt() == 20 ? 215 : fontSize.toInt() == 17 ? 205 : 170,
+                  height: fontSize.toInt() == 24 ? 230 : fontSize.toInt() == 20 ? 215 : fontSize.toInt() == 18 ? 205 : 230,
                   fontSize: fontSize,
                   textStyle: contentNormal,
                 ),
@@ -311,13 +311,10 @@ class _SelfProtectInfoScreenState extends State<SelfProtectInfoScreen> {
             return Container(
               width: 10.0,
               height: 10.0,
-              margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 3.0),
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                color: _current == index
-                    ? Colors.grey
-                    : Color.fromRGBO(200, 200, 200, 1),
-              ),
+              margin: EdgeInsets.only(bottom: 16, right: 10),
+              child: Icon(Icons.arrow_forward, color: _current == index
+                  ? Colors.grey
+                  : Color.fromRGBO(200, 200, 200, 1)),
             );
           }),
         ),
@@ -347,13 +344,10 @@ class _SelfProtectInfoScreenState extends State<SelfProtectInfoScreen> {
             return Container(
               width: 10.0,
               height: 10.0,
-              margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 3.0),
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                color: _currentSecond == index
-                    ? Colors.grey
-                    : Color.fromRGBO(200, 200, 200, 1),
-              ),
+              margin: EdgeInsets.only(bottom: 16, right: 10),
+              child: Icon(Icons.arrow_forward, color: _currentSecond == index
+                  ? Colors.grey
+                  : Color.fromRGBO(200, 200, 200, 1)),
             );
           }),
         ),
@@ -384,13 +378,10 @@ class _SelfProtectInfoScreenState extends State<SelfProtectInfoScreen> {
             return Container(
               width: 10.0,
               height: 10.0,
-              margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 3.0),
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                color: _currentThird == index
-                    ? Colors.grey
-                    : Color.fromRGBO(200, 200, 200, 1),
-              ),
+              margin: EdgeInsets.only(bottom: 16, right: 10),
+              child: Icon(Icons.arrow_forward, color: _currentThird == index
+                  ? Colors.grey
+                  : Color.fromRGBO(200, 200, 200, 1)),
             );
           }),
         ),
@@ -414,7 +405,7 @@ class _SelfProtectInfoScreenState extends State<SelfProtectInfoScreen> {
                         TextStyle(fontSize: fontSize + 4, color: Colors.black)),
                 TextSpan(
                     text:
-                        "Повторное заражение, а также заражение другими инфекции ухудшит его состояние здоровья.",
+                        "Повторное заражение, а также заражение другими инфекциями ухудшит его состояние здоровья.",
                     style: TextStyle(
                         fontSize: fontSize + 4,
                         color: Colors.black,
