@@ -1251,7 +1251,6 @@ class _ChapterOneState extends State<ChapterOne>
       ),
     );
   }
-
   /// Страниа 15 Как вирус попадает в организм человека
   Widget _page15(BuildContext context, TextStyle style) {
     return ListTile(
@@ -1326,7 +1325,6 @@ class _ChapterOneState extends State<ChapterOne>
       ),
     );
   }
-
   /// Страниа 16 Как вирус попадает в организм человека
   Widget _page16(BuildContext context, TextStyle style) {
     return ListTile(
@@ -1485,12 +1483,12 @@ class _ChapterOneState extends State<ChapterOne>
                 ),
               ],
             ),
+            SizedBox(height: 90),
           ],
         ),
       ),
     );
   }
-
   /// Страниа 17 Как вирус попадает в организм человека
   Widget _page17(BuildContext context, TextStyle style) {
     return ListTile(
@@ -1620,7 +1618,6 @@ class _ChapterOneState extends State<ChapterOne>
       ),
     );
   }
-
   /// Страниа 18 Как вирус попадает в организм человека
   Widget _page18(BuildContext context, TextStyle style) {
     return ListTile(
@@ -1697,12 +1694,12 @@ class _ChapterOneState extends State<ChapterOne>
                 style: style,
               ),
             ),
+            SizedBox(height: 90),
           ],
         ),
       ),
     );
   }
-
   /// Страниа 19 СТАДИИ И ПРОЯВЛЕНИЯ ВИЧ-ИНФЕКЦИИ
   Widget _page19(BuildContext context, TextStyle style) {
     return ListTile(
@@ -1782,7 +1779,6 @@ class _ChapterOneState extends State<ChapterOne>
       ),
     );
   }
-
   /// Страниа 20 СТАДИИ И ПРОЯВЛЕНИЯ ВИЧ-ИНФЕКЦИИ
   Widget _page20(BuildContext context, TextStyle style) {
     return ListTile(
@@ -1824,7 +1820,6 @@ class _ChapterOneState extends State<ChapterOne>
       ),
     );
   }
-
   /// Страниа 21 ЧТО ПРОИСХОДИТ, КОГДА ВИЧ ПОПАДАЕТ В ОРГАНИЗМ ЧЕЛОВЕКА?
   Widget _page21(BuildContext context, TextStyle style) {
     return ListTile(
@@ -1894,7 +1889,6 @@ class _ChapterOneState extends State<ChapterOne>
       ),
     );
   }
-
   /// Страниа 22 ЧТО ПРОИСХОДИТ, КОГДА ВИЧ ПОПАДАЕТ В ОРГАНИЗМ ЧЕЛОВЕКА?
   Widget _page22(BuildContext context, TextStyle style) {
     return ListTile(
@@ -1932,7 +1926,6 @@ class _ChapterOneState extends State<ChapterOne>
       ),
     );
   }
-
   /// Страниа 23 Как ВИЧ-не передается
   Widget _page23(BuildContext context, TextStyle style) {
     return ListTile(
@@ -1989,13 +1982,12 @@ class _ChapterOneState extends State<ChapterOne>
                 style: style,
               ),
             ),
-            // SizedBox(height: 86),
+            SizedBox(height: 90),
           ],
         ),
       ),
     );
   }
-
   /// Страниа 24 Как ВИЧ-не передается
   Widget _page24(BuildContext context, TextStyle style) {
     return ListTile(
@@ -2051,7 +2043,6 @@ class _ChapterOneState extends State<ChapterOne>
       ),
     );
   }
-
   /// Страниа 25 Как ВИЧ-не передается
   Widget _page25(BuildContext context, TextStyle style) {
     return ListTile(
@@ -2083,7 +2074,6 @@ class _ChapterOneState extends State<ChapterOne>
       ),
     );
   }
-
   /// Страниа 26 Как ВИЧ-не передается
   Widget _page26(BuildContext context, TextStyle style) {
     return ListTile(
@@ -2126,7 +2116,6 @@ class _ChapterOneState extends State<ChapterOne>
       ),
     );
   }
-
   /// Страниа 27 Что делать, если мне сообщили о положительном ВИЧ-статусе?
   Widget _page27(BuildContext context, TextStyle style) {
     return ListTile(
@@ -2209,7 +2198,6 @@ class _ChapterOneState extends State<ChapterOne>
       ),
     );
   }
-
   /// Страниа 28 Что делать, если мне сообщили о положительном ВИЧ-статусе?
   Widget _page28(BuildContext context, TextStyle style) {
     return ListTile(
@@ -2412,7 +2400,6 @@ class _ChapterOneState extends State<ChapterOne>
       ),
     );
   }
-
   /// Страниа 29 Что делать, если мне сообщили о положительном ВИЧ-статусе?
   Widget _page29(BuildContext context, TextStyle style) {
     return ListTile(
@@ -2552,7 +2539,6 @@ class _ChapterOneState extends State<ChapterOne>
       ),
     );
   }
-
   /// Страниа 30 Что делать, если мне сообщили о положительном ВИЧ-статусе?
   Widget _page30(BuildContext context, TextStyle style) {
     return ListTile(
@@ -2623,7 +2609,6 @@ class _ChapterOneState extends State<ChapterOne>
       ),
     );
   }
-
   //endregion
 
   @override

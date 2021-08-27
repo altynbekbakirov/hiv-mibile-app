@@ -231,7 +231,7 @@ class _HIVTestingScreenState extends State<HIVTestingScreen> {
                   title: RichText(
                 text: TextSpan(children: [
                   TextSpan(
-                      text: "Обращение за тестированием и его результаты ",
+                      text: "Сведения об обращении за тестированием и его результаты ",
                       style: contentNormal),
                   TextSpan(
                       text: "являются медицинской тайной ", style: normalBold),
@@ -242,7 +242,7 @@ class _HIVTestingScreenState extends State<HIVTestingScreen> {
                   TextSpan(text: "конфиденциальность. ", style: normalBold),
                   TextSpan(
                       text:
-                          "Они могут использоваться только медицинскими работниками, которые проводят наблюдение за ЛЖВ.. ",
+                          "Они могут использоваться только медицинскими работниками, которые проводят наблюдение за ЛЖВ.",
                       style: contentNormal),
                 ]),
               )),

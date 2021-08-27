@@ -320,6 +320,27 @@ class _HivAIDSInfoScreenState extends State<HivAIDSInfoScreen> {
                                   "ослабленным иммунитетом, развиваются инфекционные или онкологические заболевания. ",
                               style: contentNormal
                           ),
+                        ]
+                    ),
+                  )
+              ),
+            ),
+          ],
+        ),
+        Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Expanded(
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 10),
+                  child: MyBullet(),
+                )),
+            Expanded(
+              flex: 3,
+              child: ListTile(
+                  title: RichText(
+                    text: TextSpan(
+                        children: [
                           TextSpan(
                               text: 'При раннем начале и правильно проводимом лечении ',
                               style: normalBold

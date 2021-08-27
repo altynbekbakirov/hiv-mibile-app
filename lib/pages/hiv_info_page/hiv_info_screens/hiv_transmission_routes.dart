@@ -171,7 +171,7 @@ class _HivTransmissionRoutesScreenState
                   text: "ВИЧ передается при всех видах сексуальных контактов. "
                       "Особенно опасны анальные половые контакты; частая смена половых партнеров; "
                       "случайные половые контакты; насильственный и групповой секс. Увеличивают риск "
-                      "инфицирования ВИЧ инфекций, которые передаются половым путем (сифилис, гонорея и др.). ",
+                      "инфицирования ИППП – инфекции, которые передаются половым путем (сифилис, гонорея и др.). ",
                   style: contentNormal),
             ]),
           ),
@@ -191,7 +191,7 @@ class _HivTransmissionRoutesScreenState
           ),
         ),
         SizedBox(height: 20),
-        Image.asset('assets/images/injection_way.png'),
+        Image.asset('assets/images/image_way2.png'),
         SizedBox(height: 20),
         ListTile(
           title: RichText(

@@ -1316,11 +1316,11 @@ class _ChapterTwoState extends State<ChapterTwo> {
                 ),
               ],
             ),
-            Text("Картинка Книги или скан мобильного приложения",
-                style: TextStyle(
-                    color: Colors.red,
-                    fontSize: fontSize,
-                    fontWeight: FontWeight.w600)),
+            // Text("Картинка Книги или скан мобильного приложения",
+            //     style: TextStyle(
+            //         color: Colors.red,
+            //         fontSize: fontSize,
+            //         fontWeight: FontWeight.w600)),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
@@ -1359,11 +1359,11 @@ class _ChapterTwoState extends State<ChapterTwo> {
                 ),
               ],
             ),
-            Text("Картинка телефона, часы",
-                style: TextStyle(
-                    color: Colors.red,
-                    fontSize: fontSize,
-                    fontWeight: FontWeight.w600)),
+            // Text("Картинка телефона, часы",
+            //     style: TextStyle(
+            //         color: Colors.red,
+            //         fontSize: fontSize,
+            //         fontWeight: FontWeight.w600)),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
@@ -1415,11 +1415,11 @@ class _ChapterTwoState extends State<ChapterTwo> {
       title: SingleChildScrollView(
         child: Column(
           children: [
-            Text("Картинка Календарь и ручка",
-                style: TextStyle(
-                    color: Colors.red,
-                    fontSize: fontSize,
-                    fontWeight: FontWeight.w600)),
+            // Text("Картинка Календарь и ручка",
+            //     style: TextStyle(
+            //         color: Colors.red,
+            //         fontSize: fontSize,
+            //         fontWeight: FontWeight.w600)),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
@@ -1458,11 +1458,11 @@ class _ChapterTwoState extends State<ChapterTwo> {
                 ),
               ],
             ),
-            Text("Картинка групповая работа",
-                style: TextStyle(
-                    color: Colors.red,
-                    fontSize: fontSize,
-                    fontWeight: FontWeight.w600)),
+            // Text("Картинка групповая работа",
+            //     style: TextStyle(
+            //         color: Colors.red,
+            //         fontSize: fontSize,
+            //         fontWeight: FontWeight.w600)),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
