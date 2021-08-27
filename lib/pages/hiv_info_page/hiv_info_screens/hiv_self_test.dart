@@ -64,9 +64,9 @@ class _HIVSelfTestScreenState extends State<HIVSelfTestScreen> {
         ListTile(
           title: RichText(
             text: TextSpan(children: [
-              TextSpan(text: "Самотестированиена ВИЧ\n\n", style: chapterStyle),
+              TextSpan(text: "Самотестирование и на ВИЧ\n\n", style: chapterStyle),
               TextSpan(text: "Что такое самотест?\n\n", style: TextStyle(color: Colors.black, fontSize: fontSize + 6, fontWeight: FontWeight.bold)),
-              TextSpan(text: "Самотестированиена ВИЧ", style: normalBold),
+              TextSpan(text: "Самотестирование и на ВИЧ", style: normalBold),
               TextSpan(
                 text:" - это проведение тестирования на ВИЧ самостоятельно без участия медицинских работников. Тестирование "
                     "проводится по слюне. Это экспресс-тест, что позволяет узнать результат за 20 минут.\n",
@@ -82,9 +82,11 @@ class _HIVSelfTestScreenState extends State<HIVSelfTestScreen> {
                   text: "Где можно получить самотест?\n\n",
                   style: normalBoldForChapter),
               TextSpan(
-                text: "Набор для самотестирования на ВИЧ можно получить в Республиканском Центре СПИД, скоро они появятся "
-                    "во всех центрах СПИД или в некоторых НПО. Уже в 2021 году их можно будет также купить в аптеках.\n\n",
+                text: "Набор для самотестирования на ВИЧ можно получить ",
                 style: contentNormal),
+              TextSpan(
+                  text: "во всех центрах СПИД, а также купить в аптеках.\n\n",
+                  style: normalBold),
               TextSpan(
                   text: "Преимущества самотестирования на ВИЧ\n\n",
                   style: normalBoldForChapter),
@@ -109,11 +111,11 @@ class _HIVSelfTestScreenState extends State<HIVSelfTestScreen> {
                       "которые вырабатываются при попадании вируса в организм.\n\n",
                   style: contentNormal),
               TextSpan(
-                  text: "Что включает набор для самотестирования на ВИЧ?\n\n",
+                  text: "Что включает набор для самотеста?\n\n",
                   style: normalBoldForChapter),
               TextSpan(
                   text: "Набор для самотестирования на ВИЧ включает сам тест и приспособления для тестирования, а также "
-                      "инструкцию о проведении тестирования; оценке результатов теса, а также рекомендации по более "
+                      "инструкцию о проведении тестирования; оценке результатов теста, а также рекомендации по более "
                       "безопасному поведению и презервативы.\n\n",
                   style: contentNormal),
               TextSpan(
@@ -137,7 +139,7 @@ class _HIVSelfTestScreenState extends State<HIVSelfTestScreen> {
                   text: "Оценка результата теста\n\n",
                   style: normalBoldForChapter),
               TextSpan(
-                  text: "Через 20 минут на в окошке теста появятся полоски. Если одна полоска - то антител на ВИЧ нет. "
+                  text: "Через 20 минут в окошке теста появятся полоски. Если одна полоска - то антител на ВИЧ нет. "
                       "Если Вы увидите 2 полоски, то результат на ВИЧ положительный, то есть определены антитела к ВИЧ. "
                       "При положительном результате, необходимо сдать тест на ВИЧ повторно в Центре СПИД или другой "
                       "медицинской организации.\n\n",
@@ -147,7 +149,7 @@ class _HIVSelfTestScreenState extends State<HIVSelfTestScreen> {
                   style: normalBoldForChapter),
               TextSpan(
                   text: "Однако, если у вас было небезопасное поведение относительно недавно, то лучше сдать тест спустя "
-                      "2-3 недели, тогда результат будет более верным. Это связано с периодом окна – то есть периода, когда "
+                      "2-3 недели, тогда результат будет более верным. Это связано с периодом окна – то есть периодом, когда "
                       "заражение ВИЧ уже произошло, но антитела не образовались.\n\n",
                   style: contentNormal),
               TextSpan(
