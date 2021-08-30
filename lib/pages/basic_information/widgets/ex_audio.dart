@@ -7,15 +7,13 @@ import 'package:HIVApp/data/pref_manager.dart';
 import 'package:HIVApp/utils/constants.dart';
 import 'package:audioplayers/audio_cache.dart';
 import 'package:audioplayers/audioplayers.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:http/http.dart';
-import 'package:path_provider/path_provider.dart';
 import 'package:provider/provider.dart';
 import 'package:http/http.dart' as http;
 
-import '../../../db/db_provider.dart';
 import '../../../db/audio_db.dart';
 
 import 'player_widget.dart';
@@ -91,12 +89,18 @@ class AudioApp extends StatefulWidget {
 class _AudioAppState extends State<AudioApp> {
   AudioCache audioCache = AudioCache();
   AudioPlayer advancedPlayer = AudioPlayer();
+  AudioPlayer player = AudioPlayer();
   String fileName = 'audios';
   int fileIndex = 0;
   double pinPillPosition = -1000;
   double playerHeight = 0;
   bool playing = false;
   String category_name;
+  List<Duration> durations = List<Duration>();
+  int p;
+
+  String path =
+      'http://138.68.82.38/storage/audios/Введение/20201216161221intro_01.mp3';
 
   Duration _duration = new Duration();
   Duration _position = new Duration();
@@ -142,50 +146,41 @@ class _AudioAppState extends State<AudioApp> {
       }
       advancedPlayer.startHeadlessService();
     }
-
     audioCache.fixedPlayer = advancedPlayer;
-
     initPlayer();
+    getAudioDurations();
+  }
+
+  void getAudioDurations() async {
+    var ip = Configs.file_ip;
+    for (var i in files) {
+      player.setUrl(ip + i.name);
+    }
   }
 
   void initPlayer() {
-    advancedPlayer.durationHandler = (d) => setState(() {
-          _duration = d;
-        });
+    advancedPlayer.onDurationChanged.listen((Duration d) {
+      setState(() {
+        _duration = d;
+      });
+    });
 
-    advancedPlayer.positionHandler = (p) => setState(() {
-          _position = p;
-        });
+    player.onDurationChanged.listen((Duration d) {
+      setState(() {
+        durations.add(d);
+      });
+    });
+
+    advancedPlayer.onAudioPositionChanged.listen((Duration d) {
+      setState(() {
+        _position = d;
+      });
+    });
   }
 
   void seekToSecond(int second) {
     Duration newDuration = Duration(seconds: second);
     advancedPlayer.seek(newDuration);
-  }
-
-  Future _loadFile(AudioFileModel model) async {
-    final bytes = await readBytes(Configs.file_ip + model.name);
-    final dir = await getApplicationDocumentsDirectory();
-    final file = File('${dir.path}/${model.title}.mp3');
-
-    await file.writeAsBytes(bytes).then((value) async {
-      AudioDb audioDb = new AudioDb(
-          title: model.title,
-          local_path: file.path,
-          remote_path: model.name,
-          category_name: category_name);
-      await DBProvider.db.newAudioFile(audioDb).then((value) {
-        setState(() {
-          model.downloaded = true;
-          model.name = audioDb.local_path;
-        });
-      });
-    });
-    if (await file.exists()) {
-      setState(() {
-//        localFilePath = file.path;
-      });
-    }
   }
 
   Widget slider() {
@@ -234,23 +229,13 @@ class _AudioAppState extends State<AudioApp> {
               itemCount: files.length,
               itemBuilder: (BuildContext ctxt, int index) {
                 return ListTile(
-                  leading: files[index].downloaded
-                      ? Container(
-                          width: 0,
-                        )
-                      : InkWell(
-                          child: Icon(
-                            Icons.download_rounded,
-                            color: kModerateBlue,
-                            size: 30,
-                          ),
-                          onTap: () {
-                            _loadFile(files[index]);
-                            setState(() {
-                              files[index].downloaded = true;
-                            });
-                          },
-                        ),
+                  leading: GestureDetector(
+                    onTap: () {
+                      print(index);
+                      print(durations);
+                    },
+                    child: Text("${durations[index].toString().split(".")[0]}"),
+                  ),
                   title: Text(
                     files[index].title,
                     style: TextStyle(
@@ -266,7 +251,7 @@ class _AudioAppState extends State<AudioApp> {
                     color: kModerateBlue,
                     size: 20,
                   ),
-                  onTap: () {
+                  onTap: () async {
                     setState(() {
                       fileIndex = index;
                       audioCache.clearCache();
@@ -287,147 +272,155 @@ class _AudioAppState extends State<AudioApp> {
               }),
         ),
         AnimatedPositioned(
-            bottom: pinPillPosition,
-            right: 0,
-            left: 0,
-            duration: Duration(milliseconds: 200),
-            child: Container(
-                height: 150,
-                width: MediaQuery.of(context).size.width,
-                decoration: BoxDecoration(
-                  color: kColorWhite,
-                  borderRadius: BorderRadius.horizontal(right: Radius.circular(12), left: Radius.circular(12)),
-                ),
-                child: Column(children: <Widget>[
-                  Container(
-                      padding: EdgeInsets.only(top: 20),
-                      width: MediaQuery.of(context).size.width * 0.6,
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment:
-                        MainAxisAlignment.spaceBetween,
-                        children: [
-                          _Btn1(
-                            txt: Icon(FontAwesomeIcons.stepBackward,
-                                size: 20, color: kModerateBlue),
-                            onPressed: () {
-                              setState(() {
-                                if (fileIndex == 0) {
-                                  fileIndex = files.length - 1;
-                                } else {
-                                  fileIndex = fileIndex - 1;
-                                }
-                                fileName = files[fileIndex].name;
-                                if (files[fileIndex].downloaded)
-                                  advancedPlayer.play(fileName);
-                                else
-                                  advancedPlayer
-                                      .play(Configs.file_ip + fileName);
-                                playing = true;
-                              });
-                            },
-                          ),
-                          _Btn1(
-                            txt: Icon(
-                                playing
-                                    ? FontAwesomeIcons.pauseCircle
-                                    : FontAwesomeIcons.playCircle,
-                                size: 50,
-                                color: kModerateBlue),
-                            onPressed: () {
-                              if (advancedPlayer.state ==
-                                  AudioPlayerState.PLAYING) {
-                                advancedPlayer.pause();
-                              } else if (advancedPlayer.state ==
-                                  AudioPlayerState.PAUSED) {
-                                if (files[fileIndex].downloaded)
-                                  advancedPlayer.play(fileName);
-                                else
-                                  advancedPlayer
-                                      .play(Configs.file_ip + fileName);
-                              } else if (advancedPlayer.state ==
-                                  AudioPlayerState.STOPPED) {
-                                if (files[fileIndex].downloaded)
-                                  advancedPlayer.play(fileName);
-                                else
-                                  advancedPlayer
-                                      .play(Configs.file_ip + fileName);
+          bottom: pinPillPosition,
+          right: 0,
+          left: 0,
+          duration: Duration(milliseconds: 200),
+          child: Container(
+              height: 170,
+              width: MediaQuery.of(context).size.width,
+              decoration: BoxDecoration(
+                color: kColorWhite,
+                borderRadius: BorderRadius.horizontal(
+                    right: Radius.circular(12), left: Radius.circular(12)),
+              ),
+              child: Column(children: <Widget>[
+                Container(
+                  padding: EdgeInsets.symmetric(horizontal: 16),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Expanded(
+                        child: _Btn1(
+                          txt: Image.asset("assets/images/left-player.png",
+                              scale: 19),
+                          onPressed: () {
+                            setState(() {
+                              if (fileIndex == 0) {
+                                fileIndex = files.length - 1;
                               } else {
-                                advancedPlayer.pause();
+                                fileIndex = fileIndex - 1;
                               }
+                              fileName = files[fileIndex].name;
+                              if (files[fileIndex].downloaded)
+                                advancedPlayer.play(fileName);
+                              else
+                                advancedPlayer.play(Configs.file_ip + fileName);
+                              playing = true;
+                            });
+                          },
+                        ),
+                      ),
+                      Expanded(
+                        child: _Btn1(
+                          txt: Image.asset("assets/images/left-backward.png",
+                              scale: 19),
+                          onPressed: () {
+                            setState(() {
+                              seekToSecond(_position.inSeconds - 10);
+                            });
+                          },
+                        ),
+                      ),
+                      Expanded(
+                        child: _Btn1(
+                          txt: Icon(
+                            playing
+                                ? FontAwesomeIcons.pauseCircle
+                                : FontAwesomeIcons.playCircle,
+                            size: 40,
+                            color: kModerateBlue,
+                          ),
+                          onPressed: () {
+                            if (advancedPlayer.state ==
+                                AudioPlayerState.PLAYING) {
+                              advancedPlayer.pause();
+                            } else if (advancedPlayer.state ==
+                                AudioPlayerState.PAUSED) {
+                              if (files[fileIndex].downloaded)
+                                advancedPlayer.play(fileName);
+                              else
+                                advancedPlayer.play(Configs.file_ip + fileName);
+                            } else if (advancedPlayer.state ==
+                                AudioPlayerState.STOPPED) {
+                              if (files[fileIndex].downloaded)
+                                advancedPlayer.play(fileName);
+                              else
+                                advancedPlayer.play(Configs.file_ip + fileName);
+                            } else {
+                              advancedPlayer.pause();
+                            }
+                            setState(() {
+                              playing = !playing;
+                            });
+                          },
+                        ),
+                      ),
+                      Expanded(
+                        child: _Btn1(
+                          txt: Image.asset("assets/images/right-backward.png",
+                              scale: 19),
+                          onPressed: () {
+                            setState(() {
                               setState(() {
-                                playing = !playing;
+                                seekToSecond(_position.inSeconds + 10);
                               });
-                            },
+                            });
+                          },
+                        ),
+                      ),
+                      Expanded(
+                        child: _Btn1(
+                          txt: Image.asset("assets/images/right-player.png",
+                              scale: 19),
+                          onPressed: () {
+                            setState(() {
+                              if (fileIndex < files.length - 1) {
+                                fileIndex = fileIndex + 1;
+                              } else if (fileIndex >= files.length - 1) {
+                                fileIndex = 0;
+                              }
+                              fileName = files[fileIndex].name;
+                              if (files[fileIndex].downloaded)
+                                advancedPlayer.play(fileName);
+                              else
+                                advancedPlayer.play(Configs.file_ip + fileName);
+                              playing = true;
+                            });
+                          },
+                        ),
+                      ),
+                    ],
+                  ),
+                ), // first widget
+                Container(
+                    width: MediaQuery.of(context).size.width * 0.95,
+                    child: Column(
+                      children: [
+                        slider(),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 10),
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Text(
+                                (_position.toString().split(".")[0]),
+                                style: TextStyle(color: kModerateBlue),
+                              ),
+                              // getLocalFileDuration(),
+                              Text(
+                                _duration.toString().split(".")[0],
+                                style: TextStyle(color: kModerateBlue),
+                              ),
+                            ],
                           ),
-                          _Btn1(
-                            txt: Icon(FontAwesomeIcons.stepForward,
-                                size: 20, color: kModerateBlue),
-                            onPressed: () {
-                              setState(() {
-                                if (fileIndex < files.length - 1) {
-                                  fileIndex = fileIndex + 1;
-                                } else if (fileIndex >=
-                                    files.length - 1) {
-                                  fileIndex = 0;
-                                }
-                                fileName = files[fileIndex].name;
-                                if (files[fileIndex].downloaded)
-                                  advancedPlayer.play(fileName);
-                                else
-                                  advancedPlayer
-                                      .play(Configs.file_ip + fileName);
-                                playing = true;
-                              });
-                            },
-                          ),
-                        ],
-                      ),), // first widget
-                  Container(
-                      width: MediaQuery.of(context).size.width * 0.95,
-                      child: Column(
-                        children: [
-                          slider(),
-                          Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 10),
-                            child: Row(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              mainAxisAlignment:
-                              MainAxisAlignment.spaceBetween,
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                Text(
-                                  (_position.inMinutes +
-                                      _position.inSeconds.toInt() ~/
-                                          60)
-                                      .toString()
-                                      .padLeft(2, '0') +
-                                      ':' +
-                                      ((_position.inSeconds.round() % 60))
-                                          .toString()
-                                          .padLeft(2, '0'),
-                                  style: TextStyle(color: kModerateBlue),
-                                ),
-                                // getLocalFileDuration(),
-                                Text(
-                                  (_duration.inMinutes +
-                                      _duration.inSeconds.toInt() ~/
-                                          60)
-                                      .toString()
-                                      .padLeft(2, '0') +
-                                      ':' +
-                                      ((_duration.inSeconds.round() % 60))
-                                          .toString()
-                                          .padLeft(2, '0'),
-                                  style: TextStyle(color: kModerateBlue),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ],
-                      )),
-                ])), // end of Align
-            ),
+                        ),
+                      ],
+                    )),
+              ])), // end of Align
+        ),
       ]),
     );
   }
@@ -467,7 +460,6 @@ class _AudioAppState extends State<AudioApp> {
 
   @override
   void dispose() {
-    // TODO: implement dispose
     super.dispose();
     audioCache.clearCache();
     advancedPlayer.dispose();
@@ -505,21 +497,6 @@ class _Tab extends StatelessWidget {
           ),
         ),
       ),
-    );
-  }
-}
-
-class _Btn extends StatelessWidget {
-  final String txt;
-  final VoidCallback onPressed;
-
-  const _Btn({Key key, this.txt, this.onPressed}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return ButtonTheme(
-      minWidth: 48.0,
-      child: RaisedButton(child: Text(txt), onPressed: onPressed),
     );
   }
 }
