@@ -4,6 +4,7 @@ import 'package:HIVApp/model/symptoms_model.dart';
 import 'package:HIVApp/model/text_provider.dart';
 import 'package:HIVApp/model/user.dart';
 import 'package:HIVApp/model/user_registrations.dart';
+import 'package:HIVApp/model/videoUI_provider.dart';
 import 'package:HIVApp/utils/connection/connectivity_service.dart';
 import 'package:data_connection_checker/data_connection_checker.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -66,6 +67,9 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider.value(
           value: Symptoms(),
+        ),
+        ChangeNotifierProvider.value(
+          value: VideoUI(),
         )
       ],
       child: BlocProvider(
