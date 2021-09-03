@@ -1,6 +1,5 @@
 import 'package:HIVApp/db/db_provider.dart';
 import 'package:HIVApp/pages/basic_information/widgets/audio_category_widget.dart';
-import 'package:HIVApp/pages/basic_information/widgets/text.dart';
 import 'package:HIVApp/pages/basic_information/widgets/video_category_widget.dart';
 import 'package:HIVApp/utils/constants.dart';
 import 'package:flutter/cupertino.dart';
@@ -21,7 +20,7 @@ class _BasicInformationPageState extends State<BasicInformationPage> {
 
   Widget getWidget(int type){
     if(type == 0)
-      return TextWidget();
+      return Container();
     else if(type == 1)
       return VideoCategoryWidget();
     else

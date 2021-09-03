@@ -111,6 +111,7 @@ class _ChapterOneState extends State<ChapterOne>
                 ),
               ],
             ),
+            Image.asset("assets/images/prophylaxis/3/4.gif"),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
@@ -133,6 +134,7 @@ class _ChapterOneState extends State<ChapterOne>
                 ),
               ],
             ),
+            Image.asset("assets/images/prophylaxis/1/3.gif"),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
@@ -155,6 +157,7 @@ class _ChapterOneState extends State<ChapterOne>
                 ),
               ],
             ),
+            Image.asset('assets/images/prophylaxis/2/6.gif'),
             SizedBox(height: 80),
           ],
         ),
@@ -191,6 +194,7 @@ class _ChapterOneState extends State<ChapterOne>
                 ),
               ],
             ),
+            Image.asset('assets/images/prophylaxis/2/4.gif'),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
@@ -227,6 +231,7 @@ class _ChapterOneState extends State<ChapterOne>
                 ),
               ],
             ),
+            Image.asset('assets/images/prophylaxis/3/2.gif'),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
@@ -251,6 +256,7 @@ class _ChapterOneState extends State<ChapterOne>
                 ),
               ],
             ),
+            Image.asset('assets/images/prophylaxis/3/1.gif'),
             SizedBox(height: 80),
           ],
         ),
@@ -285,6 +291,7 @@ class _ChapterOneState extends State<ChapterOne>
                 ),
               ],
             ),
+            Image.asset('assets/images/prophylaxis/3/3.gif'),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
@@ -310,7 +317,8 @@ class _ChapterOneState extends State<ChapterOne>
                 ),
               ],
             ),
-            SizedBox(height: 80),
+            Image.asset('assets/images/prophylaxis/2/5.gif'),
+            SizedBox(height: 90),
           ],
         ),
       ),
@@ -332,7 +340,6 @@ class _ChapterOneState extends State<ChapterOne>
                         color: Colors.black)),
               ], style: TextStyle(fontSize: fontSize)),
             ),
-            Image.asset("assets/images/hiv_.png"),
             RichText(
               text: TextSpan(children: [
                 TextSpan(
@@ -348,6 +355,7 @@ class _ChapterOneState extends State<ChapterOne>
                 ),
               ], style: TextStyle(fontSize: fontSize)),
             ),
+            Image.asset("assets/images/hiv_.png"),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
@@ -379,6 +387,7 @@ class _ChapterOneState extends State<ChapterOne>
                 ),
               ],
             ),
+            Image.asset("assets/images/что следует помнить 2.png"),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
@@ -411,6 +420,7 @@ class _ChapterOneState extends State<ChapterOne>
                 ),
               ],
             ),
+            Image.asset("assets/images/zarazhenie.png"),
             SizedBox(height: 80),
           ],
         ),
@@ -454,6 +464,7 @@ class _ChapterOneState extends State<ChapterOne>
                 ),
               ],
             ),
+            Image.asset("assets/images/oportunisticheskie1.png"),
             RichText(
               text: TextSpan(children: [
                 TextSpan(
@@ -475,6 +486,7 @@ class _ChapterOneState extends State<ChapterOne>
                 ),
               ], style: TextStyle(fontSize: fontSize)),
             ),
+            Image.asset("assets/images/lechenie2.png"),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
@@ -727,12 +739,21 @@ class _ChapterOneState extends State<ChapterOne>
                   ),
                   TextSpan(
                     text:
-                        ' (строгое соблюдение дозы препарата, непрерывности лечения) антиретровирусными '
+                    ' (строгое соблюдение дозы препарата, непрерывности лечения) антиретровирусными '
                         'препаратами у ВИЧ-позитивных людей иммунная система не разрушается, поэтому СПИД '
                         'не развивается.',
                     style: TextStyle(
                         fontWeight: FontWeight.w400, color: Colors.black),
                   ),
+                ],
+                style: style,
+              ),
+            ),
+            SizedBox(height: 20),
+            Image.asset("assets/images/lechenie4.png"),
+            RichText(
+              text: TextSpan(
+                children: [
                   TextSpan(
                     text: '\n\nТаким образом, Вы знаете, что:',
                     style: TextStyle(
@@ -779,30 +800,11 @@ class _ChapterOneState extends State<ChapterOne>
                     style: TextStyle(
                         fontWeight: FontWeight.w600, color: Colors.black),
                   ),
-                  TextSpan(
-                      text: '\n\nЧТО ТАКОЕ ИММУНИТЕТ?\n\n',
-                      style: TextStyle(
-                          fontWeight: FontWeight.w600,
-                          fontSize: fontSize + 6,
-                          color: Colors.black)),
-                  TextSpan(
-                    text: 'Иммунитет ',
-                    style: TextStyle(
-                        fontWeight: FontWeight.w600, color: Colors.black),
-                  ),
-                  TextSpan(
-                    text:
-                        'отвечает за защиту организма от всего чужого – как от чужеродных агентов '
-                        '(микробов, вирусов), так и от собственных измененных клеток организма. '
-                        'Это позволяет сохранить целостность организма.  ',
-                    style: TextStyle(
-                        fontWeight: FontWeight.w400, color: Colors.black),
-                  ),
                 ],
                 style: style,
               ),
             ),
-            SizedBox(height: 80),
+            SizedBox(height: 90),
           ],
         ),
       ),
@@ -817,6 +819,25 @@ class _ChapterOneState extends State<ChapterOne>
             RichText(
               text: TextSpan(
                 children: [
+                  TextSpan(
+                      text: 'ЧТО ТАКОЕ ИММУНИТЕТ?\n\n',
+                      style: TextStyle(
+                          fontWeight: FontWeight.w600,
+                          fontSize: fontSize + 6,
+                          color: Colors.black)),
+                  TextSpan(
+                    text: 'Иммунитет ',
+                    style: TextStyle(
+                        fontWeight: FontWeight.w600, color: Colors.black),
+                  ),
+                  TextSpan(
+                    text:
+                    'отвечает за защиту организма от всего чужого – как от чужеродных агентов '
+                        '(микробов, вирусов), так и от собственных измененных клеток организма. '
+                        'Это позволяет сохранить целостность организма.  ',
+                    style: TextStyle(
+                        fontWeight: FontWeight.w400, color: Colors.black),
+                  ),
                   TextSpan(
                     text:
                         'Иммунитет обеспечивают органы и клетки, которые образуют ',
@@ -865,9 +886,16 @@ class _ChapterOneState extends State<ChapterOne>
                     style: TextStyle(
                         fontWeight: FontWeight.w400, color: Colors.black),
                   ),
+                ],
+                style: style,
+              ),
+            ),
+            RichText(
+              text: TextSpan(
+                children: [
                   TextSpan(
                     text:
-                        'Различают несколько видов иммунных клеток, одними из них являются ',
+                    'Различают несколько видов иммунных клеток, одними из них являются ',
                     style: TextStyle(
                         fontWeight: FontWeight.w400, color: Colors.black),
                   ),
@@ -878,7 +906,7 @@ class _ChapterOneState extends State<ChapterOne>
                   ),
                   TextSpan(
                     text:
-                        'помощники (хелперы), которые организуют слаженную работу всей '
+                    'помощники (хелперы), которые организуют слаженную работу всей '
                         'иммунной системы. Их называют ',
                     style: TextStyle(
                         fontWeight: FontWeight.w400, color: Colors.black),
@@ -894,9 +922,18 @@ class _ChapterOneState extends State<ChapterOne>
                     style: TextStyle(
                         fontWeight: FontWeight.w400, color: Colors.black),
                   ),
+                ],
+                style: style,
+              ),
+            ),
+            Image.asset("assets/images/Имунная-система-2.png"),
+            SizedBox(height: 20),
+            RichText(
+              text: TextSpan(
+                children: [
                   TextSpan(
                     text:
-                        'Человека окружает множество микроорганизмов (вирусы, бактерии, грибки), '
+                    'Человека окружает множество микроорганизмов (вирусы, бактерии, грибки), '
                         'которые при попадании в организм могут стать причиной инфекционных заболеваний '
                         '(грипп, менингит, туберкулез, дизентерия и т. п.). ',
                     style: TextStyle(
@@ -906,7 +943,7 @@ class _ChapterOneState extends State<ChapterOne>
                 style: style,
               ),
             ),
-            SizedBox(height: 80),
+            SizedBox(height: 90),
           ],
         ),
       ),
@@ -941,7 +978,7 @@ class _ChapterOneState extends State<ChapterOne>
               ),
             ),
             Image.asset("assets/images/human_organs.png"),
-            SizedBox(height: 80),
+            SizedBox(height: 90),
           ],
         ),
       ),
@@ -953,7 +990,6 @@ class _ChapterOneState extends State<ChapterOne>
       title: SingleChildScrollView(
         child: Column(
           children: [
-            Image.asset("assets/images/leukocytes.png"),
             Container(
               margin: EdgeInsets.only(top: 20),
               color: kGrayishBlue,
@@ -971,6 +1007,7 @@ class _ChapterOneState extends State<ChapterOne>
                 ),
               ),
             ),
+            Image.asset("assets/images/lek.png"),
             SizedBox(height: 80),
           ],
         ),
@@ -983,12 +1020,11 @@ class _ChapterOneState extends State<ChapterOne>
       title: SingleChildScrollView(
         child: Column(
           children: [
-            Image.asset("assets/images/sd4.png"),
             RichText(
               text: TextSpan(
                 children: [
                   TextSpan(
-                      text: '\n\nКак вирус попадает в организм человека\n\n',
+                      text: 'Как вирус попадает в организм человека\n\n',
                       style: TextStyle(
                           fontWeight: FontWeight.w600,
                           fontSize: fontSize + 6,
@@ -997,7 +1033,7 @@ class _ChapterOneState extends State<ChapterOne>
                     text:
                         'Спасибо, что остаетесь на связи с нами.  В этом разделе содержится важная'
                         ' информация, которая поможет определить собственные риски заражения ВИЧ и как '
-                        'этого можно избежать.\n',
+                        'этого можно избежать.\n\n',
                     style: TextStyle(
                         fontWeight: FontWeight.w400,
                         color: Colors.black,
@@ -1078,7 +1114,34 @@ class _ChapterOneState extends State<ChapterOne>
                 ),
               ],
             ),
-            SizedBox(height: 80),
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Expanded(
+                    child: Padding(
+                      padding: const EdgeInsets.only(top: 10),
+                      child: MyBullet(),
+                    )),
+                Expanded(
+                  flex: 5,
+                  child: ListTile(
+                    title: RichText(
+                      text: TextSpan(
+                        children: [
+                          TextSpan(
+                            text:
+                            "От ВИЧ-позитивной матери ребенку во время беременности, родов и при кормлении грудью.",
+                          ),
+                        ],
+                        style: style,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            Image.asset("assets/images/что следует помнить 6.png"),
+            SizedBox(height: 90),
           ],
         ),
       ),
@@ -1090,34 +1153,6 @@ class _ChapterOneState extends State<ChapterOne>
       title: SingleChildScrollView(
         child: Column(
           children: [
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Expanded(
-                    child: Padding(
-                  padding: const EdgeInsets.only(top: 10),
-                  child: MyBullet(),
-                )),
-                Expanded(
-                  flex: 5,
-                  child: ListTile(
-                    title: RichText(
-                      text: TextSpan(
-                        children: [
-                          TextSpan(
-                            text:
-                                "От ВИЧ-позитивной матери ребенку во время беременности, родов и при кормлении грудью.",
-                          ),
-                        ],
-                        style: style,
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            SizedBox(height: 10),
-            Image.asset("assets/images/family.png"),
             SizedBox(height: 10),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -1157,18 +1192,6 @@ class _ChapterOneState extends State<ChapterOne>
                 ),
               ],
             ),
-            SizedBox(height: 80),
-          ],
-        ),
-      ),
-    );
-  }
-  /// Страниа 14 Как вирус попадает в организм человека
-  Widget _page14(BuildContext context, TextStyle style) {
-    return ListTile(
-      title: SingleChildScrollView(
-        child: Column(
-          children: [
             RichText(
               text: TextSpan(
                 children: [
@@ -1181,7 +1204,7 @@ class _ChapterOneState extends State<ChapterOne>
                   ),
                   TextSpan(
                     text:
-                        ' Воздержание от половых контактов; верность одному неинфицированному партнеру; '
+                    ' Воздержание от половых контактов; верность одному неинфицированному партнеру; '
                         'использование презервативов и специальных смазок на водной основе (лубрикантов).',
                     style: TextStyle(
                       fontWeight: FontWeight.w400,
@@ -1192,8 +1215,19 @@ class _ChapterOneState extends State<ChapterOne>
                 style: style,
               ),
             ),
-            SizedBox(height: 10),
-            Image.asset("assets/images/injection.png"),
+            Image.asset("assets/images/sex_way.png"),
+            SizedBox(height: 90),
+          ],
+        ),
+      ),
+    );
+  }
+  /// Страниа 14 Как вирус попадает в организм человека
+  Widget _page14(BuildContext context, TextStyle style) {
+    return ListTile(
+      title: SingleChildScrollView(
+        child: Column(
+          children: [
             SizedBox(height: 10),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -1233,17 +1267,6 @@ class _ChapterOneState extends State<ChapterOne>
                 ),
               ],
             ),
-          ],
-        ),
-      ),
-    );
-  }
-  /// Страниа 15 Как вирус попадает в организм человека
-  Widget _page15(BuildContext context, TextStyle style) {
-    return ListTile(
-      title: SingleChildScrollView(
-        child: Column(
-          children: [
             RichText(
               text: TextSpan(
                 children: [
@@ -1256,7 +1279,7 @@ class _ChapterOneState extends State<ChapterOne>
                   ),
                   TextSpan(
                     text:
-                        'отказ от употребления наркотиков, использование индивидуального шприца и посуды '
+                    'отказ от употребления наркотиков, использование индивидуального шприца и посуды '
                         'для приготовления наркотиков; получение медицинских услуг только в медицинских '
                         'учреждениях; использование стерильного инструментария при проведении татуировок, '
                         'пирсинга и других процедур вне организаций здравоохранения. ',
@@ -1269,8 +1292,18 @@ class _ChapterOneState extends State<ChapterOne>
                 style: style,
               ),
             ),
-            SizedBox(height: 10),
-            Image.asset("assets/images/pregnant.png"),
+            Image.asset("assets/images/image_way2.png"),
+          ],
+        ),
+      ),
+    );
+  }
+  /// Страниа 15 Как вирус попадает в организм человека
+  Widget _page15(BuildContext context, TextStyle style) {
+    return ListTile(
+      title: SingleChildScrollView(
+        child: Column(
+          children: [
             SizedBox(height: 10),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -1307,6 +1340,8 @@ class _ChapterOneState extends State<ChapterOne>
                 ),
               ],
             ),
+            SizedBox(height: 10),
+            Image.asset("assets/images/pregnant.png"),
           ],
         ),
       ),
@@ -1818,7 +1853,7 @@ class _ChapterOneState extends State<ChapterOne>
                 children: [
                   TextSpan(
                     text:
-                        '\nЧТО ПРОИСХОДИТ, КОГДА ВИЧ ПОПАДАЕТ В ОРГАНИЗМ ЧЕЛОВЕКА?\n\n',
+                    '\nЧТО ПРОИСХОДИТ, КОГДА ВИЧ ПОПАДАЕТ В ОРГАНИЗМ ЧЕЛОВЕКА?\n\n',
                     style: TextStyle(
                       fontWeight: FontWeight.w600,
                       color: Colors.black,
@@ -1834,7 +1869,7 @@ class _ChapterOneState extends State<ChapterOne>
                   ),
                   TextSpan(
                     text:
-                        '– это хроническое инфекционное заболевание, вызываемое вирусом иммунодефицита'
+                    '– это хроническое инфекционное заболевание, вызываемое вирусом иммунодефицита'
                         ' человека (ВИЧ), протекающее с поражением иммунной системы. При отсутствии лечения '
                         'ВИЧ-инфекция приводит к появлению инфекционных заболеваний, опухолей и к развитию '
                         'синдрома приобретённого иммунного дефицита (СПИД). ',
@@ -1843,6 +1878,14 @@ class _ChapterOneState extends State<ChapterOne>
                       color: Colors.black,
                     ),
                   ),
+                ],
+                style: style,
+              ),
+            ),
+            Image.asset("assets/images/что следует помнить 2.png"),
+            RichText(
+              text: TextSpan(
+                children: [
                   TextSpan(
                     text:
                         '\nКогда ВИЧ попадает в организм человека, он атакует клетки иммунной системы, '
@@ -1870,6 +1913,7 @@ class _ChapterOneState extends State<ChapterOne>
                 style: style,
               ),
             ),
+            Image.asset("assets/images/mechanism.png"),
             SizedBox(height: 86),
           ],
         ),
@@ -1882,7 +1926,6 @@ class _ChapterOneState extends State<ChapterOne>
       title: SingleChildScrollView(
         child: Column(
           children: [
-            Image.asset("assets/images/размножение.png"),
             Text('Механизм размножения ВИЧ'),
             SizedBox(height: 20),
             Container(
@@ -1901,11 +1944,11 @@ class _ChapterOneState extends State<ChapterOne>
               ),
             ),
             SizedBox(height: 10),
-            Image.asset('assets/images/развитие_заболевания.png'),
+            Image.asset('assets/images/disease_evolution1.png'),
             SizedBox(height: 10),
-            Image.asset('assets/images/развитие_заболевания2.png'),
+            Image.asset('assets/images/disease_evolution.png'),
             SizedBox(height: 10),
-            Image.asset('assets/images/развитие_заболевания3.png'),
+            Image.asset('assets/images/disease_evolution2.png'),
             SizedBox(height: 10),
             SizedBox(height: 86),
           ],
@@ -1951,7 +1994,6 @@ class _ChapterOneState extends State<ChapterOne>
                 style: style,
               ),
             ),
-            Image.asset("assets/images/hello.png"),
             SizedBox(height: 10),
             RichText(
               text: TextSpan(
@@ -1969,6 +2011,7 @@ class _ChapterOneState extends State<ChapterOne>
                 style: style,
               ),
             ),
+            Image.asset("assets/images/hello.png"),
             SizedBox(height: 90),
           ],
         ),
@@ -1981,24 +2024,27 @@ class _ChapterOneState extends State<ChapterOne>
       title: SingleChildScrollView(
         child: Column(
           children: [
-            RichText(
-              text: TextSpan(
-                children: [
-                  TextSpan(
-                    text:
-                        'При объятии, рукопожатии, поцелуе При кашле и чихании',
-                    style: TextStyle(
-                      fontWeight: FontWeight.w400,
-                      color: Colors.black,
-                      fontSize: fontSize,
+            SizedBox(height: 10),
+            Align(
+              alignment: Alignment.centerLeft,
+              child: RichText(
+                text: TextSpan(
+                  children: [
+                    TextSpan(
+                      text:
+                      'При кашле и чихании',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w400,
+                        color: Colors.black,
+                        fontSize: fontSize,
+                      ),
                     ),
-                  ),
-                ],
-                style: style,
+                  ],
+                  style: style,
+                ),
               ),
             ),
-            SizedBox(height: 10),
-            Image.asset('assets/images/cooking.png'),
+            Image.asset('assets/images/kashel.png'),
             SizedBox(height: 10),
             RichText(
               text: TextSpan(
@@ -2018,13 +2064,8 @@ class _ChapterOneState extends State<ChapterOne>
               ),
             ),
             SizedBox(height: 10),
-            // Image.asset('assets/images/using_bathroom.png'),
-            // SizedBox(height: 10),
-            // Image.asset('assets/images/развитие_заболевания2.png'),
-            // SizedBox(height: 10),
-            // Image.asset('assets/images/развитие_заболевания3.png'),
-            // SizedBox(height: 10),
-            SizedBox(height: 86),
+            Image.asset('assets/images/image_way5.png'),
+            SizedBox(height: 90),
           ],
         ),
       ),
@@ -2036,8 +2077,6 @@ class _ChapterOneState extends State<ChapterOne>
       title: SingleChildScrollView(
         child: Column(
           children: [
-            SizedBox(height: 10),
-            Image.asset('assets/images/using_bathroom.png'),
             SizedBox(height: 10),
             RichText(
               text: TextSpan(
@@ -2055,7 +2094,26 @@ class _ChapterOneState extends State<ChapterOne>
                 style: style,
               ),
             ),
-            SizedBox(height: 86),
+            SizedBox(height: 10),
+            Image.asset('assets/images/image_way6.png'),
+            RichText(
+              text: TextSpan(
+                children: [
+                  TextSpan(
+                    text:
+                    'При укусах насекомых (комаров, москитов, пчел). При общении и укусах животных',
+                    style: TextStyle(
+                      fontWeight: FontWeight.w400,
+                      color: Colors.black,
+                      fontSize: fontSize,
+                    ),
+                  ),
+                ],
+                style: style,
+              ),
+            ),
+            Image.asset('assets/images/image_way7.png'),
+            SizedBox(height: 90),
           ],
         ),
       ),
@@ -2068,20 +2126,9 @@ class _ChapterOneState extends State<ChapterOne>
         child: Column(
           children: [
             SizedBox(height: 10),
-            Image.asset('assets/images/mosquito.png'),
-            SizedBox(height: 10),
             RichText(
               text: TextSpan(
                 children: [
-                  TextSpan(
-                    text:
-                        'При укусах насекомых (комаров, москитов, пчел). При общении и укусах животных',
-                    style: TextStyle(
-                      fontWeight: FontWeight.w400,
-                      color: Colors.black,
-                      fontSize: fontSize,
-                    ),
-                  ),
                   TextSpan(
                     text:
                         '\nЧеловек, живущий с ВИЧ не опасен в быту. Вы можете общаться, '
@@ -2109,14 +2156,30 @@ class _ChapterOneState extends State<ChapterOne>
       title: SingleChildScrollView(
         child: Column(
           children: [
+            RichText(
+              text: TextSpan(
+                children: [
+                  TextSpan(
+                    text:
+                    "Что делать, если мне сообщили о положительном ВИЧ-статусе?\n",
+                    style: TextStyle(
+                      fontWeight: FontWeight.w600,
+                      fontSize: fontSize + 6,
+                      color: Colors.black,
+                    ),
+                  ),
+                ],
+                style: style,
+              ),
+            ),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Expanded(
                     child: Padding(
-                  padding: const EdgeInsets.only(top: 10),
-                  child: MyBullet(),
-                )),
+                      padding: const EdgeInsets.only(top: 10),
+                      child: MyBullet(),
+                    )),
                 Expanded(
                   flex: 5,
                   child: ListTile(
@@ -2125,7 +2188,7 @@ class _ChapterOneState extends State<ChapterOne>
                         children: [
                           TextSpan(
                             text:
-                                "Нужно подумать о том, что могло привести к заражению ВИЧ, и сделать свой "
+                            "Нужно подумать о том, что могло привести к заражению ВИЧ, и сделать свой "
                                 "собственный выбор – продолжить жизнь, как она есть, или изменить ее к лучшему. ",
                             style: TextStyle(
                               fontWeight: FontWeight.w400,
@@ -2141,14 +2204,15 @@ class _ChapterOneState extends State<ChapterOne>
                 ),
               ],
             ),
+            Image.asset("assets/images/prophylaxis/2/1.gif"),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Expanded(
                     child: Padding(
-                  padding: const EdgeInsets.only(top: 10),
-                  child: MyBullet(),
-                )),
+                      padding: const EdgeInsets.only(top: 10),
+                      child: MyBullet(),
+                    )),
                 Expanded(
                   flex: 5,
                   child: ListTile(
@@ -2157,7 +2221,7 @@ class _ChapterOneState extends State<ChapterOne>
                         children: [
                           TextSpan(
                             text:
-                                "Нужно подумать и принять ответственное решение в отношении своей семейной жизни."
+                            "Нужно подумать и принять ответственное решение в отношении своей семейной жизни."
                                 " Наличие ВИЧ-инфекции не означает прекращение сексуальной жизни, не ограничивает"
                                 " возможности создания семьи и рождения здоровых детей. Важно помнить о риске "
                                 "заражения полового партнера и вашего новорожденного ребенка. Вам поможет обсуждение"
@@ -2179,6 +2243,7 @@ class _ChapterOneState extends State<ChapterOne>
                 ),
               ],
             ),
+            Image.asset("assets/images/prophylaxis/1/3.gif"),
             SizedBox(height: 86),
           ],
         ),
@@ -2223,6 +2288,7 @@ class _ChapterOneState extends State<ChapterOne>
                 ),
               ],
             ),
+            Image.asset("assets/images/prophylaxis/1/4.gif"),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
@@ -2255,6 +2321,7 @@ class _ChapterOneState extends State<ChapterOne>
                 ),
               ],
             ),
+            Image.asset("assets/images/prophylaxis/2/3.gif"),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
@@ -2590,6 +2657,7 @@ class _ChapterOneState extends State<ChapterOne>
                 ),
               ],
             ),
+            Image.asset("assets/images/prophylaxis/1/7.gif"),
             SizedBox(height: 86),
           ],
         ),

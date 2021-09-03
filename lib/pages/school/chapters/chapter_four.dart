@@ -401,7 +401,7 @@ class _ChapterFourState extends State<ChapterFour> {
                 ], style: TextStyle(fontSize: fontSize)),
             ),
             SizedBox(height: 20),
-            Image.asset("assets/images/gepatit2.png"),
+            Image.asset("assets/images/prophylaxis/1/3.gif"),
             RichText(
               text: TextSpan(children: [
                 normalText(

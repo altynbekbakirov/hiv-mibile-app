@@ -544,7 +544,7 @@ class _ChapterTwoState extends State<ChapterTwo> {
                 ),
               ],
             ),
-            Image.asset('assets/images/human_art2.png'),
+            Image.asset('assets/images/prophylaxis/2/4.gif'),
             SizedBox(height: 86),
           ],
         ),
@@ -729,7 +729,7 @@ class _ChapterTwoState extends State<ChapterTwo> {
                 ),
               ],
             ),
-            Image.asset('assets/images/human_art6.png'),
+            Image.asset('assets/images/prophylaxis/2/6.gif'),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
@@ -1127,7 +1127,7 @@ class _ChapterTwoState extends State<ChapterTwo> {
                 boldText("Почему важно принимать препараты точно по времени?"),
               ], style: TextStyle(fontSize: fontSize)),
             ),
-            Image.asset('assets/images/chasytreatment.png'),
+            Image.asset('assets/images/что следует помнить 8.png'),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[

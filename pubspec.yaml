@@ -106,6 +106,10 @@ flutter:
      - assets/images/icons/Notification/Regular/
      - assets/images/Sections/
      - assets/images/tabs/
+     - assets/images/prophylaxis/3/
+     - assets/images/prophylaxis/1/
+     - assets/images/prophylaxis/2/
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

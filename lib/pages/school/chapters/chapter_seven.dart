@@ -538,7 +538,7 @@ class _ChapterSevenState extends State<ChapterSeven> {
                 ),
               ],
             ),
-            Image.asset("assets/images/что делать если у тебя вич 4.png", scale: 0.7),
+            Image.asset('assets/images/prophylaxis/2/4.gif'),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
@@ -705,7 +705,7 @@ class _ChapterSevenState extends State<ChapterSeven> {
                 ),
               ],
             ),
-            Image.asset("assets/images/что делать если у тебя вич 5.png", scale: 0.7),
+            Image.asset('assets/images/prophylaxis/2/5.gif'),
             SizedBox(height: 90),
           ],
         ),
