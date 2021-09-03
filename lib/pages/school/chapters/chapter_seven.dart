@@ -139,6 +139,7 @@ class _ChapterSevenState extends State<ChapterSeven> {
                 ),
               ],
             ),
+            Image.asset("assets/images/что следует помнить 1.png", scale: 7),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
@@ -161,6 +162,7 @@ class _ChapterSevenState extends State<ChapterSeven> {
                 ),
               ],
             ),
+            Image.asset("assets/images/что следует помнить 2.png", scale: 7),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
@@ -206,13 +208,13 @@ class _ChapterSevenState extends State<ChapterSeven> {
                 ),
               ],
             ),
+            Image.asset("assets/images/что следует помнить 3.png", scale: 7),
             SizedBox(height: 90),
           ],
         ),
       ),
     );
   }
-
   Widget _page2(BuildContext context) {
     return ListTile(
       title: SingleChildScrollView(
@@ -262,6 +264,7 @@ class _ChapterSevenState extends State<ChapterSeven> {
                 ),
               ],
             ),
+            Image.asset("assets/images/что следует помнить 4.png", scale: 7),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
@@ -284,13 +287,13 @@ class _ChapterSevenState extends State<ChapterSeven> {
                 ),
               ],
             ),
+            Image.asset("assets/images/что следует помнить 5.png", scale: 1),
             SizedBox(height: 90),
           ],
         ),
       ),
     );
   }
-
   Widget _page3(BuildContext context) {
     return ListTile(
       title: SingleChildScrollView(
@@ -365,6 +368,7 @@ class _ChapterSevenState extends State<ChapterSeven> {
                 ),
               ],
             ),
+            Image.asset("assets/images/что следует помнить 6.png", scale: 5),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
@@ -387,6 +391,7 @@ class _ChapterSevenState extends State<ChapterSeven> {
                 ),
               ],
             ),
+            Image.asset("assets/images/что следует помнить 7.png", scale: 5),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
@@ -409,13 +414,13 @@ class _ChapterSevenState extends State<ChapterSeven> {
                 ),
               ],
             ),
+            Image.asset("assets/images/что следует помнить 8.png", scale: 5),
             SizedBox(height: 90),
           ],
         ),
       ),
     );
   }
-
   ///Что делать, если мне сообщили о положительном ВИЧ-статусе?
   Widget _page4(BuildContext context) {
     return ListTile(
@@ -453,6 +458,7 @@ class _ChapterSevenState extends State<ChapterSeven> {
                 ),
               ],
             ),
+            Image.asset("assets/images/что делать если у тебя вич 1.png", scale: 0.7),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
@@ -475,13 +481,13 @@ class _ChapterSevenState extends State<ChapterSeven> {
                 ),
               ],
             ),
+            Image.asset("assets/images/что делать если у тебя вич 2.png", scale: 0.7),
             SizedBox(height: 90),
           ],
         ),
       ),
     );
   }
-
   Widget _page5(BuildContext context) {
     return ListTile(
       title: SingleChildScrollView(
@@ -509,6 +515,7 @@ class _ChapterSevenState extends State<ChapterSeven> {
                 ),
               ],
             ),
+            Image.asset("assets/images/что делать если у тебя вич 3.png", scale: 0.7),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
@@ -531,6 +538,7 @@ class _ChapterSevenState extends State<ChapterSeven> {
                 ),
               ],
             ),
+            Image.asset("assets/images/что делать если у тебя вич 4.png", scale: 0.7),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
@@ -697,6 +705,7 @@ class _ChapterSevenState extends State<ChapterSeven> {
                 ),
               ],
             ),
+            Image.asset("assets/images/что делать если у тебя вич 5.png", scale: 0.7),
             SizedBox(height: 90),
           ],
         ),
@@ -731,6 +740,7 @@ class _ChapterSevenState extends State<ChapterSeven> {
                 ),
               ],
             ),
+            Image.asset("assets/images/что делать если у тебя вич 6.png", scale: 0.7),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
@@ -753,6 +763,7 @@ class _ChapterSevenState extends State<ChapterSeven> {
                 ),
               ],
             ),
+            Image.asset("assets/images/что делать если у тебя вич 7.png", scale: 0.7),
             RichText(
               text: TextSpan(children: [
                 header("Преимущества раскрытия ВИЧ-статуса своим близким"),
@@ -780,6 +791,7 @@ class _ChapterSevenState extends State<ChapterSeven> {
                 ),
               ],
             ),
+            Image.asset("assets/images/preimushestva_1.png"),
             SizedBox(height: 90),
           ],
         ),
@@ -815,6 +827,7 @@ class _ChapterSevenState extends State<ChapterSeven> {
                 ),
               ],
             ),
+            Image.asset("assets/images/preimushestva_2.png"),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
@@ -837,6 +850,7 @@ class _ChapterSevenState extends State<ChapterSeven> {
                 ),
               ],
             ),
+            Image.asset("assets/images/preimushestva_3.png"),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
@@ -859,6 +873,7 @@ class _ChapterSevenState extends State<ChapterSeven> {
                 ),
               ],
             ),
+            Image.asset("assets/images/preimushestva_4.png"),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
@@ -881,6 +896,7 @@ class _ChapterSevenState extends State<ChapterSeven> {
                 ),
               ],
             ),
+            Image.asset("assets/images/preimushestva_5.png"),
             SizedBox(height: 90),
           ],
         ),
