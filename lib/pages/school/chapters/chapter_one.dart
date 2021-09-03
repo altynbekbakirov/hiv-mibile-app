@@ -80,7 +80,6 @@ class _ChapterOneState extends State<ChapterOne>
       ),
     );
   }
-
   /// Страниа 2
   Widget _page2(BuildContext context, TextStyle style) {
     return ListTile(
@@ -162,7 +161,6 @@ class _ChapterOneState extends State<ChapterOne>
       ),
     );
   }
-
   /// Страниа 3
   Widget _page3(BuildContext context, TextStyle style) {
     return ListTile(
@@ -259,7 +257,6 @@ class _ChapterOneState extends State<ChapterOne>
       ),
     );
   }
-
   /// Страниа 4
   Widget _page4(BuildContext context, TextStyle style) {
     return ListTile(
@@ -319,7 +316,6 @@ class _ChapterOneState extends State<ChapterOne>
       ),
     );
   }
-
   /// Страниа 5 Что такое ВИЧ и СПИД
   Widget _page5(BuildContext context, TextStyle style) {
     return ListTile(
@@ -421,7 +417,6 @@ class _ChapterOneState extends State<ChapterOne>
       ),
     );
   }
-
   /// Страниа 6 Что такое ВИЧ и СПИД
   Widget _page6(BuildContext context, TextStyle style) {
     return ListTile(
@@ -560,7 +555,6 @@ class _ChapterOneState extends State<ChapterOne>
       ),
     );
   }
-
   /// Страниа 7 Что такое ВИЧ и СПИД
   Widget _page7(BuildContext context, TextStyle style) {
     return ListTile(
@@ -717,7 +711,6 @@ class _ChapterOneState extends State<ChapterOne>
       ),
     );
   }
-
   /// Страниа 8 Что такое ВИЧ и СПИД
   Widget _page8(BuildContext context, TextStyle style) {
     return ListTile(
@@ -815,7 +808,6 @@ class _ChapterOneState extends State<ChapterOne>
       ),
     );
   }
-
   /// Страниа 9 ЧТО ТАКОЕ ИММУНИТЕТ?
   Widget _page9(BuildContext context, TextStyle style) {
     return ListTile(
@@ -920,7 +912,6 @@ class _ChapterOneState extends State<ChapterOne>
       ),
     );
   }
-
   /// Страниа 10 ЧТО ТАКОЕ ИММУНИТЕТ?
   Widget _page10(BuildContext context, TextStyle style) {
     return ListTile(
@@ -956,7 +947,6 @@ class _ChapterOneState extends State<ChapterOne>
       ),
     );
   }
-
   /// Страниа 11 ЧТО ТАКОЕ ИММУНИТЕТ?
   Widget _page11(BuildContext context, TextStyle style) {
     return ListTile(
@@ -987,7 +977,6 @@ class _ChapterOneState extends State<ChapterOne>
       ),
     );
   }
-
   /// Страниа 12 Как ВИЧ передается
   Widget _page12(BuildContext context, TextStyle style) {
     return ListTile(
@@ -1095,7 +1084,6 @@ class _ChapterOneState extends State<ChapterOne>
       ),
     );
   }
-
   /// Страниа 13 Как вирус попадает в организм человека
   Widget _page13(BuildContext context, TextStyle style) {
     return ListTile(
@@ -1175,7 +1163,6 @@ class _ChapterOneState extends State<ChapterOne>
       ),
     );
   }
-
   /// Страниа 14 Как вирус попадает в организм человека
   Widget _page14(BuildContext context, TextStyle style) {
     return ListTile(

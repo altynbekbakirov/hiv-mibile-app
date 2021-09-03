@@ -101,6 +101,11 @@ class _ChapterTwoState extends State<ChapterTwo> {
                 boldText("АРТ "),
                 normalText(
                     "- это лечение, которое действует против ретровируса – то есть вируса, который вызывает ВИЧ-инфекцию."),
+              ], style: TextStyle(fontSize: fontSize)),
+            ),
+            Image.asset("assets/images/lechenie1.png"),
+            RichText(
+              text: TextSpan(children: [
                 normalText(
                     "\n\nБез лечения ВИЧ поражает лимфоциты – клетки иммунной (защитной) системы организма "
                     "(их называют CD4-клетки). Поэтому количество СД4 уменьшается, а количество вируса в крови "
@@ -109,7 +114,7 @@ class _ChapterTwoState extends State<ChapterTwo> {
               ], style: TextStyle(fontSize: fontSize)),
             ),
             SizedBox(height: 10),
-            Image.asset("assets/images/pills.png"),
+            Image.asset("assets/images/lechenie2.png"),
             SizedBox(height: 10),
             SizedBox(height: 86),
           ],
@@ -117,7 +122,6 @@ class _ChapterTwoState extends State<ChapterTwo> {
       ),
     );
   }
-
   /// Страица 2 ЛЕЧЕНИЕ ВИЧ-инфекции
   Widget _page2(BuildContext context) {
     return ListTile(
@@ -141,9 +145,7 @@ class _ChapterTwoState extends State<ChapterTwo> {
               ], style: TextStyle(fontSize: fontSize)),
             ),
             SizedBox(height: 10),
-            Image.asset("assets/images/befor&afterhiv.png"),
-            Text(
-                "Рис. Вирусная нагрузка – количество вируса в крови до и после лечения."),
+            Image.asset("assets/images/lechenie3.png"),
             SizedBox(height: 10),
             RichText(
               text: TextSpan(children: [
@@ -158,7 +160,6 @@ class _ChapterTwoState extends State<ChapterTwo> {
       ),
     );
   }
-
   /// Страица 3 ЛЕЧЕНИЕ ВИЧ-инфекции
   Widget _page3(BuildContext context) {
     return ListTile(
@@ -174,16 +175,21 @@ class _ChapterTwoState extends State<ChapterTwo> {
                 normalText(
                     "Это очень важно, потому что восстановление иммунитета происходит очень медленно и организм "
                     "остается без защиты даже если вирус уже не размножается в результате приема АРТ.\n\n"),
+                ], style: TextStyle(fontSize: fontSize)),
+            ),
+            Image.asset("assets/images/truvada.png"),
+            RichText(
+              text: TextSpan(children: [
                 normalText(
                     "Важно строго соблюдать дозу и время приема лекарств, никогда не прерывать лечение – "),
                 boldText("это называется приверженность к лечению. "),
                 normalText(
                     "У ЛЖВ всегда должен быть запас препаратов, не меньше, чем на 1 месяц, который нужно регулярно "
-                    "пополнять, чтобы не было перерывов в лечении. Нарушение предписаний врача по приему АРТ может привести к "),
+                        "пополнять, чтобы не было перерывов в лечении. Нарушение предписаний врача по приему АРТ может привести к "),
                 boldText("устойчивости вируса к лечению "),
                 normalText(
                     "– тогда лекарства не будут действовать на ВИЧ. В таком случае врач меняет курс лечения или назначает"
-                    " уже вторую линию препаратов и количество применяемых таблеток увеличивается."),
+                        " уже вторую линию препаратов и количество применяемых таблеток увеличивается."),
               ], style: TextStyle(fontSize: fontSize)),
             ),
             SizedBox(height: 10),
@@ -193,7 +199,6 @@ class _ChapterTwoState extends State<ChapterTwo> {
       ),
     );
   }
-
   /// Страица 4 ЛЕЧЕНИЕ ВИЧ-инфекции
   Widget _page4(BuildContext context) {
     return ListTile(
@@ -204,7 +209,12 @@ class _ChapterTwoState extends State<ChapterTwo> {
               text: TextSpan(children: [
                 boldText(
                     "\nПрепараты для лечения ВИЧ-инфекции (АРВП) предоставляются бесплатно! \n"),
-                //TODO image Get Pill
+              ], style: TextStyle(fontSize: fontSize)),
+            ),
+            Image.asset("assets/images/lechenie4.png"),
+            SizedBox(height: 20),
+            RichText(
+              text: TextSpan(children: [
                 normalText(
                     "Лечение ВИЧ-инфекции позволяет сохранить здоровье и жизнь человека. "),
                 boldText("Поэтому лечение нужно начинать как можно раньше"),
@@ -221,7 +231,6 @@ class _ChapterTwoState extends State<ChapterTwo> {
       ),
     );
   }
-
   /// Страица 5 Антиретровирусные препараты
   Widget _page5(BuildContext context) {
     return ListTile(
@@ -233,8 +242,6 @@ class _ChapterTwoState extends State<ChapterTwo> {
                 header("Антиретровирусные препараты"),
               ], style: TextStyle(fontSize: fontSize)),
             ),
-            Image.asset("assets/images/pills_health.png"),
-            SizedBox(height: 10),
             RichText(
               text: TextSpan(children: [
                 boldText("Антиретровирусные препараты (АРВП) – "),
@@ -247,35 +254,39 @@ class _ChapterTwoState extends State<ChapterTwo> {
                     "которые действуют на разные этапы развития вируса. "),
               ], style: TextStyle(fontSize: fontSize)),
             ),
-            SizedBox(height: 86),
-          ],
-        ),
-      ),
-    );
-  }
-
-  /// Страица 6 Антиретровирусные препараты
-  Widget _page6(BuildContext context) {
-    return ListTile(
-      title: SingleChildScrollView(
-        child: Column(
-          children: [
+            SizedBox(height: 20),
             Container(
               color: kGrayishBlue,
               child: Text(
                 "До настоящего времени не разработано лекарство, которое могло бы полностью излечить "
-                "человека от ВИЧ-инфекции, и нет вакцины, которая могла бы защитить от заражения ВИЧ. "
-                "Поэтому человек с ВИЧ должен постоянно получать лечение всю свою жизнь.",
+                    "человека от ВИЧ-инфекции, и нет вакцины, которая могла бы защитить от заражения ВИЧ. "
+                    "Поэтому человек с ВИЧ должен постоянно получать лечение всю свою жизнь.",
                 style: TextStyle(
                     fontStyle: FontStyle.italic,
                     fontSize: fontSize,
                     color: CupertinoColors.black),
               ),
             ),
+            SizedBox(height: 86),
+          ],
+        ),
+      ),
+    );
+  }
+  /// Страица 6 Антиретровирусные препараты
+  Widget _page6(BuildContext context) {
+    return ListTile(
+      title: SingleChildScrollView(
+        child: Column(
+          children: [
             RichText(
               text: TextSpan(children: [
                 boldText("\nКак действуют антиретровирусные препараты?"),
-                header("Антиретровирусные препараты"),
+               ], style: TextStyle(fontSize: fontSize)),
+            ),
+            Image.asset("assets/images/atreavirus.png"),
+            RichText(
+              text: TextSpan(children: [
                 normalText(
                     "Антиретровирусные препараты не излечивают от ВИЧ-инфекции, а лишь подавляют "
                     "размножение вируса, обеспечивая контроль над инфекцией. С целью максимального эффекта от лечения "),
@@ -291,7 +302,6 @@ class _ChapterTwoState extends State<ChapterTwo> {
       ),
     );
   }
-
   /// Страица 7 Антиретровирусные препараты
   Widget _page7(BuildContext context) {
     return ListTile(
@@ -395,7 +405,6 @@ class _ChapterTwoState extends State<ChapterTwo> {
       ),
     );
   }
-
   /// Страица 8 Антиретровирусные препараты
   Widget _page8(BuildContext context) {
     return ListTile(
@@ -474,7 +483,6 @@ class _ChapterTwoState extends State<ChapterTwo> {
       ),
     );
   }
-
   /// Страица 9 Воздействие АРТ на человека с ВИЧ
   Widget _page9(BuildContext context) {
     return ListTile(
@@ -513,6 +521,7 @@ class _ChapterTwoState extends State<ChapterTwo> {
                 ),
               ],
             ),
+            Image.asset('assets/images/human_art1.png'),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
@@ -535,13 +544,13 @@ class _ChapterTwoState extends State<ChapterTwo> {
                 ),
               ],
             ),
+            Image.asset('assets/images/human_art2.png'),
             SizedBox(height: 86),
           ],
         ),
       ),
     );
   }
-
   /// Страица 10 Воздействие АРТ на человека с ВИЧ
   Widget _page10(BuildContext context) {
     return ListTile(
@@ -574,6 +583,7 @@ class _ChapterTwoState extends State<ChapterTwo> {
                 ),
               ],
             ),
+            Image.asset('assets/images/human_art3.png'),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
@@ -596,6 +606,7 @@ class _ChapterTwoState extends State<ChapterTwo> {
                 ),
               ],
             ),
+            Image.asset('assets/images/human_art4.png'),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
@@ -617,6 +628,7 @@ class _ChapterTwoState extends State<ChapterTwo> {
                 ),
               ],
             ),
+            Image.asset('assets/images/human_art5.png'),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
@@ -645,7 +657,6 @@ class _ChapterTwoState extends State<ChapterTwo> {
       ),
     );
   }
-
   /// Страица 11 Воздействие АРТ на человека с ВИЧ
   Widget _page11(BuildContext context) {
     return ListTile(
@@ -718,6 +729,7 @@ class _ChapterTwoState extends State<ChapterTwo> {
                 ),
               ],
             ),
+            Image.asset('assets/images/human_art6.png'),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
@@ -740,13 +752,13 @@ class _ChapterTwoState extends State<ChapterTwo> {
                 ),
               ],
             ),
+            Image.asset('assets/images/prevent11.png'),
             SizedBox(height: 86),
           ],
         ),
       ),
     );
   }
-
   /// Страица 12 Что такое вирусная нагрузка (ВН) и число лимфоцитов CД4?
   Widget _page12(BuildContext context) {
     return ListTile(
@@ -759,7 +771,7 @@ class _ChapterTwoState extends State<ChapterTwo> {
                     "Ссылка: Что такое вирусная нагрузка (ВН) и число лимфоцитов CД4?")
               ], style: TextStyle(fontSize: fontSize)),
             ),
-            Image.asset("assets/images/virus_nagruzka.png"),
+            Image.asset("assets/images/virus_nagruzka1.png"),
             RichText(
               text: TextSpan(children: [
                 boldText(
@@ -794,7 +806,6 @@ class _ChapterTwoState extends State<ChapterTwo> {
       ),
     );
   }
-
   /// Страица 13 Что такое вирусная нагрузка (ВН) и число лимфоцитов CД4?
   Widget _page13(BuildContext context) {
     return ListTile(
@@ -917,7 +928,6 @@ class _ChapterTwoState extends State<ChapterTwo> {
       ),
     );
   }
-
   /// Страица 14 Что такое вирусная нагрузка (ВН) и число лимфоцитов CД4?
   Widget _page14(BuildContext context) {
     return ListTile(
@@ -930,6 +940,7 @@ class _ChapterTwoState extends State<ChapterTwo> {
                     "Вирусная нагрузка (сокращенно – ВН) — это количество копий ВИЧ в 1 миллилитре крови (копий/мл).\n")
               ], style: TextStyle(fontSize: fontSize)),
             ),
+            Image.asset('assets/images/virus_nagruzka2.png'),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
@@ -1002,7 +1013,6 @@ class _ChapterTwoState extends State<ChapterTwo> {
       ),
     );
   }
-
   /// Страица 15 Что такое вирусная нагрузка (ВН) и число лимфоцитов CД4?
   Widget _page15(BuildContext context) {
     return ListTile(
@@ -1013,6 +1023,11 @@ class _ChapterTwoState extends State<ChapterTwo> {
               text: TextSpan(children: [
                 boldText(
                     "Как часто нужно сдавать анализы на число CД4-клеток и ВН?\n\n"),
+              ], style: TextStyle(fontSize: fontSize)),
+            ),
+            Image.asset('assets/images/virus_nagruzka3.png'),
+            RichText(
+              text: TextSpan(children: [
                 normalText(
                     "Эти исследования проводятся при установлении ВИЧ-статуса либо при возобновлении АРТ после перерыва в лечении. \nТест на ВН очень важно проводить регулярно "
                     "1 раз в 6 месяцев – поскольку он показывает эффективность лечения. При недоступности такого исследования, "
@@ -1029,7 +1044,6 @@ class _ChapterTwoState extends State<ChapterTwo> {
       ),
     );
   }
-
   /// Страица 16 ПРИВЕРЖЕННОСТЬ к АНТИРЕТРОВИРУСНОЙ ТЕРАПИИ
   Widget _page16(BuildContext context) {
     return ListTile(
@@ -1041,7 +1055,7 @@ class _ChapterTwoState extends State<ChapterTwo> {
                 header("ПРИВЕРЖЕННОСТЬ к АНТИРЕТРОВИРУСНОЙ ТЕРАПИИ"),
               ], style: TextStyle(fontSize: fontSize)),
             ),
-            Image.asset("assets/images/treatment_image51.png", scale: 2),
+            Image.asset("assets/images/treatment_image51.png"),
             SizedBox(height: 10),
             RichText(
               text: TextSpan(children: [
@@ -1077,7 +1091,6 @@ class _ChapterTwoState extends State<ChapterTwo> {
       ),
     );
   }
-
   /// Страица 17 ПРИВЕРЖЕННОСТЬ к АНТИРЕТРОВИРУСНОЙ ТЕРАПИИ
   Widget _page17(BuildContext context) {
     return ListTile(
@@ -1103,7 +1116,6 @@ class _ChapterTwoState extends State<ChapterTwo> {
       ),
     );
   }
-
   /// Страица 18 ПРИВЕРЖЕННОСТЬ к АНТИРЕТРОВИРУСНОЙ ТЕРАПИИ
   Widget _page18(BuildContext context) {
     return ListTile(
@@ -1113,9 +1125,9 @@ class _ChapterTwoState extends State<ChapterTwo> {
             RichText(
               text: TextSpan(children: [
                 boldText("Почему важно принимать препараты точно по времени?"),
-                //TODO Картинка часы
               ], style: TextStyle(fontSize: fontSize)),
             ),
+            Image.asset('assets/images/chasytreatment.png'),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
@@ -1174,7 +1186,6 @@ class _ChapterTwoState extends State<ChapterTwo> {
       ),
     );
   }
-
   /// Страица 19 ПРИВЕРЖЕННОСТЬ к АНТИРЕТРОВИРУСНОЙ ТЕРАПИИ
   Widget _page19(BuildContext context) {
     return ListTile(
@@ -1266,7 +1277,6 @@ class _ChapterTwoState extends State<ChapterTwo> {
       ),
     );
   }
-
   /// Страица 20 Как повысить приверженность к АРТ
   Widget _page20(BuildContext context) {
     return ListTile(

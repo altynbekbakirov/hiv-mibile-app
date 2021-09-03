@@ -2,7 +2,6 @@ import 'package:HIVApp/components/bottom_slider.dart';
 import 'package:HIVApp/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
-
 import '../doctors_component.dart';
 
 class ChapterThree extends StatefulWidget {
@@ -86,8 +85,34 @@ class _ChapterThreeState extends State<ChapterThree> {
                 boldText("Как предупредить заражение ВИЧ своих детей?")
               ], style: TextStyle(fontSize: fontSize)),
             ),
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.end,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                Expanded(
+                  child: Column(
+                    children: <Widget>[
+                      Text('1. Предупреждение ВИЧ-инфекции ', style: TextStyle(color: Colors.red, fontSize: fontSize)),
+                      SizedBox(height: 20),
+                      Text('2. Тестирование на ВИЧ обоих родителей', style: TextStyle(color: kDarkModerateBlue, fontSize: fontSize)),
+                      SizedBox(height: 20),
+                      Text('3. Профилактика нежелательной беременности', style: TextStyle(color: kModerateBlue, fontSize: fontSize)),
+                    ],
+                  ),
+                ),
+                Expanded(
+                  child: Column(
+                    children: <Widget>[
+                      Text('4. Профилактика передачи ВИЧ от ВИЧ+ матери ребенку', style: TextStyle(color: Colors.orange, fontSize: fontSize)),
+                      SizedBox(height: 20),
+                      Text('5. Предоставление лечения, помощи и поддержки ВИЧ-позитивным женщинам, их детям и семьям', style: TextStyle(color: Colors.deepPurple, fontSize: fontSize)),
+                    ],
+                  ),
+                ),
+              ],
+            ),
             SizedBox(height: 20),
-            Image.asset('assets/images/excell.png'),
+            Image.asset('assets/images/beremennost1.png'),
             SizedBox(height: 20),
             RichText(
               text: TextSpan(children: [
@@ -103,13 +128,13 @@ class _ChapterThreeState extends State<ChapterThree> {
                     "Для этого используют презерватив при каждом половом контакте.")
               ], style: TextStyle(fontSize: fontSize)),
             ),
+            Image.asset('assets/images/beremennost2.png'),
             SizedBox(height: 86),
           ],
         ),
       ),
     );
   }
-
   /// Страница 2 Планирование беременности в семьях, живущих с ВИЧ
   Widget _page2(BuildContext context) {
     return ListTile(
@@ -123,6 +148,11 @@ class _ChapterThreeState extends State<ChapterThree> {
                     "чтобы мужчина правильно принимал АРТ и достиг неопределяемой вирусной нагрузки (менее 1000 "
                     "вирусов в 1 капле крови). Зачатие ребенка можно планировать только при неопределяемой вирусной "
                     "нагрузке, чтобы не подвергать женщину и ребенка риску инфицирования ВИЧ."),
+               ], style: TextStyle(fontSize: fontSize)),
+            ),
+            Image.asset("assets/images/beremennost3.png"),
+            RichText(
+              text: TextSpan(children: [
                 boldText("\n\nПланирование беременности"),
                 normalText(
                     "\nКаждая пара сама решает, когда и сколько детей им иметь. Однако, нужно планировать "
@@ -172,7 +202,6 @@ class _ChapterThreeState extends State<ChapterThree> {
       ),
     );
   }
-
   /// Страница 3 Планирование беременности в семьях, живущих с ВИЧ
   Widget _page3(BuildContext context) {
     return ListTile(
@@ -210,7 +239,6 @@ class _ChapterThreeState extends State<ChapterThree> {
       ),
     );
   }
-
   /// Страница 4 Планирование беременности в семьях, живущих с ВИЧ
   Widget _page4(BuildContext context) {
     return ListTile(
@@ -220,6 +248,11 @@ class _ChapterThreeState extends State<ChapterThree> {
             RichText(
               text: TextSpan(children: [
                 header("Профилактика передачи ВИЧ от матери ребенку"),
+               ], style: TextStyle(fontSize: fontSize)),
+            ),
+            Image.asset('assets/images/profilactika1.png'),
+            RichText(
+              text: TextSpan(children: [
                 boldText("Ведение беременности\n\n"),
                 normalText(
                     "Беременность у ВИЧ-позитивной женщины при хорошем состоянии здоровья протекает так же, как у женщины без ВИЧ.\n"),
@@ -229,13 +262,13 @@ class _ChapterThreeState extends State<ChapterThree> {
                     "\n\nВо время беременности особенно важно правильно принимать АРТ, либо начать прием АРТ, если по каким-либо причинам женщина еще не получала АРТ до беременности. Важно иметь неопределяемую вирусную нагрузку. "),
               ], style: TextStyle(fontSize: fontSize)),
             ),
+            Image.asset('assets/images/profilactika2.png'),
             SizedBox(height: 86),
           ],
         ),
       ),
     );
   }
-
   /// Страница 5 Планирование беременности в семьях, живущих с ВИЧ
   Widget _page5(BuildContext context) {
     return ListTile(
@@ -250,28 +283,39 @@ class _ChapterThreeState extends State<ChapterThree> {
                 normalText(
                     "Решение о порядке родоразрешения зависит от состояния вирусной нагрузки и течения беременности. Если состояние женщины хорошее и вирусная нагрузка неопределяемая, то роды проходят естественным путем. В других случаях врач может предложить операцию (кесарево сечение). Выбор операции или естественных родов определяется по желанию женщины с учетом не только ВИЧ-статуса, но и течения беременности."),
                 boldText(
-                    "\n\nПомощь ВИЧ-позитивной женщине в послеродовый период\n\n"),
+                    "\n\nПомощь ВИЧ-позитивной женщине в послеродовый период\n\n"),], style: TextStyle(fontSize: fontSize)),
+            ),
+            Image.asset("assets/images/beremennost4.png"),
+            SizedBox(height: 20),
+            RichText(
+              text: TextSpan(children: [
                 italicText(
                     "Женщине после рождения ребенка проводится консультирование и назначается контрацепция для предупреждения нежелательной беременности. "),
-                normalText(
-                    "\nВажно оказать помощь женщине после родов, чтобы она имела возможность для отдыха и хорошего питания,"),
-                italicText(
-                    " а также создать условия, чтобы женщина не прерывала прием АРТ после родов."),
               ], style: TextStyle(fontSize: fontSize)),
             ),
-            SizedBox(height: 86),
+            SizedBox(height: 90),
           ],
         ),
       ),
     );
   }
-
   /// Страница 6 Планирование беременности в семьях, живущих с ВИЧ
   Widget _page6(BuildContext context) {
     return ListTile(
       title: SingleChildScrollView(
         child: Column(
           children: [
+            RichText(
+              text: TextSpan(children: [
+                normalText(
+                    "\nВажно оказать помощь женщине после родов, чтобы она имела возможность для отдыха и хорошего питания,"),
+                italicText(
+                    " а также создать условия, чтобы женщина не прерывала прием АРТ после родов."),
+              ], style: TextStyle(fontSize: fontSize)),
+            ),
+            SizedBox(height: 20),
+            Image.asset("assets/images/beremennost5.png"),
+            SizedBox(height: 20),
             RichText(
               textAlign: TextAlign.center,
               text: TextSpan(children: [
@@ -323,7 +367,6 @@ class _ChapterThreeState extends State<ChapterThree> {
       ),
     );
   }
-
   /// Страница 7 Планирование беременности в семьях, живущих с ВИЧ
   Widget _page7(BuildContext context) {
     return ListTile(
@@ -336,12 +379,23 @@ class _ChapterThreeState extends State<ChapterThree> {
                     "Наблюдение за ребенком, рожденным у ВИЧ-позитивной матери"),
                 normalText(
                     "Если у женщины неопределяемая вирусная нагрузка, разрешается естественное вскармливание ребенка – кормление грудью, которое проводится до 6 месяцев, при условии только грудного вскармливания, по требованию ребенка, без добавления искусственных смесей и воды. "),
+              ], style: TextStyle(fontSize: fontSize)),
+            ),
+            Image.asset("assets/images/nabludenie1.png"),
+            RichText(
+              text: TextSpan(children: [
                 normalText(
                     "\n\nЕсли же у женщины высокая вирусная нагрузка или она не принимает АРТ, грудное вскармливание может привести к инфицированию ВИЧ новорожденного ребенка. В таких случаях назначают искусственное вскармливание с рождения. Предусмотрено бесплатное предоставление заменителей грудного молока для таких детей, которое Вы сможете получить в поликлинике по месту жительства. "),
+              ], style: TextStyle(fontSize: fontSize)),
+            ),
+            Image.asset("assets/images/nabludenie2.png"),
+            RichText(
+              text: TextSpan(children: [
                 normalText(
                     "\n\nСразу после рождения ребенку назначают АРТ в течение 6-12 недель – это важно для профилактики инфицирования ВИЧ. Доза и продолжительность АРТ зависят от приема АРТ и состояния вирусной нагрузки у матери."),
               ], style: TextStyle(fontSize: fontSize)),
             ),
+            Image.asset("assets/images/nabludenie3.png"),
             SizedBox(height: 86),
           ],
         ),
