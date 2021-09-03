@@ -86,8 +86,18 @@ class _ChapterFourState extends State<ChapterFour> {
                 header("Оппортунистические инфекции (ОИ)"),
                 normalText(
                     "Оппортунистические инфекции (ОИ) – это особые заболевания, которые развиваются только при снижении иммунитета. Вирус иммунодефицита человека (ВИЧ), убивает клетки иммунной системы, в результате иммунитет снижается и присоединяются оппортунистические инфекции, которые не вызывают заболевания у человека с сильной иммунной системой. "),
+              ], style: TextStyle(fontSize: fontSize)),
+            ),
+            SizedBox(height: 20),
+            Image.asset("assets/images/oportunisticheskie1.png"),
+            RichText(
+              text: TextSpan(children: [
                 normalText(
                     "\n\nОсновным показателем состояния иммунной системы – является количество иммунных клеток – СД4 лимфоцитов. Снижение числа СД4  ниже 350 клеток/мкл, говорит о существенном снижении иммунитета и высоком риске возникновении оппортунистических инфекций. "),
+              ], style: TextStyle(fontSize: fontSize)),
+            ),
+            RichText(
+              text: TextSpan(children: [
                 normalText(
                     "\n\nЧаще всего из ОИ встречается туберкулез, пневмоцистная пневмония, токсоплазмоз, саркома Капоши (рак кожи), грибковые поражения и другое."),
               ], style: TextStyle(fontSize: fontSize)),
@@ -98,7 +108,6 @@ class _ChapterFourState extends State<ChapterFour> {
       ),
     );
   }
-
   /// Страница 2 Оппортунистические инфекции (ОИ)
   Widget _page2(BuildContext context) {
     return ListTile(
@@ -108,6 +117,12 @@ class _ChapterFourState extends State<ChapterFour> {
             RichText(
               text: TextSpan(children: [
                 header("Основные проявления ОИ:"),
+              ], style: TextStyle(fontSize: fontSize)),
+            ),
+            Image.asset("assets/images/oportunisticheskie2.png"),
+            SizedBox(height: 20),
+            RichText(
+              text: TextSpan(children: [
                 normalText(
                     "Проявления и время проявления ОИ у каждого человека разное. У ВИЧ-позитивного человека с хорошим состоянием иммунитета, оппортунистические инфекции не возникают или протекают в легкой форме. Основные проявления:"),
                 normalText(
@@ -133,7 +148,6 @@ class _ChapterFourState extends State<ChapterFour> {
       ),
     );
   }
-
   /// Страница 3 Оппортунистические инфекции (ОИ)
   Widget _page3(BuildContext context) {
     return ListTile(
@@ -157,7 +171,6 @@ class _ChapterFourState extends State<ChapterFour> {
       ),
     );
   }
-
   /// Страница 4 Оппортунистические инфекции (ОИ)
   Widget _page4(BuildContext context) {
     return ListTile(
@@ -181,7 +194,6 @@ class _ChapterFourState extends State<ChapterFour> {
       ),
     );
   }
-
   /// Страница 5 Оппортунистические инфекции (ОИ)
   Widget _page5(BuildContext context) {
     return ListTile(
@@ -205,6 +217,12 @@ class _ChapterFourState extends State<ChapterFour> {
                     "\n- получать прививки для детей и взрослых по назначению врача. Они помогут защититься от инфекций;"),
                 normalText(
                     "\n- при половых контактах всегда использовать презерватив."),
+              ], style: TextStyle(fontSize: fontSize)),
+            ),
+            SizedBox(height: 20),
+            Image.asset("assets/images/oportunisticheskie3.png"),
+            RichText(
+              text: TextSpan(children: [
                 boldText(
                     "\n\nОппортунистические инфекции появляются при ослаблении иммунитета. "),
                 normalText(
@@ -217,7 +235,6 @@ class _ChapterFourState extends State<ChapterFour> {
       ),
     );
   }
-
   /// Страница 6 Туберкулез у людей с ВИЧ
   Widget _page6(BuildContext context) {
     return ListTile(
@@ -241,7 +258,6 @@ class _ChapterFourState extends State<ChapterFour> {
       ),
     );
   }
-
   /// Страница 7 Туберкулез у людей с ВИЧ
   Widget _page7(BuildContext context) {
     return ListTile(
@@ -273,7 +289,6 @@ class _ChapterFourState extends State<ChapterFour> {
       ),
     );
   }
-
   /// Страница 8 Туберкулез у людей с ВИЧ
   Widget _page8(BuildContext context) {
     return ListTile(
@@ -313,7 +328,6 @@ class _ChapterFourState extends State<ChapterFour> {
       ),
     );
   }
-
   /// Страница 9 Что такое вирусные гепатиты?
   Widget _page9(BuildContext context) {
     return ListTile(
@@ -344,7 +358,6 @@ class _ChapterFourState extends State<ChapterFour> {
       ),
     );
   }
-
   /// Страница 10 Что такое вирусные гепатиты?
   Widget _page10(BuildContext context) {
     return ListTile(
@@ -368,13 +381,13 @@ class _ChapterFourState extends State<ChapterFour> {
                     "\n- При употреблении наркотиков, откажитесь от внутривенного использования или пользуйтесь только своим шприцом и приспособлениями для изготовления наркотика.")
               ], style: TextStyle(fontSize: fontSize)),
             ),
+            Image.asset("assets/images/gepatit1.png"),
             SizedBox(height: 90),
           ],
         ),
       ),
     );
   }
-
   /// Страница 11 Что такое вирусные гепатиты?
   Widget _page11(BuildContext context) {
     return ListTile(
@@ -385,12 +398,28 @@ class _ChapterFourState extends State<ChapterFour> {
               text: TextSpan(children: [
                 normalText(
                     "\n- При половых контактах всегда и правильно используйте презерватив."),
+                ], style: TextStyle(fontSize: fontSize)),
+            ),
+            SizedBox(height: 20),
+            Image.asset("assets/images/gepatit2.png"),
+            RichText(
+              text: TextSpan(children: [
                 normalText(
                     "\n- Пользуйтесь индивидуальными предметами личной гигиены (зубной щеткой, бритвенным станком, полотенцем и др.)."),
                 normalText(
                     "\n- При проведении татуировки или пирсинга, используйте одноразовые (стерильные) инструменты."),
+                ], style: TextStyle(fontSize: fontSize)),
+            ),
+            Image.asset("assets/images/gepatit3.png"),
+            RichText(
+              text: TextSpan(children: [
                 normalText(
                     "\n- От гепатита В защищает прививка, которую ЛЖВ могут получить бесплатно. "),
+                ], style: TextStyle(fontSize: fontSize)),
+            ),
+            Image.asset("assets/images/gepatit4.png"),
+            RichText(
+              text: TextSpan(children: [
                 boldText("\n\nКак жить с вирусными гепатитами?"),
                 normalText(
                     "\nВирусные гепатиты В и С нужно обязательно лечить – без лечения развиаются тяжелые осложнения (цирроз или рак печени)."),
@@ -408,7 +437,6 @@ class _ChapterFourState extends State<ChapterFour> {
       ),
     );
   }
-
   /// Страница 12 Что такое вирусные гепатиты?
   Widget _page12(BuildContext context) {
     return ListTile(
@@ -436,7 +464,6 @@ class _ChapterFourState extends State<ChapterFour> {
       ),
     );
   }
-
   //endregion
 
   Widget _appBar() {

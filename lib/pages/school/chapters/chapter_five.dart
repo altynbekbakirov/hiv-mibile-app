@@ -86,6 +86,11 @@ class _ChapterFiveState extends State<ChapterFive> {
                 header("Сексуальное и репродуктивное здоровье (СРЗ)"),
                 normalText(
                     "СРЗ – это состояние полного благополучия в вопросах сексуальных отношений, планирования и рождения детей, отсутствия заболеваний половых органов."),
+              ], style: TextStyle(fontSize: fontSize)),
+            ),
+            Image.asset("assets/images/reproductive1.png"),
+            RichText(
+              text: TextSpan(children: [
                 boldText("\n\nРепродукция – воспроизведение "),
                 normalText(
                     "воспроизведение – т.е. это способность к зачатию и рождению потомства."),
@@ -163,7 +168,6 @@ class _ChapterFiveState extends State<ChapterFive> {
       ),
     );
   }
-
   Widget _page2(BuildContext context) {
     return ListTile(
       title: SingleChildScrollView(
@@ -297,7 +301,6 @@ class _ChapterFiveState extends State<ChapterFive> {
       ),
     );
   }
-
   Widget _page3(BuildContext context) {
     return ListTile(
       title: SingleChildScrollView(
@@ -387,13 +390,12 @@ class _ChapterFiveState extends State<ChapterFive> {
       ),
     );
   }
-
   Widget _page4(BuildContext context) {
     return ListTile(
       title: SingleChildScrollView(
         child: Column(
           children: [
-            Image.asset("assets/images/contraception.png"),
+            Image.asset("assets/images/reproductive2.png"),
             RichText(
               text: TextSpan(children: [
                 boldText(
@@ -414,14 +416,34 @@ class _ChapterFiveState extends State<ChapterFive> {
               ], style: TextStyle(fontSize: fontSize)),
             ),
             SizedBox(height: 10),
-            Image.asset("assets/images/protect_child.png"),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Expanded(
+                  child: Column(
+                    children: <Widget>[
+                      Text("1.	Предупреждение ВИЧ-инфекции", style: TextStyle(color: Colors.red, fontSize: fontSize)),
+                      Text("2.	Профилактика нежелательной беременности", style: TextStyle(color: kDarkModerateBlue, fontSize: fontSize)),
+                    ],
+                  ),
+                ),
+                Expanded(
+                  child: Column(
+                    children: <Widget>[
+                      Text("3.	Профилактика передачи ВИЧ от ВИЧ+ матери ребенку", style: TextStyle(color: Colors.orange, fontSize: fontSize)),
+                      Text("4.	Предоставление лечения, помощи и поддержки ВИЧ-позитивным женщинам, их детям и семьям", style: TextStyle(color: kDarkModerateBlue, fontSize: fontSize)),
+                    ],
+                  ),
+                ),
+              ],
+            ),
             SizedBox(height: 90),
           ],
         ),
       ),
     );
   }
-
   ///2. Инфекции, передаваемые половым путем
   Widget _page5(BuildContext context) {
     return ListTile(
@@ -433,7 +455,7 @@ class _ChapterFiveState extends State<ChapterFive> {
                 TextSpan(
                     text: "ИППП ",
                     style:
-                        TextStyle(color: Colors.red, fontSize: fontSize + 6)),
+                        TextStyle(color: Colors.red, fontWeight: FontWeight.w600, fontSize: fontSize + 6)),
                 boldText("- инфекции, передаваемые половым путем"),
                 boldText("\n\nЧто такое ИППП?"),
                 normalText(
@@ -516,7 +538,6 @@ class _ChapterFiveState extends State<ChapterFive> {
       ),
     );
   }
-
   Widget _page6(BuildContext context) {
     return ListTile(
       title: SingleChildScrollView(
@@ -700,7 +721,6 @@ class _ChapterFiveState extends State<ChapterFive> {
       ),
     );
   }
-
   Widget _page7(BuildContext context) {
     return ListTile(
       title: SingleChildScrollView(
@@ -941,7 +961,6 @@ class _ChapterFiveState extends State<ChapterFive> {
       ),
     );
   }
-
   Widget _page8(BuildContext context) {
     return ListTile(
       title: SingleChildScrollView(
@@ -976,6 +995,7 @@ class _ChapterFiveState extends State<ChapterFive> {
                 ),
               ],
             ),
+            Image.asset("assets/images/ipp1.png"),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
@@ -1001,6 +1021,7 @@ class _ChapterFiveState extends State<ChapterFive> {
                 ),
               ],
             ),
+            Image.asset("assets/images/ipp2.png"),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
@@ -1028,13 +1049,13 @@ class _ChapterFiveState extends State<ChapterFive> {
                 ),
               ],
             ),
+            Image.asset("assets/images/ipp3.png"),
             SizedBox(height: 90)
           ],
         ),
       ),
     );
   }
-
   ///Инструкция по использованию презерватива
   Widget _page9(BuildContext context) {
     return ListTile(
@@ -1118,13 +1139,12 @@ class _ChapterFiveState extends State<ChapterFive> {
               ],
             ),
             SizedBox(height: 20),
-            Image.asset("assets/images/use_condom1.png")
+            Image.asset("assets/images/use_condom_1.png", scale: 0.6)
           ],
         ),
       ),
     );
   }
-
   Widget _page10(BuildContext context) {
     return ListTile(
       title: SingleChildScrollView(
@@ -1153,7 +1173,7 @@ class _ChapterFiveState extends State<ChapterFive> {
               ],
             ),
             SizedBox(height: 20),
-            Image.asset("assets/images/use_condom2.png"),
+            Image.asset("assets/images/use_condom_2.png"),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
@@ -1198,13 +1218,12 @@ class _ChapterFiveState extends State<ChapterFive> {
                 ),
               ],
             ),
-            Image.asset("assets/images/use_condom3.png"),
+            Image.asset("assets/images/use_condom_3.png"),
           ],
         ),
       ),
     );
   }
-
   Widget _page11(BuildContext context) {
     return ListTile(
       title: SingleChildScrollView(
@@ -1298,14 +1317,13 @@ class _ChapterFiveState extends State<ChapterFive> {
                 ),
               ],
             ),
-            Image.asset("assets/images/use_condom4.png"),
+            Image.asset("assets/images/use_condom_4.png"),
             SizedBox(height: 90),
           ],
         ),
       ),
     );
   }
-
   Widget _page12(BuildContext context) {
     return ListTile(
       title: SingleChildScrollView(
@@ -1333,8 +1351,8 @@ class _ChapterFiveState extends State<ChapterFive> {
                 ),
               ],
             ),
-            Image.asset("assets/images/use_condom4.png"),
-            SizedBox(height: 90),
+            Image.asset("assets/images/use_condom_5.png"),
+            SizedBox(height: 20),
             RichText(
               text: TextSpan(children: [
                 TextSpan(

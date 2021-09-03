@@ -100,6 +100,13 @@ class _ChapterSixState extends State<ChapterSix> {
                       "Права человека гарантируются законами Кыргызской Республики; они предоставляются каждому человеку от рождения и не могут ущемляться в связи с ВИЧ-статусом. Люди, живущие с ВИЧ, обладают всей полнотой социально-экономических, политических, личных прав и свобод, а также несут обязанности, закрепленные законодательством Кыргызской Республики."),
                   italicText(
                       "\n\nУслуги профилактики, лечения, ухода и поддержки оказываются на принципах уважения и соблюдения прав человека, потребностях и интересах этих людей. "),
+                ],
+              ),
+            ),
+            Image.asset("assets/images/prava1.png"),
+            RichText(
+              text: TextSpan(
+                children: [
                   boldText("\n\nГарантии государства для ЛЖВ "),
                   normalText(
                       "\nЗакон «О ВИЧ/СПИДе в Кыргызской Республике» предусматривает медицинскую и социальную помощь ЛЖВ и членам их семей. Закон запрещает "),
@@ -123,7 +130,6 @@ class _ChapterSixState extends State<ChapterSix> {
       ),
     );
   }
-
   Widget _page2(BuildContext context) {
     return ListTile(
       title: SingleChildScrollView(
@@ -260,7 +266,6 @@ class _ChapterSixState extends State<ChapterSix> {
       ),
     );
   }
-
   Widget _page3(BuildContext context) {
     return ListTile(
       title: SingleChildScrollView(
@@ -335,6 +340,7 @@ class _ChapterSixState extends State<ChapterSix> {
                 ),
               ],
             ),
+            Image.asset("assets/images/prava2.png"),
             RichText(
               text: TextSpan(
                 children: [
@@ -349,7 +355,6 @@ class _ChapterSixState extends State<ChapterSix> {
       ),
     );
   }
-
   Widget _page4(BuildContext context) {
     return ListTile(
       title: SingleChildScrollView(
@@ -377,7 +382,6 @@ class _ChapterSixState extends State<ChapterSix> {
       ),
     );
   }
-
   ///ОТВЕТСТВЕННОСТЬ и ОГРАНИЧЕНИЯ, ПРЕДУСМОТРЕННЫЕ ЗАКОНОМ
   Widget _page5(BuildContext context) {
     return ListTile(
@@ -417,7 +421,6 @@ class _ChapterSixState extends State<ChapterSix> {
       ),
     );
   }
-
   Widget _page6(BuildContext context) {
     return ListTile(
       title: SingleChildScrollView(
@@ -456,7 +459,6 @@ class _ChapterSixState extends State<ChapterSix> {
       ),
     );
   }
-
   Widget _page7(BuildContext context) {
     return ListTile(
       title: SingleChildScrollView(
@@ -486,7 +488,6 @@ class _ChapterSixState extends State<ChapterSix> {
       ),
     );
   }
-
   Widget _page8(BuildContext context) {
     return ListTile(
       title: SingleChildScrollView(
@@ -511,7 +512,6 @@ class _ChapterSixState extends State<ChapterSix> {
       ),
     );
   }
-
   ///Социальная защита детей, живущих с ВИЧ (Ст. 12 закона о ВИЧ/СПИДе)
   Widget _page9(BuildContext context) {
     return ListTile(
@@ -543,7 +543,6 @@ class _ChapterSixState extends State<ChapterSix> {
       ),
     );
   }
-
   Widget _page10(BuildContext context) {
     return ListTile(
       title: SingleChildScrollView(
@@ -570,7 +569,6 @@ class _ChapterSixState extends State<ChapterSix> {
       ),
     );
   }
-
   Widget _page11(BuildContext context) {
     return ListTile(
       title: SingleChildScrollView(
@@ -646,7 +644,6 @@ class _ChapterSixState extends State<ChapterSix> {
       ),
     );
   }
-
   Widget _page12(BuildContext context) {
     return ListTile(
       title: SingleChildScrollView(
@@ -758,7 +755,6 @@ class _ChapterSixState extends State<ChapterSix> {
       ),
     );
   }
-
   Widget _page13(BuildContext context) {
     return ListTile(
       title: SingleChildScrollView(
@@ -908,7 +904,6 @@ class _ChapterSixState extends State<ChapterSix> {
       ),
     );
   }
-
   Widget _page14(BuildContext context) {
     return ListTile(
       title: SingleChildScrollView(
@@ -975,7 +970,6 @@ class _ChapterSixState extends State<ChapterSix> {
       ),
     );
   }
-
   Widget _page15(BuildContext context) {
     return ListTile(
       title: SingleChildScrollView(
@@ -1001,7 +995,6 @@ class _ChapterSixState extends State<ChapterSix> {
       ),
     );
   }
-
   Widget _page16(BuildContext context) {
     return ListTile(
       title: SingleChildScrollView(
@@ -1024,7 +1017,6 @@ class _ChapterSixState extends State<ChapterSix> {
       ),
     );
   }
-
   Widget _page17(BuildContext context) {
     return ListTile(
       title: SingleChildScrollView(
@@ -1049,7 +1041,6 @@ class _ChapterSixState extends State<ChapterSix> {
       ),
     );
   }
-
   //endregion
 
   Widget _appBar() {
