@@ -1051,13 +1051,9 @@ class _QuestionBuilderState extends State<QuestionBuilder>
                                     total = total + model.answers.length;
                                     val = model.answers[index].value + val;
                                     model = model.answers[index].to;
-
-                                    print("${val} fffffff ${total}");
                                   });
                                 } else {
                                   _showModalBottomSheet(val, total);
-                                  print("${val} eeeeee ${total}");
-
                                   // Route route = MaterialPageRoute(
                                   //     builder: (context) => WarningPage(
                                   //         value: val,

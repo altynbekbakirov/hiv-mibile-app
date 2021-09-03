@@ -16,6 +16,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:path/path.dart';
 import 'package:provider/provider.dart';
 import 'package:sqflite/sqflite.dart';
+import 'model/questionnaire_provider.dart';
 import 'routes/route_generator.dart';
 import 'routes/routes.dart';
 import 'utils/themebloc/theme_bloc.dart';
@@ -70,6 +71,9 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider.value(
           value: VideoUI(),
+        ),
+        ChangeNotifierProvider.value(
+          value: Questionnaire(),
         )
       ],
       child: BlocProvider(

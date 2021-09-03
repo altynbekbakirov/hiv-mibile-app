@@ -1,9 +1,12 @@
 import 'package:HIVApp/components/button_with_chevron.dart';
 import 'package:HIVApp/components/next_button.dart';
+import 'package:HIVApp/model/questionnaire_provider.dart';
+import 'package:HIVApp/pages/PLHIV_questionnaire/plhiv_test_page.dart';
 import 'package:HIVApp/routes/routes.dart';
 import 'package:HIVApp/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:provider/provider.dart';
 
 class HivTestPage extends StatefulWidget {
   const HivTestPage({Key key}) : super(key: key);
@@ -66,6 +69,17 @@ class _HivTestPageState extends State<HivTestPage> {
                     Navigator.pushNamed(context, Routes.screeningResult);
                   },
                   text: 'get_tested'.tr().toUpperCase(),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 16),
+                child: NextButton(
+                  onPressed: () {
+                    var provider = Provider.of<Questionnaire>(context, listen: false);
+                    provider.setDefault();
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => PLHIV_Test()));
+                  },
+                  text: '1234'.tr().toUpperCase(),
                 ),
               ),
             ],
