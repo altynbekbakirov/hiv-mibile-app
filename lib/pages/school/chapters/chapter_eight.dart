@@ -99,7 +99,6 @@ class _ChapterEightState extends State<ChapterEight> {
       );
     });
   }
-
   Widget _page1(BuildContext context) {
     return ListTile(
       title: SingleChildScrollView(
@@ -172,7 +171,6 @@ class _ChapterEightState extends State<ChapterEight> {
       ),
     );
   }
-
   Widget _page2(BuildContext context) {
     return ListTile(
       title: SingleChildScrollView(
@@ -277,7 +275,6 @@ class _ChapterEightState extends State<ChapterEight> {
       ),
     );
   }
-
   Widget _page3(BuildContext context) {
     return ListTile(
       title: SingleChildScrollView(
@@ -377,7 +374,6 @@ class _ChapterEightState extends State<ChapterEight> {
       ),
     );
   }
-
   Widget _page4(BuildContext context) {
     return ListTile(
       title: SingleChildScrollView(
@@ -437,7 +433,6 @@ class _ChapterEightState extends State<ChapterEight> {
       ),
     );
   }
-
   Widget _page5(BuildContext context) {
     return ListTile(
       title: SingleChildScrollView(
@@ -463,7 +458,6 @@ class _ChapterEightState extends State<ChapterEight> {
       ),
     );
   }
-
   Widget _page6(BuildContext context) {
     return ListTile(
       title: SingleChildScrollView(
@@ -492,7 +486,6 @@ class _ChapterEightState extends State<ChapterEight> {
       ),
     );
   }
-
   Widget _page7(BuildContext context) {
     return ListTile(
       title: SingleChildScrollView(

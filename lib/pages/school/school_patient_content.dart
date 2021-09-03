@@ -1,5 +1,6 @@
 import 'package:HIVApp/Enums/chapter_type.dart';
 import 'package:HIVApp/components/card_with_list_tile.dart';
+import 'package:HIVApp/data/pref_manager.dart';
 import 'package:HIVApp/model/text_provider.dart';
 import 'package:HIVApp/pages/school/chapters/certificate_page.dart';
 import 'package:HIVApp/pages/school/chapters/chapter_seven.dart';
@@ -187,7 +188,7 @@ class _SchoolPatientContentState extends State<SchoolPatientContent> {
                       child: Center(
                         child: InkWell(
                             child: Text(
-                              totalReadPercent == 100
+                              totalReadPercent == 100 && Prefs.getDouble("PL_HIV_TEST") >= 80
                                   ? "my_certificate".tr().toUpperCase()
                                   : "continue_to_read".tr().toUpperCase(),
                               style: TextStyle(
@@ -197,7 +198,7 @@ class _SchoolPatientContentState extends State<SchoolPatientContent> {
                             ),
                             onTap: () {
                               Route route;
-                              if (totalReadPercent == 100) {
+                              if (totalReadPercent == 100 && Prefs.getDouble("PL_HIV_TEST") >= 80) {
                                 route = MaterialPageRoute(
                                     builder: (context) => CertificatePage());
                               } else {

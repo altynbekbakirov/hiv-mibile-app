@@ -55,6 +55,7 @@ class Questionnaire extends ChangeNotifier {
   }
 
   void checkAnswers(int questionIndex) {
+    int countOfAllCorrectAnswers = 32;
     List<Option> selectedOption = List<Option>();
     _questions[questionIndex].options.forEach((option) {
       if (option.selected) {
@@ -70,10 +71,11 @@ class Questionnaire extends ChangeNotifier {
     var correctAnswerCount =
         _correctAnswerCount == null ? 0 : _correctAnswerCount;
     for (var selectedAnswer in selectedOption) {
-      if (correctAnswers.contains(selectedAnswer.answer)) correctAnswerCount++;
+      if (correctAnswers.contains(selectedAnswer.answer))
+        correctAnswerCount != countOfAllCorrectAnswers ? correctAnswerCount = correctAnswerCount + 1 : correctAnswerCount;
     }
     _correctAnswerCount = correctAnswerCount;
-    _correctAnswerPercent = correctAnswerCount * 100 / 26;
+    _correctAnswerPercent = correctAnswerCount * 100 / countOfAllCorrectAnswers;
     notifyListeners();
   }
 }

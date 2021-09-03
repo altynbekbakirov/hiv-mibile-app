@@ -5,7 +5,6 @@ import 'package:HIVApp/model/plhiv_question_model.dart';
 import 'package:HIVApp/model/questionnaire_provider.dart';
 import 'package:HIVApp/model/test_model.dart';
 import 'package:HIVApp/pages/PLHIV_questionnaire/plhiv_result_page.dart';
-import 'package:HIVApp/routes/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -108,7 +107,6 @@ class _PLHIV_TestState extends State<PLHIV_Test> {
       showAlertDialog(questionIndex);
     } else {
       provider.setAnsweredDefault();
-      provider.nextQuestion();
       if (provider.questionIndex == questions.length - 1) {
         Prefs.setDouble("PL_HIV_TEST", provider.correctPercent);
         Navigator.push(
@@ -116,6 +114,8 @@ class _PLHIV_TestState extends State<PLHIV_Test> {
             MaterialPageRoute(
               builder: (context) => PLHivResultPage(),
             ));
+      } else {
+        provider.nextQuestion();
       }
     }
   }

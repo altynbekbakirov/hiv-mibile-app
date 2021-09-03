@@ -1,8 +1,12 @@
 import 'package:HIVApp/components/next_button.dart';
+import 'package:HIVApp/model/questionnaire_provider.dart';
+import 'package:HIVApp/pages/PLHIV_questionnaire/plhiv_result_page.dart';
+import 'package:HIVApp/pages/PLHIV_questionnaire/plhiv_test_page.dart';
 import 'package:HIVApp/routes/routes.dart';
 import 'package:HIVApp/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:provider/provider.dart';
 
 enum Doctors {
   Azamat,
@@ -10,12 +14,12 @@ enum Doctors {
 }
 
 /// Речь докторов
-Widget thinkingDialog(Doctors doctor, String text,
-    {double fontSize}) {
+Widget thinkingDialog(Doctors doctor, String text, {double fontSize}) {
   return Container(
     decoration: BoxDecoration(
       image: DecorationImage(
-        image: AssetImage(doctor == Doctors.Azamat ? rightSideDialog : leftSideDialog),
+        image: AssetImage(
+            doctor == Doctors.Azamat ? rightSideDialog : leftSideDialog),
         fit: BoxFit.fill,
         matchTextDirection: true,
       ),
@@ -116,7 +120,9 @@ class Doctor {
                   doctor == Doctors.Nadezhda
                       ? okButton(context)
                       : _doctor(drAzamat),
-                  doctor == Doctors.Nadezhda ? _doctor(drNadezhda) : okButton(context),
+                  doctor == Doctors.Nadezhda
+                      ? _doctor(drNadezhda)
+                      : okButton(context),
                 ],
               ),
             ],
@@ -125,7 +131,6 @@ class Doctor {
       ),
     );
   }
-
 
   static showDialogs(BuildContext context) {
     return showDialog(
@@ -147,7 +152,9 @@ class Doctor {
                         padding: EdgeInsets.only(bottom: 50),
                         child: NextButton(
                           onPressed: () {
-                            Navigator.pushNamed(context, Routes.screeningResult);
+                            var provider = Provider.of<Questionnaire>(context, listen: false);
+                            provider.setDefault();
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => PLHIV_Test()));
                           },
                           text: 'get_tested'.tr().toUpperCase(),
                         ),
@@ -156,10 +163,7 @@ class Doctor {
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      okButton(context),
-                      _doctor(drNadezhda)
-                    ],
+                    children: <Widget>[okButton(context), _doctor(drNadezhda)],
                   ),
                 ],
               ),
