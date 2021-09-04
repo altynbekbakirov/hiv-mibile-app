@@ -458,7 +458,7 @@ class _ChapterSevenState extends State<ChapterSeven> {
                 ),
               ],
             ),
-            Image.asset("assets/images/что делать если у тебя вич 1.png", scale: 0.7),
+            Image.asset("assets/images/prophylaxis/2/1.gif"),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
@@ -481,7 +481,7 @@ class _ChapterSevenState extends State<ChapterSeven> {
                 ),
               ],
             ),
-            Image.asset("assets/images/что делать если у тебя вич 2.png", scale: 0.7),
+            Image.asset("assets/images/prophylaxis/2/2.gif"),
             SizedBox(height: 90),
           ],
         ),
@@ -515,7 +515,7 @@ class _ChapterSevenState extends State<ChapterSeven> {
                 ),
               ],
             ),
-            Image.asset("assets/images/что делать если у тебя вич 3.png", scale: 0.7),
+            Image.asset("assets/images/prophylaxis/2/3.gif"),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
@@ -611,7 +611,6 @@ class _ChapterSevenState extends State<ChapterSeven> {
       ),
     );
   }
-
   Widget _page6(BuildContext context) {
     return ListTile(
       title: SingleChildScrollView(
@@ -712,7 +711,6 @@ class _ChapterSevenState extends State<ChapterSeven> {
       ),
     );
   }
-
   Widget _page7(BuildContext context) {
     return ListTile(
       title: SingleChildScrollView(
@@ -740,7 +738,7 @@ class _ChapterSevenState extends State<ChapterSeven> {
                 ),
               ],
             ),
-            Image.asset("assets/images/что делать если у тебя вич 6.png", scale: 0.7),
+            Image.asset("assets/images/prophylaxis/2/6.gif"),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
@@ -763,7 +761,7 @@ class _ChapterSevenState extends State<ChapterSeven> {
                 ),
               ],
             ),
-            Image.asset("assets/images/что делать если у тебя вич 7.png", scale: 0.7),
+            Image.asset("assets/images/prophylaxis/1/7.gif"),
             RichText(
               text: TextSpan(children: [
                 header("Преимущества раскрытия ВИЧ-статуса своим близким"),
@@ -791,14 +789,13 @@ class _ChapterSevenState extends State<ChapterSeven> {
                 ),
               ],
             ),
-            Image.asset("assets/images/preimushestva_1.png"),
+            Image.asset("assets/images/prophylaxis/1/6.gif"),
             SizedBox(height: 90),
           ],
         ),
       ),
     );
   }
-
   ///Преимущества раскрытия ВИЧ-статуса своим близким
   Widget _page8(BuildContext context) {
     return ListTile(
@@ -827,7 +824,7 @@ class _ChapterSevenState extends State<ChapterSeven> {
                 ),
               ],
             ),
-            Image.asset("assets/images/preimushestva_2.png"),
+            Image.asset("assets/images/prophylaxis/1/3.gif"),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
@@ -850,7 +847,7 @@ class _ChapterSevenState extends State<ChapterSeven> {
                 ),
               ],
             ),
-            Image.asset("assets/images/preimushestva_3.png"),
+            Image.asset("assets/images/prophylaxis/1/4.gif"),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
@@ -873,7 +870,7 @@ class _ChapterSevenState extends State<ChapterSeven> {
                 ),
               ],
             ),
-            Image.asset("assets/images/preimushestva_4.png"),
+            Image.asset("assets/images/prophylaxis/1/11.gif"),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
@@ -896,14 +893,13 @@ class _ChapterSevenState extends State<ChapterSeven> {
                 ),
               ],
             ),
-            Image.asset("assets/images/preimushestva_5.png"),
+            Image.asset("assets/images/prophylaxis/1/2.gif"),
             SizedBox(height: 90),
           ],
         ),
       ),
     );
   }
-
   ///Означает ли диагноз ВИЧ - инфекции,
   /// что в Вашей жизни что-то должно измениться?
   Widget _page9(BuildContext context) {
@@ -932,7 +928,6 @@ class _ChapterSevenState extends State<ChapterSeven> {
       ),
     );
   }
-
   Widget _page10(BuildContext context) {
     return ListTile(
       title: SingleChildScrollView(
@@ -961,16 +956,16 @@ class _ChapterSevenState extends State<ChapterSeven> {
     );
   }
 
-  ///Good news
-  Widget _page11(BuildContext context) {
-    return Column(
-      children: [
-        Container(
-          child: Image.asset("assets/images/good_news.png"),
-        ),
-      ],
-    );
-  }
+  // ///Good news
+  // Widget _page11(BuildContext context) {
+  //   return Column(
+  //     children: [
+  //       Container(
+  //         child: Image.asset("assets/images/good_news.png"),
+  //       ),
+  //     ],
+  //   );
+  // }
 
   Widget _appBar() {
     return AppBar(
@@ -1050,7 +1045,7 @@ class _ChapterSevenState extends State<ChapterSeven> {
       _page8(context),
       _page9(context),
       _page10(context),
-      _page11(context),
+      // _page11(context),
     ];
     return Scaffold(
       appBar: AppBar(
