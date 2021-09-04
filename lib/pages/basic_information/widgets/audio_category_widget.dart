@@ -1,9 +1,7 @@
 import 'package:HIVApp/utils/constants.dart';
 import 'package:connectivity/connectivity.dart';
-import 'package:data_connection_checker/data_connection_checker.dart';
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
-import 'package:provider/provider.dart';
 
 import 'ex_audio.dart';
 import '../../../db/audio_db.dart';

@@ -89,7 +89,7 @@ class AudioApp extends StatefulWidget {
 class _AudioAppState extends State<AudioApp> {
   AudioCache audioCache = AudioCache();
   AudioPlayer advancedPlayer = AudioPlayer();
-  AudioPlayer player = AudioPlayer();
+
   String fileName = 'audios';
   int fileIndex = 0;
   double pinPillPosition = -1000;
@@ -97,10 +97,7 @@ class _AudioAppState extends State<AudioApp> {
   bool playing = false;
   String category_name;
   List<Duration> durations = List<Duration>();
-  int p;
-
-  String path =
-      'http://138.68.82.38/storage/audios/Введение/20201216161221intro_01.mp3';
+  AudioPlayer player;
 
   Duration _duration = new Duration();
   Duration _position = new Duration();
@@ -151,10 +148,16 @@ class _AudioAppState extends State<AudioApp> {
     getAudioDurations();
   }
 
-  void getAudioDurations() async {
+  void getAudioDurations() {
     var ip = Configs.file_ip;
     for (var i in files) {
+      player = AudioPlayer(playerId: ip + i.name);
       player.setUrl(ip + i.name);
+      player.onDurationChanged.listen((Duration d) {
+        setState(() {
+          durations.add(d);
+        });
+      });
     }
   }
 
@@ -162,12 +165,6 @@ class _AudioAppState extends State<AudioApp> {
     advancedPlayer.onDurationChanged.listen((Duration d) {
       setState(() {
         _duration = d;
-      });
-    });
-
-    player.onDurationChanged.listen((Duration d) {
-      setState(() {
-        durations.add(d);
       });
     });
 
@@ -203,19 +200,6 @@ class _AudioAppState extends State<AudioApp> {
     );
   }
 
-  Widget remoteUrl() {
-    return SingleChildScrollView(
-      child: _Tab(children: [
-        Text(
-          'Sample 1 ($kUrl1)',
-          key: Key('url1'),
-          style: TextStyle(fontWeight: FontWeight.bold),
-        ),
-        PlayerWidget(url: kUrl1),
-      ]),
-    );
-  }
-
   Widget localAsset() {
     return Container(
       height: MediaQuery.of(context).size.height * 0.7,
@@ -224,50 +208,70 @@ class _AudioAppState extends State<AudioApp> {
         Container(
           padding: EdgeInsets.all(MediaQuery.of(context).size.width * 0.05),
           height: MediaQuery.of(context).size.height * 0.70 - playerHeight,
-          child: ListView.separated(
-              separatorBuilder: (BuildContext context, int index) => Divider(),
+          child: ListView.builder(
               itemCount: files.length,
               itemBuilder: (BuildContext ctxt, int index) {
-                return ListTile(
-                  leading: GestureDetector(
-                    onTap: () {
-                      print(index);
-                      print(durations);
-                    },
-                    child: Text("${durations[index].toString().split(".")[0]}"),
-                  ),
-                  title: Text(
-                    files[index].title,
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 16,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                  trailing: Icon(
-                    fileName == files[index].name
-                        ? FontAwesomeIcons.pause
-                        : FontAwesomeIcons.play,
-                    color: kModerateBlue,
-                    size: 20,
-                  ),
-                  onTap: () async {
+                return GestureDetector(
+                  onTap: () {
                     setState(() {
                       fileIndex = index;
                       audioCache.clearCache();
                       advancedPlayer.stop();
                       fileName = files[index].name;
                       var sss = Configs.file_ip;
-                      if (files[index].downloaded)
-                        advancedPlayer.play(fileName);
-                      else
-                        advancedPlayer.play(sss + fileName);
+                      // if (files[index].downloaded)
+                      //   advancedPlayer.play(fileName);
+                      // else
+                      advancedPlayer.play(sss + fileName);
                       pinPillPosition =
                           MediaQuery.of(context).size.height * 0.001;
                       playerHeight = MediaQuery.of(context).size.height * 0.20;
                       playing = true;
                     });
                   },
+                  child: Container(
+                    margin: EdgeInsets.symmetric(vertical: 8),
+                    height: 56,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: <Widget>[
+                        Container(
+                          padding: EdgeInsets.only(left: 20),
+                          child: Text(
+                            files[index].title,
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 16,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(right: 10),
+                          child: Container(
+                            height: 30,
+                            width: 60,
+                            decoration: BoxDecoration(
+                                color: kLightGrayishBlue,
+                                borderRadius: BorderRadius.circular(8)),
+                            child: Center(
+                                child: durations.asMap()[index] != null
+                                    ? Text(
+                                        "${durations[index].toString().split(".")[0].split(":")[1]}:${durations[index].toString().split(".")[0].split(":")[2]}",
+                                        style: TextStyle(color: kGrayishBlue),
+                                      )
+                                    : Text("0:00", style: TextStyle(color: kGrayishBlue))),
+                          ),
+
+                        ),
+                      ],
+                    ),
+                  ),
                 );
               }),
         ),
@@ -302,10 +306,10 @@ class _AudioAppState extends State<AudioApp> {
                                 fileIndex = fileIndex - 1;
                               }
                               fileName = files[fileIndex].name;
-                              if (files[fileIndex].downloaded)
-                                advancedPlayer.play(fileName);
-                              else
-                                advancedPlayer.play(Configs.file_ip + fileName);
+                              // if (files[fileIndex].downloaded)
+                              //   advancedPlayer.play(fileName);
+                              // else
+                              advancedPlayer.play(Configs.file_ip + fileName);
                               playing = true;
                             });
                           },
@@ -337,16 +341,16 @@ class _AudioAppState extends State<AudioApp> {
                               advancedPlayer.pause();
                             } else if (advancedPlayer.state ==
                                 AudioPlayerState.PAUSED) {
-                              if (files[fileIndex].downloaded)
-                                advancedPlayer.play(fileName);
-                              else
-                                advancedPlayer.play(Configs.file_ip + fileName);
+                              // if (files[fileIndex].downloaded)
+                              //   advancedPlayer.play(fileName);
+                              // else
+                              advancedPlayer.play(Configs.file_ip + fileName);
                             } else if (advancedPlayer.state ==
                                 AudioPlayerState.STOPPED) {
-                              if (files[fileIndex].downloaded)
-                                advancedPlayer.play(fileName);
-                              else
-                                advancedPlayer.play(Configs.file_ip + fileName);
+                              // if (files[fileIndex].downloaded)
+                              //   advancedPlayer.play(fileName);
+                              // else
+                              advancedPlayer.play(Configs.file_ip + fileName);
                             } else {
                               advancedPlayer.pause();
                             }
@@ -381,10 +385,10 @@ class _AudioAppState extends State<AudioApp> {
                                 fileIndex = 0;
                               }
                               fileName = files[fileIndex].name;
-                              if (files[fileIndex].downloaded)
-                                advancedPlayer.play(fileName);
-                              else
-                                advancedPlayer.play(Configs.file_ip + fileName);
+                              // if (files[fileIndex].downloaded)
+                              //   advancedPlayer.play(fileName);
+                              // else
+                              advancedPlayer.play(Configs.file_ip + fileName);
                               playing = true;
                             });
                           },
@@ -463,6 +467,7 @@ class _AudioAppState extends State<AudioApp> {
     super.dispose();
     audioCache.clearCache();
     advancedPlayer.dispose();
+    player.dispose();
   }
 
   @override
@@ -474,29 +479,6 @@ class _AudioAppState extends State<AudioApp> {
             value: advancedPlayer.onAudioPositionChanged),
       ],
       child: localAsset(),
-    );
-  }
-}
-
-class _Tab extends StatelessWidget {
-  final List<Widget> children;
-
-  const _Tab({Key key, this.children}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Container(
-        alignment: Alignment.topCenter,
-        padding: EdgeInsets.all(16.0),
-        child: SingleChildScrollView(
-          child: Column(
-            children: children
-                .map((w) => Container(child: w, padding: EdgeInsets.all(6.0)))
-                .toList(),
-          ),
-        ),
-      ),
     );
   }
 }
