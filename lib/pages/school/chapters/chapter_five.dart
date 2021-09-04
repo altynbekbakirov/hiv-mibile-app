@@ -395,7 +395,26 @@ class _ChapterFiveState extends State<ChapterFive> {
       title: SingleChildScrollView(
         child: Column(
           children: [
-            Image.asset("assets/images/reproductive2.png"),
+            Row(
+              children: <Widget>[
+                Expanded(
+                  child: Image.asset("assets/images/condom.png"),
+                ),
+                Expanded(
+                  flex: 2,
+                  child: Column(
+                    children: <Widget>[
+                      Align(alignment: Alignment.centerLeft, child: Text('Существует много методов контрацепции: ', style: TextStyle(color: Colors.black, fontSize: fontSize - 4, fontWeight: FontWeight.w600))),
+                      Align(alignment: Alignment.centerLeft, child: Text('•	Барьерные методы;', style: TextStyle(color: Colors.black, fontSize: fontSize - 4, fontWeight: FontWeight.w400), textAlign: TextAlign.start,)),
+                      Align(alignment: Alignment.centerLeft, child: Text('•	Внутриматочные средства;', style: TextStyle(color: Colors.black, fontSize: fontSize - 4, fontWeight: FontWeight.w400),)),
+                      Align(alignment: Alignment.centerLeft, child: Text('•	Гормональные контрацептивы;', style: TextStyle(color: Colors.black, fontSize: fontSize - 4, fontWeight: FontWeight.w400),)),
+                      Align(alignment: Alignment.centerLeft, child: Text('•	Хирургический метод;', style: TextStyle(color: Colors.black, fontSize: fontSize - 4, fontWeight: FontWeight.w400),)),
+                      Align(alignment: Alignment.centerLeft, child: Text('•	Биологический (календарный) метод контрацепции', style: TextStyle(color: Colors.black, fontSize: fontSize - 4, fontWeight: FontWeight.w400),)),
+                    ],
+                  ),
+                ),
+              ],
+            ),
             RichText(
               text: TextSpan(children: [
                 boldText(
@@ -995,7 +1014,7 @@ class _ChapterFiveState extends State<ChapterFive> {
                 ),
               ],
             ),
-            Image.asset("assets/images/ipp1.png"),
+            Image.asset("assets/images/prophylaxis/1/1.gif"),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
@@ -1021,7 +1040,7 @@ class _ChapterFiveState extends State<ChapterFive> {
                 ),
               ],
             ),
-            Image.asset("assets/images/ipp2.png"),
+            Image.asset("assets/images/prophylaxis/1/2.gif"),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
@@ -1049,7 +1068,7 @@ class _ChapterFiveState extends State<ChapterFive> {
                 ),
               ],
             ),
-            Image.asset("assets/images/ipp3.png"),
+            Image.asset("assets/images/prophylaxis/1/3.gif"),
             SizedBox(height: 90)
           ],
         ),
@@ -1546,7 +1565,6 @@ class _ChapterFiveState extends State<ChapterFive> {
       ),
     );
   }
-
   Widget _page13(BuildContext context) {
     return ListTile(
       title: SingleChildScrollView(
@@ -1649,7 +1667,6 @@ class _ChapterFiveState extends State<ChapterFive> {
       ),
     );
   }
-
   Widget _page14(BuildContext context) {
     return ListTile(
       title: SingleChildScrollView(
@@ -1727,7 +1744,6 @@ class _ChapterFiveState extends State<ChapterFive> {
       ),
     );
   }
-
   Widget _page15(BuildContext context) {
     return ListTile(
       title: SingleChildScrollView(

@@ -220,7 +220,7 @@ class _ChapterFourState extends State<ChapterFour> {
               ], style: TextStyle(fontSize: fontSize)),
             ),
             SizedBox(height: 20),
-            Image.asset("assets/images/oportunisticheskie3.png"),
+            Image.asset("assets/images/prava2.png"),
             RichText(
               text: TextSpan(children: [
                 boldText(
@@ -381,7 +381,7 @@ class _ChapterFourState extends State<ChapterFour> {
                     "\n- При употреблении наркотиков, откажитесь от внутривенного использования или пользуйтесь только своим шприцом и приспособлениями для изготовления наркотика.")
               ], style: TextStyle(fontSize: fontSize)),
             ),
-            Image.asset("assets/images/gepatit1.png"),
+            Image.asset("assets/images/prophylaxis/1/6.gif"),
             SizedBox(height: 90),
           ],
         ),
@@ -410,14 +410,14 @@ class _ChapterFourState extends State<ChapterFour> {
                     "\n- При проведении татуировки или пирсинга, используйте одноразовые (стерильные) инструменты."),
                 ], style: TextStyle(fontSize: fontSize)),
             ),
-            Image.asset("assets/images/gepatit3.png"),
+            Image.asset("assets/images/prophylaxis/1/8.gif"),
             RichText(
               text: TextSpan(children: [
                 normalText(
                     "\n- От гепатита В защищает прививка, которую ЛЖВ могут получить бесплатно. "),
                 ], style: TextStyle(fontSize: fontSize)),
             ),
-            Image.asset("assets/images/gepatit4.png"),
+            Image.asset("assets/images/prophylaxis/2/2.gif"),
             RichText(
               text: TextSpan(children: [
                 boldText("\n\nКак жить с вирусными гепатитами?"),

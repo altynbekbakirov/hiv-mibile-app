@@ -128,8 +128,8 @@ class _ChapterThreeState extends State<ChapterThree> {
                     "Для этого используют презерватив при каждом половом контакте.")
               ], style: TextStyle(fontSize: fontSize)),
             ),
-            Image.asset('assets/images/beremennost2.png'),
-            SizedBox(height: 86),
+            Image.asset('assets/images/prophylaxis/1/3.gif'),
+            SizedBox(height: 90),
           ],
         ),
       ),
@@ -150,7 +150,7 @@ class _ChapterThreeState extends State<ChapterThree> {
                     "нагрузке, чтобы не подвергать женщину и ребенка риску инфицирования ВИЧ."),
                ], style: TextStyle(fontSize: fontSize)),
             ),
-            Image.asset("assets/images/beremennost3.png"),
+            Image.asset("assets/images/beremennost3.gif"),
             RichText(
               text: TextSpan(children: [
                 boldText("\n\nПланирование беременности"),
@@ -196,7 +196,7 @@ class _ChapterThreeState extends State<ChapterThree> {
                 ),
               ],
             ),
-            SizedBox(height: 86),
+            SizedBox(height: 90),
           ],
         ),
       ),
@@ -262,8 +262,8 @@ class _ChapterThreeState extends State<ChapterThree> {
                     "\n\nВо время беременности особенно важно правильно принимать АРТ, либо начать прием АРТ, если по каким-либо причинам женщина еще не получала АРТ до беременности. Важно иметь неопределяемую вирусную нагрузку. "),
               ], style: TextStyle(fontSize: fontSize)),
             ),
-            Image.asset('assets/images/profilactika2.png'),
-            SizedBox(height: 86),
+            Image.asset('assets/images/profilactika2.gif'),
+            SizedBox(height: 90),
           ],
         ),
       ),
@@ -285,7 +285,7 @@ class _ChapterThreeState extends State<ChapterThree> {
                 boldText(
                     "\n\nПомощь ВИЧ-позитивной женщине в послеродовый период\n\n"),], style: TextStyle(fontSize: fontSize)),
             ),
-            Image.asset("assets/images/beremennost4.png"),
+            Image.asset("assets/images/beremennost4.gif"),
             SizedBox(height: 20),
             RichText(
               text: TextSpan(children: [
@@ -314,7 +314,7 @@ class _ChapterThreeState extends State<ChapterThree> {
               ], style: TextStyle(fontSize: fontSize)),
             ),
             SizedBox(height: 20),
-            Image.asset("assets/images/beremennost5.png"),
+            Image.asset("assets/images/beremennost5.gif"),
             SizedBox(height: 20),
             RichText(
               textAlign: TextAlign.center,
@@ -361,7 +361,7 @@ class _ChapterThreeState extends State<ChapterThree> {
                         fontWeight: FontWeight.w600)),
               ], style: TextStyle(fontSize: fontSize)),
             ),
-            SizedBox(height: 86),
+            SizedBox(height: 90),
           ],
         ),
       ),
@@ -395,14 +395,13 @@ class _ChapterThreeState extends State<ChapterThree> {
                     "\n\nСразу после рождения ребенку назначают АРТ в течение 6-12 недель – это важно для профилактики инфицирования ВИЧ. Доза и продолжительность АРТ зависят от приема АРТ и состояния вирусной нагрузки у матери."),
               ], style: TextStyle(fontSize: fontSize)),
             ),
-            Image.asset("assets/images/nabludenie3.png"),
+            Image.asset("assets/images/beremennost5.gif"),
             SizedBox(height: 86),
           ],
         ),
       ),
     );
   }
-
   /// Страница 8 Планирование беременности в семьях, живущих с ВИЧ
   Widget _page8(BuildContext context) {
     return ListTile(

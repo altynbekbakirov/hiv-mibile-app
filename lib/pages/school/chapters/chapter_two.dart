@@ -114,7 +114,7 @@ class _ChapterTwoState extends State<ChapterTwo> {
               ], style: TextStyle(fontSize: fontSize)),
             ),
             SizedBox(height: 10),
-            Image.asset("assets/images/lechenie2.png"),
+            Image.asset("assets/images/ДКП.png"),
             SizedBox(height: 10),
             SizedBox(height: 86),
           ],
@@ -521,7 +521,7 @@ class _ChapterTwoState extends State<ChapterTwo> {
                 ),
               ],
             ),
-            Image.asset('assets/images/human_art1.png'),
+            Image.asset('assets/images/prophylaxis/2/3.gif'),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
@@ -583,7 +583,7 @@ class _ChapterTwoState extends State<ChapterTwo> {
                 ),
               ],
             ),
-            Image.asset('assets/images/human_art3.png'),
+            Image.asset('assets/images/prophylaxis/1/2.gif'),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
@@ -606,7 +606,7 @@ class _ChapterTwoState extends State<ChapterTwo> {
                 ),
               ],
             ),
-            Image.asset('assets/images/human_art4.png'),
+            Image.asset('assets/images/profilactika2.gif'),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
@@ -628,7 +628,7 @@ class _ChapterTwoState extends State<ChapterTwo> {
                 ),
               ],
             ),
-            Image.asset('assets/images/human_art5.png'),
+            Image.asset('assets/images/prophylaxis/1/4.gif'),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
@@ -771,7 +771,7 @@ class _ChapterTwoState extends State<ChapterTwo> {
                     "Ссылка: Что такое вирусная нагрузка (ВН) и число лимфоцитов CД4?")
               ], style: TextStyle(fontSize: fontSize)),
             ),
-            Image.asset("assets/images/virus_nagruzka1.png"),
+            Image.asset("assets/images/ДКП.png"),
             RichText(
               text: TextSpan(children: [
                 boldText(
@@ -940,7 +940,7 @@ class _ChapterTwoState extends State<ChapterTwo> {
                     "Вирусная нагрузка (сокращенно – ВН) — это количество копий ВИЧ в 1 миллилитре крови (копий/мл).\n")
               ], style: TextStyle(fontSize: fontSize)),
             ),
-            Image.asset('assets/images/virus_nagruzka2.png'),
+            Image.asset('assets/images/lechenie3.png'),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
@@ -1025,7 +1025,7 @@ class _ChapterTwoState extends State<ChapterTwo> {
                     "Как часто нужно сдавать анализы на число CД4-клеток и ВН?\n\n"),
               ], style: TextStyle(fontSize: fontSize)),
             ),
-            Image.asset('assets/images/virus_nagruzka3.png'),
+            Image.asset('assets/images/виды-тестов.png'),
             RichText(
               text: TextSpan(children: [
                 normalText(
@@ -1107,7 +1107,6 @@ class _ChapterTwoState extends State<ChapterTwo> {
                     "из числа ЛЖВ и/или сообщества. Они помогут справиться со стрессом, связанным с принятием "
                     "ВИЧ-статуса; помогут на начальном этапе лечения по ВИЧ-инфекции, напомнят о приеме "
                     "препаратов; окажут другую помощь."),
-                //TODO Картинка часы
               ], style: TextStyle(fontSize: fontSize)),
             ),
             SizedBox(height: 86),
@@ -1418,7 +1417,6 @@ class _ChapterTwoState extends State<ChapterTwo> {
       ),
     );
   }
-
   /// Страица 21 Как повысить приверженность к АРТ
   Widget _page21(BuildContext context) {
     return ListTile(
@@ -1517,7 +1515,6 @@ class _ChapterTwoState extends State<ChapterTwo> {
       ),
     );
   }
-
   /// Страица 22 НЕЖЕЛАТЕЛЬНЫЕ (ПОБОЧНЫЕ) ЭФФЕКТЫ АНТИРЕТРОВИРУСНОЙ ТЕРАПИИ.
   Widget _page22(BuildContext context) {
     return ListTile(
@@ -1530,7 +1527,6 @@ class _ChapterTwoState extends State<ChapterTwo> {
                     "НЕЖЕЛАТЕЛЬНЫЕ (ПОБОЧНЫЕ) ЭФФЕКТЫ АНТИРЕТРОВИРУСНОЙ ТЕРАПИИ."),
               ], style: TextStyle(fontSize: fontSize)),
             ),
-            Image.asset("assets/images/doctor2.png"),
             SizedBox(height: 10),
             RichText(
               text: TextSpan(children: [
@@ -1549,7 +1545,6 @@ class _ChapterTwoState extends State<ChapterTwo> {
       ),
     );
   }
-
   /// Страица 23 НЕЖЕЛАТЕЛЬНЫЕ (ПОБОЧНЫЕ) ЭФФЕКТЫ АНТИРЕТРОВИРУСНОЙ ТЕРАПИИ.
   Widget _page23(BuildContext context) {
     return ListTile(
@@ -1635,7 +1630,6 @@ class _ChapterTwoState extends State<ChapterTwo> {
       ),
     );
   }
-
   /// Страица 24 НЕЖЕЛАТЕЛЬНЫЕ (ПОБОЧНЫЕ) ЭФФЕКТЫ АНТИРЕТРОВИРУСНОЙ ТЕРАПИИ.
   Widget _page24(BuildContext context) {
     return ListTile(
@@ -1739,7 +1733,6 @@ class _ChapterTwoState extends State<ChapterTwo> {
       ),
     );
   }
-
   /// Страица 25 НЕЖЕЛАТЕЛЬНЫЕ (ПОБОЧНЫЕ) ЭФФЕКТЫ АНТИРЕТРОВИРУСНОЙ ТЕРАПИИ.
   Widget _page25(BuildContext context) {
     return ListTile(
@@ -1770,7 +1763,6 @@ class _ChapterTwoState extends State<ChapterTwo> {
       ),
     );
   }
-
   //endregion
 
   Widget _appBar() {
