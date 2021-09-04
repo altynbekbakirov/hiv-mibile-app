@@ -105,31 +105,31 @@ class _PrePostExposureTherapyScreenState extends State<PrePostExposureTherapyScr
               children: [
                 CarouselPage(
                   list: list[0],
-                  height: fontSize.toInt() == 24 ? 225 : fontSize.toInt() == 22 ? 220 : fontSize.toInt() == 20 ? 210 : 205,
+                  height: fontSize.toInt() == 24 ? 320 : fontSize.toInt() == 22 ? 300 : fontSize.toInt() == 20 ? 280 : 250,
                   fontSize: fontSize,
                   textStyle: contentNormal,
                 ),
                 CarouselPage(
                   list: list[1],
-                  height: fontSize.toInt() == 24 ? 230 : fontSize.toInt() == 22 ? 225 : fontSize.toInt() == 20 ? 215 : 205,
+                  height: fontSize.toInt() == 24 ? 320 : fontSize.toInt() == 22 ? 300 : fontSize.toInt() == 20 ? 280 : 250,
                   fontSize: fontSize,
                   textStyle: contentNormal,
                 ),
                 CarouselPage(
                   list: list[2],
-                  height: fontSize.toInt() == 24 ? 220 : fontSize.toInt() == 22 ? 190 : fontSize.toInt() == 20 ? 185 : 180,
+                  height: fontSize.toInt() == 24 ? 290 : fontSize.toInt() == 22 ? 270 : fontSize.toInt() == 20 ? 250 : 230,
                   fontSize: fontSize,
                   textStyle: contentNormal,
                 ),
                 CarouselPage(
                   list: list[3],
-                  height: fontSize.toInt() == 24 ? 230 : fontSize.toInt() == 22 ? 190 : fontSize.toInt() == 20 ? 185 : 180,
+                  height: fontSize.toInt() == 24 ? 280 : fontSize.toInt() == 22 ? 260 : fontSize.toInt() == 20 ? 240 : 220,
                   fontSize: fontSize,
                   textStyle: contentNormal,
                 ),
                 CarouselPage(
                   list: list[4],
-                  height: fontSize.toInt() == 24 ? 235 : fontSize.toInt() == 22 ? 230 : fontSize.toInt() == 20 ? 225 : 205,
+                  height: fontSize.toInt() == 24 ? 300 : fontSize.toInt() == 22 ? 270 : fontSize.toInt() == 20 ? 250 : 230,
                   fontSize: fontSize,
                   textStyle: contentNormal,
                 ),

@@ -146,12 +146,12 @@ class _SelfProtectInfoScreenState extends State<SelfProtectInfoScreen> {
                 CarouselPage(
                   list: list[0],
                   height: fontSize.toInt() == 24
-                      ? 200
+                      ? 260
                       : fontSize.toInt() == 20
-                          ? 190
+                          ? 230
                           : fontSize.toInt() == 18
-                              ? 180
-                              : 200,
+                              ? 220
+                              : 250,
                   fontSize: fontSize,
                   textStyle: contentNormal,
                 ),
@@ -170,24 +170,24 @@ class _SelfProtectInfoScreenState extends State<SelfProtectInfoScreen> {
                 CarouselPage(
                   list: list[2],
                   height: fontSize.toInt() == 24
-                      ? 260
+                      ? 300
                       : fontSize.toInt() == 20
-                          ? 240
+                          ? 270
                           : fontSize.toInt() == 18
-                              ? 210
-                              : 260,
+                              ? 240
+                              : 290,
                   fontSize: fontSize,
                   textStyle: contentNormal,
                 ),
                 CarouselPage(
                   list: list[3],
                   height: fontSize.toInt() == 24
-                      ? 230
+                      ? 290
                       : fontSize.toInt() == 20
-                          ? 190
+                          ? 250
                           : fontSize.toInt() == 18
-                              ? 180
-                              : 230,
+                              ? 230
+                              : 270,
                   fontSize: fontSize,
                   textStyle: contentNormal,
                 ),
@@ -213,12 +213,12 @@ class _SelfProtectInfoScreenState extends State<SelfProtectInfoScreen> {
                 CarouselPage(
                   list: list[0],
                   height: fontSize.toInt() == 24
-                      ? 195
+                      ? 280
                       : fontSize.toInt() == 20
-                          ? 180
+                          ? 220
                           : fontSize.toInt() == 22
-                              ? 195
-                              : 155,
+                              ? 250
+                              : 200,
                   fontSize: fontSize,
                   textStyle: contentNormal,
                 ),
@@ -237,24 +237,24 @@ class _SelfProtectInfoScreenState extends State<SelfProtectInfoScreen> {
                 CarouselPage(
                   list: list[2],
                   height: fontSize.toInt() == 24
-                      ? 260
+                      ? 300
                       : fontSize.toInt() == 20
-                          ? 220
+                          ? 260
                           : fontSize.toInt() == 18
-                              ? 210
-                              : 250,
+                              ? 240
+                              : 280,
                   fontSize: fontSize,
                   textStyle: contentNormal,
                 ),
                 CarouselPage(
                   list: list[3],
                   height: fontSize.toInt() == 24
-                      ? 335
+                      ? 370
                       : fontSize.toInt() == 20
-                          ? 280
+                          ? 320
                           : fontSize.toInt() == 18
-                              ? 250
-                              : 335,
+                              ? 280
+                              : 350,
                   fontSize: fontSize,
                   textStyle: contentNormal,
                 ),
@@ -280,48 +280,48 @@ class _SelfProtectInfoScreenState extends State<SelfProtectInfoScreen> {
                 CarouselPage(
                   list: list[0],
                   height: fontSize.toInt() == 24
-                      ? 255
+                      ? 320
                       : fontSize.toInt() == 20
-                          ? 240
+                          ? 275
                           : fontSize.toInt() == 18
-                              ? 220
-                              : 250,
+                              ? 250
+                              : 300,
                   fontSize: fontSize,
                   textStyle: contentNormal,
                 ),
                 CarouselPage(
                   list: list[1],
                   height: fontSize.toInt() == 24
-                      ? 285
+                      ? 330
                       : fontSize.toInt() == 20
-                          ? 260
+                          ? 290
                           : fontSize.toInt() == 18
-                              ? 230
-                              : 285,
+                              ? 270
+                              : 310,
                   fontSize: fontSize,
                   textStyle: contentNormal,
                 ),
                 CarouselPage(
                   list: list[2],
                   height: fontSize.toInt() == 24
-                      ? 300
+                      ? 330
                       : fontSize.toInt() == 20
-                          ? 240
+                          ? 260
                           : fontSize.toInt() == 18
-                              ? 220
-                              : 255,
+                              ? 240
+                              : 280,
                   fontSize: fontSize,
                   textStyle: contentNormal,
                 ),
                 CarouselPage(
                   list: list[3],
                   height: fontSize.toInt() == 24
-                      ? 230
+                      ? 310
                       : fontSize.toInt() == 20
-                          ? 215
+                          ? 270
                           : fontSize.toInt() == 18
-                              ? 205
-                              : 230,
+                              ? 250
+                              : 290,
                   fontSize: fontSize,
                   textStyle: contentNormal,
                 ),

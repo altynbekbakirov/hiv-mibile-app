@@ -102,7 +102,7 @@ class _HivTreatmentScreenState extends State<HivTreatmentScreen> {
             ]),
           ),
         ),
-        Image.asset("assets/images/befor&afterhiv.png", height: 100),
+        Image.asset("assets/images/lechenie3.png"),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16),
           child: Text(
