@@ -246,7 +246,7 @@ class _SchoolPatientContentState extends State<SchoolPatientContent> {
               padding: EdgeInsets.all(8.0),
               child: Column(children: [
                 CardListTile(
-                    tileName: 'hiv_aids'.tr(),
+                    tileName: 'Модуль 1'.tr(),
                     trailing: chapterOnePercent != null
                         ? chapterOnePercent.toInt()
                         : 0,
@@ -255,88 +255,88 @@ class _SchoolPatientContentState extends State<SchoolPatientContent> {
                       Navigator.push(context, route);
                     }),
                 CardListTile(
-                    tileName: 'hiv_infection_treatment'.tr(),
+                    tileName: 'Модуль 2'.tr(),
                     trailing: chapterTwoPercent != null
                         ? chapterTwoPercent.toInt()
                         : 0,
                     onTap: () {
-                      if (chapterOnePercent != null &&
-                          chapterOnePercent == 100) {
+                      // if (chapterOnePercent != null &&
+                      //     chapterOnePercent == 100) {
                         Route route = selectChapter(Chapter.two);
                         Navigator.push(context, route);
-                      }
+                      // }
                     }),
                 CardListTile(
-                    tileName: 'hiv_transmission_to_child'.tr(),
+                    tileName: 'Модуль 3'.tr(),
                     trailing: chapterThreePercent != null
                         ? chapterThreePercent.toInt()
                         : 0,
                     onTap: () {
-                      if (chapterTwoPercent != null &&
-                          chapterTwoPercent == 100) {
+                      // if (chapterTwoPercent != null &&
+                      //     chapterTwoPercent == 100) {
                         Route route = selectChapter(Chapter.three);
                         Navigator.push(context, route);
-                      }
+                      // }
                     }),
                 CardListTile(
-                    tileName: 'opportunistic_infections'.tr(),
+                    tileName: 'Модуль 4'.tr(),
                     trailing: chapterFourPercent != null
                         ? chapterFourPercent.toInt()
                         : 0,
                     onTap: () {
-                      if (chapterThreePercent != null &&
-                          chapterThreePercent == 100) {
+                      // if (chapterThreePercent != null &&
+                      //     chapterThreePercent == 100) {
                         Route route = selectChapter(Chapter.four);
                         Navigator.push(context, route);
-                      }
+                      // }
                     }),
                 CardListTile(
-                    tileName: 'sexual_health'.tr(),
+                    tileName: 'Модуль 5'.tr(),
                     trailing: chapterFivePercent != null
                         ? chapterFivePercent.toInt()
                         : 0,
                     onTap: () {
-                      if (chapterFourPercent != null &&
-                          chapterFourPercent == 100) {
+                      // if (chapterFourPercent != null &&
+                      //     chapterFourPercent == 100) {
                         Route route = selectChapter(Chapter.five);
                         Navigator.push(context, route);
-                      }
+                      // }
                     }),
                 CardListTile(
-                    tileName: 'human_rights'.tr(),
+                    tileName: 'Модуль 6'.tr(),
                     trailing: chapterSixPercent != null
                         ? chapterSixPercent.toInt()
                         : 0,
                     onTap: () {
-                      if (chapterFivePercent != null &&
-                          chapterFivePercent == 100) {
+                      // if (chapterFivePercent != null &&
+                      //     chapterFivePercent == 100) {
                         Route route = selectChapter(Chapter.six);
                         Navigator.push(context, route);
-                      }
+                      // }
                     }),
                 CardListTile(
-                    tileName: 'how_to_live'.tr(),
+                    tileName: 'Модуль 7'.tr(),
                     trailing: chapterSevenPercent != null
                         ? chapterSevenPercent.toInt()
                         : 0,
                     onTap: () {
-                      if (chapterSixPercent != null &&
-                          chapterSixPercent == 100) {
+                      // if (chapterSixPercent != null &&
+                      //     chapterSixPercent == 100) {
                         Route route = selectChapter(Chapter.seven);
                         Navigator.push(context, route);
-                      }
+                      // }
                     }),
                 CardListTile(
-                    tileName: 'hiv_positive_children_parent'.tr(),
+                    tileName: 'Модуль 8'.tr(),
                     trailing: chapterEightPercent != null
                         ? chapterEightPercent.toInt()
                         : 0,
                     onTap: () {
-                      if (chapterSevenPercent != null &&
-                          chapterSevenPercent == 100) {
+                      // if (chapterSevenPercent != null &&
+                      //     chapterSevenPercent == 100) {
                         Route route = selectChapter(Chapter.eight);
                         Navigator.push(context, route);
-                      }
+                      // }
                     }),
               ]),
             ),

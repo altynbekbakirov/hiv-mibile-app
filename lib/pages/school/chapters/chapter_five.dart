@@ -88,7 +88,7 @@ class _ChapterFiveState extends State<ChapterFive> {
                     "СРЗ – это состояние полного благополучия в вопросах сексуальных отношений, планирования и рождения детей, отсутствия заболеваний половых органов."),
               ], style: TextStyle(fontSize: fontSize)),
             ),
-            Image.asset("assets/images/reproductive1.png"),
+            Image.asset("assets/images/profilactika1.png"),
             RichText(
               text: TextSpan(children: [
                 boldText("\n\nРепродукция – воспроизведение "),
@@ -1238,6 +1238,7 @@ class _ChapterFiveState extends State<ChapterFive> {
               ],
             ),
             Image.asset("assets/images/use_condom_3.png"),
+            SizedBox(height: 90)
           ],
         ),
       ),
