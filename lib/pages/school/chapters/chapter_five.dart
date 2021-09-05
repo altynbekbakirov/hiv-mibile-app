@@ -1,5 +1,6 @@
 import 'package:HIVApp/components/bottom_slider.dart';
 import 'package:HIVApp/components/bullet.dart';
+import 'package:HIVApp/data/pref_manager.dart';
 import 'package:HIVApp/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -20,10 +21,12 @@ class _ChapterFiveState extends State<ChapterFive> {
   bool showSlider = false;
   PageController pageController = PageController();
   double currentPage = 0;
+  int showChapterFiveDialog;
 
   @override
   void initState() {
     show();
+    showChapterFiveDialog = Prefs.getInt("show_chapter_five_dialog");
     super.initState();
   }
 
@@ -33,14 +36,15 @@ class _ChapterFiveState extends State<ChapterFive> {
       'Следует помнить, что только использование презерватива защищает от заражения ВИЧ/ ИППП. Другие барьерные методы снижают риск, а прочие методы контрацепции не защищают от заражения ВИЧ. Для обеспечения эффективной защиты нужно: пользоваться презервативом всегда, пользоваться правильно, дополнять использование презерватива спермицидами/ микробицидами; использовать двойной метод защиты.';
 
   show() async {
-    await Future.delayed(
-        const Duration(seconds: 1),
-        () => Doctor.showDialogFunc(
-              context: context,
-              text: first,
-              doctor: Doctors.Nadezhda,
-              fontSize: 20,
-            ));
+    await Future.delayed(const Duration(seconds: 1), () {
+      showChapterFiveDialog == null ? Doctor.showDialogFunc(
+        context: context,
+        text: first,
+        doctor: Doctors.Nadezhda,
+        fontSize: 20,
+      ) : Container();
+      Prefs.setInt("show_chapter_five_dialog", 1);
+    });
   }
 
   header(String header) {
@@ -168,6 +172,7 @@ class _ChapterFiveState extends State<ChapterFive> {
       ),
     );
   }
+
   Widget _page2(BuildContext context) {
     return ListTile(
       title: SingleChildScrollView(
@@ -301,6 +306,7 @@ class _ChapterFiveState extends State<ChapterFive> {
       ),
     );
   }
+
   Widget _page3(BuildContext context) {
     return ListTile(
       title: SingleChildScrollView(
@@ -390,6 +396,7 @@ class _ChapterFiveState extends State<ChapterFive> {
       ),
     );
   }
+
   Widget _page4(BuildContext context) {
     return ListTile(
       title: SingleChildScrollView(
@@ -404,12 +411,59 @@ class _ChapterFiveState extends State<ChapterFive> {
                   flex: 2,
                   child: Column(
                     children: <Widget>[
-                      Align(alignment: Alignment.centerLeft, child: Text('Существует много методов контрацепции: ', style: TextStyle(color: Colors.black, fontSize: fontSize - 4, fontWeight: FontWeight.w600))),
-                      Align(alignment: Alignment.centerLeft, child: Text('•	Барьерные методы;', style: TextStyle(color: Colors.black, fontSize: fontSize - 4, fontWeight: FontWeight.w400), textAlign: TextAlign.start,)),
-                      Align(alignment: Alignment.centerLeft, child: Text('•	Внутриматочные средства;', style: TextStyle(color: Colors.black, fontSize: fontSize - 4, fontWeight: FontWeight.w400),)),
-                      Align(alignment: Alignment.centerLeft, child: Text('•	Гормональные контрацептивы;', style: TextStyle(color: Colors.black, fontSize: fontSize - 4, fontWeight: FontWeight.w400),)),
-                      Align(alignment: Alignment.centerLeft, child: Text('•	Хирургический метод;', style: TextStyle(color: Colors.black, fontSize: fontSize - 4, fontWeight: FontWeight.w400),)),
-                      Align(alignment: Alignment.centerLeft, child: Text('•	Биологический (календарный) метод контрацепции', style: TextStyle(color: Colors.black, fontSize: fontSize - 4, fontWeight: FontWeight.w400),)),
+                      Align(
+                          alignment: Alignment.centerLeft,
+                          child: Text('Существует много методов контрацепции: ',
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: fontSize - 4,
+                                  fontWeight: FontWeight.w600))),
+                      Align(
+                          alignment: Alignment.centerLeft,
+                          child: Text(
+                            '•	Барьерные методы;',
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontSize: fontSize - 4,
+                                fontWeight: FontWeight.w400),
+                            textAlign: TextAlign.start,
+                          )),
+                      Align(
+                          alignment: Alignment.centerLeft,
+                          child: Text(
+                            '•	Внутриматочные средства;',
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontSize: fontSize - 4,
+                                fontWeight: FontWeight.w400),
+                          )),
+                      Align(
+                          alignment: Alignment.centerLeft,
+                          child: Text(
+                            '•	Гормональные контрацептивы;',
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontSize: fontSize - 4,
+                                fontWeight: FontWeight.w400),
+                          )),
+                      Align(
+                          alignment: Alignment.centerLeft,
+                          child: Text(
+                            '•	Хирургический метод;',
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontSize: fontSize - 4,
+                                fontWeight: FontWeight.w400),
+                          )),
+                      Align(
+                          alignment: Alignment.centerLeft,
+                          child: Text(
+                            '•	Биологический (календарный) метод контрацепции',
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontSize: fontSize - 4,
+                                fontWeight: FontWeight.w400),
+                          )),
                     ],
                   ),
                 ),
@@ -442,16 +496,26 @@ class _ChapterFiveState extends State<ChapterFive> {
                 Expanded(
                   child: Column(
                     children: <Widget>[
-                      Text("1.	Предупреждение ВИЧ-инфекции", style: TextStyle(color: Colors.red, fontSize: fontSize)),
-                      Text("2.	Профилактика нежелательной беременности", style: TextStyle(color: kDarkModerateBlue, fontSize: fontSize)),
+                      Text("1.	Предупреждение ВИЧ-инфекции",
+                          style:
+                              TextStyle(color: Colors.red, fontSize: fontSize)),
+                      Text("2.	Профилактика нежелательной беременности",
+                          style: TextStyle(
+                              color: kDarkModerateBlue, fontSize: fontSize)),
                     ],
                   ),
                 ),
                 Expanded(
                   child: Column(
                     children: <Widget>[
-                      Text("3.	Профилактика передачи ВИЧ от ВИЧ+ матери ребенку", style: TextStyle(color: Colors.orange, fontSize: fontSize)),
-                      Text("4.	Предоставление лечения, помощи и поддержки ВИЧ-позитивным женщинам, их детям и семьям", style: TextStyle(color: kDarkModerateBlue, fontSize: fontSize)),
+                      Text(
+                          "3.	Профилактика передачи ВИЧ от ВИЧ+ матери ребенку",
+                          style: TextStyle(
+                              color: Colors.orange, fontSize: fontSize)),
+                      Text(
+                          "4.	Предоставление лечения, помощи и поддержки ВИЧ-позитивным женщинам, их детям и семьям",
+                          style: TextStyle(
+                              color: kDarkModerateBlue, fontSize: fontSize)),
                     ],
                   ),
                 ),
@@ -463,6 +527,7 @@ class _ChapterFiveState extends State<ChapterFive> {
       ),
     );
   }
+
   ///2. Инфекции, передаваемые половым путем
   Widget _page5(BuildContext context) {
     return ListTile(
@@ -473,8 +538,10 @@ class _ChapterFiveState extends State<ChapterFive> {
               text: TextSpan(children: [
                 TextSpan(
                     text: "ИППП ",
-                    style:
-                        TextStyle(color: Colors.red, fontWeight: FontWeight.w600, fontSize: fontSize + 6)),
+                    style: TextStyle(
+                        color: Colors.red,
+                        fontWeight: FontWeight.w600,
+                        fontSize: fontSize + 6)),
                 boldText("- инфекции, передаваемые половым путем"),
                 boldText("\n\nЧто такое ИППП?"),
                 normalText(
@@ -557,6 +624,7 @@ class _ChapterFiveState extends State<ChapterFive> {
       ),
     );
   }
+
   Widget _page6(BuildContext context) {
     return ListTile(
       title: SingleChildScrollView(
@@ -740,6 +808,7 @@ class _ChapterFiveState extends State<ChapterFive> {
       ),
     );
   }
+
   Widget _page7(BuildContext context) {
     return ListTile(
       title: SingleChildScrollView(
@@ -980,6 +1049,7 @@ class _ChapterFiveState extends State<ChapterFive> {
       ),
     );
   }
+
   Widget _page8(BuildContext context) {
     return ListTile(
       title: SingleChildScrollView(
@@ -1075,6 +1145,7 @@ class _ChapterFiveState extends State<ChapterFive> {
       ),
     );
   }
+
   ///Инструкция по использованию презерватива
   Widget _page9(BuildContext context) {
     return ListTile(
@@ -1164,6 +1235,7 @@ class _ChapterFiveState extends State<ChapterFive> {
       ),
     );
   }
+
   Widget _page10(BuildContext context) {
     return ListTile(
       title: SingleChildScrollView(
@@ -1244,6 +1316,7 @@ class _ChapterFiveState extends State<ChapterFive> {
       ),
     );
   }
+
   Widget _page11(BuildContext context) {
     return ListTile(
       title: SingleChildScrollView(
@@ -1344,6 +1417,7 @@ class _ChapterFiveState extends State<ChapterFive> {
       ),
     );
   }
+
   Widget _page12(BuildContext context) {
     return ListTile(
       title: SingleChildScrollView(
@@ -1566,6 +1640,7 @@ class _ChapterFiveState extends State<ChapterFive> {
       ),
     );
   }
+
   Widget _page13(BuildContext context) {
     return ListTile(
       title: SingleChildScrollView(
@@ -1668,6 +1743,7 @@ class _ChapterFiveState extends State<ChapterFive> {
       ),
     );
   }
+
   Widget _page14(BuildContext context) {
     return ListTile(
       title: SingleChildScrollView(
@@ -1745,6 +1821,7 @@ class _ChapterFiveState extends State<ChapterFive> {
       ),
     );
   }
+
   Widget _page15(BuildContext context) {
     return ListTile(
       title: SingleChildScrollView(

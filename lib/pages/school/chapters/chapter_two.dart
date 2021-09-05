@@ -1,5 +1,6 @@
 import 'package:HIVApp/components/bottom_slider.dart';
 import 'package:HIVApp/components/bullet.dart';
+import 'package:HIVApp/data/pref_manager.dart';
 import 'package:HIVApp/utils/constants.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -20,6 +21,7 @@ class _ChapterTwoState extends State<ChapterTwo> {
   double fontSize = 18.0;
   bool showSlider = false;
   PageController pageController = PageController();
+  int showChapterTwoDialog;
 
   String textAza = 'Однако до настоящего '
       "времени не разработано "
@@ -38,18 +40,22 @@ class _ChapterTwoState extends State<ChapterTwo> {
   @override
   void initState() {
     super.initState();
+    showChapterTwoDialog = Prefs.getInt("show_chapter_two_dialog");
     show();
   }
 
   show() async {
-    await Future.delayed(
-        const Duration(seconds: 1),
-        () => Doctor.showDialogFunc(
+    await Future.delayed(const Duration(seconds: 1), () {
+      showChapterTwoDialog == null
+          ? Doctor.showDialogFunc(
               context: context,
               text: textAza,
               doctor: Doctors.Azamat,
               fontSize: 18,
-            ));
+            )
+          : Container();
+      Prefs.setInt("show_chapter_two_dialog", 1);
+    });
   }
 
   header(String header) {
@@ -122,6 +128,7 @@ class _ChapterTwoState extends State<ChapterTwo> {
       ),
     );
   }
+
   /// Страица 2 ЛЕЧЕНИЕ ВИЧ-инфекции
   Widget _page2(BuildContext context) {
     return ListTile(
@@ -160,6 +167,7 @@ class _ChapterTwoState extends State<ChapterTwo> {
       ),
     );
   }
+
   /// Страица 3 ЛЕЧЕНИЕ ВИЧ-инфекции
   Widget _page3(BuildContext context) {
     return ListTile(
@@ -175,7 +183,7 @@ class _ChapterTwoState extends State<ChapterTwo> {
                 normalText(
                     "Это очень важно, потому что восстановление иммунитета происходит очень медленно и организм "
                     "остается без защиты даже если вирус уже не размножается в результате приема АРТ.\n\n"),
-                ], style: TextStyle(fontSize: fontSize)),
+              ], style: TextStyle(fontSize: fontSize)),
             ),
             Image.asset("assets/images/truvada.png"),
             RichText(
@@ -185,11 +193,11 @@ class _ChapterTwoState extends State<ChapterTwo> {
                 boldText("это называется приверженность к лечению. "),
                 normalText(
                     "У ЛЖВ всегда должен быть запас препаратов, не меньше, чем на 1 месяц, который нужно регулярно "
-                        "пополнять, чтобы не было перерывов в лечении. Нарушение предписаний врача по приему АРТ может привести к "),
+                    "пополнять, чтобы не было перерывов в лечении. Нарушение предписаний врача по приему АРТ может привести к "),
                 boldText("устойчивости вируса к лечению "),
                 normalText(
                     "– тогда лекарства не будут действовать на ВИЧ. В таком случае врач меняет курс лечения или назначает"
-                        " уже вторую линию препаратов и количество применяемых таблеток увеличивается."),
+                    " уже вторую линию препаратов и количество применяемых таблеток увеличивается."),
               ], style: TextStyle(fontSize: fontSize)),
             ),
             SizedBox(height: 10),
@@ -199,6 +207,7 @@ class _ChapterTwoState extends State<ChapterTwo> {
       ),
     );
   }
+
   /// Страица 4 ЛЕЧЕНИЕ ВИЧ-инфекции
   Widget _page4(BuildContext context) {
     return ListTile(
@@ -231,6 +240,7 @@ class _ChapterTwoState extends State<ChapterTwo> {
       ),
     );
   }
+
   /// Страица 5 Антиретровирусные препараты
   Widget _page5(BuildContext context) {
     return ListTile(
@@ -259,8 +269,8 @@ class _ChapterTwoState extends State<ChapterTwo> {
               color: kGrayishBlue,
               child: Text(
                 "До настоящего времени не разработано лекарство, которое могло бы полностью излечить "
-                    "человека от ВИЧ-инфекции, и нет вакцины, которая могла бы защитить от заражения ВИЧ. "
-                    "Поэтому человек с ВИЧ должен постоянно получать лечение всю свою жизнь.",
+                "человека от ВИЧ-инфекции, и нет вакцины, которая могла бы защитить от заражения ВИЧ. "
+                "Поэтому человек с ВИЧ должен постоянно получать лечение всю свою жизнь.",
                 style: TextStyle(
                     fontStyle: FontStyle.italic,
                     fontSize: fontSize,
@@ -273,6 +283,7 @@ class _ChapterTwoState extends State<ChapterTwo> {
       ),
     );
   }
+
   /// Страица 6 Антиретровирусные препараты
   Widget _page6(BuildContext context) {
     return ListTile(
@@ -282,7 +293,7 @@ class _ChapterTwoState extends State<ChapterTwo> {
             RichText(
               text: TextSpan(children: [
                 boldText("\nКак действуют антиретровирусные препараты?"),
-               ], style: TextStyle(fontSize: fontSize)),
+              ], style: TextStyle(fontSize: fontSize)),
             ),
             Image.asset("assets/images/atreavirus.png"),
             RichText(
@@ -302,6 +313,7 @@ class _ChapterTwoState extends State<ChapterTwo> {
       ),
     );
   }
+
   /// Страица 7 Антиретровирусные препараты
   Widget _page7(BuildContext context) {
     return ListTile(
@@ -405,6 +417,7 @@ class _ChapterTwoState extends State<ChapterTwo> {
       ),
     );
   }
+
   /// Страица 8 Антиретровирусные препараты
   Widget _page8(BuildContext context) {
     return ListTile(
@@ -483,6 +496,7 @@ class _ChapterTwoState extends State<ChapterTwo> {
       ),
     );
   }
+
   /// Страица 9 Воздействие АРТ на человека с ВИЧ
   Widget _page9(BuildContext context) {
     return ListTile(
@@ -551,6 +565,7 @@ class _ChapterTwoState extends State<ChapterTwo> {
       ),
     );
   }
+
   /// Страица 10 Воздействие АРТ на человека с ВИЧ
   Widget _page10(BuildContext context) {
     return ListTile(
@@ -657,6 +672,7 @@ class _ChapterTwoState extends State<ChapterTwo> {
       ),
     );
   }
+
   /// Страица 11 Воздействие АРТ на человека с ВИЧ
   Widget _page11(BuildContext context) {
     return ListTile(
@@ -759,6 +775,7 @@ class _ChapterTwoState extends State<ChapterTwo> {
       ),
     );
   }
+
   /// Страица 12 Что такое вирусная нагрузка (ВН) и число лимфоцитов CД4?
   Widget _page12(BuildContext context) {
     return ListTile(
@@ -806,6 +823,7 @@ class _ChapterTwoState extends State<ChapterTwo> {
       ),
     );
   }
+
   /// Страица 13 Что такое вирусная нагрузка (ВН) и число лимфоцитов CД4?
   Widget _page13(BuildContext context) {
     return ListTile(
@@ -928,6 +946,7 @@ class _ChapterTwoState extends State<ChapterTwo> {
       ),
     );
   }
+
   /// Страица 14 Что такое вирусная нагрузка (ВН) и число лимфоцитов CД4?
   Widget _page14(BuildContext context) {
     return ListTile(
@@ -1013,6 +1032,7 @@ class _ChapterTwoState extends State<ChapterTwo> {
       ),
     );
   }
+
   /// Страица 15 Что такое вирусная нагрузка (ВН) и число лимфоцитов CД4?
   Widget _page15(BuildContext context) {
     return ListTile(
@@ -1044,6 +1064,7 @@ class _ChapterTwoState extends State<ChapterTwo> {
       ),
     );
   }
+
   /// Страица 16 ПРИВЕРЖЕННОСТЬ к АНТИРЕТРОВИРУСНОЙ ТЕРАПИИ
   Widget _page16(BuildContext context) {
     return ListTile(
@@ -1091,6 +1112,7 @@ class _ChapterTwoState extends State<ChapterTwo> {
       ),
     );
   }
+
   /// Страица 17 ПРИВЕРЖЕННОСТЬ к АНТИРЕТРОВИРУСНОЙ ТЕРАПИИ
   Widget _page17(BuildContext context) {
     return ListTile(
@@ -1115,6 +1137,7 @@ class _ChapterTwoState extends State<ChapterTwo> {
       ),
     );
   }
+
   /// Страица 18 ПРИВЕРЖЕННОСТЬ к АНТИРЕТРОВИРУСНОЙ ТЕРАПИИ
   Widget _page18(BuildContext context) {
     return ListTile(
@@ -1185,6 +1208,7 @@ class _ChapterTwoState extends State<ChapterTwo> {
       ),
     );
   }
+
   /// Страица 19 ПРИВЕРЖЕННОСТЬ к АНТИРЕТРОВИРУСНОЙ ТЕРАПИИ
   Widget _page19(BuildContext context) {
     return ListTile(
@@ -1276,6 +1300,7 @@ class _ChapterTwoState extends State<ChapterTwo> {
       ),
     );
   }
+
   /// Страица 20 Как повысить приверженность к АРТ
   Widget _page20(BuildContext context) {
     return ListTile(
@@ -1417,6 +1442,7 @@ class _ChapterTwoState extends State<ChapterTwo> {
       ),
     );
   }
+
   /// Страица 21 Как повысить приверженность к АРТ
   Widget _page21(BuildContext context) {
     return ListTile(
@@ -1515,6 +1541,7 @@ class _ChapterTwoState extends State<ChapterTwo> {
       ),
     );
   }
+
   /// Страица 22 НЕЖЕЛАТЕЛЬНЫЕ (ПОБОЧНЫЕ) ЭФФЕКТЫ АНТИРЕТРОВИРУСНОЙ ТЕРАПИИ.
   Widget _page22(BuildContext context) {
     return ListTile(
@@ -1545,6 +1572,7 @@ class _ChapterTwoState extends State<ChapterTwo> {
       ),
     );
   }
+
   /// Страица 23 НЕЖЕЛАТЕЛЬНЫЕ (ПОБОЧНЫЕ) ЭФФЕКТЫ АНТИРЕТРОВИРУСНОЙ ТЕРАПИИ.
   Widget _page23(BuildContext context) {
     return ListTile(
@@ -1630,6 +1658,7 @@ class _ChapterTwoState extends State<ChapterTwo> {
       ),
     );
   }
+
   /// Страица 24 НЕЖЕЛАТЕЛЬНЫЕ (ПОБОЧНЫЕ) ЭФФЕКТЫ АНТИРЕТРОВИРУСНОЙ ТЕРАПИИ.
   Widget _page24(BuildContext context) {
     return ListTile(
@@ -1733,6 +1762,7 @@ class _ChapterTwoState extends State<ChapterTwo> {
       ),
     );
   }
+
   /// Страица 25 НЕЖЕЛАТЕЛЬНЫЕ (ПОБОЧНЫЕ) ЭФФЕКТЫ АНТИРЕТРОВИРУСНОЙ ТЕРАПИИ.
   Widget _page25(BuildContext context) {
     return ListTile(
@@ -1763,6 +1793,7 @@ class _ChapterTwoState extends State<ChapterTwo> {
       ),
     );
   }
+
   //endregion
 
   Widget _appBar() {

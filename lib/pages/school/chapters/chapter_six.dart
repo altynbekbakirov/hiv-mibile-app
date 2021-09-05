@@ -1,5 +1,6 @@
 import 'package:HIVApp/components/bottom_slider.dart';
 import 'package:HIVApp/components/bullet.dart';
+import 'package:HIVApp/data/pref_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
 
@@ -19,6 +20,7 @@ class _ChapterSixState extends State<ChapterSix> {
   bool showSlider = false;
   PageController pageController = PageController();
   double currentPage = 0;
+  int showChapterSixDialog;
 
   String first =
       'Право – это один из видов регуляции отношений в обществе; это система обязательных для граждан прописанных, гарантированных государством правил поведения.';
@@ -28,18 +30,22 @@ class _ChapterSixState extends State<ChapterSix> {
   @override
   void initState() {
     super.initState();
+    showChapterSixDialog = Prefs.getInt("show_chapter_six_dialog");
     show();
   }
 
   show() async {
-    await Future.delayed(
-        const Duration(seconds: 1),
-        () => Doctor.showDialogFunc(
+    await Future.delayed(const Duration(seconds: 1), () {
+      showChapterSixDialog == null
+          ? Doctor.showDialogFunc(
               context: context,
               text: first,
               doctor: Doctors.Nadezhda,
               fontSize: 20,
-            ));
+            )
+          : Container();
+      Prefs.setInt("show_chapter_six_dialog", 1);
+    });
   }
 
   header(String header) {
@@ -130,6 +136,7 @@ class _ChapterSixState extends State<ChapterSix> {
       ),
     );
   }
+
   Widget _page2(BuildContext context) {
     return ListTile(
       title: SingleChildScrollView(
@@ -266,6 +273,7 @@ class _ChapterSixState extends State<ChapterSix> {
       ),
     );
   }
+
   Widget _page3(BuildContext context) {
     return ListTile(
       title: SingleChildScrollView(
@@ -355,6 +363,7 @@ class _ChapterSixState extends State<ChapterSix> {
       ),
     );
   }
+
   Widget _page4(BuildContext context) {
     return ListTile(
       title: SingleChildScrollView(
@@ -382,6 +391,7 @@ class _ChapterSixState extends State<ChapterSix> {
       ),
     );
   }
+
   ///ОТВЕТСТВЕННОСТЬ и ОГРАНИЧЕНИЯ, ПРЕДУСМОТРЕННЫЕ ЗАКОНОМ
   Widget _page5(BuildContext context) {
     return ListTile(
@@ -421,6 +431,7 @@ class _ChapterSixState extends State<ChapterSix> {
       ),
     );
   }
+
   Widget _page6(BuildContext context) {
     return ListTile(
       title: SingleChildScrollView(
@@ -459,6 +470,7 @@ class _ChapterSixState extends State<ChapterSix> {
       ),
     );
   }
+
   Widget _page7(BuildContext context) {
     return ListTile(
       title: SingleChildScrollView(
@@ -488,6 +500,7 @@ class _ChapterSixState extends State<ChapterSix> {
       ),
     );
   }
+
   Widget _page8(BuildContext context) {
     return ListTile(
       title: SingleChildScrollView(
@@ -512,6 +525,7 @@ class _ChapterSixState extends State<ChapterSix> {
       ),
     );
   }
+
   ///Социальная защита детей, живущих с ВИЧ (Ст. 12 закона о ВИЧ/СПИДе)
   Widget _page9(BuildContext context) {
     return ListTile(
@@ -543,6 +557,7 @@ class _ChapterSixState extends State<ChapterSix> {
       ),
     );
   }
+
   Widget _page10(BuildContext context) {
     return ListTile(
       title: SingleChildScrollView(
@@ -569,6 +584,7 @@ class _ChapterSixState extends State<ChapterSix> {
       ),
     );
   }
+
   Widget _page11(BuildContext context) {
     return ListTile(
       title: SingleChildScrollView(
@@ -644,6 +660,7 @@ class _ChapterSixState extends State<ChapterSix> {
       ),
     );
   }
+
   Widget _page12(BuildContext context) {
     return ListTile(
       title: SingleChildScrollView(
@@ -755,6 +772,7 @@ class _ChapterSixState extends State<ChapterSix> {
       ),
     );
   }
+
   Widget _page13(BuildContext context) {
     return ListTile(
       title: SingleChildScrollView(
@@ -904,6 +922,7 @@ class _ChapterSixState extends State<ChapterSix> {
       ),
     );
   }
+
   Widget _page14(BuildContext context) {
     return ListTile(
       title: SingleChildScrollView(
@@ -970,6 +989,7 @@ class _ChapterSixState extends State<ChapterSix> {
       ),
     );
   }
+
   Widget _page15(BuildContext context) {
     return ListTile(
       title: SingleChildScrollView(
@@ -995,6 +1015,7 @@ class _ChapterSixState extends State<ChapterSix> {
       ),
     );
   }
+
   Widget _page16(BuildContext context) {
     return ListTile(
       title: SingleChildScrollView(
@@ -1017,6 +1038,7 @@ class _ChapterSixState extends State<ChapterSix> {
       ),
     );
   }
+
   Widget _page17(BuildContext context) {
     return ListTile(
       title: SingleChildScrollView(
@@ -1041,6 +1063,7 @@ class _ChapterSixState extends State<ChapterSix> {
       ),
     );
   }
+
   //endregion
 
   Widget _appBar() {

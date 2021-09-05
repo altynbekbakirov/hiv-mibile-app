@@ -1,4 +1,5 @@
 import 'package:HIVApp/components/bottom_slider.dart';
+import 'package:HIVApp/data/pref_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
 
@@ -18,6 +19,7 @@ class _ChapterFourState extends State<ChapterFour> {
   bool showSlider = false;
   PageController pageController = PageController();
   double currentPage = 0;
+  int showChapterFourDialog;
 
   header(String header) {
     return TextSpan(
@@ -55,6 +57,7 @@ class _ChapterFourState extends State<ChapterFour> {
   @override
   void initState() {
     super.initState();
+    showChapterFourDialog = Prefs.getInt("show_chapter_four_dialog");
     show();
   }
 
@@ -64,14 +67,16 @@ class _ChapterFourState extends State<ChapterFour> {
       'Важно помнить, что специалистам, вовлеченным в процесс оказания услуг по вопросам лечения и ухода для ЛЖВ, следует предлагать все усилия для максимально раннего начала АРТ, как только в этом возникнет необходимость (при числе лимфоцитов CД4 менее 500 клеток/мкл). Раннее начало АРТ позволяет избежать возникновения таких серьезных ОИ, как ПЦП, а также таких дополнительных вмешательств, как профилактическое лечение котримоксазолом.';
 
   show() async {
-    await Future.delayed(
-        const Duration(seconds: 1),
-        () => Doctor.showDialogFunc(
-              context: context,
-              text: textAza,
-              doctor: Doctors.Azamat,
-              fontSize: 20,
-            ));
+    await Future.delayed(const Duration(seconds: 1), () {
+      showChapterFourDialog == null ?
+      Doctor.showDialogFunc(
+        context: context,
+        text: textAza,
+        doctor: Doctors.Azamat,
+        fontSize: 20,
+      ) : Container();
+      Prefs.setInt("show_chapter_four_dialog", 1);
+    });
   }
 
   //region Pages
@@ -108,6 +113,7 @@ class _ChapterFourState extends State<ChapterFour> {
       ),
     );
   }
+
   /// Страница 2 Оппортунистические инфекции (ОИ)
   Widget _page2(BuildContext context) {
     return ListTile(
@@ -148,6 +154,7 @@ class _ChapterFourState extends State<ChapterFour> {
       ),
     );
   }
+
   /// Страница 3 Оппортунистические инфекции (ОИ)
   Widget _page3(BuildContext context) {
     return ListTile(
@@ -171,6 +178,7 @@ class _ChapterFourState extends State<ChapterFour> {
       ),
     );
   }
+
   /// Страница 4 Оппортунистические инфекции (ОИ)
   Widget _page4(BuildContext context) {
     return ListTile(
@@ -194,6 +202,7 @@ class _ChapterFourState extends State<ChapterFour> {
       ),
     );
   }
+
   /// Страница 5 Оппортунистические инфекции (ОИ)
   Widget _page5(BuildContext context) {
     return ListTile(
@@ -235,6 +244,7 @@ class _ChapterFourState extends State<ChapterFour> {
       ),
     );
   }
+
   /// Страница 6 Туберкулез у людей с ВИЧ
   Widget _page6(BuildContext context) {
     return ListTile(
@@ -258,6 +268,7 @@ class _ChapterFourState extends State<ChapterFour> {
       ),
     );
   }
+
   /// Страница 7 Туберкулез у людей с ВИЧ
   Widget _page7(BuildContext context) {
     return ListTile(
@@ -289,6 +300,7 @@ class _ChapterFourState extends State<ChapterFour> {
       ),
     );
   }
+
   /// Страница 8 Туберкулез у людей с ВИЧ
   Widget _page8(BuildContext context) {
     return ListTile(
@@ -328,6 +340,7 @@ class _ChapterFourState extends State<ChapterFour> {
       ),
     );
   }
+
   /// Страница 9 Что такое вирусные гепатиты?
   Widget _page9(BuildContext context) {
     return ListTile(
@@ -358,6 +371,7 @@ class _ChapterFourState extends State<ChapterFour> {
       ),
     );
   }
+
   /// Страница 10 Что такое вирусные гепатиты?
   Widget _page10(BuildContext context) {
     return ListTile(
@@ -388,6 +402,7 @@ class _ChapterFourState extends State<ChapterFour> {
       ),
     );
   }
+
   /// Страница 11 Что такое вирусные гепатиты?
   Widget _page11(BuildContext context) {
     return ListTile(
@@ -398,7 +413,7 @@ class _ChapterFourState extends State<ChapterFour> {
               text: TextSpan(children: [
                 normalText(
                     "\n- При половых контактах всегда и правильно используйте презерватив."),
-                ], style: TextStyle(fontSize: fontSize)),
+              ], style: TextStyle(fontSize: fontSize)),
             ),
             SizedBox(height: 20),
             Image.asset("assets/images/prophylaxis/1/3.gif"),
@@ -408,14 +423,14 @@ class _ChapterFourState extends State<ChapterFour> {
                     "\n- Пользуйтесь индивидуальными предметами личной гигиены (зубной щеткой, бритвенным станком, полотенцем и др.)."),
                 normalText(
                     "\n- При проведении татуировки или пирсинга, используйте одноразовые (стерильные) инструменты."),
-                ], style: TextStyle(fontSize: fontSize)),
+              ], style: TextStyle(fontSize: fontSize)),
             ),
             Image.asset("assets/images/prophylaxis/1/8.gif"),
             RichText(
               text: TextSpan(children: [
                 normalText(
                     "\n- От гепатита В защищает прививка, которую ЛЖВ могут получить бесплатно. "),
-                ], style: TextStyle(fontSize: fontSize)),
+              ], style: TextStyle(fontSize: fontSize)),
             ),
             Image.asset("assets/images/prophylaxis/2/2.gif"),
             RichText(
@@ -437,6 +452,7 @@ class _ChapterFourState extends State<ChapterFour> {
       ),
     );
   }
+
   /// Страница 12 Что такое вирусные гепатиты?
   Widget _page12(BuildContext context) {
     return ListTile(
@@ -464,6 +480,7 @@ class _ChapterFourState extends State<ChapterFour> {
       ),
     );
   }
+
   //endregion
 
   Widget _appBar() {

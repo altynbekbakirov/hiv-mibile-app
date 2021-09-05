@@ -1,5 +1,6 @@
 import 'package:HIVApp/components/bottom_slider.dart';
 import 'package:HIVApp/components/bullet.dart';
+import 'package:HIVApp/data/pref_manager.dart';
 import 'package:HIVApp/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -20,6 +21,7 @@ class _ChapterSevenState extends State<ChapterSeven> {
   bool showSlider = false;
   PageController pageController = PageController();
   double currentPage = 0;
+  int showChapterSevenDialog;
 
   header(String header) {
     return TextSpan(
@@ -64,6 +66,7 @@ class _ChapterSevenState extends State<ChapterSeven> {
   @override
   initState() {
     super.initState();
+    showChapterSevenDialog = Prefs.getInt("show_chapter_seven_dialog");
     show();
   }
 
@@ -94,12 +97,15 @@ class _ChapterSevenState extends State<ChapterSeven> {
   show() async {
     await Future.delayed(
       const Duration(seconds: 1),
-      () => Doctor.showDialogFunc(
-        context: context,
-        text: drAza,
-        doctor: Doctors.Azamat,
-        fontSize: 20,
-      ),
+      () {
+        showChapterSevenDialog == null ? Doctor.showDialogFunc(
+          context: context,
+          text: drAza,
+          doctor: Doctors.Azamat,
+          fontSize: 20,
+        ) : Container();
+        Prefs.setInt("show_chapter_seven_dialog", 1);
+      },
     );
   }
 

@@ -1,4 +1,5 @@
 import 'package:HIVApp/components/bottom_slider.dart';
+import 'package:HIVApp/data/pref_manager.dart';
 import 'package:HIVApp/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -18,6 +19,7 @@ class _ChapterThreeState extends State<ChapterThree> {
   bool showSlider = false;
   PageController pageController = PageController();
   double currentPage = 0;
+  int showChapterThreeDialog;
 
   header(String header) {
     return TextSpan(
@@ -55,6 +57,7 @@ class _ChapterThreeState extends State<ChapterThree> {
   @override
   initState() {
     super.initState();
+    showChapterThreeDialog = Prefs.getInt("show_chapter_three_dialog");
     show();
   }
 
@@ -63,12 +66,15 @@ class _ChapterThreeState extends State<ChapterThree> {
   show() async {
     await Future.delayed(
       const Duration(seconds: 1),
-      () => Doctor.showDialogFunc(
-        context: context,
-        text: text,
-        doctor: Doctors.Nadezhda,
-        fontSize: 20,
-      ),
+      () {
+        showChapterThreeDialog == null ? Doctor.showDialogFunc(
+          context: context,
+          text: text,
+          doctor: Doctors.Nadezhda,
+          fontSize: 20,
+        ) : Container();
+        Prefs.setInt("show_chapter_three_dialog", 1);
+      }
     );
   }
 

@@ -1,5 +1,6 @@
 import 'package:HIVApp/components/bottom_slider.dart';
 import 'package:HIVApp/components/bullet.dart';
+import 'package:HIVApp/data/pref_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
 
@@ -19,7 +20,7 @@ class _ChapterEightState extends State<ChapterEight> {
   bool showSlider = false;
   PageController pageController = PageController();
   double currentPage = 0;
-
+  int showChapterEightDialog;
   header(String header) {
     return TextSpan(
       text: '\n$header\n',
@@ -67,6 +68,7 @@ class _ChapterEightState extends State<ChapterEight> {
   @override
   initState() {
     super.initState();
+    showChapterEightDialog = Prefs.getInt("show_chapter_eight_dialog");
     show();
   }
 
@@ -82,23 +84,24 @@ class _ChapterEightState extends State<ChapterEight> {
       '«берлинский пациент».';
 
   show() async {
-    await Future.delayed(
-      const Duration(seconds: 1),
-      () => Doctor.showDialogFunc(
+    await Future.delayed(const Duration(seconds: 1), () {
+      showChapterEightDialog == null ? Doctor.showDialogFunc(
         context: context,
         text: drAza,
         doctor: Doctors.Nadezhda,
         fontSize: 16,
-      ),
-    ).then((value) async {
-      await Doctor.showDialogFunc(
-        context: context,
-        text: drAza2,
-        doctor: Doctors.Nadezhda,
-        fontSize: 18,
-      );
+      ).then((value) async {
+        await Doctor.showDialogFunc(
+          context: context,
+          text: drAza2,
+          doctor: Doctors.Nadezhda,
+          fontSize: 18,
+        );
+      }) : Container();
+      Prefs.setInt("show_chapter_eight_dialog", 1);
     });
   }
+
   Widget _page1(BuildContext context) {
     return ListTile(
       title: SingleChildScrollView(
@@ -171,6 +174,7 @@ class _ChapterEightState extends State<ChapterEight> {
       ),
     );
   }
+
   Widget _page2(BuildContext context) {
     return ListTile(
       title: SingleChildScrollView(
@@ -275,6 +279,7 @@ class _ChapterEightState extends State<ChapterEight> {
       ),
     );
   }
+
   Widget _page3(BuildContext context) {
     return ListTile(
       title: SingleChildScrollView(
@@ -374,6 +379,7 @@ class _ChapterEightState extends State<ChapterEight> {
       ),
     );
   }
+
   Widget _page4(BuildContext context) {
     return ListTile(
       title: SingleChildScrollView(
@@ -433,6 +439,7 @@ class _ChapterEightState extends State<ChapterEight> {
       ),
     );
   }
+
   Widget _page5(BuildContext context) {
     return ListTile(
       title: SingleChildScrollView(
@@ -458,6 +465,7 @@ class _ChapterEightState extends State<ChapterEight> {
       ),
     );
   }
+
   Widget _page6(BuildContext context) {
     return ListTile(
       title: SingleChildScrollView(
@@ -486,6 +494,7 @@ class _ChapterEightState extends State<ChapterEight> {
       ),
     );
   }
+
   Widget _page7(BuildContext context) {
     return ListTile(
       title: SingleChildScrollView(
@@ -541,8 +550,7 @@ class _ChapterEightState extends State<ChapterEight> {
       body: PageView(
         controller: pageController,
         onPageChanged: (value) {
-          if (value == 6)
-            Doctor.showDialogs(context);
+          if (value == 6) Doctor.showDialogs(context);
           setState(() {
             currentPage = value.toDouble();
           });
