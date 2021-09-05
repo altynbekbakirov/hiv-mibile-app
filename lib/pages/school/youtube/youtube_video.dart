@@ -31,7 +31,8 @@ class _YoutubeVideoWidgetState extends State<YoutubeVideoWidget> {
     });
     _controller.setLooping(true);
     _controller.initialize();
-    // setLandscape();
+    setAllOrientations();
+    setLandscape();
   }
 
   @override
@@ -40,47 +41,54 @@ class _YoutubeVideoWidgetState extends State<YoutubeVideoWidget> {
     super.dispose();
   }
 
+  Future setAllOrientations() async {
+    await SystemChrome.setEnabledSystemUIOverlays(SystemUiOverlay.values);
+    await SystemChrome.setPreferredOrientations(DeviceOrientation.values);
+  }
+
   Future setLandscape() async {
     await SystemChrome.setEnabledSystemUIOverlays([]);
     await SystemChrome.setPreferredOrientations([
       DeviceOrientation.landscapeLeft,
       DeviceOrientation.landscapeRight,
+      DeviceOrientation.portraitUp,
     ]);
   }
 
   @override
   Widget build(BuildContext context) {
-    return OrientationBuilder(
-      builder: (context, orientation) {
-        var isPortrait = orientation == Orientation.portrait;
-        return SingleChildScrollView(
-          child: Column(
-            children: <Widget>[
-              Container(
-                padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                child: AspectRatio(
-                  aspectRatio: 16 / 9,
-                  child: Stack(
+    return SingleChildScrollView(
+      child: Column(
+        children: <Widget>[
+          Container(
+            padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+            child: AspectRatio(
+              aspectRatio: 16 / 9,
+              child: OrientationBuilder(
+                builder: (context, orientation) {
+                  var isPortrait = orientation == Orientation.portrait;
+                  return Stack(
+                    fit: StackFit.expand,
                     alignment: Alignment.bottomCenter,
                     children: <Widget>[
                       VideoPlayer(_controller),
                       ClosedCaption(text: _controller.value.caption.text),
                       _VideoPlayerOverlay(controller: _controller),
                     ],
-                  ),
-                ),
+                  );
+                },
               ),
-              Container(
-                padding: EdgeInsets.only(bottom: 20, left: 16, right: 16),
-                child: Text(
-                  widget.title,
-                  style: TextStyle(color: Colors.black, fontSize: 16),
-                ),
-              ),
-            ],
+            ),
           ),
-        );
-      },
+          Container(
+            padding: EdgeInsets.only(bottom: 20, left: 16, right: 16),
+            child: Text(
+              widget.title,
+              style: TextStyle(color: Colors.black, fontSize: 16),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

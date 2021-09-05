@@ -1,3 +1,4 @@
+import 'package:HIVApp/pages/school/new_video_player/portrait_landscape_player_page.dart';
 import 'package:HIVApp/pages/school/video/hiv_channel_model.dart';
 import 'package:HIVApp/pages/school/video/video_api_service.dart';
 import 'package:HIVApp/pages/school/youtube/video_player.dart';
@@ -51,6 +52,7 @@ class _VideoCategoryWidgetState extends State<VideoCategoryWidget> {
     return Container(
       child: _channel != null
           ? VideoPlayerWidget(videos: videos)
+      // VideoPlayerWidget(videos: videos)
           : Center(
             child: CircularProgressIndicator(
         valueColor: AlwaysStoppedAnimation<Color>(kModerateBlue),

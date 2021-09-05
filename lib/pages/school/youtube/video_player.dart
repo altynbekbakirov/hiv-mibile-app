@@ -1,5 +1,7 @@
 import 'package:HIVApp/pages/school/youtube/youtube_video.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:native_device_orientation/native_device_orientation.dart';
 
 class YoutubeVideoModel {
   String id;
@@ -18,6 +20,35 @@ class VideoPlayerWidget extends StatefulWidget {
 }
 
 class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
+  Orientation target;
+
+  @override
+  void initState() {
+    NativeDeviceOrientationCommunicator()
+        .onOrientationChanged(useSensor: true)
+        .listen((event) {
+      final isPortrait = event == NativeDeviceOrientation.portraitUp;
+      final isLandscape = event == NativeDeviceOrientation.landscapeLeft ||
+          event == NativeDeviceOrientation.landscapeRight;
+      final isTargetPortrait = target == Orientation.portrait;
+      final isTargetLandscape = target == Orientation.landscape;
+
+      if (isPortrait && isTargetPortrait || isLandscape && isTargetLandscape) {
+        target = null;
+        SystemChrome.setPreferredOrientations(DeviceOrientation.values);
+      }
+    });
+    super.initState();
+  }
+
+  void setOrientation(bool isPortrait) {
+    if (isPortrait) {
+      SystemChrome.setEnabledSystemUIOverlays(SystemUiOverlay.values);
+    } else {
+      SystemChrome.setEnabledSystemUIOverlays([]);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(

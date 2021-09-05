@@ -69,6 +69,7 @@ dependencies:
   ext_video_player: ^0.0.6
   audio_video_progress_bar: ^0.1.0
   auto_orientation: ^1.0.6
+  native_device_orientation: ^0.4.3
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -95,7 +96,6 @@ flutter:
      - assets/images/symptoms/
      - assets/images/moods/
      - assets/languages/
-     - assets/audios/
      - assets/images/icons/Add/
      - assets/images/icons/School/
      - assets/images/icons/Diary/
