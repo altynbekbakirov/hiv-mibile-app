@@ -74,7 +74,9 @@ class _ChapterFourState extends State<ChapterFour> {
         text: textAza,
         doctor: Doctors.Azamat,
         fontSize: 20,
-      ) : Container();
+      ).then((value) async {
+        await Doctor.showInstruction(context);
+      }) : Container();
       Prefs.setInt("show_chapter_four_dialog", 1);
     });
   }

@@ -171,4 +171,25 @@ class Doctor {
           );
         });
   }
+
+  static showInstruction(BuildContext context) async {
+    showDialog(
+      context: context,
+      builder: (_) => Material(
+        type: MaterialType.transparency,
+        child: Container(
+          padding: EdgeInsets.symmetric(horizontal: 16),
+          height: MediaQuery.of(context).size.height,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: <Widget>[
+              Icon(Icons.arrow_forward_ios_outlined, size: 50),
+              Icon(Icons.arrow_forward_ios_outlined, size: 50),
+              Icon(Icons.arrow_forward_ios_outlined, size: 50),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
 }

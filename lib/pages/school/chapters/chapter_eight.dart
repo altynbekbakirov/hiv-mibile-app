@@ -97,6 +97,7 @@ class _ChapterEightState extends State<ChapterEight> {
           doctor: Doctors.Nadezhda,
           fontSize: 18,
         );
+        await Doctor.showInstruction(context);
       }) : Container();
       Prefs.setInt("show_chapter_eight_dialog", 1);
     });

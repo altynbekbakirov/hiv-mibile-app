@@ -24,6 +24,57 @@ class _ChapterOneState extends State<ChapterOne>
   PageController pageController = PageController();
   int showDialogs;
 
+  @override
+  void initState() {
+    super.initState();
+    showDialogs = Prefs.getInt("show_dialogs");
+    show();
+  }
+  String drNadezhda = 'Здравствуйте!\nя – доктор Надежда';
+  String drAzamat = 'Здравствуйте!\nя – доктор Азамат';
+  String firstDialog =
+      "Сегодня мы поговорим с Вами о ВИЧ и СПИДе. Мы расскажем о том, что такое ВИЧ и СПИД, как ВИЧ передается, почему важно тестирование на ВИЧ и что нужно делать, когда тест на ВИЧ оказывается\n положительным.";
+  String lastDialog =
+      "Первые случаи ВИЧ-инфекции в Кыргызстане среди иностранцев были выявлены в 1987 году, "
+      "а среди граждан Кыргызской Республики первый случай был выявлен в 1996 году. "
+      "На 1 января 2017 года в Кыргызстане выявлено 7117 людей с ВИЧ. По оценкам, в "
+      "стране проживает 8307 ЛЖВ, то есть многие люди с ВИЧеще не прошли тестирование на ВИЧ и не знают "
+      "о своем статусе.";
+
+  show() async {
+    await Future.delayed(
+      const Duration(seconds: 1),
+          () => showDialogs == null
+          ? Doctor.showDialogFunc(
+        context: context,
+        text: drNadezhda,
+        doctor: Doctors.Nadezhda,
+        fontSize: 20,
+      )
+          : Container(),
+    ).then((value) async {
+      if(showDialogs == null) {
+        await Doctor.showDialogFunc(
+          context: context,
+          text: drAzamat,
+          doctor: Doctors.Azamat,
+          fontSize: 20,
+        );
+
+        await Doctor.showDialogFunc(
+          context: context,
+          text: firstDialog,
+          doctor: Doctors.Nadezhda,
+          fontSize: 20,
+        );
+
+        await Doctor.showInstruction(context);
+      }
+
+      Prefs.setInt('show_dialogs', 1);
+    });
+  }
+
   //region Pages
   /// Страниа 1
   Widget _page1(BuildContext context, TextStyle style) {
@@ -2665,55 +2716,6 @@ class _ChapterOneState extends State<ChapterOne>
     );
   }
   //endregion
-
-  @override
-  void initState() {
-    super.initState();
-    showDialogs = Prefs.getInt("show_dialogs");
-    show();
-  }
-
-  String drNadezhda = 'Здравствуйте!\nя – доктор Надежда';
-  String drAzamat = 'Здравствуйте!\nя – доктор Азамат';
-  String firstDialog =
-      "Сегодня мы поговорим с Вами о ВИЧ и СПИДе. Мы расскажем о том, что такое ВИЧ и СПИД, как ВИЧ передается, почему важно тестирование на ВИЧ и что нужно делать, когда тест на ВИЧ оказывается\n положительным.";
-  String lastDialog =
-      "Первые случаи ВИЧ-инфекции в Кыргызстане среди иностранцев были выявлены в 1987 году, "
-      "а среди граждан Кыргызской Республики первый случай был выявлен в 1996 году. "
-      "На 1 января 2017 года в Кыргызстане выявлено 7117 людей с ВИЧ. По оценкам, в "
-      "стране проживает 8307 ЛЖВ, то есть многие люди с ВИЧеще не прошли тестирование на ВИЧ и не знают "
-      "о своем статусе.";
-
-  show() async {
-    await Future.delayed(
-      const Duration(seconds: 1),
-      () => showDialogs == null
-          ? Doctor.showDialogFunc(
-              context: context,
-              text: drNadezhda,
-              doctor: Doctors.Nadezhda,
-              fontSize: 20,
-            )
-          : Container(),
-    ).then((value) async {
-      showDialogs == null
-          ? await Doctor.showDialogFunc(
-              context: context,
-              text: drAzamat,
-              doctor: Doctors.Azamat,
-              fontSize: 20,
-            )
-          : Container();
-
-      await Doctor.showDialogFunc(
-        context: context,
-        text: firstDialog,
-        doctor: Doctors.Nadezhda,
-        fontSize: 20,
-      );
-      Prefs.setInt('show_dialogs', 1);
-    });
-  }
 
   Widget _appBar() {
     return AppBar(

@@ -36,13 +36,16 @@ class _ChapterFiveState extends State<ChapterFive> {
       'Следует помнить, что только использование презерватива защищает от заражения ВИЧ/ ИППП. Другие барьерные методы снижают риск, а прочие методы контрацепции не защищают от заражения ВИЧ. Для обеспечения эффективной защиты нужно: пользоваться презервативом всегда, пользоваться правильно, дополнять использование презерватива спермицидами/ микробицидами; использовать двойной метод защиты.';
 
   show() async {
-    await Future.delayed(const Duration(seconds: 1), () {
-      showChapterFiveDialog == null ? Doctor.showDialogFunc(
-        context: context,
-        text: first,
-        doctor: Doctors.Nadezhda,
-        fontSize: 20,
-      ) : Container();
+    await Future.delayed(const Duration(seconds: 1), () async {
+      if(showChapterFiveDialog == null) {
+        await Doctor.showDialogFunc(
+          context: context,
+          text: first,
+          doctor: Doctors.Nadezhda,
+          fontSize: 20,
+        );
+        await Doctor.showInstruction(context);
+      }
       Prefs.setInt("show_chapter_five_dialog", 1);
     });
   }

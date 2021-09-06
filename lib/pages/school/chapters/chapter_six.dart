@@ -42,7 +42,9 @@ class _ChapterSixState extends State<ChapterSix> {
               text: first,
               doctor: Doctors.Nadezhda,
               fontSize: 20,
-            )
+            ).then((value) async {
+              await Doctor.showInstruction(context);
+            })
           : Container();
       Prefs.setInt("show_chapter_six_dialog", 1);
     });

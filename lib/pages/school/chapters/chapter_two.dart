@@ -52,7 +52,9 @@ class _ChapterTwoState extends State<ChapterTwo> {
               text: textAza,
               doctor: Doctors.Azamat,
               fontSize: 18,
-            )
+            ).then((value) async {
+              await Doctor.showInstruction(context);
+            })
           : Container();
       Prefs.setInt("show_chapter_two_dialog", 1);
     });

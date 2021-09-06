@@ -72,7 +72,9 @@ class _ChapterThreeState extends State<ChapterThree> {
           text: text,
           doctor: Doctors.Nadezhda,
           fontSize: 20,
-        ) : Container();
+        ).then((value) async {
+          await Doctor.showInstruction(context);
+        }) : Container();
         Prefs.setInt("show_chapter_three_dialog", 1);
       }
     );
