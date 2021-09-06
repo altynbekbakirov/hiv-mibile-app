@@ -4,6 +4,7 @@ import 'package:HIVApp/pages/basic_information/widgets/audio_category_widget.dar
 import 'package:HIVApp/pages/basic_information/widgets/video.dart';
 import 'package:HIVApp/pages/basic_information/widgets/video_category_widget.dart';
 import 'package:HIVApp/pages/school/school_patient_content.dart';
+import 'package:HIVApp/pages/school/video/school_video_page.dart';
 import 'package:HIVApp/utils/constants.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -195,13 +196,14 @@ class _PatientSchoolPageState extends State<PatientSchoolPage> {
                     ],
                   )
                 : SizedBox.shrink(),
-
             /// Контент (Текст, Видео, Аудио)
             Expanded(
               child: selectedIndex == 0
                   ? SchoolPatientContent()
                   : selectedIndex == 1
-                      ? VideoCategoryWidget()
+                      ? /*VideoCategoryWidget()*/
+              VideoPage()
+              // VideoCategoryWidget()
                       : AudioCategoryWidget(),
             ),
           ],
