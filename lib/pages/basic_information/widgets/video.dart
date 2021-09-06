@@ -159,11 +159,13 @@ class _ButterFlyAssetVideoState extends State<_ButterFlyAssetVideo> {
               ),
             ),
             SizedBox(height: 10),
-            Text(widget.title,
-                style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w500,
-                    color: Colors.black)),
+            Text(
+              widget.title,
+              style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w500,
+                  color: Colors.black),
+            ),
             SizedBox(height: 20),
           ],
         ),
@@ -198,15 +200,15 @@ class _ControlsOverlay extends StatelessWidget {
           child: controller.value.isPlaying
               ? SizedBox.shrink()
               : Container(
-            color: Colors.black26,
-            child: Center(
-              child: Icon(
-                Icons.play_arrow,
-                color: Colors.white,
-                size: 70.5,
-              ),
-            ),
-          ),
+                  color: Colors.black26,
+                  child: Center(
+                    child: Icon(
+                      Icons.play_arrow,
+                      color: Colors.white,
+                      size: 70.5,
+                    ),
+                  ),
+                ),
         ),
         GestureDetector(
           onTap: () {

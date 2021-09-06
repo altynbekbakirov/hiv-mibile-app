@@ -1,3 +1,5 @@
+import 'package:HIVApp/pages/basic_information/widgets/ex_audio.dart';
+import 'package:HIVApp/pages/school/better_player/better_player_list.dart';
 import 'package:HIVApp/pages/school/new_video_player/portrait_landscape_player_page.dart';
 import 'package:HIVApp/pages/school/video/hiv_channel_model.dart';
 import 'package:HIVApp/pages/school/video/video_api_service.dart';
@@ -15,6 +17,7 @@ class VideoCategoryWidget extends StatefulWidget {
 
 class _VideoCategoryWidgetState extends State<VideoCategoryWidget> {
   List<VideoCategoryModel> _list = new List<VideoCategoryModel>();
+  List<VideoFileModel> _videos = List<VideoFileModel>();
   bool showVideos = false;
   int index;
   Channel _channel;
@@ -25,6 +28,11 @@ class _VideoCategoryWidgetState extends State<VideoCategoryWidget> {
     await VideoFileModel.getList().then((value) {
       setState(() {
         _list.addAll(value);
+        for(var i in value){
+          for(var k in i.videos) {
+              _videos.add(k);
+          }
+        }
       });
     });
   }
@@ -32,26 +40,27 @@ class _VideoCategoryWidgetState extends State<VideoCategoryWidget> {
   @override
   void initState() {
     getListOfVideos();
-    _initChannel();
+    // _initChannel();
     super.initState();
   }
 
-  _initChannel() async {
-    Channel channel = await APIService.instance
-        .fetchChannel(channelId: REPUBLICAN_AIDS_CENTER_ID);
-    for (var i in channel.videos) {
-      videos.add(YoutubeVideoModel(id: i.id, title: i.title));
-    }
-    setState(() {
-      _channel = channel;
-    });
-  }
+  // _initChannel() async {
+  //   Channel channel = await APIService.instance
+  //       .fetchChannel(channelId: REPUBLICAN_AIDS_CENTER_ID);
+  //   for (var i in channel.videos) {
+  //     videos.add(YoutubeVideoModel(id: i.id, title: i.title));
+  //   }
+  //   setState(() {
+  //     _channel = channel;
+  //   });
+  // }
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: _channel != null
-          ? VideoPlayerWidget(videos: videos)
+      child: _list != null
+          ? BetterPlayerVideosWidget(list: _videos)
+      // PortraitLandscapePlayerPage(videos: videos)
       // VideoPlayerWidget(videos: videos)
           : Center(
             child: CircularProgressIndicator(
