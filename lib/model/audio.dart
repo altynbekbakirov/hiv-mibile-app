@@ -7,6 +7,15 @@ class Audio extends ChangeNotifier {
   String audioState;
   int duration;
 
+  bool _isTransparency = false;
+
+  bool get isTransparency => _isTransparency;
+
+  void setTransparency(bool value) {
+    _isTransparency = value;
+    notifyListeners();
+  }
+
   AudioPlayer audioPlayer = AudioPlayer();
 
   Audio() {

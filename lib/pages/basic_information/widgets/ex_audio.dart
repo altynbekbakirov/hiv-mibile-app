@@ -4,6 +4,7 @@ import 'dart:io';
 
 import 'package:HIVApp/data/configs.dart';
 import 'package:HIVApp/data/pref_manager.dart';
+import 'package:HIVApp/model/audio.dart';
 import 'package:HIVApp/utils/constants.dart';
 import 'package:audioplayers/audio_cache.dart';
 import 'package:audioplayers/audioplayers.dart';
@@ -11,12 +12,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:provider/provider.dart';
 import 'package:http/http.dart' as http;
+import 'package:provider/provider.dart';
 
 import '../../../db/audio_db.dart';
-
-import 'player_widget.dart';
 
 typedef void OnError(Exception exception);
 
@@ -34,6 +33,7 @@ class AudioFileModel {
   String title;
   String name;
   bool downloaded = false;
+  bool isSelected = false;
 
   AudioFileModel({this.title, this.name, this.downloaded});
 
@@ -98,6 +98,7 @@ class _AudioAppState extends State<AudioApp> {
   String category_name;
   List<Duration> durations = List<Duration>();
   AudioPlayer player;
+  bool isContainerTransparent = false;
 
   Duration _duration = new Duration();
   Duration _position = new Duration();
@@ -201,6 +202,7 @@ class _AudioAppState extends State<AudioApp> {
   }
 
   Widget localAsset() {
+    var provider = Provider.of<Audio>(context);
     return Container(
       height: MediaQuery.of(context).size.height * 0.7,
       width: MediaQuery.of(context).size.width,
@@ -219,21 +221,25 @@ class _AudioAppState extends State<AudioApp> {
                       advancedPlayer.stop();
                       fileName = files[index].name;
                       var sss = Configs.file_ip;
-                      // if (files[index].downloaded)
-                      //   advancedPlayer.play(fileName);
-                      // else
                       advancedPlayer.play(sss + fileName);
                       pinPillPosition =
                           MediaQuery.of(context).size.height * 0.001;
                       playerHeight = MediaQuery.of(context).size.height * 0.20;
                       playing = true;
+                      provider.setTransparency(true);
+                      for (var i in files) {
+                        i.isSelected = false;
+                      }
+                      files[index].isSelected = true;
                     });
                   },
                   child: Container(
                     margin: EdgeInsets.symmetric(vertical: 8),
                     height: 56,
                     decoration: BoxDecoration(
-                      color: Colors.white,
+                      color: files[index].isSelected
+                          ? kModerateBlue
+                          : Colors.white,
                       borderRadius: BorderRadius.circular(12),
                     ),
                     child: Row(
@@ -251,30 +257,55 @@ class _AudioAppState extends State<AudioApp> {
                             ),
                           ),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.only(right: 10),
-                          child: Container(
-                            height: 30,
-                            width: 60,
-                            decoration: BoxDecoration(
-                                color: kLightGrayishBlue,
-                                borderRadius: BorderRadius.circular(8)),
-                            child: Center(
-                                child: durations.asMap()[index] != null
-                                    ? Text(
-                                        "${durations[index].toString().split(".")[0].split(":")[1]}:${durations[index].toString().split(".")[0].split(":")[2]}",
-                                        style: TextStyle(color: kGrayishBlue),
-                                      )
-                                    : Text("0:00", style: TextStyle(color: kGrayishBlue))),
-                          ),
-
-                        ),
+                        files[index].isSelected
+                            ? Padding(
+                                padding: const EdgeInsets.only(right: 10),
+                                child: Icon(
+                                  advancedPlayer.state ==
+                                          AudioPlayerState.PAUSED
+                                      ? Icons.play_arrow
+                                      : Icons.pause,
+                                  color: Colors.white,
+                                ),
+                              )
+                            : Padding(
+                                padding: const EdgeInsets.only(right: 10),
+                                child: Container(
+                                  height: 30,
+                                  width: 60,
+                                  decoration: BoxDecoration(
+                                      color: kLightGrayishBlue,
+                                      borderRadius: BorderRadius.circular(8)),
+                                  child: Center(
+                                      child: durations.asMap()[index] != null
+                                          ? Text(
+                                              "${durations[index].toString().split(".")[0].split(":")[1]}:${durations[index].toString().split(".")[0].split(":")[2]}",
+                                              style: TextStyle(
+                                                  color: kGrayishBlue),
+                                            )
+                                          : Text("0:00",
+                                              style: TextStyle(
+                                                  color: kGrayishBlue))),
+                                ),
+                              ),
                       ],
                     ),
                   ),
                 );
               }),
         ),
+        provider.isTransparency
+            ? GestureDetector(
+                onTap: () {
+                  provider.setTransparency(false);
+                },
+                child: Container(
+                  height: MediaQuery.of(context).size.height,
+                  width: MediaQuery.of(context).size.width,
+                  color: kModerateBlue.withOpacity(0.3),
+                ),
+              )
+            : Container(),
         AnimatedPositioned(
           bottom: pinPillPosition,
           right: 0,
@@ -285,8 +316,9 @@ class _AudioAppState extends State<AudioApp> {
               width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(
                 color: kColorWhite,
-                borderRadius: BorderRadius.horizontal(
-                    right: Radius.circular(12), left: Radius.circular(12)),
+                borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(12),
+                    topRight: Radius.circular(12)),
               ),
               child: Column(children: <Widget>[
                 Container(
@@ -306,11 +338,13 @@ class _AudioAppState extends State<AudioApp> {
                                 fileIndex = fileIndex - 1;
                               }
                               fileName = files[fileIndex].name;
-                              // if (files[fileIndex].downloaded)
-                              //   advancedPlayer.play(fileName);
-                              // else
+                              for (var i in files) {
+                                i.isSelected = false;
+                              }
+                              files[fileIndex].isSelected = true;
                               advancedPlayer.play(Configs.file_ip + fileName);
                               playing = true;
+                              provider.setTransparency(true);
                             });
                           },
                         ),
@@ -385,11 +419,13 @@ class _AudioAppState extends State<AudioApp> {
                                 fileIndex = 0;
                               }
                               fileName = files[fileIndex].name;
-                              // if (files[fileIndex].downloaded)
-                              //   advancedPlayer.play(fileName);
-                              // else
+                              for (var i in files) {
+                                i.isSelected = false;
+                              }
+                              files[fileIndex].isSelected = true;
                               advancedPlayer.play(Configs.file_ip + fileName);
                               playing = true;
+                              provider.setTransparency(true);
                             });
                           },
                         ),
@@ -398,31 +434,32 @@ class _AudioAppState extends State<AudioApp> {
                   ),
                 ), // first widget
                 Container(
-                    width: MediaQuery.of(context).size.width * 0.95,
-                    child: Column(
-                      children: [
-                        slider(),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 10),
-                          child: Row(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Text(
-                                (_position.toString().split(".")[0]),
-                                style: TextStyle(color: kModerateBlue),
-                              ),
-                              // getLocalFileDuration(),
-                              Text(
-                                _duration.toString().split(".")[0],
-                                style: TextStyle(color: kModerateBlue),
-                              ),
-                            ],
-                          ),
+                  width: MediaQuery.of(context).size.width * 0.95,
+                  child: Column(
+                    children: [
+                      slider(),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 10),
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            Text(
+                              (_position.toString().split(".")[0]),
+                              style: TextStyle(color: kModerateBlue),
+                            ),
+                            // getLocalFileDuration(),
+                            Text(
+                              _duration.toString().split(".")[0],
+                              style: TextStyle(color: kModerateBlue),
+                            ),
+                          ],
                         ),
-                      ],
-                    )),
+                      ),
+                    ],
+                  ),
+                ),
               ])), // end of Align
         ),
       ]),
@@ -472,14 +509,7 @@ class _AudioAppState extends State<AudioApp> {
 
   @override
   Widget build(BuildContext context) {
-    return MultiProvider(
-      providers: [
-        StreamProvider<Duration>.value(
-            initialData: Duration(),
-            value: advancedPlayer.onAudioPositionChanged),
-      ],
-      child: localAsset(),
-    );
+    return localAsset();
   }
 }
 

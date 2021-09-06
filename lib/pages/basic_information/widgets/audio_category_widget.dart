@@ -1,7 +1,9 @@
+import 'package:HIVApp/model/audio.dart';
 import 'package:HIVApp/utils/constants.dart';
 import 'package:connectivity/connectivity.dart';
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:provider/provider.dart';
 
 import 'ex_audio.dart';
 import '../../../db/audio_db.dart';
@@ -81,19 +83,35 @@ class _AudioCategoryWidgetState extends State<AudioCategoryWidget> {
 
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<Audio>(context);
     return showAudios
         ? Column(
             children: [
               Container(
+                color: !provider.isTransparency ? null : kModerateBlue.withOpacity(0.3),
                 padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                 alignment: Alignment.centerLeft,
                 child: InkWell(
-                  child: Text(
-                    'back'.tr(),
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                    ),
+                  child: Stack(
+                    children: [
+                      Container(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Icon(Icons.arrow_back, color: kModerateBlue),
+                            SizedBox(width: 5),
+                            Text(
+                              "back".tr().toUpperCase(),
+                              style: TextStyle(
+                                color: kModerateBlue,
+                                fontSize: 16,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                    ],
                   ),
                   onTap: () {
                     setState(() {
