@@ -1093,19 +1093,30 @@ class _ChapterSixState extends State<ChapterSix> {
 
   int lastPage = 16;
 
+  void getChapterInt() {
+    setState(() {
+      showChapterSixDialog = Prefs.getInt("show_chapter_six_dialog");
+    });
+  }
+
   Widget _chapters(BuildContext context, List pages) {
     return Scaffold(
       appBar: showSlider ? _appBar() : null,
       body: PageView(
         controller: pageController,
         onPageChanged: (value) async {
-          if (value == lastPage)
+          getChapterInt();
+          if (value == lastPage && showChapterSixDialog == 1){
+            setState(() {
+              Prefs.setInt("show_chapter_six_dialog", 2);
+            });
             await Doctor.showDialogFunc(
               context: context,
               text: second,
               doctor: Doctors.Azamat,
               fontSize: 18,
             );
+          }
           setState(() {
             currentPage = value.toDouble();
           });

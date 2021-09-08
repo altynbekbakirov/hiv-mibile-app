@@ -68,7 +68,6 @@ class _ChapterEightState extends State<ChapterEight> {
   @override
   initState() {
     super.initState();
-    showChapterEightDialog = Prefs.getInt("show_chapter_eight_dialog");
     show();
   }
 
@@ -551,7 +550,10 @@ class _ChapterEightState extends State<ChapterEight> {
       body: PageView(
         controller: pageController,
         onPageChanged: (value) {
-          if (value == 6) Doctor.showDialogs(context);
+          if (value == 6)
+          {
+            Doctor.showDialogs(context);
+          }
           setState(() {
             currentPage = value.toDouble();
           });

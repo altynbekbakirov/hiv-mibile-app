@@ -106,7 +106,9 @@ class _ChapterSevenState extends State<ChapterSeven> {
         ).then((value) async {
           await Doctor.showInstruction(context);
         }) : Container();
-        Prefs.setInt("show_chapter_seven_dialog", 1);
+        setState(() {
+          Prefs.setInt("show_chapter_seven_dialog", 1);
+        });
       },
     );
   }
@@ -998,13 +1000,23 @@ class _ChapterSevenState extends State<ChapterSeven> {
     );
   }
 
+  void getChapterInt() {
+    setState(() {
+      showChapterSevenDialog = Prefs.getInt("show_chapter_seven_dialog");
+    });
+  }
+
   Widget _chapters(BuildContext context, List pages) {
     return Scaffold(
       appBar: showSlider ? _appBar() : null,
       body: PageView(
         controller: pageController,
         onPageChanged: (value) async {
-          if (value == 10)
+          getChapterInt();
+          if (value == 10 && showChapterSevenDialog == 1){
+            setState(() {
+              Prefs.setInt("show_chapter_seven_dialog", 2);
+            });
             await Doctor.showDialogFunc(
               context: context,
               text: drNadya,
@@ -1030,6 +1042,7 @@ class _ChapterSevenState extends State<ChapterSeven> {
                 fontSize: 18,
               );
             });
+          }
           setState(() {
             currentPage = value.toDouble();
           });

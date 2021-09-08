@@ -2015,19 +2015,30 @@ class _ChapterFiveState extends State<ChapterFive> {
 
   int lastPage = 14;
 
+  void getChapterInt() {
+    setState(() {
+      showChapterFiveDialog = Prefs.getInt("show_chapter_five_dialog");
+    });
+  }
+
   Widget _chapters(BuildContext context, List pages) {
     return Scaffold(
       appBar: showSlider ? _appBar() : null,
       body: PageView(
         controller: pageController,
         onPageChanged: (value) async {
-          if (value == lastPage)
+          getChapterInt();
+          if (value == lastPage && showChapterFiveDialog == 1) {
             await Doctor.showDialogFunc(
               context: context,
               text: second,
               doctor: Doctors.Azamat,
               fontSize: 14,
             );
+            setState(() {
+              Prefs.setInt("show_chapter_five_dialog", 2);
+            });
+          }
           setState(() {
             currentPage = value.toDouble();
           });

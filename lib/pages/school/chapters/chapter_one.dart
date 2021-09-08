@@ -70,7 +70,6 @@ class _ChapterOneState extends State<ChapterOne>
 
         await Doctor.showInstruction(context);
       }
-
       Prefs.setInt('show_dialogs', 1);
     });
   }
@@ -2744,13 +2743,23 @@ class _ChapterOneState extends State<ChapterOne>
 
   int hivStagesPage = 29;
 
+  void getChapterInt() {
+    setState(() {
+      showDialogs = Prefs.getInt("show_dialogs");
+    });
+  }
+
   Widget _chapters(BuildContext context, List pages) {
     return Scaffold(
       appBar: showSlider ? _appBar() : null,
       body: PageView(
         controller: pageController,
         onPageChanged: (value) async {
-          if (value == hivStagesPage) {
+          getChapterInt();
+          if (value == hivStagesPage && showDialogs == 1) {
+            setState(() {
+              Prefs.setInt('show_dialogs', 2);
+            });
             await Doctor.showDialogFunc(
               context: context,
               text: lastDialog,
@@ -2758,6 +2767,7 @@ class _ChapterOneState extends State<ChapterOne>
               fontSize: 16,
             );
           }
+          print(showDialogs);
           setState(() {
             this.currentPage = value.toDouble();
           });
