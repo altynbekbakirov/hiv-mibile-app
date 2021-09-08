@@ -91,9 +91,12 @@ class _BetterPlayerWidgetState extends State<BetterPlayerWidget> {
             controller: _betterPlayerController,
           ),
         ),
-        Align(
-            alignment: Alignment.centerLeft,
-            child: Text("$title", style: TextStyle(color: Colors.black, fontSize: 18, fontWeight: FontWeight.w500),)),
+        Padding(
+          padding: const EdgeInsets.only(bottom: 20),
+          child: Align(
+              alignment: Alignment.centerLeft,
+              child: Text("$title", style: TextStyle(color: Colors.black, fontSize: 18, fontWeight: FontWeight.w500),)),
+        ),
       ],
     );
   }
