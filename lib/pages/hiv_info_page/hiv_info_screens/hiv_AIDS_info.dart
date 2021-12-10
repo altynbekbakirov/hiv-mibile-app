@@ -70,14 +70,6 @@ class _HivAIDSInfoScreenState extends State<HivAIDSInfoScreen> {
             ]),
           ),
         ),
-        Image.asset('assets/images/symptoms/preparats_info.png'),
-        Container(
-            padding: EdgeInsets.symmetric(horizontal: 16),
-            child: Text(
-              "Рис. 1 - Строение ВИЧ",
-              style: TextStyle(fontSize: 14, fontStyle: FontStyle.italic),
-            )),
-        SizedBox(height: 20),
         ListTile(
           title: RichText(
             text: TextSpan(children: [
@@ -189,7 +181,7 @@ class _HivAIDSInfoScreenState extends State<HivAIDSInfoScreen> {
                   title: RichText(
                     text: TextSpan(children: [
                       TextSpan(
-                        text: 'ВИЧ',
+                        text: 'ВИЧ ',
                         style: normalBold,
                       ),
                       TextSpan(
@@ -205,7 +197,7 @@ class _HivAIDSInfoScreenState extends State<HivAIDSInfoScreen> {
                           'которое называют ',
                           style: contentNormal),
                       TextSpan(
-                        text: 'ВИЧ-инфекция., ',
+                        text: 'ВИЧ-инфекция; ',
                         style: normalBold,
                       ),
                     ]),
@@ -358,47 +350,6 @@ class _HivAIDSInfoScreenState extends State<HivAIDSInfoScreen> {
             ),
           ],
         ),
-        ListTile(
-          title: RichText(
-            text: TextSpan(children: [
-              TextSpan(
-                text: "Таким образом, теперь Вы знаете, что:",
-                style: normalBoldForChapter
-              ),
-            ]),
-          ),
-        ),
-        ListTile(
-          title: RichText(
-            text: TextSpan(children: [
-              TextSpan(
-                text: "ВИЧ",
-                style: normalBold,
-              ),
-              TextSpan(
-                text: "- это вирус. ",
-                style: contentNormal,
-              ),
-              TextSpan(
-                text: "ВИЧ-инфекция",
-                style: normalBold,
-              ),
-              TextSpan(
-                text: " - это заболевание, а ",
-                style: contentNormal,
-              ),
-              TextSpan(
-                text: "СПИД",
-                style: normalBold,
-              ),
-              TextSpan(
-                text: " – это только часть ВИЧ-инфекции (мы говорим – стадия). "
-                    "СПИД никогда не наступит, если человек получает лечение.\n",
-                style: contentNormal,
-              ),
-            ]),
-          ),
-        )
       ]);
     }
 
