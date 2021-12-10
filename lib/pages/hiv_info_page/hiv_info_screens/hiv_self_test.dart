@@ -166,13 +166,9 @@ class _HIVSelfTestScreenState extends State<HIVSelfTestScreen> {
               TextSpan(
                   text: "г. Бишкек, улица Логвиненко 8, кабинет - 7-8-9 Телефон для справок: 0774 42-08-66\n\n",
                   style: contentItalic),
-              TextSpan(
-                  text: "#РЦСПИДКР #АИВкеТест #ӨзСтатусуңдуБил2020",
-                  style: TextStyle(color: kModerateBlue, fontSize: 18, fontWeight: FontWeight.w600)),
             ]),
           ),
         ),
-        Image.asset("assets/images/persons_picture.png")
       ]);
     }
 
