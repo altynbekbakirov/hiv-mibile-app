@@ -222,6 +222,32 @@ class _PrePostExposureTherapyScreenState extends State<PrePostExposureTherapyScr
             ),
           ),
         ),
+        Container(
+          height: 50,
+          child: Row(
+            children: <Widget>[
+              Expanded(
+                flex: 4,
+                child: Container(),
+              ),
+              Expanded(
+                child: list.length - 1 == _current
+                    ? Container()
+                    : Container(
+                  child: Row(children: [
+                    Text("ЛИСТАЙ"),
+                    Container(
+                        width: 10.0,
+                        height: 10.0,
+                        margin: EdgeInsets.only(bottom: 16, right: 10),
+                        child: Icon(Icons.arrow_forward,
+                            color: Colors.grey)),
+                  ]),
+                ),
+              ),
+            ],
+          ),
+        ),
         _carouselSlider(list),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -230,9 +256,11 @@ class _PrePostExposureTherapyScreenState extends State<PrePostExposureTherapyScr
               width: 10.0,
               height: 10.0,
               margin: EdgeInsets.only(bottom: 16, right: 10),
-              child: Icon(Icons.arrow_forward, color: _current == index
-                  ? Colors.grey
-                  : Color.fromRGBO(200, 200, 200, 1)),
+              decoration: BoxDecoration(
+                  color: _current == index
+                      ? Colors.grey
+                      : Color.fromRGBO(200, 200, 200, 1),
+                  borderRadius: BorderRadius.circular(25)),
             );
           }),
         ),

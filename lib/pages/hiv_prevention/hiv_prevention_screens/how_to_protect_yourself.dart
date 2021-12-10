@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:HIVApp/utils/constants.dart';
 import 'package:expandable_page_view/expandable_page_view.dart';
 import 'package:flutter/material.dart';
@@ -144,17 +146,16 @@ class _SelfProtectInfoScreenState extends State<SelfProtectInfoScreen> {
             ExpandablePageView(
               children: [
                 CarouselPage(
-                  list: list[0],
-                  height: fontSize.toInt() == 24
-                      ? 260
-                      : fontSize.toInt() == 20
-                          ? 230
-                          : fontSize.toInt() == 18
-                              ? 220
-                              : 250,
-                  fontSize: fontSize,
-                  textStyle: contentNormal,
-                ),
+                    list: list[0],
+                    height: fontSize.toInt() == 24
+                        ? 260
+                        : fontSize.toInt() == 20
+                            ? 230
+                            : fontSize.toInt() == 18
+                                ? 220
+                                : 250,
+                    fontSize: fontSize,
+                    textStyle: contentNormal),
                 CarouselPage(
                   list: list[1],
                   height: fontSize.toInt() == 24
@@ -197,7 +198,7 @@ class _SelfProtectInfoScreenState extends State<SelfProtectInfoScreen> {
                   _current = value;
                 });
               },
-            )
+            ),
           ],
         ),
       );
@@ -377,6 +378,32 @@ class _SelfProtectInfoScreenState extends State<SelfProtectInfoScreen> {
             ),
           ),
         ),
+        Container(
+          height: 50,
+          child: Row(
+            children: <Widget>[
+              Expanded(
+                flex: 4,
+                child: Container(),
+              ),
+              Expanded(
+                child: listOne.length - 1 == _current
+                    ? Container()
+                    : Container(
+                        child: Row(children: [
+                          Text("ЛИСТАЙ"),
+                          Container(
+                              width: 10.0,
+                              height: 10.0,
+                              margin: EdgeInsets.only(bottom: 16, right: 10),
+                              child: Icon(Icons.arrow_forward,
+                                  color: Colors.grey)),
+                        ]),
+                      ),
+              ),
+            ],
+          ),
+        ),
         _carouselSliderFirst(listOne),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -385,10 +412,11 @@ class _SelfProtectInfoScreenState extends State<SelfProtectInfoScreen> {
               width: 10.0,
               height: 10.0,
               margin: EdgeInsets.only(bottom: 16, right: 10),
-              child: Icon(Icons.arrow_forward,
+              decoration: BoxDecoration(
                   color: _current == index
                       ? Colors.grey
-                      : Color.fromRGBO(200, 200, 200, 1)),
+                      : Color.fromRGBO(200, 200, 200, 1),
+                  borderRadius: BorderRadius.circular(25)),
             );
           }),
         ),
@@ -411,6 +439,33 @@ class _SelfProtectInfoScreenState extends State<SelfProtectInfoScreen> {
             ),
           ),
         ),
+        Container(
+          height: 50,
+          child: Row(
+            children: <Widget>[
+              Expanded(
+                flex: 4,
+                child: Container(),
+              ),
+              Expanded(
+                child: listTwo.length - 1 == _currentSecond
+                    ? Container()
+                    : Container(
+                  child: Row(children: [
+                    Text("ЛИСТАЙ"),
+                    Container(
+                        width: 10.0,
+                        height: 10.0,
+                        margin: EdgeInsets.only(bottom: 16, right: 10),
+                        child: Icon(Icons.arrow_forward,
+                            color: Colors.grey)),
+                  ]),
+                ),
+              ),
+            ],
+          ),
+        ),
+
         _carouselSliderSecond(listTwo),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -419,10 +474,11 @@ class _SelfProtectInfoScreenState extends State<SelfProtectInfoScreen> {
               width: 10.0,
               height: 10.0,
               margin: EdgeInsets.only(bottom: 16, right: 10),
-              child: Icon(Icons.arrow_forward,
+              decoration: BoxDecoration(
                   color: _currentSecond == index
                       ? Colors.grey
-                      : Color.fromRGBO(200, 200, 200, 1)),
+                      : Color.fromRGBO(200, 200, 200, 1),
+                  borderRadius: BorderRadius.circular(25)),
             );
           }),
         ),
@@ -446,6 +502,32 @@ class _SelfProtectInfoScreenState extends State<SelfProtectInfoScreen> {
             ),
           ),
         ),
+        Container(
+          height: 50,
+          child: Row(
+            children: <Widget>[
+              Expanded(
+                flex: 4,
+                child: Container(),
+              ),
+              Expanded(
+                child: listThree.length - 1 == _currentThird
+                    ? Container()
+                    : Container(
+                  child: Row(children: [
+                    Text("ЛИСТАЙ"),
+                    Container(
+                        width: 10.0,
+                        height: 10.0,
+                        margin: EdgeInsets.only(bottom: 16, right: 10),
+                        child: Icon(Icons.arrow_forward,
+                            color: Colors.grey)),
+                  ]),
+                ),
+              ),
+            ],
+          ),
+        ),
         _carouselSliderThird(listThree),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -454,11 +536,12 @@ class _SelfProtectInfoScreenState extends State<SelfProtectInfoScreen> {
               width: 10.0,
               height: 10.0,
               margin: EdgeInsets.only(bottom: 16, right: 10),
-              child: Icon(Icons.arrow_forward,
+              decoration: BoxDecoration(
                   color: _currentThird == index
                       ? Colors.grey
-                      : Color.fromRGBO(200, 200, 200, 1)),
-            );
+                      : Color.fromRGBO(200, 200, 200, 1),
+                  borderRadius: BorderRadius.circular(25)),
+            );;
           }),
         ),
         ListTile(
