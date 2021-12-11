@@ -56,8 +56,7 @@ class _TakeMedicationsViewState extends State<TakeMedicationsView> {
         onSelectNotification: onSelectNotification);
   }
 
-  Future onSelectNotification(String payload) async =>
-      await Navigator.push(
+  Future onSelectNotification(String payload) async => await Navigator.push(
         context,
         MaterialPageRoute(builder: (context) => AddPage()),
       );
@@ -70,8 +69,7 @@ class _TakeMedicationsViewState extends State<TakeMedicationsView> {
     Navigator.pushReplacement(
       context,
       MaterialPageRoute(
-          builder: (context) =>
-              NotificationForm(
+          builder: (context) => NotificationForm(
                 type: NotificationDbType.Drug,
                 notificationDb: notificationList[index],
                 operationType: Operation.updateNotification,
@@ -101,7 +99,6 @@ class _TakeMedicationsViewState extends State<TakeMedicationsView> {
                 child: Icon(Icons.delete_outline,
                     size: 20, color: kVeryDarkGrayishBlue),
                 onTap: () async {
-                  print("$notificationId ----------------");
                   await notifications.cancel(notificationId);
                   await NotificationDb.deleteNotification(notificationId)
                       .then((value) {
@@ -117,12 +114,11 @@ class _TakeMedicationsViewState extends State<TakeMedicationsView> {
                   final result = Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) =>
-                            NotificationForm(
-                              type: NotificationDbType.Drug,
-                              notificationDb: notificationList[index],
-                              operationType: Operation.updateNotification,
-                            ),
+                        builder: (context) => NotificationForm(
+                          type: NotificationDbType.Drug,
+                          notificationDb: notificationList[index],
+                          operationType: Operation.updateNotification,
+                        ),
                       )).then((value) {
                     if (value) setState(() {});
                   });
@@ -145,148 +141,155 @@ class _TakeMedicationsViewState extends State<TakeMedicationsView> {
         appBar: ArrowBackAppBar(text: "my_condition".tr().toUpperCase()),
         body: notificationList != null
             ? Container(
-          padding: EdgeInsets.symmetric(vertical: 20),
-          color: kLightGrayishBlue,
-          child: ListView.builder(
-            itemCount: notificationList.length,
-            itemBuilder: (BuildContext context, int index) {
-              return Container(
-                padding: EdgeInsets.symmetric(horizontal: 16),
-                height: 226,
-                child: Card(
-                  color: kColorWhite,
-                  child: Column(
-                    children: <Widget>[
-                      Container(
-                        padding: EdgeInsets.all(16),
-                        child: _drugName(
-                            notificationList[index].drugName,
-                            notificationList[index].notificationId,
-                            index),
-                      ),
-                      Container(
-                        alignment: Alignment.centerLeft,
-                        padding: EdgeInsets.symmetric(horizontal: 16),
-                        child: Text(
-                          notificationList[index].drugCount == 1
-                              ? "${notificationList[index].drugCount} " +
-                              "tablet".tr()
-                              : "${notificationList[index].drugCount} " +
-                              "tablets".tr(),
-                          style: TextStyle(
-                              color: Colors.black,
-                              fontWeight: FontWeight.w700,
-                              fontSize: 16),
-                        ),
-                      ),
-                      Container(
-                        alignment: Alignment.centerLeft,
-                        padding: EdgeInsets.all(16),
-                        child: Text(
-                          "${DateFormat('MM/dd/yyyy').format(
-                              notificationList[index]
-                                  .startDateTime)}-${DateFormat('MM/dd/yyyy')
-                              .format(notificationList[index].endDateTime)}",
-                          style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.w400,
-                              color: Colors.black),
-                        ),
-                      ),
-                      Container(
-                        alignment: Alignment.centerLeft,
-                        padding: EdgeInsets.symmetric(horizontal: 16),
-                        child: Row(
+                padding: EdgeInsets.symmetric(vertical: 20),
+                color: kLightGrayishBlue,
+                child: ListView.builder(
+                  itemCount: notificationList.length,
+                  itemBuilder: (BuildContext context, int index) {
+                    return Container(
+                      padding: EdgeInsets.symmetric(horizontal: 16),
+                      height: 226,
+                      child: Card(
+                        color: kColorWhite,
+                        child: Column(
                           children: <Widget>[
-                            Text(
-                              "daily".tr(),
-                              style: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w500),
+                            Container(
+                              padding: EdgeInsets.all(16),
+                              child: _drugName(
+                                  notificationList[index].drugName,
+                                  notificationList[index].notificationId,
+                                  index),
                             ),
-                            Padding(
-                              padding: const EdgeInsets.symmetric(
-                                  horizontal: 16),
-                              child: Container(
-                                alignment: Alignment.center,
-                                width: 48,
-                                height: 24,
-                                child: Text(
-                                    "${notificationList[index].drugTime
-                                        .hour}:${notificationList[index]
-                                        .drugTime.minute}"),
-                                decoration: BoxDecoration(
-                                    color: kSoftCyan,
-                                    borderRadius:
-                                    BorderRadius.circular(8)),
+                            Container(
+                              alignment: Alignment.centerLeft,
+                              padding: EdgeInsets.symmetric(horizontal: 16),
+                              child: Text(
+                                notificationList[index].drugCount == 1
+                                    ? "${notificationList[index].drugCount} " +
+                                        "tablet".tr()
+                                    : "${notificationList[index].drugCount} " +
+                                        "tablets".tr(),
+                                style: TextStyle(
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.w700,
+                                    fontSize: 16),
+                              ),
+                            ),
+                            Container(
+                              alignment: Alignment.centerLeft,
+                              padding: EdgeInsets.all(16),
+                              child:
+                                  notificationList[index].startDateTime != null
+                                      ? Text(
+                                          "${DateFormat('MM/dd/yyyy').format(notificationList[index].startDateTime)}-${DateFormat('MM/dd/yyyy').format(notificationList[index].endDateTime)}",
+                                          style: TextStyle(
+                                              fontSize: 18,
+                                              fontWeight: FontWeight.w400,
+                                              color: Colors.black),
+                                        )
+                                      : Container(),
+                            ),
+                            Container(
+                              alignment: Alignment.centerLeft,
+                              padding: EdgeInsets.symmetric(horizontal: 16),
+                              child: Row(
+                                children: <Widget>[
+                                  Text(
+                                    "daily".tr(),
+                                    style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w500),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: 16),
+                                    child: Container(
+                                      alignment: Alignment.center,
+                                      width: 48,
+                                      height: 24,
+                                      child: Text(
+                                          "${notificationList[index].drugTime.hour}:${notificationList[index].drugTime.minute}"),
+                                      decoration: BoxDecoration(
+                                          color: kSoftCyan,
+                                          borderRadius:
+                                              BorderRadius.circular(8)),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Container(
+                              height: 60,
+                              alignment: Alignment.centerLeft,
+                              padding: EdgeInsets.all(16),
+                              child: Row(
+                                children: [
+                                  CustomSwitch(
+                                    activeColor: kDesaturatedBlue,
+                                    value:
+                                        notificationList[index].isActive == 1,
+                                    onChanged: (value) async {
+                                      NotificationDb.updateNotificationStatus(
+                                          notificationList[index]
+                                              .notificationId,
+                                          value);
+                                      if (value) {
+                                        notifications.zonedSchedule(
+                                            notificationList[index]
+                                                .notificationId,
+                                            notificationList[index].drugName,
+                                            notificationList[index].description,
+                                            _nextInstanceOfATTime(Time(
+                                                notificationList[index]
+                                                    .drugTime
+                                                    .hour,
+                                                notificationList[index]
+                                                    .drugTime
+                                                    .minute)),
+                                            const NotificationDetails(
+                                              android:
+                                                  AndroidNotificationDetails(
+                                                'daily notification channel id',
+                                                'daily notification channel name',
+                                                'daily notification description',
+                                                priority: Priority.high,
+                                                importance: Importance.max,
+                                              ),
+                                              iOS: IOSNotificationDetails(),
+                                            ),
+                                            androidAllowWhileIdle: true,
+                                            uiLocalNotificationDateInterpretation:
+                                                UILocalNotificationDateInterpretation
+                                                    .absoluteTime,
+                                            matchDateTimeComponents:
+                                                DateTimeComponents.time);
+                                      }
+                                      if (!value)
+                                        await notifications.cancel(
+                                            notificationList[index]
+                                                .notificationId);
+                                    },
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.only(left: 16),
+                                    child: Text("notification".tr(),
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.w400,
+                                            fontSize: 18,
+                                            color: Colors.black)),
+                                  )
+                                ],
                               ),
                             ),
                           ],
                         ),
                       ),
-                      Container(
-                        height: 60,
-                        alignment: Alignment.centerLeft,
-                        padding: EdgeInsets.all(16),
-                        child: Row(
-                          children: [
-                            CustomSwitch(
-                              activeColor: kDesaturatedBlue,
-                              value: notificationList[index].isActive == 1,
-                              onChanged: (value) async {
-                                NotificationDb.updateNotificationStatus(
-                                    notificationList[index].notificationId,
-                                    value);
-                                if (value) {
-                                  notifications.zonedSchedule(
-                                      notificationList[index].notificationId,
-                                      notificationList[index].drugName,
-                                      notificationList[index].description,
-                                      _nextInstanceOfATTime(Time(
-                                          notificationList[index].drugTime.hour,
-                                          notificationList[index].drugTime
-                                              .minute)),
-                                      const NotificationDetails(
-                                        android: AndroidNotificationDetails(
-                                          'daily notification channel id',
-                                          'daily notification channel name',
-                                          'daily notification description',
-                                          priority: Priority.high,
-                                          importance: Importance.max,
-                                        ),
-                                        iOS: IOSNotificationDetails(),
-                                      ),
-                                      androidAllowWhileIdle: true,
-                                      uiLocalNotificationDateInterpretation:
-                                      UILocalNotificationDateInterpretation.absoluteTime,
-                                      matchDateTimeComponents: DateTimeComponents.time);
-                                }
-                                if (!value)
-                                  await notifications.cancel(
-                                      notificationList[index].notificationId);
-                              },
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(left: 16),
-                              child: Text("notification".tr(),
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.w400,
-                                      fontSize: 18,
-                                      color: Colors.black)),
-                            )
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
+                    );
+                  },
                 ),
-              );
-            },
-          ),
-        )
+              )
             : Center(
-            child: Container(child: Text("no_active_notifications".tr()))));
+                child: Container(child: Text("no_active_notifications".tr()))));
   }
 }
-

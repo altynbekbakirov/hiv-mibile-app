@@ -203,7 +203,6 @@ class NotificationFormState extends State<NotificationForm> {
 
   @override
   void dispose() {
-    // TODO: implement dispose
     super.dispose();
     didReceiveLocalNotificationSubject.close();
     selectNotificationSubject.close();

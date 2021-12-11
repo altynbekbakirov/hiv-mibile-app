@@ -1,12 +1,10 @@
 import 'package:HIVApp/components/square_button.dart';
-import 'package:HIVApp/db/notification.dart';
 import 'package:HIVApp/pages/my_state/result/results_tests.dart';
 import 'package:HIVApp/routes/routes.dart';
 import 'package:HIVApp/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
 
-import 'medications/taking_medications.dart';
 import 'visit_and_taking_tests_doctor/visit_and_taking_tests_doctor_page.dart';
 
 class MyHealth extends StatelessWidget {

@@ -254,11 +254,17 @@ class NotificationDb {
                 id: i['patient_id'],
                 notificationId: i['notificationId'],
                 drugName: i['drug_name'],
-                drugTime: TimeOfDay(hour: int.parse(i['drug_time'].split(":")[0]), minute: int.parse(i['drug_time'].split(":")[1])),
+                drugTime: i['drug_time'] != ""
+                    ? TimeOfDay(hour: int.parse(i['drug_time'].split(":")[0]), minute: int.parse(i['drug_time'].split(":")[1]))
+                    : TimeOfDay(hour: 0, minute: 0),
                 drugCount: i['drug_count'],
                 isActive: i['isAcive'],
-                startDateTime: DateTime.parse((i['startDateTime'])),
-                endDateTime: DateTime.parse((i['endDateTime'])),
+                startDateTime: i['startDateTime'] == ""
+                    ? null
+                    : DateTime.parse((i['startDateTime'])),
+                endDateTime: i['endDateTime'] == ""
+                    ? null
+                    : DateTime.parse((i['endDateTime'])),
                 type: convertStringToTypeEnums(i['type']),
                 datetime: DateTime.parse((i['datetime'])),
                 time_type: convertStringToTimetypeEnums(i['remind']),
