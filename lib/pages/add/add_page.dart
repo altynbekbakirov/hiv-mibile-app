@@ -25,7 +25,6 @@ class AddPage extends StatefulWidget {
 
 class _AddPageState extends State<AddPage> {
 
-  List<NotificationDb> _list = new List<NotificationDb>();
   bool logged = false;
 
   @override
@@ -78,9 +77,6 @@ class _AddPageState extends State<AddPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   title: Text('add'.tr()),
-      // ),
       body: Padding(
         padding: const EdgeInsets.all(8),
         child: Center(

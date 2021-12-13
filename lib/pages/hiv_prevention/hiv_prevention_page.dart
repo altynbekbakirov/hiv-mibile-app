@@ -1,3 +1,4 @@
+import 'package:HIVApp/components/app_bar_arrow_back.dart';
 import 'package:HIVApp/components/button_with_chevron.dart';
 import 'package:HIVApp/routes/routes.dart';
 import 'package:HIVApp/utils/constants.dart';
@@ -17,6 +18,9 @@ class _HivPreventionPageState extends State<HivPreventionPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: ArrowBackAppBar(
+        text: "hiv_prevention".tr().toUpperCase(),
+      ),
       body: Container(
         color: kLightGrayishBlue,
         child: Container(

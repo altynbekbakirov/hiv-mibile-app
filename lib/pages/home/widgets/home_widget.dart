@@ -1,14 +1,16 @@
+import 'package:HIVApp/pages/consultation/consultation_page.dart';
+import 'package:HIVApp/pages/hiv_info_page/hiv_info_page.dart';
+import 'package:HIVApp/pages/hiv_prevention/hiv_prevention_page.dart';
 import 'package:HIVApp/pages/home/widgets/home_card.dart';
+import 'package:HIVApp/pages/my_state/my_health.dart';
+import 'package:HIVApp/pages/presence_of_hiv/hiv_presence.dart';
+import 'package:HIVApp/pages/school/patient_school.dart';
+import 'package:HIVApp/pages/test/hiv_test_page.dart';
 import 'package:HIVApp/routes/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
 
 class HomeWidget extends StatefulWidget {
-
-  Function(int) callback;
-
-  HomeWidget({this.callback});
-
   @override
   _HomeWidgetState createState() => _HomeWidgetState();
 }
@@ -36,7 +38,13 @@ class _HomeWidgetState extends State<HomeWidget> {
                       cardName: "patient_school".tr().toUpperCase(),
                       fontSize: 16,
                       onTap: () {
-                        Navigator.of(context).pushNamed(Routes.patientSchool);
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) =>
+                                PatientSchoolPage(showAppBar: true),
+                          ),
+                        );
                       },
                     ),
                     SizedBox(height: 30),
@@ -53,8 +61,13 @@ class _HomeWidgetState extends State<HomeWidget> {
                               imageHeight: 40,
                               imageWidth: 40,
                               cardName: "what_is_HIV".tr().toUpperCase(),
-                              onTap: (){
-                                widget.callback(5);
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) =>
+                                          HivInformationPage(showAppBar: true),
+                                    ));
                               },
                             ),
                           ),
@@ -65,12 +78,16 @@ class _HomeWidgetState extends State<HomeWidget> {
                             child: HomeMenuCard(
                               height: 104,
                               imagePath:
-                              "assets/images/Sections/Section=Test.png",
+                                  "assets/images/Sections/Section=Test.png",
                               imageHeight: 40,
                               imageWidth: 40,
                               cardName: "hiv_test".tr().toUpperCase(),
-                              onTap: (){
-                                widget.callback(6);
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => HivTestPage(),
+                                    ));
                               },
                             ),
                           ),
@@ -86,12 +103,16 @@ class _HomeWidgetState extends State<HomeWidget> {
                             child: HomeMenuCard(
                               height: 104,
                               imagePath:
-                              "assets/images/Sections/Section=Treatment.png",
+                                  "assets/images/Sections/Section=Treatment.png",
                               imageHeight: 40,
                               imageWidth: 40,
                               cardName: "hiv_prevention".tr().toUpperCase(),
-                              onTap: (){
-                                widget.callback(7);
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => HivPreventionPage(),
+                                    ));
                               },
                             ),
                           ),
@@ -102,12 +123,16 @@ class _HomeWidgetState extends State<HomeWidget> {
                             child: HomeMenuCard(
                               height: 104,
                               imagePath:
-                              "assets/images/Sections/Section=HIV.png",
+                                  "assets/images/Sections/Section=HIV.png",
                               imageHeight: 40,
                               imageWidth: 40,
                               cardName: "do_you_have_hiv".tr().toUpperCase(),
-                              onTap: (){
-                                widget.callback(8);
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => PresenceOfHivPage(),
+                                    ));
                               },
                             ),
                           ),
@@ -123,12 +148,16 @@ class _HomeWidgetState extends State<HomeWidget> {
                             child: HomeMenuCard(
                               height: 104,
                               imagePath:
-                              "assets/images/Sections/Section=Consultation.png",
+                                  "assets/images/Sections/Section=Consultation.png",
                               imageHeight: 40,
                               imageWidth: 40,
                               cardName: "consultation".tr().toUpperCase(),
-                              onTap: (){
-                                widget.callback(9);
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => ConsultationPage(),
+                                    ));
                               },
                             ),
                           ),
@@ -143,9 +172,13 @@ class _HomeWidgetState extends State<HomeWidget> {
                               imageHeight: 40,
                               imageWidth: 40,
                               cardName: "my_condition".tr().toUpperCase(),
-                              onTap: (){
-                                widget.callback(10);
-                                print("TODO");
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => MyHealth(),
+                                  ),
+                                );
                               },
                             ),
                           ),

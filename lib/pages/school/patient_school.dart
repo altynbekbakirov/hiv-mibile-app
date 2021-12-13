@@ -15,6 +15,9 @@ import 'better_player/chewie_video_player.dart';
 
 /// Страница Школы Пациентов
 class PatientSchoolPage extends StatefulWidget {
+  final bool showAppBar;
+
+  PatientSchoolPage({this.showAppBar});
   @override
   _PatientSchoolPageState createState() => _PatientSchoolPageState();
 }
@@ -36,6 +39,7 @@ class _PatientSchoolPageState extends State<PatientSchoolPage> {
   @override
   void initState() {
     appBarName = "patient_school";
+
     getListOfVideos();
     super.initState();
   }
@@ -45,7 +49,7 @@ class _PatientSchoolPageState extends State<PatientSchoolPage> {
     final provider = Provider.of<VideoUI>(context, listen: true);
     var isShowAppbar = provider.isShowAppbar;
     return Scaffold(
-      appBar: isShowAppbar
+      appBar: widget.showAppBar
           ? ArrowBackAppBar(
               text: appBarName.tr().toUpperCase(),
             )

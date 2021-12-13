@@ -1,12 +1,15 @@
+import 'package:HIVApp/components/app_bar_arrow_back.dart';
 import 'package:HIVApp/components/button_with_chevron.dart';
 import 'package:HIVApp/routes/routes.dart';
 import 'package:HIVApp/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
 
-import 'hiv_info_screens/hiv_AIDS_info.dart';
-
 class HivInformationPage extends StatefulWidget {
+  final bool showAppBar;
+
+  HivInformationPage({this.showAppBar});
+
   @override
   _HivInformationPageState createState() => _HivInformationPageState();
 }
@@ -17,6 +20,11 @@ class _HivInformationPageState extends State<HivInformationPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: widget.showAppBar
+          ? ArrowBackAppBar(
+              text: "what_is_HIV".tr().toUpperCase(),
+            )
+          : null,
       body: Container(
         color: kLightGrayishBlue,
         child: Container(
@@ -44,7 +52,8 @@ class _HivInformationPageState extends State<HivInformationPage> {
                 height: 56,
                 text: "how_is_HIV_not_transmitted".tr(),
                 onTap: () {
-                  Navigator.pushNamed(context, Routes.hiv_not_transmitted_screen);
+                  Navigator.pushNamed(
+                      context, Routes.hiv_not_transmitted_screen);
                 },
               ),
             ],
