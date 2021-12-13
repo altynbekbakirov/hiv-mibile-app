@@ -280,7 +280,6 @@ class _AddPageState extends State<AddPage> {
     );
   }
 
-
   List getDayEnums(List list) {
     List newList = [];
     for (int i in list) {

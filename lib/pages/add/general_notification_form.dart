@@ -207,8 +207,6 @@ class GeneralNotificationFormState extends State<GeneralNotificationForm> {
     await flutterLocalNotificationsPlugin.cancelAll();
   }
 
-
-
   static Future<void> scheduledNotification(String title, String body, DateTime dateTime, NotificationDbTimeType type, int value) async {
     await flutterLocalNotificationsPlugin.zonedSchedule(
         dateTime.millisecond,
@@ -388,7 +386,7 @@ class GeneralNotificationFormState extends State<GeneralNotificationForm> {
                           .then((value) async {
                         await DBProvider.db.newNotification(
                             NotificationDb(description: _description, datetime: _dateTime, time_type: _day.type, type: _type, sent: 0));
-                      }
+                        }
                       );
                       Navigator.of(context).pop();
                     },

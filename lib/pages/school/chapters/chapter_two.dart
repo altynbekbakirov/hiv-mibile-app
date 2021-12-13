@@ -448,7 +448,7 @@ class _ChapterTwoState extends State<ChapterTwo> {
                     title: RichText(
                       text: TextSpan(
                           text:
-                              "Чаще всего это связано с низкой приверженностью к лечению - когда ЛЖВ по разным причинам пропускают прием препаратов.",
+                          "Чаще всего это связано с низкой приверженностью к лечению - когда ЛЖВ по разным причинам пропускают прием препаратов.",
                           style: TextStyle(
                               color: Colors.black,
                               fontSize: fontSize,
@@ -1097,15 +1097,6 @@ class _ChapterTwoState extends State<ChapterTwo> {
                     color: Colors.black,
                   ),
                 ),
-                TextSpan(
-                    text: "95 –100 % предписанных доз препаратов. ",
-                    style: TextStyle(
-                      fontStyle: FontStyle.italic,
-                      fontSize: fontSize,
-                      fontWeight: FontWeight.w600,
-                      color: Colors.black,
-                      decoration: TextDecoration.underline,
-                    )),
               ], style: TextStyle(fontSize: fontSize)),
             ),
             SizedBox(height: 86),

@@ -5,7 +5,7 @@ import 'package:easy_localization/easy_localization.dart';
 
 import 'carousel_page.dart';
 
-/// Страница "Поддерживающая терапия метадоном"
+/// Страница "Доконтактная и постконтактная профилактика ВИЧ-инфекции"
 class PrePostExposureTherapyScreen extends StatefulWidget {
   @override
   _PrePostExposureTherapyScreenState createState() => _PrePostExposureTherapyScreenState();

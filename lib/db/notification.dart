@@ -92,11 +92,11 @@ class NotificationDb {
 
   static String convertTypeEnumsToString(NotificationDbType type) {
     if (type == NotificationDbType.Drug)
-      return 'medications';
+      return 'Лекарства';
     else if (type == NotificationDbType.Analysis)
-      return 'tests';
+      return 'Анализ';
     else
-      return 'visit';
+      return 'Посещение врача';
   }
 
   static NotificationDbTimeType convertStringToTimetypeEnums(String type) {
