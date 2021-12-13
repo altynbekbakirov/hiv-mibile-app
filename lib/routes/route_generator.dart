@@ -41,7 +41,6 @@ import 'package:HIVApp/pages/signup/questionnaire.dart';
 import 'package:HIVApp/pages/signup/successful_registration.dart';
 import 'package:HIVApp/pages/test/test_information_page.dart';
 import 'package:HIVApp/pages/test/test_page.dart';
-import 'package:HIVApp/pages/treatment/treatment_page.dart';
 import 'package:HIVApp/pages/pin_code_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -109,8 +108,8 @@ class RouteGenerator {
       case Routes.test_information:
         return CupertinoPageRoute(builder: (_) => TestInformationPage());
 
-      case Routes.treatment:
-        return CupertinoPageRoute(builder: (_) => TreatmentPage());
+      // case Routes.treatment:
+      //   return CupertinoPageRoute(builder: (_) => TreatmentPage());
 
       case Routes.consultation:
         return CupertinoPageRoute(builder: (_) => ConsultationPage());
