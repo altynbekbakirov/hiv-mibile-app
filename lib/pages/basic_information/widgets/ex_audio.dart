@@ -135,7 +135,6 @@ class _AudioAppState extends State<AudioApp> {
     category_name = widget.category_name;
     files = compareRemoteLocalAudios(widget.list, widget.dbList);
     if (kIsWeb) {
-      // Calls to Platform.isIOS fails on web
       return;
     }
     if (Platform.isIOS) {
@@ -294,18 +293,6 @@ class _AudioAppState extends State<AudioApp> {
                 );
               }),
         ),
-        provider.isTransparency
-            ? GestureDetector(
-                onTap: () {
-                  provider.setTransparency(false);
-                },
-                child: Container(
-                  height: MediaQuery.of(context).size.height,
-                  width: MediaQuery.of(context).size.width,
-                  color: kModerateBlue.withOpacity(0.3),
-                ),
-              )
-            : Container(),
         AnimatedPositioned(
           bottom: pinPillPosition,
           right: 0,
@@ -317,8 +304,16 @@ class _AudioAppState extends State<AudioApp> {
               decoration: BoxDecoration(
                 color: kColorWhite,
                 borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(12),
-                    topRight: Radius.circular(12)),
+                    topLeft: Radius.circular(16),
+                    topRight: Radius.circular(16)),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.5),
+                    spreadRadius: 5,
+                    blurRadius: 7,
+                    offset: Offset(0, 3),
+                  )
+                ]
               ),
               child: Column(children: <Widget>[
                 Container(

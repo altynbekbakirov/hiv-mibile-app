@@ -81,6 +81,17 @@ class _AudioCategoryWidgetState extends State<AudioCategoryWidget> {
     super.initState();
   }
 
+  // @override
+  // void dispose() {
+  //   disableTransparency();
+  //   super.dispose();
+  // }
+  //
+  // void disableTransparency(){
+  //   var provider = Provider.of<Audio>(context);
+  //   provider.setTransparency(false);
+  // }
+
   @override
   Widget build(BuildContext context) {
     var provider = Provider.of<Audio>(context);
@@ -88,7 +99,7 @@ class _AudioCategoryWidgetState extends State<AudioCategoryWidget> {
         ? Column(
             children: [
               Container(
-                color: !provider.isTransparency ? null : kModerateBlue.withOpacity(0.3),
+                // color: !provider.isTransparency ? null : kModerateBlue.withOpacity(0.3),
                 padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                 alignment: Alignment.centerLeft,
                 child: InkWell(
