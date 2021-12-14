@@ -141,7 +141,7 @@ class _ContactsPageState extends State<ContactsPage>
         return "https://api.whatsapp.com/send?phone=$phone=${Uri.parse(message)}"; // new line
       }
     }
-
+    await launch(url());
     if (await canLaunch(url())) {
       await launch(url());
     } else {
@@ -152,6 +152,7 @@ class _ContactsPageState extends State<ContactsPage>
   void launchTelegram({
     @required String profileName,
   }) async {
+    //TODO Set profile name
     var url = 'https://t.me/$profileName';
 
     if (await canLaunch(url)) {
@@ -216,10 +217,10 @@ class _ContactsPageState extends State<ContactsPage>
             controller: _nestedTabController,
             children: [
               // TODO Add telegram Profile Name
-              contentBuilder('996558558980', "", 'contact_to_doctor', "doctor_consultation"),
-              contentBuilder('996558558981', "", 'contact_to_equal_consultant', 'equal_consultant'),
-              contentBuilder('996558558982', "", 'contact_to_psychologist', 'Психолог'),
-              contentBuilder('996558558983', "", 'contact_to_lawyer', 'Юрист'),
+              contentBuilder('+996558558980', "", 'contact_to_doctor', "doctor_consultation"),
+              contentBuilder('+996558558981', "", 'contact_to_equal_consultant', 'equal_consultant'),
+              contentBuilder('+996558558982', "", 'contact_to_psychologist', 'Психолог'),
+              contentBuilder('+996558558983', "", 'contact_to_lawyer', 'Юрист'),
             ],
           ),
         ),
