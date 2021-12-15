@@ -63,27 +63,26 @@ class _ResultsOfTestsState extends State<ResultsOfTests> {
   void _showErrorDialog(String message) {
     showDialog(
       context: context,
-      builder: (ctx) =>
-          Center(
-            child: AlertDialog(
-              title: Text(''),
-              content: Text(message),
-              actions: <Widget>[
-                FlatButton(
-                  child: Text('back'.tr()),
-                  onPressed: () {
-                    Navigator.of(ctx).pop();
-                  },
-                ),
-                FlatButton(
-                  child: Text('continue'.tr()),
-                  onPressed: () {
-                    Navigator.of(ctx).popAndPushNamed(Routes.login);
-                  },
-                )
-              ],
+      builder: (ctx) => Center(
+        child: AlertDialog(
+          title: Text(''),
+          content: Text(message),
+          actions: <Widget>[
+            FlatButton(
+              child: Text('back'.tr()),
+              onPressed: () {
+                Navigator.of(ctx).pop();
+              },
             ),
-          ),
+            FlatButton(
+              child: Text('continue'.tr()),
+              onPressed: () {
+                Navigator.of(ctx).popAndPushNamed(Routes.login);
+              },
+            )
+          ],
+        ),
+      ),
     );
   }
 
@@ -202,10 +201,11 @@ class _ResultsOfTestsState extends State<ResultsOfTests> {
           action: InkWell(
             onTap: () {
               if (logged) {
-                Navigator.push(context, MaterialPageRoute(
-                  builder: (context) =>
-                      ImageForm(title: 'set_image_analysis', type: 1,),
-                ));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => DoctorAppointment(),
+                    ));
               } else {
                 _showErrorDialog('login_or_sign_up_to_add'.tr());
               }
@@ -258,12 +258,31 @@ class _MyItemState extends State<MyItem> {
       padding: EdgeInsets.symmetric(horizontal: 16),
       child: Column(
         children: [
-          Align(
-            alignment: Alignment.centerRight,
-            child: InkWell(
-              onTap: widget.onDelete,
-              child: Icon(Icons.delete_outline, size: 25, color: Colors.black),
-            ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              widget.userImages.type == 1
+                  ? Text("analyze_result".tr().toUpperCase(),
+                      style: TextStyle(
+                        color: kModerateBlue,
+                        fontSize: 14,
+                        fontWeight: FontWeight.w500,
+                      ))
+                  : Text("doctor_appointment".tr().toUpperCase(),
+                      style: TextStyle(
+                        color: kModerateBlue,
+                        fontSize: 14,
+                        fontWeight: FontWeight.w500,
+                      )),
+              Align(
+                alignment: Alignment.centerRight,
+                child: InkWell(
+                  onTap: widget.onDelete,
+                  child:
+                      Icon(Icons.delete_outline, size: 25, color: Colors.black),
+                ),
+              ),
+            ],
           ),
           SizedBox(height: 10),
           Image.file(File(widget.userImages.path)),
@@ -271,5 +290,142 @@ class _MyItemState extends State<MyItem> {
         ],
       ),
     );
+  }
+}
+
+class DoctorAppointment extends StatefulWidget {
+  const DoctorAppointment({Key key}) : super(key: key);
+
+  @override
+  _DoctorAppointmentState createState() => _DoctorAppointmentState();
+}
+
+class _DoctorAppointmentState extends State<DoctorAppointment> {
+  bool logged = false;
+
+  @override
+  void initState() {
+    super.initState();
+    isLoggedIn();
+  }
+
+  isLoggedIn() async {
+    await DBProvider.db.getUserId().then((value) {
+      if (value != null)
+        setState(() {
+          logged = true;
+        });
+    });
+  }
+
+  void _showErrorDialog(String message) {
+    showDialog(
+      context: context,
+      builder: (ctx) => Center(
+        child: AlertDialog(
+          title: Text(''),
+          content: Text(message),
+          actions: <Widget>[
+            FlatButton(
+              child: Text('back'.tr()),
+              onPressed: () {
+                Navigator.of(ctx).pop();
+              },
+            ),
+            FlatButton(
+              child: Text('continue'.tr()),
+              onPressed: () {
+                Navigator.of(ctx).popAndPushNamed(Routes.login);
+              },
+            )
+          ],
+        ),
+      ),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: ArrowBackAppBar(
+          text: "my_condition".tr().toUpperCase(),
+        ),
+        body: Container(
+          padding: EdgeInsets.symmetric(vertical: 20),
+          color: kLightGrayishBlue,
+          child: Center(
+            child: ListView(
+              children: [
+                Container(
+                  margin: EdgeInsets.symmetric(horizontal: 16),
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(8.0)),
+                  child: ListTile(
+                      title: Text(
+                        'set_image_analysis'.tr().toUpperCase(),
+                        style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.bold,
+                          color: kModerateBlue,
+                        ),
+                      ),
+                      trailing: Icon(
+                        Icons.chevron_right,
+                        color: kModerateBlue,
+                      ),
+                      onTap: () {
+                        if (logged) {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => ImageForm(
+                                  title: 'set_image_analysis',
+                                  type: 1,
+                                ),
+                              ));
+                        } else {
+                          _showErrorDialog('login_or_sign_up_to_add'.tr());
+                        }
+                      }),
+                ),
+                Divider(),
+                Container(
+                  margin: EdgeInsets.symmetric(horizontal: 16),
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(8.0)),
+                  child: ListTile(
+                      title: Text(
+                        'set_image_recipe'.tr().toUpperCase(),
+                        style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.bold,
+                          color: kModerateBlue,
+                        ),
+                      ),
+                      trailing: Icon(
+                        Icons.chevron_right,
+                        color: kModerateBlue,
+                      ),
+                      onTap: () {
+                        if (logged) {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => ImageForm(
+                                  title: 'set_image_recipe',
+                                  type: 2,
+                                ),
+                              ));
+                        } else {
+                          _showErrorDialog('login_or_sign_up_to_add'.tr());
+                        }
+                      }),
+                ),
+              ],
+            ),
+          ),
+        ));
   }
 }
