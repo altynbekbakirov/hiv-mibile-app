@@ -2,9 +2,11 @@ import 'dart:async';
 
 import 'package:HIVApp/Enums/select_notification_operation.dart';
 import 'package:HIVApp/components/app_bar_arrow_back.dart';
+import 'package:HIVApp/db/db_provider.dart';
 import 'package:HIVApp/db/notification.dart';
 import 'package:HIVApp/pages/add/add_page.dart';
 import 'package:HIVApp/pages/add/notification_form.dart';
+import 'package:HIVApp/routes/routes.dart';
 import 'package:HIVApp/utils/constants.dart';
 import 'package:custom_switch/custom_switch.dart';
 import 'package:flutter/material.dart';
@@ -34,10 +36,12 @@ class _TakeMedicationsViewState extends State<TakeMedicationsView> {
   List<NotificationDb> notificationList = List<NotificationDb>();
   bool status = false;
   final notifications = FlutterLocalNotificationsPlugin();
+  bool logged = false;
 
   @override
   void initState() {
     super.initState();
+    isLoggedIn();
     NotificationDb.getNotificationsById().then((value) {
       setState(() {
         for (var i in value) {
@@ -74,6 +78,42 @@ class _TakeMedicationsViewState extends State<TakeMedicationsView> {
                 notificationDb: notificationList[index],
                 operationType: Operation.updateNotification,
               )),
+    );
+  }
+
+  isLoggedIn() async {
+    await DBProvider.db.getUserId().then((value) {
+      if (value != null)
+        setState(() {
+          logged = true;
+        });
+    });
+  }
+
+  void _showErrorDialog(String message) {
+    showDialog(
+      context: context,
+      builder: (ctx) =>
+          Center(
+            child: AlertDialog(
+              title: Text(''),
+              content: Text(message),
+              actions: <Widget>[
+                FlatButton(
+                  child: Text('back'.tr()),
+                  onPressed: () {
+                    Navigator.of(ctx).pop();
+                  },
+                ),
+                FlatButton(
+                  child: Text('continue'.tr()),
+                  onPressed: () {
+                    Navigator.of(ctx).popAndPushNamed(Routes.login);
+                  },
+                )
+              ],
+            ),
+          ),
     );
   }
 
@@ -138,7 +178,30 @@ class _TakeMedicationsViewState extends State<TakeMedicationsView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: ArrowBackAppBar(text: "my_condition".tr().toUpperCase()),
+        appBar: ArrowBackAppBar(
+          text: "my_condition".tr().toUpperCase(),
+          action: InkWell(
+            onTap: () {
+              if (logged) {
+                Navigator.push(context, MaterialPageRoute(
+                  builder: (context) =>
+                      NotificationForm(type: NotificationDbType.Drug,
+                          operationType: Operation.createNotification),
+                ));
+              } else {
+                _showErrorDialog('login_or_sign_up_to_add'.tr());
+              }
+            },
+            child: Container(
+              padding: EdgeInsets.only(right: 16),
+              child: Icon(
+                Icons.add,
+                color: kModerateBlue,
+                size: 30,
+              ),
+            ),
+          ),
+        ),
         body: notificationList != null
             ? Container(
                 padding: EdgeInsets.symmetric(vertical: 20),
