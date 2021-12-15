@@ -260,11 +260,11 @@ class _SchoolPatientContentState extends State<SchoolPatientContent> {
                         ? chapterTwoPercent.toInt()
                         : 0,
                     onTap: () {
-                      // if (chapterOnePercent != null &&
-                      //     chapterOnePercent == 100) {
+                      if (chapterOnePercent != null &&
+                          chapterOnePercent == 100) {
                         Route route = selectChapter(Chapter.two);
                         Navigator.push(context, route);
-                      // }
+                      }
                     }),
                 CardListTile(
                     tileName: 'Модуль 3'.tr(),
@@ -272,11 +272,11 @@ class _SchoolPatientContentState extends State<SchoolPatientContent> {
                         ? chapterThreePercent.toInt()
                         : 0,
                     onTap: () {
-                      // if (chapterTwoPercent != null &&
-                      //     chapterTwoPercent == 100) {
+                      if (chapterTwoPercent != null &&
+                          chapterTwoPercent == 100) {
                         Route route = selectChapter(Chapter.three);
                         Navigator.push(context, route);
-                      // }
+                      }
                     }),
                 CardListTile(
                     tileName: 'Модуль 4'.tr(),
@@ -284,11 +284,11 @@ class _SchoolPatientContentState extends State<SchoolPatientContent> {
                         ? chapterFourPercent.toInt()
                         : 0,
                     onTap: () {
-                      // if (chapterThreePercent != null &&
-                      //     chapterThreePercent == 100) {
+                      if (chapterThreePercent != null &&
+                          chapterThreePercent == 100) {
                         Route route = selectChapter(Chapter.four);
                         Navigator.push(context, route);
-                      // }
+                      }
                     }),
                 CardListTile(
                     tileName: 'Модуль 5'.tr(),
@@ -296,11 +296,11 @@ class _SchoolPatientContentState extends State<SchoolPatientContent> {
                         ? chapterFivePercent.toInt()
                         : 0,
                     onTap: () {
-                      // if (chapterFourPercent != null &&
-                      //     chapterFourPercent == 100) {
+                      if (chapterFourPercent != null &&
+                          chapterFourPercent == 100) {
                         Route route = selectChapter(Chapter.five);
                         Navigator.push(context, route);
-                      // }
+                      }
                     }),
                 CardListTile(
                     tileName: 'Модуль 6'.tr(),
@@ -308,11 +308,11 @@ class _SchoolPatientContentState extends State<SchoolPatientContent> {
                         ? chapterSixPercent.toInt()
                         : 0,
                     onTap: () {
-                      // if (chapterFivePercent != null &&
-                      //     chapterFivePercent == 100) {
+                      if (chapterFivePercent != null &&
+                          chapterFivePercent == 100) {
                         Route route = selectChapter(Chapter.six);
                         Navigator.push(context, route);
-                      // }
+                      }
                     }),
                 CardListTile(
                     tileName: 'Модуль 7'.tr(),
@@ -320,11 +320,11 @@ class _SchoolPatientContentState extends State<SchoolPatientContent> {
                         ? chapterSevenPercent.toInt()
                         : 0,
                     onTap: () {
-                      // if (chapterSixPercent != null &&
-                      //     chapterSixPercent == 100) {
+                      if (chapterSixPercent != null &&
+                          chapterSixPercent == 100) {
                         Route route = selectChapter(Chapter.seven);
                         Navigator.push(context, route);
-                      // }
+                      }
                     }),
                 CardListTile(
                     tileName: 'Модуль 8'.tr(),
@@ -332,11 +332,11 @@ class _SchoolPatientContentState extends State<SchoolPatientContent> {
                         ? chapterEightPercent.toInt()
                         : 0,
                     onTap: () {
-                      // if (chapterSevenPercent != null &&
-                      //     chapterSevenPercent == 100) {
+                      if (chapterSevenPercent != null &&
+                          chapterSevenPercent == 100) {
                         Route route = selectChapter(Chapter.eight);
                         Navigator.push(context, route);
-                      // }
+                      }
                     }),
               ]),
             ),
