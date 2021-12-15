@@ -1135,7 +1135,7 @@ class _ChapterSevenState extends State<ChapterSeven> {
               currentPage: currentPage + 1,
               maxPage: pages.length,
               currentPageCallback: (value) {
-                pageController.jumpToPage(value.toInt());
+                // pageController.jumpToPage(value.toInt());
               },
             ),
           ],

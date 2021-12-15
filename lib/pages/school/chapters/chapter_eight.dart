@@ -647,7 +647,7 @@ class _ChapterEightState extends State<ChapterEight> {
               currentPage: currentPage + 1,
               maxPage: pages.length,
               currentPageCallback: (value) {
-                pageController.jumpToPage(value.toInt());
+                // pageController.jumpToPage(value.toInt());
               },
             ),
           ],

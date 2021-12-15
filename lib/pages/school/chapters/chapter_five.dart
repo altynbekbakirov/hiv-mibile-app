@@ -2137,7 +2137,7 @@ class _ChapterFiveState extends State<ChapterFive> {
               currentPage: currentPage + 1,
               maxPage: pages.length,
               currentPageCallback: (value) {
-                pageController.jumpToPage(value.toInt());
+                // pageController.jumpToPage(value.toInt());
               },
             ),
           ],
