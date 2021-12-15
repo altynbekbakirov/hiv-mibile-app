@@ -6,6 +6,8 @@ import 'package:HIVApp/db/db_provider.dart';
 import 'package:HIVApp/db/image_files.dart';
 import 'package:HIVApp/db/notification.dart';
 import 'package:HIVApp/pages/add/add_page.dart';
+import 'package:HIVApp/pages/add/image_form.dart';
+import 'package:HIVApp/routes/routes.dart';
 import 'package:HIVApp/utils/constants.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -24,11 +26,12 @@ class _ResultsOfTestsState extends State<ResultsOfTests> {
   bool status = false;
   final notifications = FlutterLocalNotificationsPlugin();
   List<UserImageFile> userImages = List<UserImageFile>();
+  bool logged = false;
 
   @override
   void initState() {
     super.initState();
-
+    isLoggedIn();
     DBProvider.db.getUserImageFiles().then((value) {
       if (value != null)
         setState(() {
@@ -46,6 +49,42 @@ class _ResultsOfTestsState extends State<ResultsOfTests> {
     notifications.initialize(
         InitializationSettings(android: settingsAndroid, iOS: settingsIOS),
         onSelectNotification: onSelectNotification);
+  }
+
+  isLoggedIn() async {
+    await DBProvider.db.getUserId().then((value) {
+      if (value != null)
+        setState(() {
+          logged = true;
+        });
+    });
+  }
+
+  void _showErrorDialog(String message) {
+    showDialog(
+      context: context,
+      builder: (ctx) =>
+          Center(
+            child: AlertDialog(
+              title: Text(''),
+              content: Text(message),
+              actions: <Widget>[
+                FlatButton(
+                  child: Text('back'.tr()),
+                  onPressed: () {
+                    Navigator.of(ctx).pop();
+                  },
+                ),
+                FlatButton(
+                  child: Text('continue'.tr()),
+                  onPressed: () {
+                    Navigator.of(ctx).popAndPushNamed(Routes.login);
+                  },
+                )
+              ],
+            ),
+          ),
+    );
   }
 
   Future onSelectNotification(String payload) async => await Navigator.push(
@@ -158,7 +197,29 @@ class _ResultsOfTestsState extends State<ResultsOfTests> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: ArrowBackAppBar(text: "my_condition".tr().toUpperCase()),
+        appBar: ArrowBackAppBar(
+          text: "my_condition".tr().toUpperCase(),
+          action: InkWell(
+            onTap: () {
+              if (logged) {
+                Navigator.push(context, MaterialPageRoute(
+                  builder: (context) =>
+                      ImageForm(title: 'set_image_analysis', type: 1,),
+                ));
+              } else {
+                _showErrorDialog('login_or_sign_up_to_add'.tr());
+              }
+            },
+            child: Container(
+              padding: EdgeInsets.only(right: 16),
+              child: Icon(
+                Icons.add,
+                color: kModerateBlue,
+                size: 30,
+              ),
+            ),
+          ),
+        ),
         body: userImages != null
             ? Container(
                 padding: EdgeInsets.symmetric(vertical: 20),

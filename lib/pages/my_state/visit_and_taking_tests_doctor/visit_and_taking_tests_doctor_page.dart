@@ -93,32 +93,6 @@ class _VisitAndTakingTestDoctorViewState
   }
 
 
-  void _showErrorDialog(String message) {
-    showDialog(
-      context: context,
-      builder: (ctx) =>
-          Center(
-            child: AlertDialog(
-              title: Text(''),
-              content: Text(message),
-              actions: <Widget>[
-                FlatButton(
-                  child: Text('back'.tr()),
-                  onPressed: () {
-                    Navigator.of(ctx).pop();
-                  },
-                ),
-                FlatButton(
-                  child: Text('continue'.tr()),
-                  onPressed: () {
-                    Navigator.of(ctx).popAndPushNamed(Routes.login);
-                  },
-                )
-              ],
-            ),
-          ),
-    );
-  }
 
   /// Card Header
   Widget _name(String name, int notificationId, int index) {
@@ -177,12 +151,8 @@ class _VisitAndTakingTestDoctorViewState
               if (logged) {
                 Navigator.push(context, MaterialPageRoute(
                   builder: (context) =>
-                      GeneralNotificationForm(type: NotificationDbType
-                          .Analysis),
+                      VisitAndAnalyze(),
                 ));
-              }
-              else {
-                _showErrorDialog('login_or_sign_up_to_add'.tr());
               }
             },
             child: Container(
@@ -359,3 +329,143 @@ class _VisitAndTakingTestDoctorViewState
                 child: Container(child: Text("no_active_notifications".tr()))));
   }
 }
+
+
+class VisitAndAnalyze extends StatefulWidget {
+  const VisitAndAnalyze({Key key}) : super(key: key);
+
+  @override
+  _VisitAndAnalyzeState createState() => _VisitAndAnalyzeState();
+}
+
+class _VisitAndAnalyzeState extends State<VisitAndAnalyze> {
+  bool logged = false;
+
+  @override
+  void initState() {
+    super.initState();
+    isLoggedIn();
+  }
+
+  isLoggedIn() async {
+    await DBProvider.db.getUserId().then((value) {
+      if (value != null)
+        setState(() {
+          logged = true;
+        });
+    });
+  }
+
+  void _showErrorDialog(String message) {
+    showDialog(
+      context: context,
+      builder: (ctx) =>
+          Center(
+            child: AlertDialog(
+              title: Text(''),
+              content: Text(message),
+              actions: <Widget>[
+                FlatButton(
+                  child: Text('back'.tr()),
+                  onPressed: () {
+                    Navigator.of(ctx).pop();
+                  },
+                ),
+                FlatButton(
+                  child: Text('continue'.tr()),
+                  onPressed: () {
+                    Navigator.of(ctx).popAndPushNamed(Routes.login);
+                  },
+                )
+              ],
+            ),
+          ),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: ArrowBackAppBar(
+          text: "my_condition".tr().toUpperCase(),
+        ),
+        body: Container(
+          padding: EdgeInsets.symmetric(vertical: 20),
+          color: kLightGrayishBlue,
+          child: Center(
+            child: ListView(
+              children: [
+                Container(
+                  margin: EdgeInsets.symmetric(horizontal: 16),
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                    borderRadius: BorderRadius.circular(8.0)
+                  ),
+                  child: ListTile(
+                      title: Text(
+                        'add_visit_notification'.tr().toUpperCase(),
+                        style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.bold,
+                          color: kModerateBlue,
+                        ),
+                      ),
+                      trailing: Icon(
+                        Icons.chevron_right,
+                        color: kModerateBlue,
+                      ),
+                      onTap: () {
+                        if (logged) {
+                          Navigator.push(context, MaterialPageRoute(
+                            builder: (context) =>
+                                GeneralNotificationForm(type: NotificationDbType
+                                    .Visit),
+                          ));
+                        } else {
+                          _showErrorDialog('login_or_sign_up_to_add'.tr());
+                        }
+                      }
+                  ),
+                ),
+                Divider(),
+                Container(
+                  margin: EdgeInsets.symmetric(horizontal: 16),
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(8.0)
+                  ),
+                  child: ListTile(
+                      title: Text(
+                        'add_analysis_notification'.tr().toUpperCase(),
+                        style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.bold,
+                          color: kModerateBlue
+                        ),
+                      ),
+                      trailing: Icon(
+                        Icons.chevron_right,
+                        color: kModerateBlue,
+                      ),
+                      onTap: () {
+                        if (logged) {
+                          Navigator.push(context, MaterialPageRoute(
+                            builder: (context) =>
+                                GeneralNotificationForm(type: NotificationDbType
+                                    .Analysis),
+                          ));
+                        }
+                        else {
+                          _showErrorDialog('login_or_sign_up_to_add'.tr());
+                        }
+                      }
+                  ),
+                ),
+              ],
+            ),
+          ),
+        )
+    );
+  }
+}
+
