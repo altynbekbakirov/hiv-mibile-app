@@ -663,40 +663,48 @@ class NotificationFormState extends State<NotificationForm> {
                     },
                   ),
                   TextButton(
-                    child: Text('add'.tr(),
-                        style: TextStyle(color: kDesaturatedBlue)),
-                    onPressed: () async {
-                      await scheduleDailyNotification(
-                        id: _dateTime.millisecond,
-                        title: _pillController.text,
-                        body: _descriptionController.text,
-                        timeOfDay: timeOfDay ?? TimeOfDay(hour: DateTime.now().hour, minute: DateTime.now().minute),
-                      ).then((value) async {
-                        await NotificationDb.updateOrCreateNotification(
-                            NotificationDb(
-                                notificationId: widget.operationType ==
-                                        Operation.createNotification
-                                    ? _dateTime.millisecond
-                                    : widget.notificationDb.notificationId,
-                                drugCount: int.parse(_pillCountController.text),
-                                startDateTime: dateRange.start,
-                                endDateTime: dateRange.end,
-                                drugName: _pillController.text,
-                                drugTime: timeOfDay ??TimeOfDay(hour: DateTime.now().hour, minute: DateTime.now().minute),
-                                isActive: 1,
-                                description: _descriptionController.text,
-                                datetime: _dateTime,
-                                time_type: _day.type,
-                                type: _type,
-                                sent: 0),
-                            selectOperation: widget.operationType);
-                      });
-                      Navigator.of(context).pop();
-                      Navigator.push(context, MaterialPageRoute(
-                        builder: (context) => MyHealth(),
-                      ));
-                    },
-                  ),
+                      child: Text('add'.tr(),
+                          style: TextStyle(color: kDesaturatedBlue)),
+                      onPressed: () async {
+                        await scheduleDailyNotification(
+                          id: _dateTime.millisecond,
+                          title: _pillController.text,
+                          body: _descriptionController.text,
+                          timeOfDay: timeOfDay ??
+                              TimeOfDay(
+                                  hour: DateTime.now().hour,
+                                  minute: DateTime.now().minute),
+                        ).then((value) async {
+                          await NotificationDb.updateOrCreateNotification(
+                              NotificationDb(
+                                  notificationId: widget.operationType ==
+                                          Operation.createNotification
+                                      ? _dateTime.millisecond
+                                      : widget.notificationDb.notificationId,
+                                  drugCount:
+                                      int.parse(_pillCountController.text),
+                                  startDateTime: dateRange.start,
+                                  endDateTime: dateRange.end,
+                                  drugName: _pillController.text,
+                                  drugTime: timeOfDay ??
+                                      TimeOfDay(
+                                          hour: DateTime.now().hour,
+                                          minute: DateTime.now().minute),
+                                  isActive: 1,
+                                  description: _descriptionController.text,
+                                  datetime: _dateTime,
+                                  time_type: _day.type,
+                                  type: _type,
+                                  sent: 0),
+                              selectOperation: widget.operationType);
+                        });
+                        Navigator.of(context).pop();
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => MyHealth(),
+                            ));
+                      }),
                 ],
               )
             ],
