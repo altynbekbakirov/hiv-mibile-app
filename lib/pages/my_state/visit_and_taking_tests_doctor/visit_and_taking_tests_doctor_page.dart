@@ -150,8 +150,7 @@ class _VisitAndTakingTestDoctorViewState
                             children: <Widget>[
                               Container(
                                 child: _name(
-                                    NotificationDb.convertTypeEnumsToString(
-                                        notificationList[index].type),
+                                    notificationList[index].drugName,
                                     notificationList[index].notificationId,
                                     index),
                               ),

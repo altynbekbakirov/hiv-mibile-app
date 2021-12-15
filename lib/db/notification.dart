@@ -92,11 +92,11 @@ class NotificationDb {
 
   static String convertTypeEnumsToString(NotificationDbType type) {
     if (type == NotificationDbType.Drug)
-      return 'Лекарства';
+      return 'medications';
     else if (type == NotificationDbType.Analysis)
-      return 'Анализ';
+      return 'tests';
     else
-      return 'Посещение врача';
+      return 'visit';
   }
 
   static NotificationDbTimeType convertStringToTimetypeEnums(String type) {
@@ -417,7 +417,7 @@ class NotificationDb {
       result.add({
         "patient_id": user_id,
         "notificationId": DateTime.now().millisecond,
-        "drug_name":"vizit",
+        "drug_name": DrugName(i.type),
         "drug_count": 1,
         "drug_time":"17:57",
         "startDateTime":"2020-11-10 15:45",
@@ -431,7 +431,18 @@ class NotificationDb {
     }
     return result;
   }
+
+  static String DrugName(NotificationDbType type) {
+    if (type == NotificationDbType.Visit)
+      return 'Визит к врачу';
+    else if (type == NotificationDbType.Analysis)
+      return 'Анализ';
+    else
+      return '';
+  }
 }
+
+
 
 NotificationDb notificationFromJson(String str) {
   final jsonData = json.decode(str);

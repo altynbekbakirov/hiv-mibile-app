@@ -327,7 +327,6 @@ class NotificationFormState extends State<NotificationForm> {
         Duration(days: cancelDayCount),
         () async => {
               await flutterLocalNotificationsPlugin.cancel(id),
-              print("QPPPPP $id, ${DateTime.now()}"),
             });
   }
 
@@ -650,7 +649,7 @@ class NotificationFormState extends State<NotificationForm> {
                     borderRadius: BorderRadius.circular(8.0)),
               ),
 
-              /// Кнопки
+              /// Buttons Cancel && Add
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
