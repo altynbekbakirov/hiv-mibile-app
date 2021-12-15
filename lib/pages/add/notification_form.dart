@@ -405,7 +405,7 @@ class NotificationFormState extends State<NotificationForm> {
   }
 
   /// Время уведомления
-  Widget _selectNotificationDay() {
+  Widget _selectNotificationTime() {
     return Container(
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -557,6 +557,7 @@ class NotificationFormState extends State<NotificationForm> {
                 ),
               ),
               _pillCountField(),
+              SizedBox(height: 20),
 
               /// Дата (С) Дата (До)
               Padding(
@@ -575,7 +576,7 @@ class NotificationFormState extends State<NotificationForm> {
 
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 20),
-                child: _selectNotificationDay(),
+                child: _selectNotificationTime(),
               ),
 
               // /// Напомнить (за час, за день, за месяц)
@@ -668,7 +669,7 @@ class NotificationFormState extends State<NotificationForm> {
                         id: _dateTime.millisecond,
                         title: _pillController.text,
                         body: _descriptionController.text,
-                        timeOfDay: timeOfDay,
+                        timeOfDay: timeOfDay ?? TimeOfDay(hour: DateTime.now().hour, minute: DateTime.now().minute),
                       ).then((value) async {
                         await NotificationDb.updateOrCreateNotification(
                             NotificationDb(
@@ -680,7 +681,7 @@ class NotificationFormState extends State<NotificationForm> {
                                 startDateTime: dateRange.start,
                                 endDateTime: dateRange.end,
                                 drugName: _pillController.text,
-                                drugTime: timeOfDay,
+                                drugTime: timeOfDay ??TimeOfDay(hour: DateTime.now().hour, minute: DateTime.now().minute),
                                 isActive: 1,
                                 description: _descriptionController.text,
                                 datetime: _dateTime,
@@ -689,7 +690,6 @@ class NotificationFormState extends State<NotificationForm> {
                                 sent: 0),
                             selectOperation: widget.operationType);
                       });
-
                       Navigator.pop(context);
                     },
                   ),
