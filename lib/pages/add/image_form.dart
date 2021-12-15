@@ -4,6 +4,7 @@ import 'package:HIVApp/components/custom_button.dart';
 import 'package:HIVApp/data/pref_manager.dart';
 import 'package:HIVApp/db/db_provider.dart';
 import 'package:HIVApp/db/image_files.dart';
+import 'package:HIVApp/pages/my_state/result/results_tests.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -183,8 +184,11 @@ class _ImageFormState extends State<ImageForm> {
                 model.user_id = 1;
                 model.type = type;
                 await DBProvider.db.newUserImage(model);
-//                    super.initState();
-                Navigator.pop(context);
+                Navigator.of(context).pop();
+                Navigator.push(context, MaterialPageRoute(
+                    builder: (context) =>
+                        ResultsOfTests(),
+                ));
               },
             ),
           ),

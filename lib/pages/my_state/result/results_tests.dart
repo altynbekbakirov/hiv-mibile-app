@@ -32,14 +32,7 @@ class _ResultsOfTestsState extends State<ResultsOfTests> {
   void initState() {
     super.initState();
     isLoggedIn();
-    DBProvider.db.getUserImageFiles().then((value) {
-      if (value != null)
-        setState(() {
-          for (var i in value) {
-            userImages.add(i);
-          }
-        });
-    });
+    getData();
 
     final settingsAndroid = AndroidInitializationSettings('app_icon');
     final settingsIOS = IOSInitializationSettings(
@@ -49,6 +42,17 @@ class _ResultsOfTestsState extends State<ResultsOfTests> {
     notifications.initialize(
         InitializationSettings(android: settingsAndroid, iOS: settingsIOS),
         onSelectNotification: onSelectNotification);
+  }
+
+  getData() async {
+    await DBProvider.db.getUserImageFiles().then((value) {
+      if (value != null)
+          for (var i in value) {
+            setState(() {
+              userImages.add(i);
+            });
+          }
+    });
   }
 
   isLoggedIn() async {
@@ -129,7 +133,9 @@ class _ResultsOfTestsState extends State<ResultsOfTests> {
                     size: 20, color: kVeryDarkGrayishBlue),
                 onTap: () async {
                   print("$imageId ----------------");
-                  await DBProvider.db.deleteUserImage(imageId);
+                  await DBProvider.db.deleteUserImage(imageId).then((value) {
+                    getData();
+                  });
                 },
               ),
               GestureDetector(
@@ -181,10 +187,13 @@ class _ResultsOfTestsState extends State<ResultsOfTests> {
             FlatButton(
               child: Text('delete'.tr().toUpperCase()),
               onPressed: () {
-                setState(() {
-                  DBProvider.db.deleteUserImage(id);
-                });
-                Navigator.pop(context);
+                DBProvider.db.deleteUserImage(id);
+                Navigator.of(ctx).pop();
+                Navigator.of(ctx).pop();
+                Navigator.push(ctx, MaterialPageRoute(
+                  builder: (context) =>
+                      ResultsOfTests(),
+                ));
               },
             )
           ],

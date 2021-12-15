@@ -9,28 +9,28 @@ import 'package:easy_localization/easy_localization.dart';
 class MyStatePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // return Scaffold(
-    //   backgroundColor: kLightGrayishBlue,
-    //   appBar: ArrowBackAppBar(text: "my_condition".tr().toUpperCase()),
-    //   body: Column(
-    //     children: [
-    //       SizedBox(height: 20),
-    //       Row(
-    //         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-    //         crossAxisAlignment: CrossAxisAlignment.start,
-    //         children: [
-    //           SquareButton(
-    //               text: 'symptoms'.tr().toUpperCase(),
-    //               image: "assets/images/Beat.png",
-    //               onTap: () => Navigator.pushNamed(context, Routes.symptom)),
-    //           SquareButton(
-    //               text: 'mood'.tr().toUpperCase(),
-    //               image: "assets/images/emoji.png",
-    //               onTap: () => Navigator.pushNamed(context, Routes.mood)),
-    //         ],
-    //       ),
-    //     ],
-    //   ),
-    // );
+    return Scaffold(
+      backgroundColor: kLightGrayishBlue,
+      appBar: ArrowBackAppBar(text: "my_condition".tr().toUpperCase()),
+      body: Column(
+        children: [
+          SizedBox(height: 20),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SquareButton(
+                  text: 'symptoms'.tr().toUpperCase(),
+                  image: "assets/images/Beat.png",
+                  onTap: () => Navigator.pushNamed(context, Routes.symptom)),
+              SquareButton(
+                  text: 'mood'.tr().toUpperCase(),
+                  image: "assets/images/emoji.png",
+                  onTap: () => Navigator.pushNamed(context, Routes.mood)),
+            ],
+          ),
+        ],
+      ),
+    );
   }
 }
