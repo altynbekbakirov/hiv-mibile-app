@@ -1,8 +1,4 @@
 import 'dart:async';
-
-import 'package:HIVApp/components/app_bar_arrow_back.dart';
-import 'package:HIVApp/pages/home/home_new.dart';
-import 'package:HIVApp/pages/home/home_page.dart';
 import 'package:HIVApp/routes/routes.dart';
 import 'package:HIVApp/utils/constants.dart';
 import 'package:connectivity/connectivity.dart';

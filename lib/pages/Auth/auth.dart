@@ -18,8 +18,7 @@ class AuthorizationPage extends StatefulWidget {
 }
 
 class _AuthorizationPageState extends State<AuthorizationPage> {
-
-  var url = Configs.ip+"/hiv_instruction.pdf";
+  var url = Configs.ip + "/hiv_instruction.pdf";
 
   _launchURL() async {
     if (await canLaunch(url)) {
@@ -87,6 +86,53 @@ class _AuthorizationPageState extends State<AuthorizationPage> {
     );
   }
 
+  /// Всплывающее окно регистрации
+  _showRegistrationDialog() {
+    showDialog(
+      context: context,
+      builder: (ctx) => Center(
+        child: AlertDialog(
+          title: Text(
+            'Уважаемый пользователь, \n'
+            'Спасибо, что установил наше мобильное приложение.',
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              color: Colors.black,
+              fontSize: 18,
+              fontWeight: FontWeight.w500,
+            ),
+          ),
+          content: SingleChildScrollView(
+              scrollDirection: Axis.vertical,
+              child: Text("- Регистрация дает тебе возможность пользоваться всем функционалом приложения: "
+                "пройти Школу пациентов, получить сертификат, вести свой дневник, записывать состояние, устанавливать "
+                "напоминания о приеме лекарств, загружать анализы и формировать электронную медицинскую карту.\n"
+                "- Ты можешь пользоваться приложением без регистрации, но тогда его функционал будет значительно ограничен. \n"
+                "- При регистрации ты можешь не указывать свои реальные данные, а указать только свой НИК или неофициальную электронную почту. \n"
+                "Все полученные данные строго конфиденциальны, хранятся в соответствие с Законом КР «Об информации персонального характера», "
+                "не передаются и не обрабатываются третьими лицами.",
+              style: TextStyle(color: Colors.grey, fontWeight: FontWeight.w400, fontSize: 16),
+            ),
+          ),
+
+          actions: <Widget>[
+            FlatButton(
+              child: Text('back'.tr()),
+              onPressed: () => Navigator.of(ctx).pop(),
+            ),
+            FlatButton(
+              child: Text('continue'.tr()),
+              onPressed: () {
+                Navigator.of(ctx).pop();
+                Navigator.of(ctx).pushNamed(Routes.signup);
+              },
+            )
+          ],
+        ),
+      ),
+    );
+  }
+
   /// Button для Регистрации
   Widget _register() {
     return Column(
@@ -104,9 +150,7 @@ class _AuthorizationPageState extends State<AuthorizationPage> {
         ),
         InkWell(
           borderRadius: BorderRadius.circular(2),
-          onTap: () {
-            Navigator.of(context).pushNamed(Routes.signup);
-          },
+          onTap: () => _showRegistrationDialog(),
           child: Padding(
             padding: const EdgeInsets.all(0),
             child: Text(
