@@ -112,31 +112,24 @@ class _HomeNewState extends State<HomeNew> with SingleTickerProviderStateMixin {
   }
 
   Future<bool> _onWillPop() async {
-    print("on will pop");
     if (_tabController.index == 0) {
+      DateTime now = DateTime.now();
+      if (currentBackPressTime == null ||
+          now.difference(currentBackPressTime) > Duration(seconds: 2)) {
+        currentBackPressTime = now;
+        Fluttertoast.showToast(msg: 'click_once_to_exit'.tr());
+        return Future.value(false);
+      }
       await SystemNavigator.pop();
     }
 
     Future.delayed(Duration(milliseconds: 200), () {
-      print("LLLLLLdfd");
       setState(() {
         _tabController.index = 0;
       });
     });
-    print("dasdfasd");
 
     return _tabController.index == 0;
-  }
-
-  Future<bool> onWillPop() {
-    DateTime now = DateTime.now();
-    if (currentBackPressTime == null ||
-        now.difference(currentBackPressTime) > Duration(seconds: 2)) {
-      currentBackPressTime = now;
-      Fluttertoast.showToast(msg: 'click_once_to_exit'.tr());
-      return Future.value(false);
-    }
-    return Future.value(true);
   }
 
   String _selectedAppBarName() {

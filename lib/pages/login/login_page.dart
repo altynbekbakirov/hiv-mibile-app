@@ -12,6 +12,53 @@ import 'package:HIVApp/components/next_button.dart';
 import 'package:HIVApp/model/user.dart';
 
 class LoginPage extends StatelessWidget {
+  /// Всплывающее окно регистрации
+  _showRegistrationDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (ctx) => Center(
+        child: AlertDialog(
+          title: Text(
+            'Уважаемый пользователь, \n'
+                'Спасибо, что установил наше мобильное приложение.',
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              color: Colors.black,
+              fontSize: 18,
+              fontWeight: FontWeight.w500,
+            ),
+          ),
+          content: SingleChildScrollView(
+            scrollDirection: Axis.vertical,
+            child: Text("- Регистрация дает тебе возможность пользоваться всем функционалом приложения: "
+                "пройти Школу пациентов, получить сертификат, вести свой дневник, записывать состояние, устанавливать "
+                "напоминания о приеме лекарств, загружать анализы и формировать электронную медицинскую карту.\n"
+                "- Ты можешь пользоваться приложением без регистрации, но тогда его функционал будет значительно ограничен. \n"
+                "- При регистрации ты можешь не указывать свои реальные данные, а указать только свой НИК или неофициальную электронную почту. \n"
+                "Все полученные данные строго конфиденциальны, хранятся в соответствие с Законом КР «Об информации персонального характера», "
+                "не передаются и не обрабатываются третьими лицами.",
+              style: TextStyle(color: Colors.grey, fontWeight: FontWeight.w400, fontSize: 16),
+            ),
+          ),
+
+          actions: <Widget>[
+            FlatButton(
+              child: Text('back'.tr()),
+              onPressed: () => Navigator.of(ctx).pop(),
+            ),
+            FlatButton(
+              child: Text('continue'.tr()),
+              onPressed: () {
+                Navigator.of(ctx).pop();
+                Navigator.of(ctx).pushNamed(Routes.signup);
+              },
+            )
+          ],
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -72,8 +119,9 @@ class LoginPage extends StatelessWidget {
                                 InkWell(
                                   borderRadius: BorderRadius.circular(2),
                                   onTap: () {
-                                    Navigator.of(context)
-                                        .pushNamed(Routes.signup);
+                                    _showRegistrationDialog(context);
+                                    // Navigator.of(context)
+                                    //     .pushNamed(Routes.signup);
                                   },
                                   child: Text(
                                     'register_now'.tr(),
