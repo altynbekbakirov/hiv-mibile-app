@@ -42,7 +42,7 @@ packages:
       name: audioplayers
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.17.4"
+    version: "0.16.2"
   auto_orientation:
     dependency: "direct main"
     description:
@@ -1030,5 +1030,5 @@ packages:
     source: hosted
     version: "7.0.0+7"
 sdks:
-  dart: ">=2.10.2 <=2.11.0-213.1.beta"
+  dart: ">=2.10.2 <=2.11.0-213.0.dev"
   flutter: ">=1.22.2 <2.0.0"
