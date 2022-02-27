@@ -842,40 +842,39 @@ class _ChapterOneState extends State<ChapterOne> with AutomaticKeepAliveClientMi
                     style: TextStyle(fontWeight: FontWeight.w400, color: Colors.black),
                   ),
                   TextSpan(
-                    text: 'Иммунитет обеспечивают органы и клетки, которые образуют ',
+                    text: 'c1_text31'.tr(),
                     style: TextStyle(fontWeight: FontWeight.w400, color: Colors.black),
                   ),
                   TextSpan(
-                    text: 'иммунную систему ',
+                    text: 'c1_text32'.tr(),
                     style: TextStyle(fontWeight: FontWeight.w600, color: Colors.black),
                   ),
                   TextSpan(
-                    text: 'организма. Ее еще называют ',
+                    text: 'c1_text33'.tr(),
                     style: TextStyle(fontWeight: FontWeight.w400, color: Colors.black),
                   ),
                   TextSpan(
-                    text: 'защитной системой. ',
+                    text: 'c1_text34'.tr(),
                     style: TextStyle(fontWeight: FontWeight.w600, color: Colors.black),
                   ),
                   TextSpan(
-                    text: 'Основным органом иммунной системы является ',
+                    text: 'c1_text35'.tr(),
                     style: TextStyle(fontWeight: FontWeight.w400, color: Colors.black),
                   ),
                   TextSpan(
-                    text: 'тимус ',
+                    text: 'c1_text36'.tr(),
                     style: TextStyle(fontWeight: FontWeight.w600, color: Colors.black),
                   ),
                   TextSpan(
-                    text: 'или ',
+                    text: 'c1_text37'.tr(),
                     style: TextStyle(fontWeight: FontWeight.w400, color: Colors.black),
                   ),
                   TextSpan(
-                    text: 'вилочковая железа. ',
+                    text: 'c1_text38'.tr(),
                     style: TextStyle(fontWeight: FontWeight.w600, color: Colors.black),
                   ),
                   TextSpan(
-                    text: 'Основные клетки иммунной защиты находятся в крови и костном мозге, в других органах, '
-                        'например, в печени.\n\n',
+                    text: 'c1_text39'.tr(),
                     style: TextStyle(fontWeight: FontWeight.w400, color: Colors.black),
                   ),
                 ],
@@ -886,25 +885,23 @@ class _ChapterOneState extends State<ChapterOne> with AutomaticKeepAliveClientMi
               text: TextSpan(
                 children: [
                   TextSpan(
-                    text: 'Различают несколько видов иммунных клеток, одними из них являются ',
+                    text: 'c1_text40'.tr(),
                     style: TextStyle(fontWeight: FontWeight.w400, color: Colors.black),
                   ),
                   TextSpan(
-                    text: 'Т-лимфоциты ',
+                    text: 'c1_text41'.tr(),
                     style: TextStyle(fontWeight: FontWeight.w600, color: Colors.black),
                   ),
                   TextSpan(
-                    text: 'помощники (хелперы), которые организуют слаженную работу всей '
-                        'иммунной системы. Их называют ',
+                    text:'c1_text42'.tr(),
                     style: TextStyle(fontWeight: FontWeight.w400, color: Colors.black),
                   ),
                   TextSpan(
-                    text: ''
-                        'СД4 ',
+                    text: 'c1_text43'.tr(),
                     style: TextStyle(fontWeight: FontWeight.w600, color: Colors.black),
                   ),
                   TextSpan(
-                    text: 'клетками.\n\n',
+                    text: 'c1_text44'.tr(),
                     style: TextStyle(fontWeight: FontWeight.w400, color: Colors.black),
                   ),
                 ],
