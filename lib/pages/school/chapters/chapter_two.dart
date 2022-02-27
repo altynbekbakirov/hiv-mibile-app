@@ -23,19 +23,8 @@ class _ChapterTwoState extends State<ChapterTwo> {
   PageController pageController = PageController();
   int showChapterTwoDialog;
 
-  String textAza = 'Однако до настоящего '
-      "времени не разработано "
-      "лекарство, которое могло "
-      "бы полностью излечить "
-      "человека от ВИЧ-инфекции, "
-      "и нет вакцины, которая "
-      "могла бы защитить от"
-      "заражения ВИЧ. Поэтому "
-      "человек с ВИЧ должен "
-      "постоянно получать "
-      "лечение.";
-  String textNadya =
-      'Когда дети вступают в подростковый возраст, они начинают осознавать свою непохожесть на других детей. В этот период очень важна поддержка со стороны близких и сообщества для открытия статуса и поддержки приверженности к терапии.';
+  String textAza = "c2_atext1".tr();
+  String textNadya ="c2_ntext1".tr();
 
   @override
   void initState() {
@@ -102,23 +91,18 @@ class _ChapterTwoState extends State<ChapterTwo> {
           children: [
             RichText(
               text: TextSpan(children: [
-                header("ЛЕЧЕНИЕ ВИЧ-инфекции"),
-                boldText("Лечение "),
-                normalText("ВИЧ-инфекции называется "),
-                boldText("антиретровирусная терапия (сокращенно - АРТ).\n"),
-                boldText("АРТ "),
-                normalText(
-                    "- это лечение, которое действует против ретровируса – то есть вируса, который вызывает ВИЧ-инфекцию."),
+                header("c2_1text1".tr()),
+                normalText("c2_1text3".tr()),
+                boldText("c2_1text4".tr()),
+                normalText("c2_1text2".tr()),
+                boldText("c2_1text5".tr()),
+                normalText("c2_1text6".tr()),
               ], style: TextStyle(fontSize: fontSize)),
             ),
             Image.asset("assets/images/lechenie1.png"),
             RichText(
               text: TextSpan(children: [
-                normalText(
-                    "\n\nБез лечения ВИЧ поражает лимфоциты – клетки иммунной (защитной) системы организма "
-                    "(их называют CD4-клетки). Поэтому количество СД4 уменьшается, а количество вируса в крови "
-                    "быстро увеличивается. При отсутствии лечения разрушается так много клеток, что иммунная "
-                    "система не может защищать организм, и человек погибает от других инфекционных заболеваний или от рака."),
+                normalText("c2_1text7".tr()),
               ], style: TextStyle(fontSize: fontSize)),
             ),
             SizedBox(height: 10),
@@ -139,18 +123,14 @@ class _ChapterTwoState extends State<ChapterTwo> {
           children: [
             RichText(
               text: TextSpan(children: [
-                italicText(
-                    "До настоящего времени не разработано лекарство, которое могло бы полностью "
-                    "излечить человека от ВИЧ-инфекции, и нет вакцины, которая могла бы защитить от "
-                    "заражения ВИЧ. Поэтому человек с ВИЧ должен постоянно получать лечение всю свою жизнь."),
-                normalText("\nДля лечения ВИЧ-инфекции используют "),
-                boldText("антиретровирусные препараты (АРВП).\n"),
-                normalText(
-                    "Они останавливают размножение вируса.  Через 3-6 месяцев после начала лечения количество вируса снижается до очень "),
-                boldText("низкого уровня, "),
-                normalText(
-                    "которое не определяется при исследовании крови – это называется "),
-                boldText("неопределяемая вирусная нагрузка."),
+                italicText("c2_2text1".tr()),
+                normalText("c2_2text2".tr()),
+                boldText("c2_2text3".tr()),
+                normalText("c2_2text4".tr()),
+                boldText("c2_2text5".tr()),
+                normalText("c2_2text6".tr()),
+                boldText("c2_2text7".tr()),
+                normalText("c2_2text75".tr()),
               ], style: TextStyle(fontSize: fontSize)),
             ),
             SizedBox(height: 10),
@@ -158,9 +138,9 @@ class _ChapterTwoState extends State<ChapterTwo> {
             SizedBox(height: 10),
             RichText(
               text: TextSpan(children: [
-                boldText("АРТ останавливает размножение вируса\n"),
+                boldText("c2_2text8".tr()),
                 normalText(
-                    "\nПри приеме АРТ ВИЧ не размножается и не убивает СД4 лимфоциты. В результате, иммунная система восстанавливается, увеличивается количество CD4-клеток. Исчезают, или уменьшаются проявления ВИЧ-инфекции (если они были ранее)."),
+                    "c2_2text9".tr()),
               ], style: TextStyle(fontSize: fontSize)),
             ),
             SizedBox(height: 86),
@@ -178,28 +158,19 @@ class _ChapterTwoState extends State<ChapterTwo> {
           children: [
             RichText(
               text: TextSpan(children: [
-                normalText(
-                    "\nКроме того, риск заражения ВИЧ полового партнера или будущего ребенка значительно снижается."),
-                boldText(
-                    "\nЧем раньше Вы начали АРТ, тем меньше вреда вирус успевает нанести иммунной системе. "),
-                normalText(
-                    "Это очень важно, потому что восстановление иммунитета происходит очень медленно и организм "
-                    "остается без защиты даже если вирус уже не размножается в результате приема АРТ.\n\n"),
+                normalText("c2_3text1".tr()),
+                boldText("c2_3text2".tr()),
+                normalText("c2_3text3".tr()),
               ], style: TextStyle(fontSize: fontSize)),
             ),
             Image.asset("assets/images/truvada.png"),
             RichText(
               text: TextSpan(children: [
-                normalText(
-                    "Важно строго соблюдать дозу и время приема лекарств, никогда не прерывать лечение – "),
-                boldText("это называется приверженность к лечению. "),
-                normalText(
-                    "У ЛЖВ всегда должен быть запас препаратов, не меньше, чем на 1 месяц, который нужно регулярно "
-                    "пополнять, чтобы не было перерывов в лечении. Нарушение предписаний врача по приему АРТ может привести к "),
-                boldText("устойчивости вируса к лечению "),
-                normalText(
-                    "– тогда лекарства не будут действовать на ВИЧ. В таком случае врач меняет курс лечения или назначает"
-                    " уже вторую линию препаратов и количество применяемых таблеток увеличивается."),
+                normalText("c2_3text4".tr()),
+                boldText("c2_3text5".tr()),
+                normalText("c2_3text6".tr()),
+                boldText("c2_3text7".tr()),
+                normalText("c2_3text8".tr()),
               ], style: TextStyle(fontSize: fontSize)),
             ),
             SizedBox(height: 10),
@@ -218,21 +189,17 @@ class _ChapterTwoState extends State<ChapterTwo> {
           children: [
             RichText(
               text: TextSpan(children: [
-                boldText(
-                    "\nПрепараты для лечения ВИЧ-инфекции (АРВП) предоставляются бесплатно! \n"),
+                boldText("c2_4text1".tr()),
               ], style: TextStyle(fontSize: fontSize)),
             ),
             Image.asset("assets/images/lechenie4.png"),
             SizedBox(height: 20),
             RichText(
               text: TextSpan(children: [
-                normalText(
-                    "Лечение ВИЧ-инфекции позволяет сохранить здоровье и жизнь человека. "),
-                boldText("Поэтому лечение нужно начинать как можно раньше"),
-                normalText(
-                    " – сразу же после установления ВИЧ-статуса и строго соблюдать назначения врача. \n"),
-                boldText(
-                    "Антиретровирусная терапия позволяет людям с ВИЧ прожить полноценную и долгую жизнь!"),
+                normalText("c2_4text2".tr()),
+                boldText("c2_4text3".tr()),
+                normalText("c2_4text4".tr()),
+                boldText("c2_4text5".tr()),
               ], style: TextStyle(fontSize: fontSize)),
             ),
             SizedBox(height: 10),
@@ -251,28 +218,20 @@ class _ChapterTwoState extends State<ChapterTwo> {
           children: [
             RichText(
               text: TextSpan(children: [
-                header("Антиретровирусные препараты"),
+                header("c2_5text1".tr(),),
               ], style: TextStyle(fontSize: fontSize)),
             ),
             RichText(
               text: TextSpan(children: [
-                boldText("Антиретровирусные препараты (АРВП) – "),
-                normalText(
-                    "это лекарства, которые действуют против ретровируса – "
-                    "то есть вируса, который вызывает ВИЧ-инфекцию\n"),
-                normalText(
-                    "\nСуществует много эффективных препаратов для лечения ВИЧ-инфекции. "
-                    "Важно получать одновременно несколько препаратов, "
-                    "которые действуют на разные этапы развития вируса. "),
+                boldText("c2_5text2".tr(),),
+                normalText("c2_5text3".tr(),),
+                normalText("c2_5text4".tr(),),
               ], style: TextStyle(fontSize: fontSize)),
             ),
             SizedBox(height: 20),
             Container(
               color: kGrayishBlue,
-              child: Text(
-                "До настоящего времени не разработано лекарство, которое могло бы полностью излечить "
-                "человека от ВИЧ-инфекции, и нет вакцины, которая могла бы защитить от заражения ВИЧ. "
-                "Поэтому человек с ВИЧ должен постоянно получать лечение всю свою жизнь.",
+              child: Text("c2_5text5".tr(),
                 style: TextStyle(
                     fontStyle: FontStyle.italic,
                     fontSize: fontSize,
@@ -294,19 +253,15 @@ class _ChapterTwoState extends State<ChapterTwo> {
           children: [
             RichText(
               text: TextSpan(children: [
-                boldText("\nКак действуют антиретровирусные препараты?"),
+                boldText("c2_6text1".tr()),
               ], style: TextStyle(fontSize: fontSize)),
             ),
             Image.asset("assets/images/atreavirus.png"),
             RichText(
               text: TextSpan(children: [
-                normalText(
-                    "Антиретровирусные препараты не излечивают от ВИЧ-инфекции, а лишь подавляют "
-                    "размножение вируса, обеспечивая контроль над инфекцией. С целью максимального эффекта от лечения "),
-                boldText("применяются трехкомпонентные схемы лечения, "),
-                normalText(
-                    "то есть содержащие три антиретровирусных препарата в одной таблетке, "
-                    "каждый из которых действует на разные этапы размножения вируса. "),
+                normalText("c2_6text2".tr()),
+                boldText("c2_6text3".tr()),
+                normalText("c2_6text4".tr()),
               ], style: TextStyle(fontSize: fontSize)),
             ),
             SizedBox(height: 86),
@@ -324,8 +279,7 @@ class _ChapterTwoState extends State<ChapterTwo> {
           children: [
             RichText(
               text: TextSpan(children: [
-                normalText(
-                    "Они, дополняя друг друга защищают организма от ВИЧ. Например:\n"),
+                normalText("c2_7text1".tr()),
               ], style: TextStyle(fontSize: fontSize)),
             ),
             Row(
@@ -341,9 +295,7 @@ class _ChapterTwoState extends State<ChapterTwo> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text:
-                              "Препараты зидовудин, ламивудин, невирапин, эфавиренц нарушают процесс размножения "
-                              "ВИЧ внутри клетки",
+                          text:"c2_7text2".tr(),
                           style: TextStyle(
                               color: Colors.black,
                               fontSize: fontSize,
@@ -366,8 +318,7 @@ class _ChapterTwoState extends State<ChapterTwo> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text:
-                              "Лопинавир/ритонавир нарушают процесс дозревания ВИЧ, что также блокирует размножение вируса.",
+                          text:"c2_7text3".tr(),
                           style: TextStyle(
                               color: Colors.black,
                               fontSize: fontSize,
@@ -390,8 +341,7 @@ class _ChapterTwoState extends State<ChapterTwo> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text:
-                              "Долутогравир подавляет фермент интегразу – которая запускает размножение вируса в клетке СД-4 человека.",
+                          text:"c2_7text4".tr(),
                           style: TextStyle(
                               color: Colors.black,
                               fontSize: fontSize,
@@ -403,14 +353,8 @@ class _ChapterTwoState extends State<ChapterTwo> {
             ),
             RichText(
               text: TextSpan(children: [
-                normalText(
-                    "\nВ результате применения АРТ, содержание ВИЧ в организме уменьшается в миллионы раз, "
-                    "и он практически перестает размножаться. Если ВИЧ не размножается, он больше не поражает "
-                    "иммунные клетки. С этого времени иммунная система начинает восстанавливаться."),
-                normalText(
-                    "\n\nСхему лечения определяет врач, с учетом особенностей здоровья и результатов лабораторного исследования. "
-                    "В одной таблетке может содержаться 1, 2, или 3 препарата. Ежедневно принимают от одной до трех "
-                    "(иногда до шести) таблеток. Это зависит от состояния иммунитета и устойчивости вируса к препаратам.")
+                normalText("c2_7text5".tr()),
+                normalText("c2_7text6".tr())
               ], style: TextStyle(fontSize: fontSize)),
             ),
             SizedBox(height: 86),
@@ -428,10 +372,8 @@ class _ChapterTwoState extends State<ChapterTwo> {
           children: [
             RichText(
               text: TextSpan(children: [
-                boldText(
-                    "Для того, чтобы контролировать лечение, нужно регулярно сдавать кровь на вирусную нагрузку.\n"),
-                boldText(
-                    "Когда АРТ перестает работать (не снижается вирусная нагрузка)?\n"),
+                boldText("c2_8text1".tr()),
+                boldText("c2_8text2".tr()),
               ], style: TextStyle(fontSize: fontSize)),
             ),
             Row(
@@ -447,8 +389,7 @@ class _ChapterTwoState extends State<ChapterTwo> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text:
-                          "Чаще всего это связано с низкой приверженностью к лечению - когда ЛЖВ по разным причинам пропускают прием препаратов.",
+                          text:"c2_8text3".tr(),
                           style: TextStyle(
                               color: Colors.black,
                               fontSize: fontSize,
@@ -471,8 +412,7 @@ class _ChapterTwoState extends State<ChapterTwo> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text:
-                              "Иногда сам ВИЧ приспосабливается и становится невосприимчивым (устойчивым) к действию лекарств.",
+                          text:"c2_8text4".tr(),
                           style: TextStyle(
                               color: Colors.black,
                               fontSize: fontSize,
@@ -484,12 +424,9 @@ class _ChapterTwoState extends State<ChapterTwo> {
             ),
             RichText(
               text: TextSpan(children: [
-                boldText(
-                    "Такие случаи нужно обсудить с врачом и совместно решать проблему.\n"),
-                boldText(
-                    "\nНазначение АРВП проводится в строгом соответствии с инструкциями, которые утверждаются Министерством здравоохранения (они называются Клинические протоколы)."),
-                boldText(
-                    "\n\nВ мире ведется постоянная работа по созданию новых более эффективных лекарств для лечения ВИЧ-инфекции.\n"),
+                boldText("c2_8text5".tr()),
+                boldText("c2_8text6".tr()),
+                boldText("c2_8text7".tr()),
               ], style: TextStyle(fontSize: fontSize)),
             ),
             SizedBox(height: 86),
@@ -507,11 +444,8 @@ class _ChapterTwoState extends State<ChapterTwo> {
           children: [
             RichText(
               text: TextSpan(children: [
-                header("Воздействие АРТ на человека с ВИЧ"),
-                normalText(
-                    "Лечение ВИЧ-инфекции (АРТ) позволяет продлить жизнь, улучшить ее качество, предотвратить"
-                    " развитие СПИДа, снизить уровень смертности среди людей с ВИЧ, снизить риск передачи ВИЧ, "
-                    "а также предотвратить передачу ВИЧ от ВИЧ-позитивной матери ребенку.")
+                header("c2_9text1".tr()),
+                normalText("c2_9text2".tr())
               ], style: TextStyle(fontSize: fontSize)),
             ),
             Row(
@@ -527,9 +461,7 @@ class _ChapterTwoState extends State<ChapterTwo> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text:
-                              "Улучшается качество жизни, то есть заболевания, связанные с ВИЧ (например, длительная диарея, туберкулез, частые ангины, герпес, кожный зуд и другие), "
-                              "не появятся либо будут лучше поддаваться лечению на фоне АРТ. ",
+                          text:"c2_9text3".tr(),
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -551,8 +483,7 @@ class _ChapterTwoState extends State<ChapterTwo> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text:
-                              "Увеличится продолжительность жизни, т. е. продолжительность жизни людей с ВИЧ, получающих АРТ, практически не отличается от таковой у людей без ВИЧ.",
+                          text:"c2_9text4".tr(),
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -587,12 +518,7 @@ class _ChapterTwoState extends State<ChapterTwo> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text:
-                              "АРТ может снизить риск передачи ВИЧ половому партнеру более, чем на 90 %! "
-                              "То есть помимо положительного воздействия на организм человека с ВИЧ, АРТ "
-                              "также помогает улучшить семейные отношения, снизить страх инфицирования ВИЧ "
-                              "партнера. Однако АРТ должна обязательно использоваться с комбинации с другими"
-                              " методами профилактики передачи ВИЧ, в том числе с использованием презервативов.",
+                          text:"c2_10text1".tr(),
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -614,8 +540,7 @@ class _ChapterTwoState extends State<ChapterTwo> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text:
-                              "Прием АРТ позволяет планировать беременность и обеспечивает рождение здорового ребенка у родителей, живущих с ВИЧ.  ",
+                          text:"c2_10text2".tr(),
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -637,7 +562,7 @@ class _ChapterTwoState extends State<ChapterTwo> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text: "Улучшаются лабораторные показатели:",
+                          text: "c2_10text3".tr(),
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -659,9 +584,8 @@ class _ChapterTwoState extends State<ChapterTwo> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text:
-                              "снижение вирусной нагрузки до неопределяемого уровня означает, что терапия эффективна, что ВИЧ не размножается и не поражает иммунные клетки;",
-                          style: TextStyle(
+                          text:     "c2_10text4".tr(),
+                            style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
                   ),
@@ -694,8 +618,7 @@ class _ChapterTwoState extends State<ChapterTwo> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text:
-                              "повышение количества CД4-клеток означает, что иммунная система восстанавливается и серьезные сопутствующие заболевания не разовьются;",
+                          text:"c2_11text1".tr(),
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -716,8 +639,7 @@ class _ChapterTwoState extends State<ChapterTwo> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text:
-                              "возможно улучшение других лабораторных показателей (например, повышение уровня гемоглобина, нормализация печёночных тестов).",
+                          text:"c2_11text2".tr(),
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -738,8 +660,7 @@ class _ChapterTwoState extends State<ChapterTwo> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text:
-                              "Улучшается настроение, поскольку снимается чувство беспокойства за близких, за возможность передачи ВИЧ половым партнерам, за планирование рождения детей. Улучшаются семейные отношения, особенно в тех случаях, когда близкие родственники вовлечены в процесс наблюдения и лечения.",
+                          text:"c2_11text3".tr(),
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -761,8 +682,7 @@ class _ChapterTwoState extends State<ChapterTwo> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text:
-                              "Назначение АРТ у детей обеспечивает их рост и развитие в соответствии с их возрастом, как и у детей без ВИЧ.",
+                          text:"c2_11text4".tr(),
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -786,15 +706,13 @@ class _ChapterTwoState extends State<ChapterTwo> {
           children: [
             RichText(
               text: TextSpan(children: [
-                header(
-                    "Ссылка: Что такое вирусная нагрузка (ВН) и число лимфоцитов CД4?")
+                header("c2_12text1".tr())
               ], style: TextStyle(fontSize: fontSize)),
             ),
             Image.asset("assets/images/ДКП.png"),
             RichText(
               text: TextSpan(children: [
-                boldText(
-                    "\nЛимфоциты CД4 (или CД4-клетки) – это вид лимфоцитов (клетки-помощники), которые играют важную роль в иммунном ответе организма.")
+                boldText("c2_12text2".tr())
               ], style: TextStyle(fontSize: fontSize)),
             ),
             Row(
@@ -810,8 +728,7 @@ class _ChapterTwoState extends State<ChapterTwo> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text:
-                              "Тест на CД4 определяет количество лимфоцитов CД4 в одном микролитре крови (клеток/мкл).",
+                          text:"c2_12text3".tr(),
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -845,8 +762,7 @@ class _ChapterTwoState extends State<ChapterTwo> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text:
-                              "В норме количество лимфоцитов CД4 для взрослых без ВИЧ составляет примерно от 500 до 1200/мкл.",
+                          text:"c2_13text1".tr(),
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -867,8 +783,7 @@ class _ChapterTwoState extends State<ChapterTwo> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text:
-                              "Пока число лимфоцитов CД4 превышает 500/мкл, человек находится в безопасности. ",
+                          text:"c2_13text2".tr(),
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -889,8 +804,7 @@ class _ChapterTwoState extends State<ChapterTwo> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text:
-                              "При снижении числа лимфоцитов CД4 менее 350/мкл могут начаться проблемы со здоровьем в виде частых простудных заболеваний, молочницы (кандидоз полости рта, половых органов), опоясывающего лишая, туберкулеза лёгких и др.",
+                          text:"c2_13text3".tr(),
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -911,8 +825,7 @@ class _ChapterTwoState extends State<ChapterTwo> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text:
-                              "При снижении уровня CД4-клеток менее 200/мкл повышается риск развития опасных для жизни инфекций – пневмоний, сепсиса, токсоплазмоза, которые очень сложно лечить, человек полностью истощен и может погибнуть без лечения.",
+                          text:"c2_13text4".tr(),
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -933,8 +846,7 @@ class _ChapterTwoState extends State<ChapterTwo> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text:
-                              "На фоне приёма АРТ количество лимфоцитов CД4 увеличивается, однако рост числа клеток у разных пациентов происходит по-разному. В среднем можно ожидать повышения числа клеток на 50-100/мкл в год в течение 3-5 лет после начала АРТ. Далее рост замедляется. У пожилых людей, и у больных с очень низким числом клеток, число СД4 восстанавливается очень медленно. Это означает, что несмотря на малое количество, организм все еще остается без защиты. Поэтому при низких показателях СД4 принимают дополнительные лекарства для профилактики туберкулеза и других инфекций.",
+                          text:"c2_13text5".tr(),
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -957,8 +869,7 @@ class _ChapterTwoState extends State<ChapterTwo> {
           children: [
             RichText(
               text: TextSpan(children: [
-                boldText(
-                    "Вирусная нагрузка (сокращенно – ВН) — это количество копий ВИЧ в 1 миллилитре крови (копий/мл).\n")
+                boldText("c2_14text1".tr())
               ], style: TextStyle(fontSize: fontSize)),
             ),
             Image.asset('assets/images/lechenie3.png'),
@@ -975,8 +886,7 @@ class _ChapterTwoState extends State<ChapterTwo> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text:
-                              "Этот показатель показывает эффективность АРТ. Целью приёма АРТ является снижение ВН до неопределяемого уровня.",
+                          text:"c2_14text2".tr(),
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -997,8 +907,7 @@ class _ChapterTwoState extends State<ChapterTwo> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text:
-                              "Неопределяемым считается уровень, когда ВН снизится до 40 копий/мл, ниже этого количества аппарат уже не может определить ВИЧ в крови.",
+                          text:"c2_14text3".tr(),
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -1019,8 +928,7 @@ class _ChapterTwoState extends State<ChapterTwo> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text:
-                              "Чаще всего ВН становится неопределяемой через 6 месяцев после начала АРТ. Если этого не происходит, то нужно обсудить с врачом причину и принять меры для снижения вируса в крови.",
+                          text:"c2_14text4".tr(),
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -1043,21 +951,14 @@ class _ChapterTwoState extends State<ChapterTwo> {
           children: [
             RichText(
               text: TextSpan(children: [
-                boldText(
-                    "Как часто нужно сдавать анализы на число CД4-клеток и ВН?\n\n"),
+                boldText("c2_15text1".tr()),
               ], style: TextStyle(fontSize: fontSize)),
             ),
             Image.asset('assets/images/виды-тестов.png'),
             RichText(
               text: TextSpan(children: [
-                normalText(
-                    "Эти исследования проводятся при установлении ВИЧ-статуса либо при возобновлении АРТ после перерыва в лечении. \nТест на ВН очень важно проводить регулярно "
-                    "1 раз в 6 месяцев – поскольку он показывает эффективность лечения. При недоступности такого исследования, "
-                    "например, если человек длительно находится в миграции в других странах, тест на ВН следует проводить не "
-                    "реже 1 раза в год\n"),
-                normalText(
-                    "\nЕсли количество СД-4 клеток не ниже 500 клеток в 1 мкл., человек хорошо переносит терапию и "
-                    "не имеет проблем со здоровьем, тест на СД-4 можно не проводить."),
+                normalText("c2_15text2".tr()),
+                normalText("c2_15text3".tr()),
               ], style: TextStyle(fontSize: fontSize)),
             ),
             SizedBox(height: 86),
@@ -1075,21 +976,16 @@ class _ChapterTwoState extends State<ChapterTwo> {
           children: [
             RichText(
               text: TextSpan(children: [
-                header("ПРИВЕРЖЕННОСТЬ к АНТИРЕТРОВИРУСНОЙ ТЕРАПИИ"),
+                header("c2_16text1".tr(),),
               ], style: TextStyle(fontSize: fontSize)),
             ),
             Image.asset("assets/images/treatment_image51.png"),
             SizedBox(height: 10),
             RichText(
               text: TextSpan(children: [
-                normalText(
-                    "Приверженность к АРТ означает прием антиретровирусных препаратов пациентом с точным "
-                    "соблюдением времени приема и дозы, которые были рекомендованы врачом.\nВысокая приверженность "
-                    "АРТ – важнейшее условие успеха лечения. "),
+                normalText("c2_16text2".tr(),),
                 TextSpan(
-                  text:
-                      "\n\nДля эффективного подавления размножения ВИЧ (то есть до достижения неопределяемой вирусной нагрузки) "
-                      "необходимо принимать 95 –100 % предписанных доз препаратов. ",
+                  text:"c2_16text3".tr(),
                   style: TextStyle(
                     fontStyle: FontStyle.italic,
                     fontWeight: FontWeight.w600,
@@ -1114,14 +1010,7 @@ class _ChapterTwoState extends State<ChapterTwo> {
           children: [
             RichText(
               text: TextSpan(children: [
-                normalText(
-                    "Люди иногда допускают ошибки в приеме препаратов по невнимательности, забывчивости либо "
-                    "неверия в эффективность лечения. Поэтому важно получить информацию об АРТ и получить "
-                    "поддержку от своих близких или людей, которые живут с ВИЧ, и могут открыто говорить "
-                    "о своем статусе. Можно принять участие в группах поддержки (группы само и взаимопомощи) "
-                    "из числа ЛЖВ и/или сообщества. Они помогут справиться со стрессом, связанным с принятием "
-                    "ВИЧ-статуса; помогут на начальном этапе лечения по ВИЧ-инфекции, напомнят о приеме "
-                    "препаратов; окажут другую помощь."),
+                normalText( "c2_17text1".tr()),
               ], style: TextStyle(fontSize: fontSize)),
             ),
             SizedBox(height: 86),
@@ -1139,7 +1028,7 @@ class _ChapterTwoState extends State<ChapterTwo> {
           children: [
             RichText(
               text: TextSpan(children: [
-                boldText("Почему важно принимать препараты точно по времени?"),
+                boldText("c2_18text1".tr()),
               ], style: TextStyle(fontSize: fontSize)),
             ),
             Image.asset('assets/images/что следует помнить 8.png'),
@@ -1156,12 +1045,7 @@ class _ChapterTwoState extends State<ChapterTwo> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text:
-                              "Для каждого препарата рассчитана такая дозировка и такая частота приёма, чтобы в "
-                              "крови постоянно поддерживалось определённое количество лекарства. Только в этом"
-                              " случае ВИЧ не размножается, и не формируются его изменения (мутации), которые "
-                              "могут стать причиной устойчивости к антиретровирусным препаратам – и лечение "
-                              "перестанет действовать на вирус.",
+                          text:"c2_18text2".tr(),
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -1182,12 +1066,7 @@ class _ChapterTwoState extends State<ChapterTwo> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text:
-                              "При пропуске препарата количество лекарства в крови снижается, и ВИЧ начинает "
-                              "размножаться. При этом могут образоваться вирусы-мутанты, которые обладают "
-                              "устойчивостью к антиретровирусным препаратам. В результате назначенная схема "
-                              "АРТ перестает действовать. Это приводит к замене схемы лечения, что может "
-                              "сопровождаться увеличением количества принимаемых таблеток. ",
+                          text:"c2_18text3".tr(),
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -1221,8 +1100,7 @@ class _ChapterTwoState extends State<ChapterTwo> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text:
-                              "Чем чаще повторяются пропуски, тем больше шансов, что вирус приспособится и станет устойчивым к антиретровирусным препаратам. ",
+                          text:"c2_19text1".tr(),
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -1243,12 +1121,7 @@ class _ChapterTwoState extends State<ChapterTwo> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text:
-                              "Допустимо отклонятся на один час от предписанного времени приема лекарств в ту или "
-                              "иную сторону, но лучше всего ориентироваться на прием лекарств в одни и те же "
-                              "часы - для этого можно использовать оповещение на мобильном телефоне, увязать"
-                              " прием препаратов с обычным ежедневным действием (умыванием, завтраком, ежедневным "
-                              "выходом на работу) либо попросить помощи друзей или родственников.",
+                          text:"c2_19text2".tr(),
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -1270,15 +1143,11 @@ class _ChapterTwoState extends State<ChapterTwo> {
                     title: RichText(
                       text: TextSpan(
                           children: [
-                            normalText(
-                                "При пропуске приема очередной дозы препарата её можно принять только в том "
-                                "случае, если до времени следующего приема осталось "),
-                            boldText("более 6 "),
-                            normalText(
-                                "часов (для лекарств, которые принимают два раза в день, например, Комбивир) или "),
-                            boldText("более 12 часов "),
-                            normalText(
-                                "(для лекарств, которые принимают один раз в день, например, Атрипла)."),
+                            normalText("c2_19text3".tr()),
+                            boldText("c2_19text4".tr()),
+                            normalText("c2_19text5".tr()),
+                            boldText("c2_19text6".tr()),
+                            normalText("c2_19text7".tr()),
                           ],
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
@@ -1312,10 +1181,7 @@ class _ChapterTwoState extends State<ChapterTwo> {
                   flex: 5,
                   child: ListTile(
                     title: RichText(
-                      text: italicText(
-                          "Нужно узнать больше о действии вируса и важности приема АРТ. "
-                          "Вы можете прочитать книгу «Позитивная жизнь или "
-                          "прослушать в записи Школу пациента в этом мобильном приложении. "),
+                      text: italicText("c2_20text1".tr()),
                     ),
                   ),
                 ),
@@ -1333,11 +1199,7 @@ class _ChapterTwoState extends State<ChapterTwo> {
                   flex: 5,
                   child: ListTile(
                     title: RichText(
-                      text: italicText(
-                          "Нужно получать только достоверную информацию из надежных источников. "
-                          "Она изложена в данном мобильном приложении или на других сайтах, о которых "
-                          "Вы можете узнать здесь же. Кроме того, эту информацию Вы получите от врача "
-                          "или сотрудников НПО."),
+                      text: italicText("c2_20text2".tr()),
                     ),
                   ),
                 ),
@@ -1360,8 +1222,7 @@ class _ChapterTwoState extends State<ChapterTwo> {
                   flex: 5,
                   child: ListTile(
                     title: RichText(
-                      text: italicText(
-                          "Можно привязать прием препаратов к повседневным делам (например, к чистке зубов)."),
+                      text: italicText("c2_20text3".tr()),
                     ),
                   ),
                 ),
@@ -1379,8 +1240,7 @@ class _ChapterTwoState extends State<ChapterTwo> {
                   flex: 5,
                   child: ListTile(
                     title: RichText(
-                      text: italicText(
-                          "Использовать напоминающие приспособления (таймеры сотовых телефонов)."),
+                      text: italicText("c2_20text4".tr()),
                     ),
                   ),
                 ),
@@ -1403,8 +1263,7 @@ class _ChapterTwoState extends State<ChapterTwo> {
                   flex: 5,
                   child: ListTile(
                     title: RichText(
-                      text: italicText(
-                          "Записать рекомендации врача и следовать им."),
+                      text: italicText("c2_20text5".tr()),
                     ),
                   ),
                 ),
@@ -1422,8 +1281,7 @@ class _ChapterTwoState extends State<ChapterTwo> {
                   flex: 5,
                   child: ListTile(
                     title: RichText(
-                      text: italicText(
-                          "Составить календарь посещения врача с учетом возможных выходных и праздничных дней, чтобы получать препараты заранее до их полного использования."),
+                      text: italicText("c2_20text6".tr())
                     ),
                   ),
                 ),
@@ -1459,8 +1317,7 @@ class _ChapterTwoState extends State<ChapterTwo> {
                   flex: 5,
                   child: ListTile(
                     title: RichText(
-                      text: italicText(
-                          "Использовать контейнеры для таблеток или аптечки-органайзеры."),
+                      text: italicText( "c2_21text1".tr()),
                     ),
                   ),
                 ),
@@ -1478,8 +1335,7 @@ class _ChapterTwoState extends State<ChapterTwo> {
                   flex: 5,
                   child: ListTile(
                     title: RichText(
-                      text: italicText(
-                          "Общение с равными себе людьми (с ЛЖВ), которые оказывают моральную поддержку и практическую помощь."),
+                      text: italicText( "c2_21text2".tr()),
                     ),
                   ),
                 ),
@@ -1502,8 +1358,7 @@ class _ChapterTwoState extends State<ChapterTwo> {
                   flex: 5,
                   child: ListTile(
                     title: RichText(
-                      text: italicText(
-                          "Найти компаньона по лечению – человека, который будет рядом и будет помогать (родственник, друг или патронажная медсестра, хотя бы на начальном этапе лечения)."),
+                      text: italicText( "c2_21text3".tr()),
                     ),
                   ),
                 ),
@@ -1521,8 +1376,7 @@ class _ChapterTwoState extends State<ChapterTwo> {
                   flex: 5,
                   child: ListTile(
                     title: RichText(
-                      text: italicText(
-                          "Включение в программы заместительной терапии метадоном для ЛЖВ, которые принимают наркотики."),
+                      text: italicText( "c2_21text4".tr()),
                     ),
                   ),
                 ),
@@ -1543,20 +1397,16 @@ class _ChapterTwoState extends State<ChapterTwo> {
           children: [
             RichText(
               text: TextSpan(children: [
-                header(
-                    "НЕЖЕЛАТЕЛЬНЫЕ (ПОБОЧНЫЕ) ЭФФЕКТЫ АНТИРЕТРОВИРУСНОЙ ТЕРАПИИ."),
+                header("c2_22text1".tr()),
               ], style: TextStyle(fontSize: fontSize)),
             ),
             SizedBox(height: 10),
             RichText(
               text: TextSpan(children: [
-                normalText(
-                    "Лекарственные препараты принимают для специальных целей, например, чтобы избавиться "
-                    "от кашля, подавить размножение вируса. Однако каждое лекарство может оказать какое-то другое "
-                    "влияние на организм – это называют "),
-                boldText("«нежелательный» "),
-                normalText("или"),
-                boldText("«побочный эффект». "),
+                normalText("c2_22text2".tr()),
+                boldText("c2_22text3".tr()),
+                normalText("c2_22text4".tr()),
+                boldText("c2_22text5".tr()),
               ], style: TextStyle(fontSize: fontSize)),
             ),
             SizedBox(height: 86),
@@ -1574,9 +1424,7 @@ class _ChapterTwoState extends State<ChapterTwo> {
           children: [
             RichText(
               text: TextSpan(children: [
-                boldText(
-                    "Разработка новых лекарств для лечения ВИЧ-инфекции направлена также на снижение "
-                    "нежелательных эффектов от их применения. ")
+                boldText("c2_23text1".tr())
               ], style: TextStyle(fontSize: fontSize)),
             ),
             Row(
@@ -1592,8 +1440,7 @@ class _ChapterTwoState extends State<ChapterTwo> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text:
-                              "Практически все, лекарства, в том числе антиретровирусные препараты в той или иной степени имеют побочные эффекты.",
+                          text:"c2_23text2".tr(),
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -1614,8 +1461,7 @@ class _ChapterTwoState extends State<ChapterTwo> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text:
-                              "Нежелательные эффекты антиретровирусных препаратов могут иметь определенные проявления, а иногда только изменения лабораторных показателей (например, «печеночных тестов»).",
+                          text:"c2_23text3".tr(),
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -1636,8 +1482,7 @@ class _ChapterTwoState extends State<ChapterTwo> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text:
-                              "Следует помнить, что иногда такие эффекты наблюдаются в силу психологического ожидания таких эффектов. ЛЖВ слышат от своих знакомых, получающих АРТ, что у них появляются побочные эффекты и заранее испытывают страх перед терапией, прислушиваются к своим ощущениям.",
+                          text:"c2_23text4".tr(),
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -1671,8 +1516,7 @@ class _ChapterTwoState extends State<ChapterTwo> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text:
-                              "Побочные реакции бывают не у каждого пациента.",
+                          text:"c2_24text1".tr(),
                           style: TextStyle(
                               color: Colors.black,
                               fontSize: fontSize,
@@ -1696,8 +1540,7 @@ class _ChapterTwoState extends State<ChapterTwo> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text:
-                              "Нужно понимать, что эти реакции могут проходить по мере принятия препаратов, либо имеются некоторые условия для снижения таких реакций. Например, врач назначает прием препарата до или после еды; прием на ночь и другое – это все направлено на снижение побочных эффектов.",
+                          text:"c2_24text2".tr(),
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -1719,9 +1562,8 @@ class _ChapterTwoState extends State<ChapterTwo> {
                     title: RichText(
                       text: TextSpan(children: [
                         italicText(
-                            "Эффект от приема препаратов значительно выше, чем их негативное воздействие – поэтому в интересах здоровья и жизни следует принять некоторые нежелательные эффекты от лечения и попытаться их преодолеть, советуясь с врачом. "),
-                        normalText(
-                            "Обо всех своих нежелательных ощущениях после начала терапии, следует сообщать врачу. Если же побочные явления тяжелые – врач может изменить схему лечения. "),
+                          "c2_24text3".tr(),),
+                        normalText("c2_24text4".tr(),),
                       ]),
                     ),
                   ),
@@ -1741,8 +1583,7 @@ class _ChapterTwoState extends State<ChapterTwo> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(children: [
-                        normalText(
-                            "Некоторые побочные эффекты наблюдаются только в первые дни и недели приёма АРТ. Они обычно проходят самостоятельно без какого-либо лечения."),
+                        normalText("c2_24text5".tr(),),
                       ]),
                     ),
                   ),
@@ -1764,20 +1605,12 @@ class _ChapterTwoState extends State<ChapterTwo> {
           children: [
             RichText(
               text: TextSpan(children: [
-                boldText(
-                    "Можно ли предотвратить побочные эффекты антиретровирусных препаратов?\n"),
-                normalText(
-                  "Иногда врач может снизить риск возникновения побочных эффектов, правильно подобрав "
-                  "схему лечения. Например, если у пациента есть анемия, ему не назначают препараты, которые "
-                  "могут её усугубить (например, зидовудин). Другой пример: если у пациента имеется гепатит, "
-                  "ему нежелательно назначать невирапин, который может вызвать ухудшение состояния печени.\n\n",
+                boldText("c2_25text1".tr()),
+                normalText("c2_25text2".tr(),
                 ),
-                normalText(
-                  "В некоторых случаях за побочные эффекты могут принять проявления других заболеваний. "
-                  "Например, рвота и диарея могут быть связаны не с приёмом АРТ, а с острой кишечной инфекцией. ",
+                normalText("c2_25text3".tr(),
                 ),
-                boldText(
-                    "Поэтому пациенту всегда следует сообщать врачу о всех новых симптомах, которые появились после начала АРТ."),
+                boldText("c2_25text4".tr()),
               ], style: TextStyle(fontSize: fontSize)),
             ),
             SizedBox(height: 86),
