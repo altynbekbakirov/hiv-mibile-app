@@ -59,28 +59,28 @@ class _HivTreatmentScreenState extends State<HivTreatmentScreen> {
       return ListView(children: [
         ListTile(
           title: RichText(
-            text: TextSpan(text: "ЛЕЧЕНИЕ ВИЧ-инфекции", style: chapterStyle),
+            text: TextSpan(text:"presence_of_hiv_6text1".tr(), style: chapterStyle),
           ),
         ),
         Image.asset("assets/images/ДКП.png"),
         ListTile(
           title: RichText(
               text: TextSpan(children: [
-            TextSpan(text: "ЛЕЧЕНИЕ ВИЧ-инфекции ", style: normalBold),
-            TextSpan(text: "называется ", style: contentNormal),
+            TextSpan(text:"presence_of_hiv_6text2".tr(), style: normalBold),
+            TextSpan(text:"presence_of_hiv_6text3".tr(), style: contentNormal),
             TextSpan(
-                text: "антиретровирусная терапия (сокращенно - АРТ).\n",
+                text:"presence_of_hiv_6text4".tr(),
                 style: normalBold),
+                TextSpan(text:"presence_of_hiv_6text45".tr(), style: contentNormal),
             TextSpan(
-                text:
-                    "АРТ - это лечение, которое действует против ретровируса – то есть вируса, который вызывает ВИЧ-инфекцию.",
+                text:"presence_of_hiv_6text5".tr(),
                 style: contentNormal),
           ])),
         ),
         ListTile(
           title: RichText(
             text: TextSpan(
-                text: "АРТ останавливает рамножение вируса",
+                text:"presence_of_hiv_6text6".tr(),
                 style: normalBoldForChapter),
           ),
         ),
@@ -88,16 +88,13 @@ class _HivTreatmentScreenState extends State<HivTreatmentScreen> {
           title: RichText(
             text: TextSpan(children: [
               TextSpan(
-                  text: "Лекарства для лечения ВИЧ-инфекции называют ",
+                  text: "presence_of_hiv_6text7".tr(),
                   style: contentNormal),
               TextSpan(
-                  text: "антиретровирусные препараты (АРВП). ",
+                  text:"presence_of_hiv_6text8".tr(),
                   style: normalBold),
               TextSpan(
-                  text:
-                      "Они останавливают размножение вируса.  Через 3-6 месяцев после начала лечения количество "
-                      "вируса снижается до очень низкого уровня, которое не определяется при исследовании крови – это называется"
-                      " неопределяемая вирусная нагрузка.",
+                  text:"presence_of_hiv_6text9".tr(),
                   style: contentNormal)
             ]),
           ),
@@ -105,8 +102,7 @@ class _HivTreatmentScreenState extends State<HivTreatmentScreen> {
         Image.asset("assets/images/lechenie3.png"),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16),
-          child: Text(
-              'Рис. Вирусная нагрузка – количество вируса в крови до и после лечения',
+          child: Text("presence_of_hiv_6text10".tr(),
               style: TextStyle(
                   fontSize: fontSize - 6,
                   fontWeight: FontWeight.w300,
@@ -116,89 +112,63 @@ class _HivTreatmentScreenState extends State<HivTreatmentScreen> {
           title: RichText(
             text: TextSpan(children: [
               TextSpan(
-                text:
-                    "\nБез лечения ВИЧ поражает клетки иммунной (защитной) системы организма (их называют "
-                    "CD4-клетки). Поэтому количество СД4 уменьшается, а количество вируса в крови быстро "
-                    "увеличивается. При отсутствии лечения разрушается так много клеток, что иммунная система не "
-                    "может защищать организм, и человек погибает от других инфекционных заболеваний или от рака.\n",
+                text:"presence_of_hiv_6text11".tr(),
                 style: contentNormal,
               ),
               TextSpan(
-                text:
-                "\nПри приеме АРТ иммунная система восстанавливается, увеличивается количество CD4-клеток. "
-                    "Исчезают, или уменьшаются проявления ВИЧ-инфекции (если они были ранее).\nРиск заражения ВИЧ "
-                    "полового партнера или будущего ребенка значительно снижается.\n",
+                text:"presence_of_hiv_6text12".tr(),
                 style: contentNormal,
               ),
               TextSpan(
-                text:
-                "\nЛечение ВИЧ-инфекции позволяет сохранить здоровье и жизнь человека.\n",
+                text:"presence_of_hiv_6text13".tr(),
                 style: contentNormal,
               ),
               TextSpan(
-                text:
-                "Лечение нужно начинать как можно раньше",
+                text:"presence_of_hiv_6text14".tr(),
                 style: normalBold,
               ),
               TextSpan(
-                text:
-                " – сразу же после установления ВИЧ-статуса и строго соблюдать назначения врача.",
+                text:"presence_of_hiv_6text15".tr(),
                 style: contentNormal,
               ),
               TextSpan(
-                text:
-                "\nЧем раньше начато лечение, тем меньше вреда вирус нанесет иммунной системе. ",
+                text:"presence_of_hiv_6text16".tr(),
                 style: normalBold,
               ),
               TextSpan(
-                text:
-                "Это очень важно, потому что восстановление иммунной системы происходит очень медленно и организм остается без "
-                    "защиты даже если вирус уже не размножается в результате приема АРТ.\n",
+                text:"presence_of_hiv_6text17".tr(),
                 style: contentNormal,
               ),
               TextSpan(
-                text:
-                "\nДо настоящего времени не разработано лекарство, которое могло бы полностью излечить человека от "
-                    "ВИЧ-инфекции, и нет вакцины, которая могла бы защитить от заражения ВИЧ. Поэтому человек с "
-                    "ВИЧ должен постоянно получать лечение.\n",
+                text:"presence_of_hiv_6text18".tr(),
                 style: contentItalic,
               ),
               TextSpan(
-                text:
-                "\nВажно строго соблюдать дозу и время приема лекарств, никогда не прерывать лечение",
+                text:"presence_of_hiv_6text19".tr(),
                 style: contentNormal,
               ),
               TextSpan(
-                text:
-                " – это называется приверженность к лечению. ",
+                text:"presence_of_hiv_6text20".tr(),
                 style: normalBold,
               ),
               TextSpan(
-                text:
-                "У ЛЖВ всегда должен быть запас препаратов, не меньше, чем на 1 месяц, который нужно регулярно "
-                    "пополнять, чтобы не было перерывов в лечении. Даже небольшие перерывы в лечении могут "
-                    "привести к ",
+                text:"presence_of_hiv_6text21".tr(),
                 style: contentNormal,
               ),
               TextSpan(
-                text:
-                "устойчивости вируса",
+                text:"presence_of_hiv_6text22".tr(),
                 style: normalBold,
               ),
               TextSpan(
-                text:
-                " – тогда лекарства не будут действовать на ВИЧ. В таком случае назначаются другие лекарства, "
-                    "а количество применяемых таблеток увеличивается. \n",
+                text:"presence_of_hiv_6text23".tr(),
                 style: contentNormal,
               ),
               TextSpan(
-                text:
-                "\nПрепараты для лечения ВИЧ-инфекции (АРВП) предоставляются бесплатно! \n",
+                text:"presence_of_hiv_6text24".tr(),
                 style: normalBold,
               ),
               TextSpan(
-                text:
-                "\nАнтиретровирусная терапия позволяет людям с ВИЧ прожить полноценную и долгую жизнь!",
+                text:"presence_of_hiv_6text25".tr(),
                 style: normalBold,
               ),
             ]),

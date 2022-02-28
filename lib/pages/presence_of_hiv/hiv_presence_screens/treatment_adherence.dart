@@ -53,7 +53,7 @@ class _TreatmentAdherenceState extends State<TreatmentAdherence> {
       ListTile(
         title: RichText(
           text: TextSpan(
-            text: "ПРИВЕРЖЕННОСТЬ к АНТИРЕТРОВИРУСНОЙ ТЕРАПИИ",
+            text:"presence_of_hiv_5text1".tr(),
             style: chapterStyle,
           ),
         ),
@@ -64,19 +64,14 @@ class _TreatmentAdherenceState extends State<TreatmentAdherence> {
           text: TextSpan(
             children: [
               TextSpan(
-                text:
-                    "Приверженность к АРТ означает прием антиретровирусных препаратов пациентом с точным "
-                    "соблюдением графика приема и дозировки, которые были рекомендованы врачом. Высокая "
-                    "приверженность АРТ – важнейшее условие успеха лечения.\n",
+                text:"presence_of_hiv_5text2".tr(),
               ),
               TextSpan(
-                text:
-                    "Для эффективного подавления размножения ВИЧ (то есть до достижения неопределяемой вирусной "
-                    "нагрузки) необходимо принимать ",
+                text:"presence_of_hiv_5text3".tr(),
                 style: normalBold,
               ),
               TextSpan(
-                text: "95 –100 % предписанных доз препаратов.\n",
+                text: "presence_of_hiv_5text4".tr(),
                 style: TextStyle(
                     decoration: TextDecoration.underline,
                     color: Colors.black,
@@ -84,16 +79,10 @@ class _TreatmentAdherenceState extends State<TreatmentAdherence> {
                     fontWeight: FontWeight.w600),
               ),
               TextSpan(
-                text:
-                    '\nЛюди иногда допускают ошибки в приеме препаратов по невнимательности, забывчивости либо неверия в '
-                    'эффективность лечения. Поэтому важно получить правдивую информацию об АРТ и получить поддержку. '
-                    'Большую помощь Вам могут оказать люди, которые живут с ВИЧ, и могут открыто говорить о своем статусе. '
-                    'Можно также принять участие в группах поддержки (группы само и взаимопомощи) из числа ЛЖВ. Они помогут '
-                    'справиться со стрессом, связанным с принятием ВИЧ-статуса; помогут на начальном этапе лечения по '
-                    'ВИЧ-инфекции, напомнят о приеме препаратов; окажут другую помощь.\n',
+                text:"presence_of_hiv_5text5".tr(),
               ),
               TextSpan(
-                text: '\nПочему важно принимать препараты точно по времени?\n',
+                text:"presence_of_hiv_5text6".tr(),
                 style: normalBold,
               ),
             ],
@@ -113,10 +102,7 @@ class _TreatmentAdherenceState extends State<TreatmentAdherence> {
             child: ListTile(
               title: RichText(
                 text: TextSpan(
-                  text: "Для каждого препарата рассчитана такая дозировка и такая частота приёма, чтобы в крови "
-                      "постоянно поддерживалось определённое количество лекарства. Только в этом случае ВИЧ не "
-                      "размножается, и не формируются его изменения (мутации), которые могут стать причиной "
-                      "устойчивости к антиретровирусным препаратам – и лечение перестанет действовать на вирус.",
+                  text: "presence_of_hiv_5text7".tr(),
                   style: contentNormal,
                 ),
               ),
@@ -136,10 +122,7 @@ class _TreatmentAdherenceState extends State<TreatmentAdherence> {
             child: ListTile(
               title: RichText(
                 text: TextSpan(
-                  text: "При пропуске препарата количество лекарства в крови снижается, и ВИЧ начинает размножаться. При этом "
-                      "могут образоваться вирусы-мутанты, которые обладают устойчивостью к препаратам. В результате лечение "
-                      "перестает действовать, а вирус начинает размножаться. В результате назначаются другие схемы лечения, и "
-                      "может увеличиться количество принимаемых таблеток.",
+                  text:"presence_of_hiv_5text8".tr(),
                   style: contentNormal,
                 ),
               ),
@@ -159,8 +142,7 @@ class _TreatmentAdherenceState extends State<TreatmentAdherence> {
             child: ListTile(
               title: RichText(
                 text: TextSpan(
-                  text: "Чем чаще повторяются пропуски, тем больше риск, что вирус приспособится и станет "
-                      "устойчивым к антиретровирусным препаратам.",
+                  text:"presence_of_hiv_5text9".tr(),
                   style: contentNormal,
                 ),
               ),
@@ -180,10 +162,7 @@ class _TreatmentAdherenceState extends State<TreatmentAdherence> {
             child: ListTile(
               title: RichText(
                 text: TextSpan(
-                  text: "Можно отклонятся на один час от предписанного времени приема лекарств в ту или иную сторону, "
-                      "но лучше всего ориентироваться на прием лекарств в одно и то же время – для этого можно использовать "
-                      "оповещение на мобильном телефоне, увязать прием препаратов с обычным ежедневным действием "
-                      "(умыванием, завтраком, ежедневным выходом на работу) либо попросить помощи друзей или родственников.",
+                  text:"presence_of_hiv_5text10".tr(),
                   style: contentNormal,
                 ),
               ),
@@ -203,10 +182,7 @@ class _TreatmentAdherenceState extends State<TreatmentAdherence> {
             child: ListTile(
               title: RichText(
                 text: TextSpan(
-                  text: "При пропуске приема очередной дозы препарата её можно принять только в том случае, если "
-                      "до времени следующего приема осталось более 6 часов (для лекарств, которые принимают два "
-                      "раза в день, например, Комбивир) или более 12 часов (для лекарств, которые принимают один "
-                      "раз в день, например, Атрипла).",
+                  text:"presence_of_hiv_5text11".tr(),
                   style: contentNormal,
                 ),
               ),
@@ -217,7 +193,7 @@ class _TreatmentAdherenceState extends State<TreatmentAdherence> {
       ListTile(
         title: RichText(
           text: TextSpan(
-            text: "Как повысить приверженность",
+            text:"presence_of_hiv_5text12".tr(),
             style: normalBold,
           ),
         ),
@@ -234,7 +210,7 @@ class _TreatmentAdherenceState extends State<TreatmentAdherence> {
             child: ListTile(
               title: RichText(
                 text: TextSpan(
-                  text: "Привязать прием препаратов к повседневным делам (например, к чистке зубов).",
+                  text: "presence_of_hiv_5text13".tr(),
                   style: contentNormal,
                 ),
               ),
@@ -254,7 +230,7 @@ class _TreatmentAdherenceState extends State<TreatmentAdherence> {
             child: ListTile(
               title: RichText(
                 text: TextSpan(
-                  text: "Напоминающие приспособления (таймеры сотовых телефонов).",
+                  text:"presence_of_hiv_5text14".tr(),
                   style: contentNormal,
                 ),
               ),
@@ -274,7 +250,7 @@ class _TreatmentAdherenceState extends State<TreatmentAdherence> {
             child: ListTile(
               title: RichText(
                 text: TextSpan(
-                  text: "Записать рекомендации врача и следовать им.",
+                  text:"presence_of_hiv_5text15".tr(),
                   style: contentNormal,
                 ),
               ),
@@ -294,8 +270,7 @@ class _TreatmentAdherenceState extends State<TreatmentAdherence> {
             child: ListTile(
               title: RichText(
                 text: TextSpan(
-                  text: "Составить календарь посещения врача с учетом возможных выходных и праздничных дней, "
-                      "чтобы получать препараты заранее до их полного использования.",
+                  text: "presence_of_hiv_5text16".tr(),
                   style: contentNormal,
                 ),
               ),
@@ -315,7 +290,7 @@ class _TreatmentAdherenceState extends State<TreatmentAdherence> {
             child: ListTile(
               title: RichText(
                 text: TextSpan(
-                  text: "Использовать контейнеры для таблеток или аптечки-органайзеры.",
+                  text: "presence_of_hiv_5text17".tr(),
                   style: contentNormal,
                 ),
               ),
@@ -335,7 +310,7 @@ class _TreatmentAdherenceState extends State<TreatmentAdherence> {
             child: ListTile(
               title: RichText(
                 text: TextSpan(
-                  text: "Общение с ЛЖВ, которые могут оказать моральную поддержку и практическую помощь.",
+                  text:"presence_of_hiv_5text18".tr(),
                   style: contentNormal,
                 ),
               ),
@@ -355,7 +330,7 @@ class _TreatmentAdherenceState extends State<TreatmentAdherence> {
             child: ListTile(
               title: RichText(
                 text: TextSpan(
-                  text: "Найти компаньона по лечению – человека, который поможет на этапе начала АРТ (родственник, друг или медсестра).",
+                  text: "presence_of_hiv_5text19".tr(),
                   style: contentNormal,
                 ),
               ),
@@ -375,7 +350,7 @@ class _TreatmentAdherenceState extends State<TreatmentAdherence> {
             child: ListTile(
               title: RichText(
                 text: TextSpan(
-                  text: "Включение в программы заместительной терапии метадоном для ЛЖВ, которые принимают наркотики.",
+                  text: "presence_of_hiv_5text20".tr(),
                   style: contentNormal,
                 ),
               ),

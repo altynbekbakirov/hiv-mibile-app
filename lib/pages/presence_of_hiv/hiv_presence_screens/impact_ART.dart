@@ -52,7 +52,7 @@ class _ImpactARTState extends State<ImpactART> {
       ListTile(
         title: RichText(
           text: TextSpan(
-            text: "Воздействие АРТ на здоровье человека",
+            text: "presence_of_hiv_3text1".tr(),
             style: chapterStyle,
           ),
         ),
@@ -68,9 +68,7 @@ class _ImpactARTState extends State<ImpactART> {
               child: ListTile(
                 title: RichText(
                   text: TextSpan(
-                    text: "Несмотря на то, что ВИЧ может долго не проявляет себя в организме человека, он медленно "
-                        "уничтожает иммунные клетки, которые защищают организм от болезней. Назначение АРТ позволит "
-                        "сохранить иммунную систему и, таким образом, защитит организм от болезней.",
+                    text:"presence_of_hiv_3text2".tr(),
                     style: contentNormal,
                   ),
                 ),
@@ -90,14 +88,7 @@ class _ImpactARTState extends State<ImpactART> {
               child: ListTile(
                 title: RichText(
                   text: TextSpan(
-                    text: "В случае нарушения иммунитета, организм человека с ВИЧ подвергается риску сопутствующих "
-                        "заболеваний – они называются оппортунистические инфекции и не развиваются у людей с сильной "
-                        "иммунной системой. Каждое такое заболевание само по себе создает серьезную (а иногда и "
-                        "смертельную) опасность для человека. Чаще всего при ВИЧ-инфекции присоединяется туберкуле."
-                        " Для человека с ВИЧ – это дополнительная угроза снижения иммунитета. Помимо этого, наряду с"
-                        " АРТ возникнет необходимость приема других препаратов, что усилит риск нежелательных "
-                        "эффектов от лечения. Т.е. вместо 2-3 препаратов в день придется принимать 8-10 препаратов "
-                        "в зависимости от формы туберкулеза.",
+                    text:"presence_of_hiv_3text3".tr(),
                     style: contentNormal,
                   ),
                 ),
@@ -117,8 +108,7 @@ class _ImpactARTState extends State<ImpactART> {
               child: ListTile(
                 title: RichText(
                   text: TextSpan(
-                    text: "Риск возникновения и тяжесть течения любых заболеваний у человека с ВИЧ значительно "
-                        "опаснее, чем у людей без ВИЧ-инфекции.",
+                    text: "presence_of_hiv_3text4".tr(),
                     style: contentNormal,
                   ),
                 ),
@@ -138,7 +128,7 @@ class _ImpactARTState extends State<ImpactART> {
               child: ListTile(
                 title: RichText(
                   text: TextSpan(
-                    text: "Назначение АРТ ВИЧ-позитивным беременным женщинам позволяет предотвратить передачу ВИЧ ее ребенку.",
+                    text: "presence_of_hiv_3text5".tr(),
                     style: contentNormal,
                   ),
                 ),
@@ -158,8 +148,7 @@ class _ImpactARTState extends State<ImpactART> {
               child: ListTile(
                 title: RichText(
                   text: TextSpan(
-                    text: "Важно назначать лечение детям, живущим с ВИЧ, чтобы они испытали все радости жизни и общения со сверстниками без боли, без болезней,"
-                        " с хорошим физическим развитием и сильной иммунной системой.",
+                    text:"presence_of_hiv_3text6".tr(),
                     style: contentNormal,
                   ),
                 ),
@@ -179,8 +168,7 @@ class _ImpactARTState extends State<ImpactART> {
               child: ListTile(
                 title: RichText(
                   text: TextSpan(
-                    text: "Наука не стоит на месте. Проводится работа по разработке новых лекарств для лечения ВИЧ-инфекции. "
-                        "Возможно, такие лекарства будут найдены и Вам удастся полностью освободиться от ВИЧ.",
+                    text:"presence_of_hiv_3text7".tr(),
                     style: contentNormal,
                   ),
                 ),
@@ -200,11 +188,7 @@ class _ImpactARTState extends State<ImpactART> {
               child: ListTile(
                 title: RichText(
                   text: TextSpan(
-                    text: "Человек рожден, чтобы жить. Для этого люди переносят тяжелые операции, соглашаются на "
-                        "ампутацию ног, рук, груди, платят огромные деньги за пересадку сердца и почек, а затем "
-                        "пожизненно принимают специальные препараты; бывает, что жертвуют своими органами (почкой) "
-                        "для своих близких. Поэтому прием одной-трех таблеток в день – это минимальная плата за "
-                        "долгую и здоровую жизнь…",
+                    text: "presence_of_hiv_3text8".tr(),
                     style: contentNormal,
                   ),
                 ),
