@@ -1,4 +1,5 @@
 import 'package:HIVApp/components/bullet.dart';
+import 'package:HIVApp/data/pref_manager.dart';
 import 'package:HIVApp/utils/constants.dart';
 import 'package:expandable_page_view/expandable_page_view.dart';
 import 'package:flutter/material.dart';
@@ -70,31 +71,25 @@ class _MethadoneTherapyScreenState extends State<MethadoneTherapyScreen> {
     List list = [
       [
         "assets/images/methadon1.png",
-        "Участие в программе добровольно - только по Вашему желанию"
-      ],
+        "hiv_prevention2_car1_text1".tr()      ],
       [
         "assets/images/methadone2.png",
-        "Метадон можно получить бесплатно в медицинских организациях, а также в тюрьмах",
-      ],
+        "hiv_prevention2_car1_text2".tr()      ],
       [
         "assets/images/methadone3.png",
-        "Прием метадона позволят избавиться от вредного действия - то есть у человека восстанавливается здоровье"
-      ],
+        "hiv_prevention2_car1_text3".tr()      ],
       [
         "assets/images/methadone4.png",
-        "Метадон принимают через рот (пьют), что помогает защитить себя от заражения вирусными гепатитами и ВИЧ"
-      ],
+        "hiv_prevention2_car1_text4".tr()      ],
       [
         "assets/images/methadone5.png",
-        "Участие в программе важно для человека, живущего с ВИЧ. Оно помогает лечению ВИЧ-инфекции"
-      ],
+        "hiv_prevention2_car1_text5".tr()      ],
       [
         "assets/images/methadone6.png",
-        "Участие в ПТМ помогает восстановить семью и добрые отношения с родственниками"
-      ],
+        "hiv_prevention2_car1_text6".tr()      ],
       [
         "assets/images/methadon7.png",
-        "Участие в программе ПТМ позволяет избежать проблем с милицией, так как приводит к отказу от приобретения, хранения и потребления незаконных наркотиков"
+        "hiv_prevention2_car1_text7".tr()
       ],
     ];
 
@@ -136,7 +131,7 @@ class _MethadoneTherapyScreenState extends State<MethadoneTherapyScreen> {
                 ),
                 CarouselPage(
                   list: list[5],
-                  height: fontSize.toInt() == 24 ? 300 : fontSize.toInt() == 22 ? 280 : fontSize.toInt() == 20 ? 260 : 240,
+                  height: fontSize.toInt() == 24 ? 360 : fontSize.toInt() == 22 ? 330 : fontSize.toInt() == 20 ? 310 : 290,
                   fontSize: fontSize,
                   textStyle: contentNormal,
                 ),
@@ -164,10 +159,12 @@ class _MethadoneTherapyScreenState extends State<MethadoneTherapyScreen> {
           title: RichText(
             textAlign: TextAlign.center,
             text: TextSpan(
-                text: "Поддерживающая терапия метадоном \n(ПТМ)\n",
+                text: "hiv_prevention2text1".tr(),
                 style: chapterStyle),
           ),
         ),
+        Prefs.getString(Prefs.LANGUAGE) == "ru"
+            ?
         ListTile(
           title: RichText(
             text: TextSpan(children: [
@@ -213,6 +210,50 @@ class _MethadoneTherapyScreenState extends State<MethadoneTherapyScreen> {
                   style: contentNormal),
             ]),
           ),
+        ):
+        ListTile(
+          title: RichText(
+            text: TextSpan(children: [
+              TextSpan(
+                  text:
+                  "Баңгизаттарды, өзгөчө опиоиддерди (героин, апийим, морфин жана башкалар) колдонгон адамда",
+                  style: contentNormal),
+              TextSpan(
+                  text: " психологиялык көз карандылык ", style: normalBold),
+              TextSpan(
+                  text:
+                  " пайда болот, башкача айтканда, ырахат алуу үчүн баңгизатын колдонуу каалоосу бар. Бирок, баңгизатынан ",
+                  style: contentNormal),
+              TextSpan(text: " физикалык көз карандылык, ", style: normalBold),
+              TextSpan(
+                  text:
+                  "абдан тез пайда болот, адам баңгизатынан баш тартканда катуу азап чегет, бул ",
+                  style: contentNormal),
+              TextSpan(text: "абстиненция ", style: normalBold),
+              TextSpan(text: "деп аталат. ", style: contentNormal),
+
+              TextSpan(
+                  text:"Ошондуктан, ден соолугу начарласа да, акчасы болбосо да, көз каранды адамдын баңгизатынан баш тартууга эрки жетпеши мүмкүн. "
+                      "Көз карандуулуктан кутулуунун бир нече жолу бар: муну адам өзү же досторунун, же медициналык кызматкерлердин жардамы менен "
+                  "жасай алат. Коопсуз жана натыйжалуу ыкмалардын бири –",
+                  style: contentNormal),
+              TextSpan(
+                  text: "метадон менен колдоо программасына (MКП) катышуу. ",
+                  style: normalBold),
+              TextSpan(
+                  text:"Бул программа Кыргызстанда дээрлик 20 жылдан бери иштеп келе жатат жана метадон берген 20дан ашык пункт бар. "
+                      "Программанын кээ бир кардарлары ага башынан бери эле катышып келатышат. Алардын көзү тирүү, ден соолугу дурус, үй-бүлөлөрү бар жана "
+                      "иштеп жатышат.\n\n",
+                  style: contentNormal),
+              TextSpan(text: "Метадонду ", style: normalBold),
+              TextSpan(
+                  text:
+                  "дарыгер детоксикация (детокс) же опиоиддик баңгизаттарынан көз карандылыкты дарылоо үчүн дайындайт "
+                      "Метадон ВИЧ жана кан аркылуу жуккан башка инфекциялардын (вирустук гепатиттин) "
+                  "алдын алууда маанилүү ролду ойнойт. ",
+                  style: contentNormal),
+            ]),
+          ),
         ),
         SizedBox(height: 20),
         Container(
@@ -224,7 +265,7 @@ class _MethadoneTherapyScreenState extends State<MethadoneTherapyScreen> {
                 textAlign: TextAlign.center,
                 text: TextSpan(children: [
                   TextSpan(
-                      text: "Преимущества приема ПТМ:",
+                      text: "hiv_prevention2text2".tr(),
                       style: TextStyle(
                           fontWeight: FontWeight.w600,
                           fontSize: fontSize + 2,
@@ -247,7 +288,7 @@ class _MethadoneTherapyScreenState extends State<MethadoneTherapyScreen> {
                     ? Container()
                     : Container(
                   child: Row(children: [
-                    Text("ЛИСТАЙ"),
+                    Text("hiv_prevention2text3".tr()),
                     Container(
                         width: 10.0,
                         height: 10.0,
@@ -281,7 +322,7 @@ class _MethadoneTherapyScreenState extends State<MethadoneTherapyScreen> {
               text: TextSpan(
             children: [
               TextSpan(
-                  text: "Ограничения программы ПТМ",
+                  text: "hiv_prevention2text4".tr(),
                   style: normalBoldForChapter),
             ],
           )),
@@ -300,9 +341,7 @@ class _MethadoneTherapyScreenState extends State<MethadoneTherapyScreen> {
                   title: RichText(
                     text: TextSpan(children: [
                       TextSpan(
-                          text:
-                          "Лечение метадоном назначается только людям, которые потребляют опиоиды (героин, опий, морфин "
-                              "и др.). ПТМ не действует на потребителей других наркотиков.",
+                          text:"hiv_prevention2text5".tr(),
                           style: contentNormal),
                     ]),
                   )),
@@ -323,10 +362,7 @@ class _MethadoneTherapyScreenState extends State<MethadoneTherapyScreen> {
                   title: RichText(
                     text: TextSpan(children: [
                       TextSpan(
-                          text:
-                          "Для участия в программе нужно зарегистрироваться в организации здравоохранения. "
-                              "Факт регистрации носит конфиденциальный характер и не разглашается третьим лицам. "
-                              "Ожидается введение анонимного учета клиентов (без регистрации).",
+                          text:"hiv_prevention2text6".tr(),
                           style: contentNormal),
                     ]),
                   )),
@@ -347,9 +383,7 @@ class _MethadoneTherapyScreenState extends State<MethadoneTherapyScreen> {
                   title: RichText(
                     text: TextSpan(children: [
                       TextSpan(
-                          text:
-                          "Нужно ежедневно посещать пункт выдачи метадона. В настоящее время клиентам, которые аккуратно "
-                              "принимают терапию выдают метадон на 5 дней.",
+                          text:"hiv_prevention2text7".tr(),
                           style: contentNormal),
                     ]),
                   )),
@@ -370,8 +404,7 @@ class _MethadoneTherapyScreenState extends State<MethadoneTherapyScreen> {
                   title: RichText(
                     text: TextSpan(children: [
                       TextSpan(
-                          text:
-                          "Метадон не излечивает зависимость от наркотиков, поэтому его принимают постоянно в течение многих лет.",
+                          text:"hiv_prevention2text8".tr(),
                           style: contentNormal),
                     ]),
                   )),
@@ -383,8 +416,7 @@ class _MethadoneTherapyScreenState extends State<MethadoneTherapyScreen> {
               text: TextSpan(
                 children: [
                   TextSpan(
-                      text: "Подробную информацию о программе ПТМ можно получить в НПО, центрах СПИД и центрах "
-                          "наркологии, сотрудники которых помогут Вам начать ПТМ.",
+                      text:"hiv_prevention2text9".tr(),
                       style: contentNormal),
                 ],
               )),
