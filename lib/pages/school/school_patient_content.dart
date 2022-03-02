@@ -40,6 +40,13 @@ class _SchoolPatientContentState extends State<SchoolPatientContent> {
   @override
   void initState() {
     super.initState();
+    setPlHivTest();
+  }
+
+  setPlHivTest() {
+    if(Prefs.getDouble("PL_HIV_TEST") == null){
+      Prefs.setDouble("PL_HIV_TEST", 0);
+    }
   }
 
   Route selectChapter(Chapter chapter) {
@@ -146,6 +153,7 @@ class _SchoolPatientContentState extends State<SchoolPatientContent> {
         chapterEightPercent;
 
     var totalReadPercent = allPercent != null ? allPercent ~/ 8 : 0;
+    var plhivtest = Prefs.getDouble("PL_HIV_TEST");
 
     return Container(
       color: kLightGrayishBlue,
@@ -335,7 +343,9 @@ class _SchoolPatientContentState extends State<SchoolPatientContent> {
                       if (chapterSevenPercent != null &&
                           chapterSevenPercent == 100) {
                         Route route = selectChapter(Chapter.eight);
-                        Navigator.push(context, route);
+                        Navigator.push(context, route).then((value) {
+                          setPlHivTest();
+                        });
                       }
                     }),
               ]),
