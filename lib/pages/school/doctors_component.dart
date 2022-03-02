@@ -71,7 +71,7 @@ _doctor(String image) {
   return Container(
     child: Image.asset(
       image,
-      height: 200,
+      height: 140,
       width: 148,
     ),
   );
