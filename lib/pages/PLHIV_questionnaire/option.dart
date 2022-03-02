@@ -2,6 +2,7 @@ import 'package:HIVApp/model/questionnaire_provider.dart';
 import 'package:HIVApp/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class AnswerBuilder extends StatefulWidget {
   const AnswerBuilder(
@@ -39,7 +40,7 @@ class _AnswerBuilderState extends State<AnswerBuilder> {
           children: <Widget>[
             Expanded(
               flex: 5,
-              child: Text("${provider.questions[provider.questionIndex].options[widget.index].answer}",
+              child: Text("${provider.questions[provider.questionIndex].options[widget.index].answer}".tr(),
                   style: TextStyle(
                       color: kModerateBlue,
                       fontSize: 18,

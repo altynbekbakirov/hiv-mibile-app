@@ -23,7 +23,7 @@ class Option {
 List<Question> data = [
   Question(
     id: 0,
-    question: "Что такое  ВИЧ (отметьте один правильный ответ)",
+    question: "test_what_is_hiv",
     correctAnswers: ["ВИЧ – это вирус иммунодефицита человека"],
     incorrectAnswers: [
       "ВИЧ – это конечная стадия ВИЧ-инфекции",
@@ -33,7 +33,7 @@ List<Question> data = [
     ],
     options: [
       Option(
-          selected: false, answer: "ВИЧ – это вирус иммунодефицита человека"),
+          selected: false, answer: "test_hiv_answer1"),
       Option(selected: false, answer: "ВИЧ – это конечная стадия ВИЧ-инфекции"),
       Option(
           selected: false,

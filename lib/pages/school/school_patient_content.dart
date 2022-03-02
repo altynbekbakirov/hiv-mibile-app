@@ -254,7 +254,7 @@ class _SchoolPatientContentState extends State<SchoolPatientContent> {
               padding: EdgeInsets.all(8.0),
               child: Column(children: [
                 CardListTile(
-                    tileName: 'Модуль 1'.tr(),
+                    tileName: 'Модуль 1',
                     trailing: chapterOnePercent != null
                         ? chapterOnePercent.toInt()
                         : 0,
@@ -263,7 +263,7 @@ class _SchoolPatientContentState extends State<SchoolPatientContent> {
                       Navigator.push(context, route);
                     }),
                 CardListTile(
-                    tileName: 'Модуль 2'.tr(),
+                    tileName: 'Модуль 2',
                     trailing: chapterTwoPercent != null
                         ? chapterTwoPercent.toInt()
                         : 0,
@@ -275,7 +275,7 @@ class _SchoolPatientContentState extends State<SchoolPatientContent> {
                       }
                     }),
                 CardListTile(
-                    tileName: 'Модуль 3'.tr(),
+                    tileName: 'Модуль 3',
                     trailing: chapterThreePercent != null
                         ? chapterThreePercent.toInt()
                         : 0,
@@ -287,7 +287,7 @@ class _SchoolPatientContentState extends State<SchoolPatientContent> {
                       }
                     }),
                 CardListTile(
-                    tileName: 'Модуль 4'.tr(),
+                    tileName: 'Модуль 4',
                     trailing: chapterFourPercent != null
                         ? chapterFourPercent.toInt()
                         : 0,
@@ -299,7 +299,7 @@ class _SchoolPatientContentState extends State<SchoolPatientContent> {
                       }
                     }),
                 CardListTile(
-                    tileName: 'Модуль 5'.tr(),
+                    tileName: 'Модуль 5',
                     trailing: chapterFivePercent != null
                         ? chapterFivePercent.toInt()
                         : 0,
@@ -311,7 +311,7 @@ class _SchoolPatientContentState extends State<SchoolPatientContent> {
                       }
                     }),
                 CardListTile(
-                    tileName: 'Модуль 6'.tr(),
+                    tileName: 'Модуль 6',
                     trailing: chapterSixPercent != null
                         ? chapterSixPercent.toInt()
                         : 0,
@@ -323,7 +323,7 @@ class _SchoolPatientContentState extends State<SchoolPatientContent> {
                       }
                     }),
                 CardListTile(
-                    tileName: 'Модуль 7'.tr(),
+                    tileName: 'Модуль 7',
                     trailing: chapterSevenPercent != null
                         ? chapterSevenPercent.toInt()
                         : 0,
@@ -335,7 +335,7 @@ class _SchoolPatientContentState extends State<SchoolPatientContent> {
                       }
                     }),
                 CardListTile(
-                    tileName: 'Модуль 8'.tr(),
+                    tileName: 'Модуль 8',
                     trailing: chapterEightPercent != null
                         ? chapterEightPercent.toInt()
                         : 0,

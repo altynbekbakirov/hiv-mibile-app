@@ -56,7 +56,7 @@ class _PLHIV_TestState extends State<PLHIV_Test> {
             Expanded(
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 8),
-                child: Text("${questions[questionIndex].question}",
+                child: Text("${questions[questionIndex].question}".tr(),
                     style: TextStyle(
                         color: Colors.black,
                         fontSize: 20,
