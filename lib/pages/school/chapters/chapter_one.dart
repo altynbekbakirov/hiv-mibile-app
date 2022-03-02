@@ -477,7 +477,14 @@ class _ChapterOneState extends State<ChapterOne> with AutomaticKeepAliveClientMi
                           fontSize: fontSize,
                         ),
                       )
-                    : TextSpan(),
+                    : TextSpan(text: 'антиретровирустук дарылар деп, '
+                    'ал эми дарылоо антиретровирустук терапия (АРТ) деп аталат.',
+                  style: TextStyle(
+                    fontWeight: FontWeight.w600,
+                    fontStyle: FontStyle.italic,
+                    color: Colors.black,
+                    fontSize: fontSize,
+                  ),),
               ], style: TextStyle(fontSize: fontSize)),
             ),
             Image.asset("assets/images/lechenie2.png"),
