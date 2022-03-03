@@ -1015,7 +1015,7 @@ class _QuestionBuilderState extends State<QuestionBuilder>
                     flex: 1,
                     child: Center(
                       child: Text(
-                        model.body,
+                        model.body.tr(),
                         style: TextStyle(fontSize: 25),
                         textAlign: TextAlign.center,
                       ),
@@ -1030,7 +1030,7 @@ class _QuestionBuilderState extends State<QuestionBuilder>
                             height: 56,
                             child: CustomButton(
                               fillColor: kSoftCyan,
-                              text: model.answers[index].body,
+                              text: model.answers[index].body.tr(),
                               textColor: kModerateBlue,
                               onPressed: () {
                                 if (question4Answer1 == model.answers[index] ||
