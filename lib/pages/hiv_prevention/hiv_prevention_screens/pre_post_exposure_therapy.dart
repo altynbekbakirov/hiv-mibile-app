@@ -213,12 +213,9 @@ class _PrePostExposureTherapyScreenState extends State<PrePostExposureTherapyScr
         Container(
           height: 50,
           child: Row(
+            mainAxisAlignment: MainAxisAlignment.end,
             children: <Widget>[
-              Expanded(
-                flex: 4,
-                child: Container(),
-              ),
-              Expanded(
+              Container(
                 child: list.length - 1 == _current
                     ? Container()
                     : Container(

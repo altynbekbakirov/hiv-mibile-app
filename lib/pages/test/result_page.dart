@@ -42,7 +42,7 @@ class TestResultPage extends StatelessWidget {
           title: Text('risk_result'.tr()),
         ),
         body: Container(
-          padding: EdgeInsets.all(MediaQuery.of(context).size.width * 0.2,),
+          padding: EdgeInsets.only(right: 16, left: 16, top: 60),
           child: Center(
             child: Column(
               children: [

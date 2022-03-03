@@ -370,12 +370,9 @@ class _SelfProtectInfoScreenState extends State<SelfProtectInfoScreen> {
         Container(
           height: 50,
           child: Row(
+            mainAxisAlignment: MainAxisAlignment.end,
             children: <Widget>[
-              Expanded(
-                flex: 4,
-                child: Container(),
-              ),
-              Expanded(
+              Container(
                 child: listOne.length - 1 == _current
                     ? Container()
                     : Container(
@@ -431,16 +428,14 @@ class _SelfProtectInfoScreenState extends State<SelfProtectInfoScreen> {
         Container(
           height: 50,
           child: Row(
+            mainAxisAlignment: MainAxisAlignment.end,
             children: <Widget>[
-              Expanded(
-                flex: 4,
-                child: Container(),
-              ),
-              Expanded(
+              Container(
                 child: listTwo.length - 1 == _currentSecond
                     ? Container()
                     : Container(
-                  child: Row(children: [
+                  child: Row(
+                      children: [
                     Text("hiv_prevention1text4".tr()),
                     Container(
                         width: 10.0,
@@ -493,12 +488,9 @@ class _SelfProtectInfoScreenState extends State<SelfProtectInfoScreen> {
         Container(
           height: 50,
           child: Row(
+            mainAxisAlignment: MainAxisAlignment.end,
             children: <Widget>[
-              Expanded(
-                flex: 4,
-                child: Container(),
-              ),
-              Expanded(
+              Container(
                 child: listThree.length - 1 == _currentThird
                     ? Container()
                     : Container(
