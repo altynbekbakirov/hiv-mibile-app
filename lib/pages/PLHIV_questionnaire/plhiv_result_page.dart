@@ -37,7 +37,7 @@ class PLHivResultPage extends StatelessWidget {
             child: Center(
               child: Column(
                 children: [
-                  Text(answerPercent < 80 ? 'Вы к сожалению не прошли тест'.tr() : 'Вы успешно прошли тест'.tr(), style: TextStyle(fontSize: 22, color: Colors.black, fontWeight: FontWeight.w600), textAlign: TextAlign.center),
+                  Text(answerPercent < 80 ? "plhiv_result_info1".tr() : "plhiv_result_info2".tr(), style: TextStyle(fontSize: 22, color: Colors.black, fontWeight: FontWeight.w600), textAlign: TextAlign.center),
                   SizedBox(height: 50),
                   CircularPercentIndicator(
                     backgroundColor: kLightGrayishBlue,
@@ -48,7 +48,7 @@ class PLHivResultPage extends StatelessWidget {
                     progressColor: kModerateBlue,
                   ),
                   SizedBox(height: 30),
-                  Text("Процент правильных ответов", style: TextStyle(color: kModerateBlue, fontSize: 20, fontWeight: FontWeight.w500), textAlign: TextAlign.center),
+                  Text("plhiv_result_info3".tr(), style: TextStyle(color: kModerateBlue, fontSize: 20, fontWeight: FontWeight.w500), textAlign: TextAlign.center),
                   SizedBox(height: 50),
                   Padding(
                     padding: const EdgeInsets.symmetric(vertical: 16),
@@ -56,7 +56,7 @@ class PLHivResultPage extends StatelessWidget {
                       onPressed: () {
                         Navigator.pushNamed(context, Routes.home);
                       },
-                      text: 'Домой'.tr().toUpperCase(),
+                      text: "plhiv_result_info4".tr().toUpperCase(),
                     ),
                   ),
                 ],
