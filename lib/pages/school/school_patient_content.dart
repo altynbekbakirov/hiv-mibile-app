@@ -40,6 +40,13 @@ class _SchoolPatientContentState extends State<SchoolPatientContent> {
   @override
   void initState() {
     super.initState();
+    setPlHivTest();
+  }
+
+  setPlHivTest() {
+    if(Prefs.getDouble("PL_HIV_TEST") == null){
+      Prefs.setDouble("PL_HIV_TEST", 0);
+    }
   }
 
   Route selectChapter(Chapter chapter) {
@@ -146,6 +153,7 @@ class _SchoolPatientContentState extends State<SchoolPatientContent> {
         chapterEightPercent;
 
     var totalReadPercent = allPercent != null ? allPercent ~/ 8 : 0;
+    var plhivtest = Prefs.getDouble("PL_HIV_TEST");
 
     return Container(
       color: kLightGrayishBlue,
@@ -246,7 +254,7 @@ class _SchoolPatientContentState extends State<SchoolPatientContent> {
               padding: EdgeInsets.all(8.0),
               child: Column(children: [
                 CardListTile(
-                    tileName: 'Модуль 1'.tr(),
+                    tileName: 'Модуль 1',
                     trailing: chapterOnePercent != null
                         ? chapterOnePercent.toInt()
                         : 0,
@@ -255,7 +263,7 @@ class _SchoolPatientContentState extends State<SchoolPatientContent> {
                       Navigator.push(context, route);
                     }),
                 CardListTile(
-                    tileName: 'Модуль 2'.tr(),
+                    tileName: 'Модуль 2',
                     trailing: chapterTwoPercent != null
                         ? chapterTwoPercent.toInt()
                         : 0,
@@ -267,7 +275,7 @@ class _SchoolPatientContentState extends State<SchoolPatientContent> {
                       }
                     }),
                 CardListTile(
-                    tileName: 'Модуль 3'.tr(),
+                    tileName: 'Модуль 3',
                     trailing: chapterThreePercent != null
                         ? chapterThreePercent.toInt()
                         : 0,
@@ -279,7 +287,7 @@ class _SchoolPatientContentState extends State<SchoolPatientContent> {
                       }
                     }),
                 CardListTile(
-                    tileName: 'Модуль 4'.tr(),
+                    tileName: 'Модуль 4',
                     trailing: chapterFourPercent != null
                         ? chapterFourPercent.toInt()
                         : 0,
@@ -291,7 +299,7 @@ class _SchoolPatientContentState extends State<SchoolPatientContent> {
                       }
                     }),
                 CardListTile(
-                    tileName: 'Модуль 5'.tr(),
+                    tileName: 'Модуль 5',
                     trailing: chapterFivePercent != null
                         ? chapterFivePercent.toInt()
                         : 0,
@@ -303,7 +311,7 @@ class _SchoolPatientContentState extends State<SchoolPatientContent> {
                       }
                     }),
                 CardListTile(
-                    tileName: 'Модуль 6'.tr(),
+                    tileName: 'Модуль 6',
                     trailing: chapterSixPercent != null
                         ? chapterSixPercent.toInt()
                         : 0,
@@ -315,7 +323,7 @@ class _SchoolPatientContentState extends State<SchoolPatientContent> {
                       }
                     }),
                 CardListTile(
-                    tileName: 'Модуль 7'.tr(),
+                    tileName: 'Модуль 7',
                     trailing: chapterSevenPercent != null
                         ? chapterSevenPercent.toInt()
                         : 0,
@@ -327,7 +335,7 @@ class _SchoolPatientContentState extends State<SchoolPatientContent> {
                       }
                     }),
                 CardListTile(
-                    tileName: 'Модуль 8'.tr(),
+                    tileName: 'Модуль 8',
                     trailing: chapterEightPercent != null
                         ? chapterEightPercent.toInt()
                         : 0,
@@ -335,7 +343,9 @@ class _SchoolPatientContentState extends State<SchoolPatientContent> {
                       if (chapterSevenPercent != null &&
                           chapterSevenPercent == 100) {
                         Route route = selectChapter(Chapter.eight);
-                        Navigator.push(context, route);
+                        Navigator.push(context, route).then((value) {
+                          setPlHivTest();
+                        });
                       }
                     }),
               ]),

@@ -1,4 +1,5 @@
 import 'package:HIVApp/components/bullet.dart';
+import 'package:HIVApp/data/pref_manager.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -48,7 +49,12 @@ class _ImpactARTForPersonLifeState extends State<ImpactARTForPersonLife> {
   }
 
   Widget _treatmentAdherenceContent() {
-    return ListView(children: [
+    return
+      Prefs.getString(Prefs.LANGUAGE) == "ru"
+          ?
+      ListView(children:
+
+    [
       ListTile(
         title: RichText(
           text: TextSpan(
@@ -238,7 +244,200 @@ class _ImpactARTForPersonLifeState extends State<ImpactARTForPersonLife> {
           ),
         ],
       ),
-    ]);
+    ]):
+      ListView(children:
+
+      [
+        ListTile(
+          title: RichText(
+            text: TextSpan(
+              text: "ВИЧ менен ооруган адамга Искуствонун таасири",
+              style: chapterStyle,
+            ),
+          ),
+        ),
+        Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Expanded(child: Padding(
+              padding: const EdgeInsets.only(top: 10),
+              child: MyBullet(),
+            )),
+            Expanded(
+              flex: 5,
+              child: ListTile(
+                title: RichText(
+                  text: TextSpan(
+                    text:
+                    "Жашоонун сапатынын жакшырышы, б.а. ВИЧ менен байланышкан оорулар (мисалы, узакка созулган диарея"
+                    "кургак учук,  ангина, герпес, кычышуу жана башка) оорулар  козгобойт же "
+                    "АРТ алып жатып дарылануунун натыйжасында басылат",
+                    style: contentNormal,
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+        Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Expanded(child: Padding(
+              padding: const EdgeInsets.only(top: 10),
+              child: MyBullet(),
+            )),
+            Expanded(
+              flex: 5,
+              child: ListTile(
+                title: RichText(
+                  text: TextSpan(
+                    text:
+                    "Өмүрдүн узактыгы, б.а. ВИЧке чалдыккан адамдардын өмүрүнүн узактыгы көбөйөт»,"
+                    "АРТ алган адамдардын өмүрүнүн узактыгы  ВИЧи жок адамдардай эле жашашат",
+                    style: contentNormal,
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+        Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Expanded(child: Padding(
+              padding: const EdgeInsets.only(top: 10),
+              child: MyBullet(),
+            )),
+            Expanded(
+              flex: 5,
+              child: ListTile(
+                title: RichText(
+                  text: TextSpan(
+                    text:
+                    "ART ВИЧтин жыныстык өнөктөшкө жугуу коркунучун 90% дан ашык азайтат! "
+                        "Үй-бүлөлүк мамилелер жакшыртат жана өнөктөштүн ВИЧ-инфекциясынан коркуу сезимин азайтат. Бирок, "
+                        "ВИЧ-инфекциясынын жугушун алдын алуу үчүн башка ыкмалар менен айкалыштырып колдонуу керек,"
+                    "анын ичинде презервативдерди колдонуу",
+                    style: contentNormal,
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+        Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Expanded(child: Padding(
+              padding: const EdgeInsets.only(top: 10),
+              child: MyBullet(),
+            )),
+            Expanded(
+              flex: 5,
+              child: ListTile(
+                title: RichText(
+                  text: TextSpan(
+                    text:
+                    "ART кабыл алуу кош бойлуулукту пландаштырууга мүмкүндүк берет жана ВИЧ менен жашаган ата-энелерде дени сак баланын төрөлүшүн камсыздайт.",
+                    style: contentNormal,
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+        Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Expanded(child: Padding(
+              padding: const EdgeInsets.only(top: 10),
+              child: MyBullet(),
+            )),
+            Expanded(
+              flex: 5,
+              child: ListTile(
+                title: RichText(
+                  text: TextSpan(
+                    text:
+                    "Жакшыртылган лабораториялык параметрлер: "
+                  "\n- вирустук жүктөмдүн аныкталбаган деңгээлге чейин төмөндөшү терапиянын эффективдүү экенин билдирет,"
+                  "ВИЧ иммундук клеткаларды репликациялабайт же кол салбайт;"
+                  "\n- CD4 клеткаларынын санынын өсүшү иммундук системанын калыбына келе баштаганын билдирет жана "
+                  "олуттуу кошумча оорулар өнүкпөйт;"
+                  "\n- башка лабораториялык параметрлерди жакшыртуу мүмкүн (мисалы, деңгээлдин жогорулашы "
+                  "гемоглобин, боор анализдерин нормалдаштыруу).",
+                    style: contentNormal,
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+        Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Expanded(child: Padding(
+              padding: const EdgeInsets.only(top: 10),
+              child: MyBullet(),
+            )),
+            Expanded(
+              flex: 5,
+              child: ListTile(
+                title: RichText(
+                  text: TextSpan(
+                    text:
+                    "ВИЧти жыныстык өнөктөштөргө бербөө же балдардын төрөлүшүн пландаштыруу , мүмкүнчүлүк үчүн жакындары үчүн тынчсыздануу сезими жоюлуп, маанай жакшырат"
+                    ", .",
+                    style: contentNormal,
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+        Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Expanded(child: Padding(
+              padding: const EdgeInsets.only(top: 10),
+              child: MyBullet(),
+            )),
+            Expanded(
+              flex: 5,
+              child: ListTile(
+                title: RichText(
+                  text: TextSpan(
+                    text:
+                    "Үй-бүлө мамилелери жакшырат, өзгөчө жакын туугандары көзөмөл процессинде"
+                    "жана дарылоодо.",
+                    style: contentNormal,
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+        Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Expanded(child: Padding(
+              padding: const EdgeInsets.only(top: 10),
+              child: MyBullet(),
+            )),
+            Expanded(
+              flex: 5,
+              child: ListTile(
+                title: RichText(
+                  text: TextSpan(
+                    text:"Балдарга АРТны дайындоо аларды ВИЧ-инфекциясы жок балдардай эле өсүшүн жана өнүгүшүн камсыздайт.",
+                    style: contentNormal,
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ]);
   }
 
   Widget _treatmentAdherence(BuildContext context) {

@@ -3,7 +3,7 @@ import 'package:HIVApp/model/test_model.dart';
 import 'package:flutter/material.dart';
 
 class SexBody extends StatefulWidget {
-  const SexBody({Key key}) : super(key: key);
+  const  SexBody({Key key}) : super(key: key);
 
   @override
   _SexBodyState createState() => _SexBodyState();

@@ -64,12 +64,11 @@ class _HIVSelfTestScreenState extends State<HIVSelfTestScreen> {
         ListTile(
           title: RichText(
             text: TextSpan(children: [
-              TextSpan(text: "Самотестирование и на ВИЧ\n\n", style: chapterStyle),
-              TextSpan(text: "Что такое самотест?\n\n", style: TextStyle(color: Colors.black, fontSize: fontSize + 6, fontWeight: FontWeight.bold)),
-              TextSpan(text: "Самотестирование и на ВИЧ", style: normalBold),
+              TextSpan(text: "hiv_selftest1".tr(), style: chapterStyle),
+              TextSpan(text: "hiv_selftest2".tr(), style: TextStyle(color: Colors.black, fontSize: fontSize + 6, fontWeight: FontWeight.bold)),
+              TextSpan(text: "hiv_selftest3".tr(), style: normalBold),
               TextSpan(
-                text:" - это проведение тестирования на ВИЧ самостоятельно без участия медицинских работников. Тестирование "
-                    "проводится по слюне. Это экспресс-тест, что позволяет узнать результат за 20 минут.\n",
+                text:"hiv_selftest4".tr(),
                 style: contentNormal,
               ),
             ]),
@@ -79,53 +78,43 @@ class _HIVSelfTestScreenState extends State<HIVSelfTestScreen> {
           title: RichText(
             text: TextSpan(children: [
               TextSpan(
-                  text: "Где можно получить самотест?\n\n",
+                  text:"hiv_selftest5".tr(),
                   style: normalBoldForChapter),
               TextSpan(
-                text: "Набор для самотестирования на ВИЧ можно получить ",
+                text: "hiv_selftest6".tr(),
                 style: contentNormal),
               TextSpan(
-                  text: "во всех центрах СПИД, а также купить в аптеках.\n\n",
+                  text: "hiv_selftest7".tr(),
                   style: normalBold),
               TextSpan(
-                  text: "Преимущества самотестирования на ВИЧ\n\n",
+                  text: "hiv_selftest8".tr(),
                   style: normalBoldForChapter),
               TextSpan(
-                  text: "Самотестирование на ВИЧ является надежным и удобным методом для контроля своего ВИЧ-статуса. "
-                      "Особенно это важно для лиц, которые практикуют опасное поведение, но не решаются обратиться в "
-                      "медицинскую организацию. \n\n",
+                  text: "hiv_selftest9".tr(),
                   style: contentNormal),
               TextSpan(
-                  text: "Где и когда Вы можете пройти самотестирование?\n\n",
+                  text: "hiv_selftest10".tr(),
                   style: normalBoldForChapter),
               TextSpan(
-                  text: "Вы можете сами выбрать время и место для проведения теста. Вы можете проводить самотестирование "
-                      "совместно с другом /подругой. По Вашему желанию можно пройти самотестирование на ВИЧ при поддержке "
-                      "представителей НПО.\n\n",
+                  text: "hiv_selftest11".tr(),
                   style: contentNormal),
               TextSpan(
-                  text: "Как работает самотест? \n\n",
+                  text: "hiv_selftest12".tr(),
                   style: normalBoldForChapter),
               TextSpan(
-                  text: "Этот тест, как и многие другие тесты, определяет в организме не вирус, а антитела - то есть белки, "
-                      "которые вырабатываются при попадании вируса в организм.\n\n",
+                  text: "hiv_selftest13".tr(),
                   style: contentNormal),
               TextSpan(
-                  text: "Что включает набор для самотеста?\n\n",
+                  text: "hiv_selftest14".tr(),
                   style: normalBoldForChapter),
               TextSpan(
-                  text: "Набор для самотестирования на ВИЧ включает сам тест и приспособления для тестирования, а также "
-                      "инструкцию о проведении тестирования; оценке результатов теста, а также рекомендации по более "
-                      "безопасному поведению и презервативы.\n\n",
+                  text: "hiv_selftest15".tr(),
                   style: contentNormal),
               TextSpan(
-                  text: "Как провести тест?\n\n",
+                  text: "hiv_selftest16".tr(),
                   style: normalBoldForChapter),
               TextSpan(
-                  text: "Для этого нужно найти удобное место и время, чтобы Вам никто не помешал.   Сначала внимательно "
-                      "прочитайте инструкцию. Подготовьте рабочее место и оборудование, как на рисунке. Для проведения "
-                      "теста Вам нужно провести тестовой палочкой по верхней и нижней десне. После этого палочку помещаете "
-                      "в прилагаемую баночку с жидкостью и ждете 20 минут.\n\n",
+                  text:"hiv_selftest17".tr(),
                   style: contentNormal),
             ]),
           ),
@@ -136,35 +125,28 @@ class _HIVSelfTestScreenState extends State<HIVSelfTestScreen> {
           title: RichText(
             text: TextSpan(children: [
               TextSpan(
-                  text: "Оценка результата теста\n\n",
+                  text: "hiv_selftest18".tr(),
                   style: normalBoldForChapter),
               TextSpan(
-                  text: "Через 20 минут в окошке теста появятся полоски. Если одна полоска - то антител на ВИЧ нет. "
-                      "Если Вы увидите 2 полоски, то результат на ВИЧ положительный, то есть определены антитела к ВИЧ. "
-                      "При положительном результате, необходимо сдать тест на ВИЧ повторно в Центре СПИД или другой "
-                      "медицинской организации.\n\n",
+                  text: "hiv_selftest19".tr(),
                   style: contentNormal),
               TextSpan(
-                  text: "Точность теста очень высока - 99%\n\n",
+                  text: "hiv_selftest20".tr(),
                   style: normalBoldForChapter),
               TextSpan(
-                  text: "Однако, если у вас было небезопасное поведение относительно недавно, то лучше сдать тест спустя "
-                      "2-3 недели, тогда результат будет более верным. Это связано с периодом окна – то есть периодом, когда "
-                      "заражение ВИЧ уже произошло, но антитела не образовались.\n\n",
+                  text: "hiv_selftest21".tr(),
                   style: contentNormal),
               TextSpan(
-                  text: "Как часто следует проходить тестирование на ВИЧ? \n\n",
+                  text: "hiv_selftest22".tr(),
                   style: normalBoldForChapter),
               TextSpan(
-                  text: "Если Вы сексуально активны и у Вас были случаи опасного поведения (случайные половые контакты, множественные "
-                      "партнеры, секс без использования презерватива, либо потребление наркотиков с использованием шприца) рекомендуется "
-                      "проходить исследование на ВИЧ 1-2 раза в год.\n\n",
+                  text: "hiv_selftest23".tr(),
                   style: contentNormal),
               TextSpan(
-                  text: "Напомним, экспресс-тесты вы можете получить бесплатно с понедельника по пятницу по адресу : \n\n",
+                  text: "hiv_selftest24".tr(),
                   style: contentNormal),
               TextSpan(
-                  text: "г. Бишкек, улица Логвиненко 8, кабинет - 7-8-9 Телефон для справок: 0774 42-08-66\n\n",
+                  text: "hiv_selftest25".tr(),
                   style: contentItalic),
             ]),
           ),

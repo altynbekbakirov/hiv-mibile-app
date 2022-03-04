@@ -77,23 +77,23 @@ class _PrePostExposureTherapyScreenState extends State<PrePostExposureTherapyScr
     List list = [
       [
         "assets/images/exposure1.png",
-        "ДКП назначается врачом с учетом состояния здоровья, отрицательного ВИЧ-статуса"
+        "hiv_prevention3_car1_text1".tr()
       ],
       [
         "assets/images/exposure5.png",
-        "Назначение требует Вашей регистрации в центре СПИД и наблюдения",
+        "hiv_prevention3_car1_text2".tr()
       ],
       [
         "assets/images/exposure3.png",
-        "Лекарства для ДКП выдаются бесплатно в центрах СПИД"
+        "hiv_prevention3_car1_text3".tr()
       ],
       [
         "assets/images/exposure4.png",
-        "В Кыргызстане получить ДКП можно при поддержке НПО"
+        "hiv_prevention3_car1_text4".tr()
       ],
       [
         "assets/images/exposure2.png",
-        "При получении ДКП человек регулярно наблюдается в центре СПИД"
+        "hiv_prevention3_car1_text5".tr()
       ],
     ];
 
@@ -151,7 +151,7 @@ class _PrePostExposureTherapyScreenState extends State<PrePostExposureTherapyScr
           title: RichText(
             textAlign: TextAlign.center,
             text: TextSpan(
-                text: "Доконтактная и постконтактая профилактика ВИЧ-инфекции",
+                text:"hiv_prevention3text1".tr(),
                 style: chapterStyle),
           ),
         ),
@@ -161,43 +161,31 @@ class _PrePostExposureTherapyScreenState extends State<PrePostExposureTherapyScr
           title: RichText(
             text: TextSpan(children: [
               TextSpan(
-                  text:
-                  "Доконтактная профилактика (ДКП)\n\n",
+                  text:"hiv_prevention3text2".tr(),
                   style: normalBoldForChapter),
               TextSpan(
-                  text:
-                  "Это прием антиретровирусных препаратов для предотвращения инфицирования ВИЧ людям с отрицательным "
-                      "ВИЧ-статусом. Доконтактная профилактика рекомендуется в случаях, если Вы имеете постоянного полового"
-                      " партнера, инфицированного ВИЧ, который не принимает либо часто нарушает прием препаратов. "
-                      "Доконтактная профилактика также рекомендуется людям, которые практикуют опасное поведение.",
+                  text:"hiv_prevention3text3".tr(),
                   style: contentNormal),
               TextSpan(
-                  text:
-                  "\n\nРекомендации по доконтактной профилактике: \n\n",
+                  text:"hiv_prevention3text4".tr(),
                   style: normalBoldForChapter),
               TextSpan(
-                  text:
-                  "Следует получить полную информацию о ДКП в Центре СПИД или в НПО. Существует два способа приема ДКП. \n\n",
+                  text:"hiv_prevention3text5".tr(),
                   style: contentNormal),
               TextSpan(
-                  text:
-                  "Ежедневный (постоянный) прием ДКП ",
+                  text:"hiv_prevention3text6".tr(),
                   style: normalBold),
               TextSpan(
-                  text:
-                  "нужно осуществлять очень аккуратно, ежедневно в установленное время весь период, когда существует риск. При таком приеме эффект достигается в течение 4-7 дней после начала ДКП.\n\n",
+                  text:"hiv_prevention3text7".tr(),
                   style: contentNormal),
               TextSpan(
-                  text:
-                  "Если у Вас бывают редкие опасные контакты, рекомендуется ",
+                  text:"hiv_prevention3text8".tr(),
                   style: contentNormal),
               TextSpan(
-                  text:
-                  "ситуативный прием ДКП",
+                  text:"hiv_prevention3text9".tr(),
                   style: normalBold),
               TextSpan(
-                  text:
-                  " – когда препараты принимают в течение 3 дней до и 3 дней после контакта. Такой прием рекомендуется при редких ситуациях опасного поведения.",
+                  text:"hiv_prevention3text10".tr(),
                   style: contentNormal),
             ]),
           ),
@@ -212,7 +200,7 @@ class _PrePostExposureTherapyScreenState extends State<PrePostExposureTherapyScr
                 textAlign: TextAlign.center,
                 text: TextSpan(children: [
                   TextSpan(
-                      text: "Следует помнить:",
+                      text:"hiv_prevention3text11".tr(),
                       style: TextStyle(
                           fontWeight: FontWeight.w600,
                           fontSize: fontSize + 2,
@@ -225,17 +213,14 @@ class _PrePostExposureTherapyScreenState extends State<PrePostExposureTherapyScr
         Container(
           height: 50,
           child: Row(
+            mainAxisAlignment: MainAxisAlignment.end,
             children: <Widget>[
-              Expanded(
-                flex: 4,
-                child: Container(),
-              ),
-              Expanded(
+              Container(
                 child: list.length - 1 == _current
                     ? Container()
                     : Container(
                   child: Row(children: [
-                    Text("ЛИСТАЙ"),
+                    Text("hiv_prevention3text12".tr()),
                     Container(
                         width: 10.0,
                         height: 10.0,
@@ -270,14 +255,10 @@ class _PrePostExposureTherapyScreenState extends State<PrePostExposureTherapyScr
               text: TextSpan(
                 children: [
                   TextSpan(
-                      text: "Постконтактная профилактика (ПКП) ",
+                      text: "hiv_prevention3text13".tr(),
                       style: normalBold),
                   TextSpan(
-                      text: "– это профилактический прием антиретровирусных препаратов для предотвращения заражения "
-                          "ВИЧ-инфекцией после возможного контакта с вирусом (при половом контакте, совместном употреблении "
-                          "наркотиков или в других случаях). После оценки риска, проведения тестирования на ВИЧ, назначается ПКП. "
-                          "Она может быть назначена в Центре СПИД, на станции скорой медицинской помощи или в других "
-                          "организациях здравоохранения.",
+                      text:"hiv_prevention3text14".tr(),
                       style: contentNormal),
                 ],
               )),
@@ -291,18 +272,13 @@ class _PrePostExposureTherapyScreenState extends State<PrePostExposureTherapyScr
               title: RichText(
                 text: TextSpan(children: [
                   TextSpan(
-                      text: "ВАЖНО ПОМНИТЬ:\n",
+                      text:"hiv_prevention3text15".tr(),
                       style: TextStyle(
                           fontWeight: FontWeight.w600,
                           fontSize: fontSize + 2,
                           color: Colors.black)),
                   TextSpan(
-                      text: "\nНачинать ПКП нужно как можно скорее после опасного контакта, но не позднее 72 часов "
-                          "(3 суток) после него. Препараты назначает врач. Их принимают в течение месяца ежедневно "
-                          "строго по назначению врача. После этого человек находится под наблюдением в течение 6 месяцев "
-                          "(проходит тест на ВИЧ через 1, 3 и 6 месяцев). Следует также помнить, что ДКП и ПКП не "
-                          "защищают от беременности и ИППП. Поэтому нужно параллельно использовать средства защиты "
-                          "(презервативы, лубриканты) и контрацептивы.",
+                      text:"hiv_prevention3text16".tr(),
                       style: TextStyle(
                           fontWeight: FontWeight.w600,
                           fontSize: fontSize + 2,
@@ -320,8 +296,7 @@ class _PrePostExposureTherapyScreenState extends State<PrePostExposureTherapyScr
               title: RichText(
                 text: TextSpan(children: [
                   TextSpan(
-                      text: "Более подробную информацию можно получить в центрах СПИД или в неправительственных организациях. "
-                          "Контактная информация находится в этом приложении",
+                      text: "hiv_prevention3text17".tr(),
                       style: TextStyle(
                           fontWeight: FontWeight.w600,
                           fontSize: fontSize + 2,

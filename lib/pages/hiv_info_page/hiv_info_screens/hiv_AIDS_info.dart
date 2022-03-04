@@ -1,4 +1,5 @@
 import 'package:HIVApp/components/bullet.dart';
+import 'package:HIVApp/data/pref_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
 
@@ -55,7 +56,8 @@ class _HivAIDSInfoScreenState extends State<HivAIDSInfoScreen> {
 
     Widget _hivAIDSContent() {
       return ListView(children: [
-        ListTile(
+        Prefs.getString(Prefs.LANGUAGE)=="ru"
+        ?ListTile(
           title: RichText(
             text: TextSpan(children: [
               TextSpan(text: "ЧТО ТАКОЕ ВИЧ и СПИД?\n\n", style: chapterStyle),
@@ -69,8 +71,25 @@ class _HivAIDSInfoScreenState extends State<HivAIDSInfoScreen> {
               ),
             ]),
           ),
-        ),
+        ):
         ListTile(
+          title: RichText(
+            text: TextSpan(children: [
+              TextSpan(text: "ВИЧ жана СПИД ДЕГЕН ЭМНЕ?\n\n", style: chapterStyle),
+              TextSpan(
+                text:"Кымбаттуу досум, курбум. Биз бир тилде сүйлөшсөк, "
+                    "бири-бирибизди оңой түшүнөбүз, туурабы? Ошондуктан, ушул "
+                    "тиркемедеги ар бир темада бир нече жолу кезиге турган "
+                    "негизги аталыштарды кайталоодон баштайлы. "
+                    "Силер бул сөздөрдү жакшы билесиңер, бирок аларды туура түшүнүп жатасыңарбы? "
+                    "Мына ушуну текшерип алууну сунуш кылабыз.\n",
+                style: contentItalic,
+              ),
+            ]),
+          ),
+        ),
+        Prefs.getString(Prefs.LANGUAGE)=="ru"
+        ? ListTile(
           title: RichText(
             text: TextSpan(children: [
               TextSpan(
@@ -91,6 +110,24 @@ class _HivAIDSInfoScreenState extends State<HivAIDSInfoScreen> {
               ),
             ]),
           ),
+        ):
+        ListTile(
+          title: RichText(
+            text: TextSpan(children: [
+              TextSpan(
+                text: "ВИЧ",
+                style: normalBold,
+              ),
+              TextSpan(
+                children: [
+
+                  TextSpan(text: "– бул адамдын иммундук жетишсиздигинин вирусу\n", style: contentNormal),
+
+                ],
+                style: contentNormal,
+              ),
+            ]),
+          ),
         ),
         Row(
           // mainAxisAlignment: MainAxisAlignment.start,
@@ -101,7 +138,9 @@ class _HivAIDSInfoScreenState extends State<HivAIDSInfoScreen> {
               padding: const EdgeInsets.only(top: 10),
               child: MyBullet(),
             )),
-            Expanded(
+            Prefs.getString(Prefs.LANGUAGE)=="ru"
+
+            ? Expanded(
               flex: 3,
               child: ListTile(
                   title: RichText(
@@ -113,7 +152,20 @@ class _HivAIDSInfoScreenState extends State<HivAIDSInfoScreen> {
                       style: contentNormal),
                 ]),
               )),
-            ),
+            ):
+            Expanded(
+              flex: 3,
+              child: ListTile(
+                  title: RichText(
+                    text: TextSpan(children: [
+                      TextSpan(text: "В", style: normalBold),
+                      TextSpan(
+                          text:
+                          "ирус  – жугуштуу оорулардын өтө майда козгогучу;",
+                          style: contentNormal),
+                    ]),
+                  )),
+            )
           ],
         ),
         Row(
@@ -124,6 +176,9 @@ class _HivAIDSInfoScreenState extends State<HivAIDSInfoScreen> {
               padding: const EdgeInsets.only(top: 10),
               child: MyBullet(),
             )),
+            Prefs.getString(Prefs.LANGUAGE)=="ru"
+
+                ?
             Expanded(
               flex: 3,
               child: ListTile(
@@ -138,7 +193,23 @@ class _HivAIDSInfoScreenState extends State<HivAIDSInfoScreen> {
                       style: contentNormal),
                 ]),
               )),
-            ),
+            ):
+            Expanded(
+              flex: 3,
+              child: ListTile(
+                  title: RichText(
+                    text: TextSpan(children: [
+                      TextSpan(text: "И", style: normalBold),
+                      TextSpan(
+                          text:
+                          'ммундук жетишсиздик вирус иммундук системаны талкалап, '
+                      'организмдин жугуштуу ооруларга каршы күрөшүндө '
+                          'жетишсиздик (чабалдык, тартыштык) шартын түзүп жатат '
+                          'дегенди билдирет. ',
+                          style: contentNormal),
+                    ]),
+                  )),
+            )
           ],
         ),
         Row(
@@ -149,6 +220,9 @@ class _HivAIDSInfoScreenState extends State<HivAIDSInfoScreen> {
               padding: const EdgeInsets.only(top: 10),
               child: MyBullet(),
             )),
+            Prefs.getString(Prefs.LANGUAGE)=="ru"
+
+                ?
             Expanded(
               flex: 3,
               child: ListTile(
@@ -164,7 +238,22 @@ class _HivAIDSInfoScreenState extends State<HivAIDSInfoScreen> {
                       style: contentNormal)
                 ]),
               )),
-            ),
+            ):Expanded(
+              flex: 3,
+              child: ListTile(
+                  title: RichText(
+                    text: TextSpan(children: [
+                      TextSpan(
+                        text: 'А',
+                        style: normalBold,
+                      ),
+                      TextSpan(
+                          text:
+                          'дамдын иммундук жетишсиздиги дегенде, бул вирус адамдарга гана жугат дегенди билдирет.',
+                          style: contentNormal)
+                    ]),
+                  )),
+            )
           ],
         ),
         Row(
@@ -175,6 +264,9 @@ class _HivAIDSInfoScreenState extends State<HivAIDSInfoScreen> {
                   padding: const EdgeInsets.only(top: 10),
                   child: MyBullet(),
                 )),
+            Prefs.getString(Prefs.LANGUAGE)=="ru"
+
+                ?
             Expanded(
               flex: 3,
               child: ListTile(
@@ -202,7 +294,39 @@ class _HivAIDSInfoScreenState extends State<HivAIDSInfoScreen> {
                       ),
                     ]),
                   )),
-            ),
+            ):
+            Expanded(
+              flex: 3,
+              child: ListTile(
+                  title: RichText(
+                    text: TextSpan(children: [
+                      TextSpan(
+                        text: 'ВИЧ ',
+                        style: normalBold,
+                      ),
+                      TextSpan(
+                          text:
+                          'адамдарда ',
+                          style: contentNormal),
+                      TextSpan(
+                        text: ' ВИЧ инфекциясы, ',
+                        style: normalBold,
+                      ),
+                      TextSpan(
+                          text:
+                          'деп аталган ',
+                          style: contentNormal),
+                      TextSpan(
+                        text: ' ооруну ',
+                        style: normalBold,
+                      ),
+                      TextSpan(
+                          text:
+                          'пайда кылат; ',
+                          style: contentNormal),
+                    ]),
+                  )),
+            )
           ],
         ),
         Row(
@@ -213,6 +337,9 @@ class _HivAIDSInfoScreenState extends State<HivAIDSInfoScreen> {
                   padding: const EdgeInsets.only(top: 10),
                   child: MyBullet(),
                 )),
+            Prefs.getString(Prefs.LANGUAGE)=="ru"
+
+                ?
             Expanded(
               flex: 3,
               child: ListTile(
@@ -259,7 +386,32 @@ class _HivAIDSInfoScreenState extends State<HivAIDSInfoScreen> {
                       ),
                     ]),
                   )),
-            ),
+            ):
+            Expanded(
+              flex: 3,
+              child: ListTile(
+                  title: RichText(
+                    text: TextSpan(children: [
+                      TextSpan(
+                        text: 'СПИД - ',
+                        style: normalBold,
+                      ),
+
+                      TextSpan(
+                        text: ' Алынган Иммундук Жетишсиздик Синдрому – бул ВИЧ-инфекциясынын соңку баскычы болуп саналат, ал иммунитет өтө катуу жабыркаган учурда пайда болот. ',
+                        style: contentNormal,
+                      ),
+
+                      TextSpan(
+                        text: 'СПИД оор жугуштуу же '
+                        'онкологиялык оорулардын өнүгүшү менен коштолот. '
+                            'ВИЧ мээни жабыркаткан учурда кем акылдык пайда болот.  ',
+                        style: contentNormal,
+                      ),
+
+                    ]),
+                  )),
+            )
           ],
         ),
         Row(
@@ -276,13 +428,27 @@ class _HivAIDSInfoScreenState extends State<HivAIDSInfoScreen> {
                 title: RichText(
                   text: TextSpan(
                     children: [
+                      Prefs.getString(Prefs.LANGUAGE)=="ru"
+
+                          ?
                       TextSpan(
                         text: 'Людей, которые инфицированы ВИЧ, называют ',
                         style: contentNormal
+                      ):
+                      TextSpan(
+                          text: 'ВИЧ-инфекциясын жуктуруп алган адамдарды ',
+                          style: contentNormal
                       ),
+                      Prefs.getString(Prefs.LANGUAGE)=="ru"
+
+                       ?
                       TextSpan(
                         text: 'ЛЖВ – люди, которые живут с ВИЧ, или ВИЧ-позитивные люди.',
                         style: normalBold
+                      ):
+                      TextSpan(
+                          text: 'ВЖА – ВИЧ менен жашаган адамдар, же ВИЧ-позитивдүү адамдар деп аташат.',
+                          style: normalBold
                       )
                     ]
                   ),
@@ -305,11 +471,20 @@ class _HivAIDSInfoScreenState extends State<HivAIDSInfoScreen> {
                   title: RichText(
                     text: TextSpan(
                         children: [
+                          Prefs.getString(Prefs.LANGUAGE)=="ru"
+
+                              ?
                           TextSpan(
                               text: "ВИЧ поражает лимфоциты – клетки иммунной системы. Лимфоциты играют важную роль в защите "
                                   "организма человека от разных заболеваний. Если не проводится лечение, то ВИЧ разрушает "
                                   "так много таких клеток, что они не уже не могут защищать организм. Поэтому у человека с "
                                   "ослабленным иммунитетом, развиваются инфекционные или онкологические заболевания. ",
+                              style: contentNormal
+                          ):TextSpan(
+                              text: "ВИЧ лимфоциттерди – иммундук системанын клеткаларын талкалайт. Лимфоциттер адамдын организмин ар кандай "
+                                  "оорулардан коргоодо маанилүү роль ойнойт. Эгерде адам дарыланбаса ВИЧ "
+                                  "ушунчалык көп клетканы талкалагандыктан, алар организмди коргой албай калышат. Ошондуктан, "
+                                  "иммунитети алсыраган адамда инфекциялык же онкологиялык оорулар пайда болот. ",
                               style: contentNormal
                           ),
                         ]
@@ -331,7 +506,10 @@ class _HivAIDSInfoScreenState extends State<HivAIDSInfoScreen> {
               flex: 3,
               child: ListTile(
                   title: RichText(
-                    text: TextSpan(
+                    text: Prefs.getString(Prefs.LANGUAGE)=="ru"
+
+                        ?
+                    TextSpan(
                         children: [
                           TextSpan(
                               text: 'При раннем начале и правильно проводимом лечении ',
@@ -341,6 +519,20 @@ class _HivAIDSInfoScreenState extends State<HivAIDSInfoScreen> {
                               text: "(строгое соблюдение дозы препарата, непрерывности "
                                   "лечения) у ВИЧ-позитивных людей иммунная система не разрушается, поэтому сопутствующие заболевания "
                                   "и СПИД не развиваются. Такой человек чувствует себя здоровым и может жить также долго, как и человек без ВИЧ.\n",
+                              style: contentNormal
+                          ),
+                        ]
+                    ):
+                    TextSpan(
+                        children: [
+                          TextSpan(
+                              text: 'Дарыланууну эрте мөөнөттө жана туура баштаганда ',
+                              style: normalBold
+                          ),
+                          TextSpan(
+                              text: " (дарынын дозасын так сактаганда, дарыланууну үзгүлтүккө учуратпаганда) "
+                                  "ВИЧ-позитивдүү адамдардын иммундук системасы талкаланбайт, ошондуктан "
+                                  "СПИД андан ары өнүкпөйт. Мындай адам өзүн дени сак сезет жана ВИЧ жуктурбаган адамдай эле узак жашай алат.\n",
                               style: contentNormal
                           ),
                         ]

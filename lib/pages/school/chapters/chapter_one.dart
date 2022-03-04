@@ -477,7 +477,14 @@ class _ChapterOneState extends State<ChapterOne> with AutomaticKeepAliveClientMi
                           fontSize: fontSize,
                         ),
                       )
-                    : TextSpan(),
+                    : TextSpan(text: 'антиретровирустук дарылар деп, '
+                    'ал эми дарылоо антиретровирустук терапия (АРТ) деп аталат.',
+                  style: TextStyle(
+                    fontWeight: FontWeight.w600,
+                    fontStyle: FontStyle.italic,
+                    color: Colors.black,
+                    fontSize: fontSize,
+                  ),),
               ], style: TextStyle(fontSize: fontSize)),
             ),
             Image.asset("assets/images/lechenie2.png"),
@@ -842,40 +849,39 @@ class _ChapterOneState extends State<ChapterOne> with AutomaticKeepAliveClientMi
                     style: TextStyle(fontWeight: FontWeight.w400, color: Colors.black),
                   ),
                   TextSpan(
-                    text: 'Иммунитет обеспечивают органы и клетки, которые образуют ',
+                    text: 'c1_text31'.tr(),
                     style: TextStyle(fontWeight: FontWeight.w400, color: Colors.black),
                   ),
                   TextSpan(
-                    text: 'иммунную систему ',
+                    text: 'c1_text32'.tr(),
                     style: TextStyle(fontWeight: FontWeight.w600, color: Colors.black),
                   ),
                   TextSpan(
-                    text: 'организма. Ее еще называют ',
+                    text: 'c1_text33'.tr(),
                     style: TextStyle(fontWeight: FontWeight.w400, color: Colors.black),
                   ),
                   TextSpan(
-                    text: 'защитной системой. ',
+                    text: 'c1_text34'.tr(),
                     style: TextStyle(fontWeight: FontWeight.w600, color: Colors.black),
                   ),
                   TextSpan(
-                    text: 'Основным органом иммунной системы является ',
+                    text: 'c1_text35'.tr(),
                     style: TextStyle(fontWeight: FontWeight.w400, color: Colors.black),
                   ),
                   TextSpan(
-                    text: 'тимус ',
+                    text: 'c1_text36'.tr(),
                     style: TextStyle(fontWeight: FontWeight.w600, color: Colors.black),
                   ),
                   TextSpan(
-                    text: 'или ',
+                    text: 'c1_text37'.tr(),
                     style: TextStyle(fontWeight: FontWeight.w400, color: Colors.black),
                   ),
                   TextSpan(
-                    text: 'вилочковая железа. ',
+                    text: 'c1_text38'.tr(),
                     style: TextStyle(fontWeight: FontWeight.w600, color: Colors.black),
                   ),
                   TextSpan(
-                    text: 'Основные клетки иммунной защиты находятся в крови и костном мозге, в других органах, '
-                        'например, в печени.\n\n',
+                    text: 'c1_text39'.tr(),
                     style: TextStyle(fontWeight: FontWeight.w400, color: Colors.black),
                   ),
                 ],
@@ -886,25 +892,23 @@ class _ChapterOneState extends State<ChapterOne> with AutomaticKeepAliveClientMi
               text: TextSpan(
                 children: [
                   TextSpan(
-                    text: 'Различают несколько видов иммунных клеток, одними из них являются ',
+                    text: 'c1_text40'.tr(),
                     style: TextStyle(fontWeight: FontWeight.w400, color: Colors.black),
                   ),
                   TextSpan(
-                    text: 'Т-лимфоциты ',
+                    text: 'c1_text41'.tr(),
                     style: TextStyle(fontWeight: FontWeight.w600, color: Colors.black),
                   ),
                   TextSpan(
-                    text: 'помощники (хелперы), которые организуют слаженную работу всей '
-                        'иммунной системы. Их называют ',
+                    text:'c1_text42'.tr(),
                     style: TextStyle(fontWeight: FontWeight.w400, color: Colors.black),
                   ),
                   TextSpan(
-                    text: ''
-                        'СД4 ',
+                    text: 'c1_text43'.tr(),
                     style: TextStyle(fontWeight: FontWeight.w600, color: Colors.black),
                   ),
                   TextSpan(
-                    text: 'клетками.\n\n',
+                    text: 'c1_text44'.tr(),
                     style: TextStyle(fontWeight: FontWeight.w400, color: Colors.black),
                   ),
                 ],
@@ -917,9 +921,7 @@ class _ChapterOneState extends State<ChapterOne> with AutomaticKeepAliveClientMi
               text: TextSpan(
                 children: [
                   TextSpan(
-                    text: 'Человека окружает множество микроорганизмов (вирусы, бактерии, грибки), '
-                        'которые при попадании в организм могут стать причиной инфекционных заболеваний '
-                        '(грипп, менингит, туберкулез, дизентерия и т. п.). ',
+                    text: 'c1_text45'.tr(),
                     style: TextStyle(fontWeight: FontWeight.w400, color: Colors.black),
                   ),
                 ],
@@ -943,14 +945,11 @@ class _ChapterOneState extends State<ChapterOne> with AutomaticKeepAliveClientMi
               text: TextSpan(
                 children: [
                   TextSpan(
-                    text: 'Иммунная система в большинстве случаев уничтожает микроорганизмы, попадающие в '
-                        'человеческий организм, защищая его от болезней. Однако, ',
+                    text: "c1_10text1".tr(),
                     style: TextStyle(fontWeight: FontWeight.w400, color: Colors.black),
                   ),
                   TextSpan(
-                    text: 'ВИЧ – вирус иммунодефицита человека – разрушает основные клетки иммунитета '
-                        '(СД4 клетки). В результате наступает иммунодефицит и организм становится '
-                        'беззащитным перед другими инфекциями.',
+                    text: "c1_10text2".tr(),
                     style: TextStyle(fontWeight: FontWeight.w600, color: Colors.black),
                   ),
                 ],
@@ -974,12 +973,7 @@ class _ChapterOneState extends State<ChapterOne> with AutomaticKeepAliveClientMi
             Container(
               margin: EdgeInsets.only(top: 20),
               color: kGrayishBlue,
-              child: Text(
-                'Состояние иммунной системы инфицированного ВИЧ человека определяется подсчетом '
-                'CД4 клеток. Их количество в крови составляет в норме от 500 до 1500 клеток в 1 микролитре. '
-                'Когда у человека, живущего с ВИЧ, выявляется одна или несколько оппортунистических инфекций '
-                'и уровень СД4 клеток снижается ниже 200 в 1 микролитре крови, то говорят о наступлении '
-                'стадии СПИДа.',
+              child: Text("c1_11text1".tr(),
                 style: TextStyle(
                   fontSize: fontSize,
                   fontStyle: FontStyle.italic,
@@ -1006,25 +1000,22 @@ class _ChapterOneState extends State<ChapterOne> with AutomaticKeepAliveClientMi
               text: TextSpan(
                 children: [
                   TextSpan(
-                      text: 'Как вирус попадает в организм человека\n\n',
+                      text: "c1_12text1".tr(),
                       style: TextStyle(fontWeight: FontWeight.w600, fontSize: fontSize + 6, color: Colors.black)),
                   TextSpan(
-                    text: 'Спасибо, что остаетесь на связи с нами.  В этом разделе содержится важная'
-                        ' информация, которая поможет определить собственные риски заражения ВИЧ и как '
-                        'этого можно избежать.\n\n',
+                    text: "c1_12text2".tr(),
                     style: TextStyle(fontWeight: FontWeight.w400, color: Colors.black, fontStyle: FontStyle.italic),
                   ),
                   TextSpan(
-                    text: 'ВИЧ - ',
+                    text: "c1_12text3".tr(),
                     style: TextStyle(fontWeight: FontWeight.w600, color: Colors.black, fontStyle: FontStyle.italic),
                   ),
                   TextSpan(
-                    text: 'это вирус иммунодефицита человека. Это означает, что им болеет только человек и вирус '
-                        'передается от человека к человеку.',
+                    text: "c1_12text4".tr(),
                     style: TextStyle(fontWeight: FontWeight.w400, color: Colors.black),
                   ),
                   TextSpan(
-                    text: '\n\nСуществует только 3 пути передачи ВИЧ:',
+                    text: "c1_12text5".tr(),
                     style: TextStyle(
                       fontWeight: FontWeight.w600,
                       color: Colors.black,
@@ -1049,7 +1040,7 @@ class _ChapterOneState extends State<ChapterOne> with AutomaticKeepAliveClientMi
                       text: TextSpan(
                         children: [
                           TextSpan(
-                            text: "Половой путь",
+                            text: "c1_12text6".tr(),
                           ),
                         ],
                         style: style,
@@ -1074,7 +1065,7 @@ class _ChapterOneState extends State<ChapterOne> with AutomaticKeepAliveClientMi
                       text: TextSpan(
                         children: [
                           TextSpan(
-                            text: "Инъекционный",
+                            text: "c1_12text7".tr(),
                           ),
                         ],
                         style: style,
@@ -1100,7 +1091,7 @@ class _ChapterOneState extends State<ChapterOne> with AutomaticKeepAliveClientMi
                         children: [
                           TextSpan(
                             text:
-                                "От ВИЧ-позитивной матери ребенку во время беременности, родов и при кормлении грудью.",
+                            "c1_12text8".tr(),
                           ),
                         ],
                         style: style,
@@ -1140,7 +1131,7 @@ class _ChapterOneState extends State<ChapterOne> with AutomaticKeepAliveClientMi
                       text: TextSpan(
                         children: [
                           TextSpan(
-                            text: "Половой путь: ",
+                            text: "c1_13text1".tr(),
                             style: TextStyle(
                               fontWeight: FontWeight.w600,
                               fontSize: fontSize,
@@ -1149,10 +1140,7 @@ class _ChapterOneState extends State<ChapterOne> with AutomaticKeepAliveClientMi
                             ),
                           ),
                           TextSpan(
-                            text: " ВИЧ передается при всех видах сексуальных контактов. Особенно опасны анальные "
-                                "половые контакты; частая смена половых партнеров; случайные половые контакты;"
-                                " насильственный и групповой секс. Увеличивают риск инфицирования ВИЧ инфекций,"
-                                " которые передаются половым путем (сифилис, гонорея и др.). ",
+                            text:"c1_13text2".tr(),
                           ),
                         ],
                         style: style,
@@ -1166,12 +1154,11 @@ class _ChapterOneState extends State<ChapterOne> with AutomaticKeepAliveClientMi
               text: TextSpan(
                 children: [
                   TextSpan(
-                    text: 'Снижает риск инфицирования ВИЧ: ',
+                    text:"c1_13text3".tr(),
                     style: TextStyle(fontWeight: FontWeight.w600, color: Colors.black, fontStyle: FontStyle.italic),
                   ),
                   TextSpan(
-                    text: ' Воздержание от половых контактов; верность одному неинфицированному партнеру; '
-                        'использование презервативов и специальных смазок на водной основе (лубрикантов).',
+                    text: "c1_13text4".tr(),
                     style: TextStyle(
                       fontWeight: FontWeight.w400,
                       color: Colors.black,
@@ -1211,7 +1198,7 @@ class _ChapterOneState extends State<ChapterOne> with AutomaticKeepAliveClientMi
                       text: TextSpan(
                         children: [
                           TextSpan(
-                            text: "Инъекционый путь передачи ВИЧ возможен: ",
+                            text: "c1_14text1".tr(),
                             style: TextStyle(
                               fontWeight: FontWeight.w600,
                               fontSize: fontSize,
@@ -1220,10 +1207,7 @@ class _ChapterOneState extends State<ChapterOne> with AutomaticKeepAliveClientMi
                             ),
                           ),
                           TextSpan(
-                            text: " при совместном употреблении наркотиков путем инъекций; получении медицинских услуг "
-                                "у случайных лиц (переливание крови; хирургические операции; инъекции; лечение у "
-                                "табибов, сопровождающееся повреждением кожи – насечки; кровопускание; обрезание);"
-                                " при проведении татуировок, пирсинга, иглоукалывания нестерильным инструментом. ",
+                            text:"c1_14text2".tr(),
                           ),
                         ],
                         style: style,
@@ -1237,14 +1221,11 @@ class _ChapterOneState extends State<ChapterOne> with AutomaticKeepAliveClientMi
               text: TextSpan(
                 children: [
                   TextSpan(
-                    text: 'Снижает риск ',
+                    text: "c1_14text3".tr(),
                     style: TextStyle(fontWeight: FontWeight.w600, color: Colors.black, fontStyle: FontStyle.italic),
                   ),
                   TextSpan(
-                    text: 'отказ от употребления наркотиков, использование индивидуального шприца и посуды '
-                        'для приготовления наркотиков; получение медицинских услуг только в медицинских '
-                        'учреждениях; использование стерильного инструментария при проведении татуировок, '
-                        'пирсинга и других процедур вне организаций здравоохранения. ',
+                    text: "c1_14text4".tr(),
                     style: TextStyle(
                       fontWeight: FontWeight.w400,
                       color: Colors.black,
@@ -1283,7 +1264,7 @@ class _ChapterOneState extends State<ChapterOne> with AutomaticKeepAliveClientMi
                       text: TextSpan(
                         children: [
                           TextSpan(
-                            text: "От ВИЧ-позитивной матери – ребенку. ",
+                            text: "c1_15text1".tr(),
                             style: TextStyle(
                               fontWeight: FontWeight.w600,
                               fontSize: fontSize,
@@ -1292,8 +1273,7 @@ class _ChapterOneState extends State<ChapterOne> with AutomaticKeepAliveClientMi
                             ),
                           ),
                           TextSpan(
-                            text:
-                                ". Своевременное выявление ВИЧ-инфекции и лечение ВИЧ-инфекции снижает риск передачи ВИЧ ребенку. ",
+                            text:"c1_15text2".tr(),
                           ),
                         ],
                         style: style,
@@ -1321,18 +1301,14 @@ class _ChapterOneState extends State<ChapterOne> with AutomaticKeepAliveClientMi
               text: TextSpan(
                 children: [
                   TextSpan(
-                    text:
-                        'Предлагаем Вам получить консультацию по оценке и снижению риска у консультантов НПО или в медицинском центре. ',
+                    text:"c1_16text1".tr(),
                     style: TextStyle(
                       fontWeight: FontWeight.w400,
                       color: Colors.black,
                     ),
                   ),
                   TextSpan(
-                    text: '\nВы можете сами определить риски инфицирования. Для этого ответьте на следующие несколько '
-                        'вопросов. Если хотя бы по одному вопросу Вы ответили «да», то Вам нужно пройти '
-                        'консультирование и тестирование на ВИЧ, а также предпринять меры по собственной '
-                        'безопасности:',
+                    text: "c1_16text2".tr(),
                     style: TextStyle(
                       fontWeight: FontWeight.w400,
                       color: Colors.black,
@@ -1357,7 +1333,7 @@ class _ChapterOneState extends State<ChapterOne> with AutomaticKeepAliveClientMi
                       text: TextSpan(
                         children: [
                           TextSpan(
-                            text: "Были ли у Вас сексуальные отношения?",
+                            text: "c1_16text3".tr(),
                             style: TextStyle(
                               fontWeight: FontWeight.w400,
                               fontSize: fontSize,
@@ -1387,7 +1363,7 @@ class _ChapterOneState extends State<ChapterOne> with AutomaticKeepAliveClientMi
                       text: TextSpan(
                         children: [
                           TextSpan(
-                            text: "Всегда ли Вы использовали презерватив при сексуальных контактах?",
+                            text:"c1_16text4".tr(),
                             style: TextStyle(
                               fontWeight: FontWeight.w400,
                               fontSize: fontSize,
@@ -1417,7 +1393,7 @@ class _ChapterOneState extends State<ChapterOne> with AutomaticKeepAliveClientMi
                       text: TextSpan(
                         children: [
                           TextSpan(
-                            text: "Было ли у Вас более одного полового партнера?",
+                            text: "c1_16text5".tr(),
                             style: TextStyle(
                               fontWeight: FontWeight.w400,
                               fontSize: fontSize,
@@ -1447,10 +1423,7 @@ class _ChapterOneState extends State<ChapterOne> with AutomaticKeepAliveClientMi
                       text: TextSpan(
                         children: [
                           TextSpan(
-                            text: "Были ли у Вас или Вашего полового партнера язвы на половых органах, "
-                                "необычные выделения из половых органов, боли внизу живота, либо проходили "
-                                "ли Вы лечение инфекций, которые передаются половым путем (сифилис, гонорея, "
-                                "трихомониаз)?",
+                            text: "c1_16text6".tr(),
                             style: TextStyle(
                               fontWeight: FontWeight.w400,
                               fontSize: fontSize,
@@ -1493,7 +1466,7 @@ class _ChapterOneState extends State<ChapterOne> with AutomaticKeepAliveClientMi
                       text: TextSpan(
                         children: [
                           TextSpan(
-                            text: "Принимали ли вы когда-либо наркотики путем инъекций, хотя бы раз?",
+                            text: "c1_17text1".tr(),
                             style: TextStyle(
                               fontWeight: FontWeight.w400,
                               fontSize: fontSize,
@@ -1523,7 +1496,7 @@ class _ChapterOneState extends State<ChapterOne> with AutomaticKeepAliveClientMi
                       text: TextSpan(
                         children: [
                           TextSpan(
-                            text: "Принимали ли Вы наркотики совместно с Вашим партнером /партнерами?",
+                            text: "c1_17text2".tr(),
                             style: TextStyle(
                               fontWeight: FontWeight.w400,
                               fontSize: fontSize,
@@ -1553,7 +1526,7 @@ class _ChapterOneState extends State<ChapterOne> with AutomaticKeepAliveClientMi
                       text: TextSpan(
                         children: [
                           TextSpan(
-                            text: "Болели ли Вы гепатитом?",
+                            text: "c1_17text3".tr(),
                             style: TextStyle(
                               fontWeight: FontWeight.w400,
                               fontSize: fontSize,
@@ -1572,7 +1545,7 @@ class _ChapterOneState extends State<ChapterOne> with AutomaticKeepAliveClientMi
               text: TextSpan(
                 children: [
                   TextSpan(
-                    text: '\n\nСТАДИИ И ПРОЯВЛЕНИЯ ВИЧ-ИНФЕКЦИИ\n\n',
+                    text:"c1_17text4".tr(),
                     style: TextStyle(
                       fontWeight: FontWeight.w600,
                       color: Colors.black,
@@ -1580,10 +1553,7 @@ class _ChapterOneState extends State<ChapterOne> with AutomaticKeepAliveClientMi
                     ),
                   ),
                   TextSpan(
-                    text: 'В зависимости от выраженности иммунодефицита, ВИЧ-инфекцию разделяют на стадии, '
-                        'ориентируясь на число лимфоцитов CД4, а также на проявления инфекции, которая '
-                        'начинается с отсутствия проявлений и развивается до тяжелого иммунодефицита '
-                        '(стадия СПИДа). ',
+                    text:"c1_17text5".tr(),
                     style: TextStyle(
                       fontWeight: FontWeight.w400,
                       color: Colors.black,
@@ -1609,58 +1579,49 @@ class _ChapterOneState extends State<ChapterOne> with AutomaticKeepAliveClientMi
               text: TextSpan(
                 children: [
                   TextSpan(
-                    text: 'Различают 4 стадии ВИЧ-инфекции, при этом 3 и 4 стадии характеризуются существенным '
-                        'снижением иммунитета. Их еще называют ',
+                    text:"c1_18text1".tr(),
                     style: TextStyle(
                       fontWeight: FontWeight.w400,
                       color: Colors.black,
                     ),
                   ),
                   TextSpan(
-                    text: 'продвинутыми стадиями ВИЧ-инфекции. ',
+                    text: "c1_18text2".tr(),
                     style: TextStyle(
                       fontWeight: FontWeight.w600,
                       color: Colors.black,
                     ),
                   ),
                   TextSpan(
-                    text: '3-я стадия наступает при количестве СД4 клеток от 200 до 350 клеток. Когда количество '
-                        'СД4 клеток снижается менее 200 говорят о 4 стадии или СПИДе. ',
+                    text:"c1_18text3".tr(),
                     style: TextStyle(
                       fontWeight: FontWeight.w400,
                       color: Colors.black,
                     ),
                   ),
                   TextSpan(
-                    text: '\nПрактически невозможно определить, когда произошло заражение, за исключением случаев, '
-                        'когда был единичный сексуальный контакт либо единичное совместное потребление '
-                        'наркотиков с ЛЖВ.',
+                    text: "c1_18text4".tr(),
                     style: TextStyle(
                       fontWeight: FontWeight.w600,
                       color: Colors.black,
                     ),
                   ),
                   TextSpan(
-                    text: '\nОсобенностью ВИЧ-инфекции является длительное скрытое течение - ',
+                    text: "c1_18text5".tr(),
                     style: TextStyle(
                       fontWeight: FontWeight.w400,
                       color: Colors.black,
                     ),
                   ),
                   TextSpan(
-                    text: 'Первая стадия ВИЧ-инфекции',
+                    text: "c1_18text6".tr(),
                     style: TextStyle(
                       fontWeight: FontWeight.w600,
                       color: Colors.black,
                     ),
                   ),
                   TextSpan(
-                    text: ' может длиться годами. По внешнему виду невозможно определить '
-                        'наличие у человека ВИЧ. Человек с ВИЧ может выглядеть и чувствовать себя здоровым, '
-                        'но в тоже время передавать ВИЧ другим. Кроме того, ВИЧ с момента попадания в организм, '
-                        'постоянно разрушает клетки иммунной системы. Поскольку ВИЧ в организме можно определить '
-                        'только лабораторными методами, человек обращается за медицинской '
-                        'помощью в продвинутой стадии ВИЧ-инфекции иногда уже с тяжелым поражением иммунной системы.',
+                    text: "c1_18text7".tr(),
                     style: TextStyle(
                       fontWeight: FontWeight.w400,
                       color: Colors.black,
@@ -1687,23 +1648,21 @@ class _ChapterOneState extends State<ChapterOne> with AutomaticKeepAliveClientMi
               text: TextSpan(
                 children: [
                   TextSpan(
-                    text: 'На ',
+                    text: "c1_19text1".tr(),
                     style: TextStyle(
                       fontWeight: FontWeight.w400,
                       color: Colors.black,
                     ),
                   ),
                   TextSpan(
-                    text: 'Второй стадии ',
+                    text:"c1_19text2".tr(),
                     style: TextStyle(
                       fontWeight: FontWeight.w600,
                       color: Colors.black,
                     ),
                   ),
                   TextSpan(
-                    text:
-                        'может наблюдаться потеря веса (до 10%), частые заболевания и другие проявления ВИЧ-инфекции; '
-                        'наблюдается повышение температуры тела, утомляемость, повышенная потливость',
+                    text:"c1_19text3".tr(),
                     style: TextStyle(
                       fontWeight: FontWeight.w400,
                       color: Colors.black,
@@ -1720,25 +1679,21 @@ class _ChapterOneState extends State<ChapterOne> with AutomaticKeepAliveClientMi
               text: TextSpan(
                 children: [
                   TextSpan(
-                    text: 'Дальнейшее развитие ВИЧ-инфекции связано с тяжелым поражением иммунитета ',
+                    text: "c1_19text4".tr(),
                     style: TextStyle(
                       fontWeight: FontWeight.w400,
                       color: Colors.black,
                     ),
                   ),
                   TextSpan(
-                    text: '(3 и 4 стадии). ',
+                    text:"c1_19text5".tr(),
                     style: TextStyle(
                       fontWeight: FontWeight.w600,
                       color: Colors.black,
                     ),
                   ),
                   TextSpan(
-                    text: 'Проявления и течение на этих стадиях обусловлено действием оппортунистических инфекций '
-                        '(ОИ) – которые обычно не встречаются у людей без ВИЧ; а также частыми инфекционными '
-                        'заболеваниями, опухолями, может развиться слабоумие. Наиболее частыми ОИ является '
-                        'туберкулез и пневмоцистная пневмония. При 4 стадии наступает кахексия (полное истощение) '
-                        'и без лечения наступает смерть. ',
+                    text: "c1_19text6".tr(),
                     style: TextStyle(
                       fontWeight: FontWeight.w400,
                       color: Colors.black,
@@ -1765,20 +1720,14 @@ class _ChapterOneState extends State<ChapterOne> with AutomaticKeepAliveClientMi
               text: TextSpan(
                 children: [
                   TextSpan(
-                    text: 'Раннее начало лечения может остановить и даже вернуть на более ранние стадии '
-                        'заболевания. Однако часто люди поступают на стадии СПИДа иногда при полном '
-                        'отсутствии иммунитета, когда лечение уже не может помочь. Это могут быть люди, '
-                        'которые не знают о своем статусе, но есть и те, кто, зная свой статус, отказываются '
-                        'от лечения.\n',
+                    text:"c1_20text1".tr(),
                     style: TextStyle(
                       fontWeight: FontWeight.w600,
                       color: Colors.black,
                     ),
                   ),
                   TextSpan(
-                    text: 'В настоящее время люди, живущие с ВИЧ, не должны умирать от СПИДа и '
-                        'оппортунистических инфекций. Для этого нужно как можно раньше начинать лечение'
-                        ' ВИЧ-инфекции. Лечение предоставляется государством бесплатно.',
+                    text: "c1_20text2".tr(),
                     style: TextStyle(
                       fontWeight: FontWeight.w600,
                       color: Colors.black,
@@ -1805,7 +1754,7 @@ class _ChapterOneState extends State<ChapterOne> with AutomaticKeepAliveClientMi
               text: TextSpan(
                 children: [
                   TextSpan(
-                    text: '\nЧТО ПРОИСХОДИТ, КОГДА ВИЧ ПОПАДАЕТ В ОРГАНИЗМ ЧЕЛОВЕКА?\n\n',
+                    text: "c1_21text1".tr(),
                     style: TextStyle(
                       fontWeight: FontWeight.w600,
                       color: Colors.black,
@@ -1813,17 +1762,14 @@ class _ChapterOneState extends State<ChapterOne> with AutomaticKeepAliveClientMi
                     ),
                   ),
                   TextSpan(
-                    text: 'ВИЧ-инфекция ',
+                    text: "c1_21text2".tr(),
                     style: TextStyle(
                       fontWeight: FontWeight.w600,
                       color: Colors.black,
                     ),
                   ),
                   TextSpan(
-                    text: '– это хроническое инфекционное заболевание, вызываемое вирусом иммунодефицита'
-                        ' человека (ВИЧ), протекающее с поражением иммунной системы. При отсутствии лечения '
-                        'ВИЧ-инфекция приводит к появлению инфекционных заболеваний, опухолей и к развитию '
-                        'синдрома приобретённого иммунного дефицита (СПИД). ',
+                    text:"c1_21text3".tr(),
                     style: TextStyle(
                       fontWeight: FontWeight.w400,
                       color: Colors.black,
@@ -1838,24 +1784,23 @@ class _ChapterOneState extends State<ChapterOne> with AutomaticKeepAliveClientMi
               text: TextSpan(
                 children: [
                   TextSpan(
-                    text: '\nКогда ВИЧ попадает в организм человека, он атакует клетки иммунной системы, '
-                        'а именно, Т-лимфоциты помощники (CД4 клетки). В результате пораженная клетка '
-                        'начинает сама производить вирусы. В результате клетка не может защищать организм '
-                        'и погибает. До 10 миллиардов новых вирусных частиц вырабатываются в день и миллионы '
-                        'CД4 клеток разрушаются ежедневно. Новые вирусы выходят из клетки и поражают другие '
-                        'СД-4 клетки. Уменьшение числа CД4 клеток приводит к снижению иммунитета, который '
-                        'уже не может защищать организм от возбудителей инфекционных и других заболеваний, '
-                        'которые редко наблюдаются у лиц с сильной иммунной системой. Их называют '
-                        'СПИД-индикаторными заболеваниями или ',
+                    text:"c1_21text4".tr(),
                     style: TextStyle(
                       fontWeight: FontWeight.w400,
                       color: Colors.black,
                     ),
                   ),
                   TextSpan(
-                    text: 'оппортунистическими инфекциями. ',
+                    text: "c1_21text5".tr(),
                     style: TextStyle(
                       fontWeight: FontWeight.w600,
+                      color: Colors.black,
+                    ),
+                  ),
+                  TextSpan(
+                    text: "c1_21text6".tr(),
+                    style: TextStyle(
+                      fontWeight: FontWeight.w400,
                       color: Colors.black,
                     ),
                   ),
@@ -1877,16 +1822,11 @@ class _ChapterOneState extends State<ChapterOne> with AutomaticKeepAliveClientMi
       title: SingleChildScrollView(
         child: Column(
           children: [
-            Text('Механизм размножения ВИЧ'),
+            Text("c1_22text1".tr()),
             SizedBox(height: 20),
             Container(
               color: kGrayishBlue,
-              child: Text(
-                'Состояние иммунной системы инфицированного ВИЧ человека определяется подсчетом '
-                'CД4 клеток. Их количество в крови составляет в норме от 500 до 1500 клеток в '
-                '1 микролитре. Когда у человека, живущего с ВИЧ, выявляется одна или несколько '
-                'оппортунистических инфекций и уровень СД4 клеток снижается ниже 200 в 1 микролитре '
-                'крови, то говорят о наступлении стадии СПИДа.',
+              child: Text("c1_22text2".tr(),
                 style: TextStyle(
                   fontStyle: FontStyle.italic,
                   fontSize: fontSize,
@@ -1918,7 +1858,7 @@ class _ChapterOneState extends State<ChapterOne> with AutomaticKeepAliveClientMi
               text: TextSpan(
                 children: [
                   TextSpan(
-                    text: '\n\nКак ВИЧ-не передается\n\n',
+                    text: "c1_23text1".tr(),
                     style: TextStyle(
                       fontWeight: FontWeight.w600,
                       color: Colors.black,
@@ -1926,16 +1866,14 @@ class _ChapterOneState extends State<ChapterOne> with AutomaticKeepAliveClientMi
                     ),
                   ),
                   TextSpan(
-                    text: 'Для каждого из нас важно знать, как ВИЧ не передается, чтобы перестать бояться '
-                        'того, что не опасно, а снижать риск там, где опасно; уметь обезопасить себя '
-                        'и окружающих. Помните, что ВИЧ передается только тремя путями (посмотрите этот раздел).',
+                    text:  "c1_23text2".tr(),
                     style: TextStyle(
                       fontWeight: FontWeight.w400,
                       color: Colors.black,
                     ),
                   ),
                   TextSpan(
-                    text: '\n\nВИЧ не передается\n',
+                    text: "c1_23text3".tr(),
                     style: TextStyle(
                       fontWeight: FontWeight.w600,
                       color: Colors.black,
@@ -1950,7 +1888,7 @@ class _ChapterOneState extends State<ChapterOne> with AutomaticKeepAliveClientMi
               text: TextSpan(
                 children: [
                   TextSpan(
-                    text: 'При объятии, рукопожатии, поцелуе При кашле и чихании',
+                    text:  "c1_23text4".tr(),
                     style: TextStyle(
                       fontWeight: FontWeight.w400,
                       color: Colors.black,
@@ -1982,7 +1920,7 @@ class _ChapterOneState extends State<ChapterOne> with AutomaticKeepAliveClientMi
                 text: TextSpan(
                   children: [
                     TextSpan(
-                      text: 'При кашле и чихании',
+                      text: "c1_24text1".tr(),
                       style: TextStyle(
                         fontWeight: FontWeight.w400,
                         color: Colors.black,
@@ -2000,8 +1938,7 @@ class _ChapterOneState extends State<ChapterOne> with AutomaticKeepAliveClientMi
               text: TextSpan(
                 children: [
                   TextSpan(
-                    text: 'При приготовлении и принятии пищи; при пользовании общей посудой, столовыми приборами, '
-                        'полотенцами и постельным бельем. При общении пользовании книгами, бытовыми приборами',
+                    text: "c1_24text2".tr(),
                     style: TextStyle(
                       fontWeight: FontWeight.w400,
                       color: Colors.black,
@@ -2032,7 +1969,7 @@ class _ChapterOneState extends State<ChapterOne> with AutomaticKeepAliveClientMi
               text: TextSpan(
                 children: [
                   TextSpan(
-                    text: 'При пользовании туалетом, душем, ванной; при плавании в бассейне, при занятиях спортом',
+                    text: "c1_25text1".tr(),
                     style: TextStyle(
                       fontWeight: FontWeight.w400,
                       color: Colors.black,
@@ -2049,7 +1986,7 @@ class _ChapterOneState extends State<ChapterOne> with AutomaticKeepAliveClientMi
               text: TextSpan(
                 children: [
                   TextSpan(
-                    text: 'При укусах насекомых (комаров, москитов, пчел). При общении и укусах животных',
+                    text: "c1_25text2".tr(),
                     style: TextStyle(
                       fontWeight: FontWeight.w400,
                       color: Colors.black,
@@ -2079,9 +2016,7 @@ class _ChapterOneState extends State<ChapterOne> with AutomaticKeepAliveClientMi
               text: TextSpan(
                 children: [
                   TextSpan(
-                    text: '\nЧеловек, живущий с ВИЧ не опасен в быту. Вы можете общаться, '
-                        'проживать в одной комнате, учиться в одном классе, одной группе; '
-                        'сидеть за одним столом; ходить в клубы, в кафе, на дискотеки, вместе отдыхать. ',
+                    text: "c1_26text1".tr(),
                     style: TextStyle(
                       fontWeight: FontWeight.w600,
                       color: Colors.black,
@@ -2109,7 +2044,7 @@ class _ChapterOneState extends State<ChapterOne> with AutomaticKeepAliveClientMi
               text: TextSpan(
                 children: [
                   TextSpan(
-                    text: "Что делать, если мне сообщили о положительном ВИЧ-статусе?\n",
+                    text: "c1_27text1".tr(),
                     style: TextStyle(
                       fontWeight: FontWeight.w600,
                       fontSize: fontSize + 6,
@@ -2135,8 +2070,7 @@ class _ChapterOneState extends State<ChapterOne> with AutomaticKeepAliveClientMi
                       text: TextSpan(
                         children: [
                           TextSpan(
-                            text: "Нужно подумать о том, что могло привести к заражению ВИЧ, и сделать свой "
-                                "собственный выбор – продолжить жизнь, как она есть, или изменить ее к лучшему. ",
+                            text: "c1_27text2".tr(),
                             style: TextStyle(
                               fontWeight: FontWeight.w400,
                               fontSize: fontSize,
@@ -2167,14 +2101,7 @@ class _ChapterOneState extends State<ChapterOne> with AutomaticKeepAliveClientMi
                       text: TextSpan(
                         children: [
                           TextSpan(
-                            text: "Нужно подумать и принять ответственное решение в отношении своей семейной жизни."
-                                " Наличие ВИЧ-инфекции не означает прекращение сексуальной жизни, не ограничивает"
-                                " возможности создания семьи и рождения здоровых детей. Важно помнить о риске "
-                                "заражения полового партнера и вашего новорожденного ребенка. Вам поможет обсуждение"
-                                " ВИЧ-статуса с половым партнером. Раннее начало АРТ, неопределяемая вирусная "
-                                "нагрузка, использование средств защиты (презерватив) позволят предотвратить "
-                                "передачу ВИЧ половому партнеру, а также планировать беременность и рождение "
-                                "здоровых детей.",
+                            text: "c1_27text3".tr(),
                             style: TextStyle(
                               fontWeight: FontWeight.w400,
                               fontSize: fontSize,
@@ -2218,8 +2145,7 @@ class _ChapterOneState extends State<ChapterOne> with AutomaticKeepAliveClientMi
                       text: TextSpan(
                         children: [
                           TextSpan(
-                            text: "Раскрытие близкому человеку/половому партнеру своего ВИЧ-статуса поможет "
-                                "Вам справиться со стрессом и получить поддержку от близких Вам лиц.",
+                            text: "c1_28text1".tr(),
                             style: TextStyle(
                               fontWeight: FontWeight.w400,
                               fontSize: fontSize,
@@ -2250,8 +2176,7 @@ class _ChapterOneState extends State<ChapterOne> with AutomaticKeepAliveClientMi
                       text: TextSpan(
                         children: [
                           TextSpan(
-                            text: "Благодаря Антиретровирусной терапии (АРТ) люди с ВИЧ могут прожить долгую "
-                                "и плодотворную жизнь, и для этого нужно:",
+                            text: "c1_28text2".tr(),
                             style: TextStyle(
                               fontWeight: FontWeight.w400,
                               fontSize: fontSize,
@@ -2282,7 +2207,7 @@ class _ChapterOneState extends State<ChapterOne> with AutomaticKeepAliveClientMi
                       text: TextSpan(
                         children: [
                           TextSpan(
-                            text: "принимать АРТ постоянно, соблюдая рекомендации лечащего врача;",
+                            text:"c1_28text3".tr(),
                             style: TextStyle(
                               fontWeight: FontWeight.w400,
                               fontSize: fontSize,
@@ -2312,9 +2237,7 @@ class _ChapterOneState extends State<ChapterOne> with AutomaticKeepAliveClientMi
                       text: TextSpan(
                         children: [
                           TextSpan(
-                            text:
-                                "при наличии других заболеваний, таких как туберкулез, потребление алкоголя или наркотиков, "
-                                "обратиться к специалистам для получения соответствующего лечения, наряду с АРТ; ",
+                            text:"c1_28text4".tr(),
                             style: TextStyle(
                               fontWeight: FontWeight.w400,
                               fontSize: fontSize,
@@ -2344,8 +2267,7 @@ class _ChapterOneState extends State<ChapterOne> with AutomaticKeepAliveClientMi
                       text: TextSpan(
                         children: [
                           TextSpan(
-                            text: "при необходимости, пройти вакцинацию для предупреждения таких инфекций, "
-                                "как грипп, КОВИД, вирусный гепатит (по назначению врача);",
+                            text:"c1_28text5".tr(),
                             style: TextStyle(
                               fontWeight: FontWeight.w400,
                               fontSize: fontSize,
@@ -2375,7 +2297,7 @@ class _ChapterOneState extends State<ChapterOne> with AutomaticKeepAliveClientMi
                       text: TextSpan(
                         children: [
                           TextSpan(
-                            text: "отказаться от курения либо существенно ограничить количество сигарет;",
+                            text: "c1_28text6".tr(),
                             style: TextStyle(
                               fontWeight: FontWeight.w400,
                               fontSize: fontSize,
@@ -2418,7 +2340,7 @@ class _ChapterOneState extends State<ChapterOne> with AutomaticKeepAliveClientMi
                       text: TextSpan(
                         children: [
                           TextSpan(
-                            text: "при потреблении наркотиков начать поддерживающую терапию метадоном. ",
+                            text: "c1_29text1".tr(),
                             style: TextStyle(
                               fontWeight: FontWeight.w400,
                               fontSize: fontSize,
@@ -2448,7 +2370,7 @@ class _ChapterOneState extends State<ChapterOne> with AutomaticKeepAliveClientMi
                       text: TextSpan(
                         children: [
                           TextSpan(
-                            text: "хорошее питание, употребление безопасной питьевой воды;",
+                            text: "c1_29text2".tr(),
                             style: TextStyle(
                               fontWeight: FontWeight.w400,
                               fontSize: fontSize,
@@ -2478,8 +2400,7 @@ class _ChapterOneState extends State<ChapterOne> with AutomaticKeepAliveClientMi
                       text: TextSpan(
                         children: [
                           TextSpan(
-                            text:
-                                "правильно организовать свой распорядок дня, чередовать работу, отдых и физическую активность.",
+                            text:"c1_29text3".tr(),
                             style: TextStyle(
                               fontWeight: FontWeight.w400,
                               fontSize: fontSize,
@@ -2509,10 +2430,7 @@ class _ChapterOneState extends State<ChapterOne> with AutomaticKeepAliveClientMi
                       text: TextSpan(
                         children: [
                           TextSpan(
-                            text: "Помнить, что любая инфекция для человека с ВИЧ значительно опаснее, "
-                                "чем для человека без ВИЧ, поэтому следует строго следовать мерам профилактики "
-                                "инфекционных заболеваний, поскольку не только Вы можете инфицировать своих "
-                                "партнеров, но и  сами получить дополнительную инфекцию.",
+                            text:"c1_29text4".tr(),
                             style: TextStyle(
                               fontWeight: FontWeight.w400,
                               fontSize: fontSize,
@@ -2551,8 +2469,7 @@ class _ChapterOneState extends State<ChapterOne> with AutomaticKeepAliveClientMi
                       text: TextSpan(
                         children: [
                           TextSpan(
-                            text: "Следует помнить, что ЛЖВ может повторно заразиться другой разновидностью ВИЧ, "
-                                "что создает большую угрозу его здоровью.",
+                            text: "c1_30text1".tr(),
                             style: TextStyle(
                               fontWeight: FontWeight.w400,
                               fontSize: fontSize,
@@ -2578,10 +2495,7 @@ class _ChapterOneState extends State<ChapterOne> with AutomaticKeepAliveClientMi
                       text: TextSpan(
                         children: [
                           TextSpan(
-                            text: "Люди, с которыми Вы имели половые контакты или использовали общие шприцы, "
-                                "также могут быть инфицированы ВИЧ и не знать об этом. Им нужно предложить"
-                                " пройти тестирование на ВИЧ, чтобы своевременно начать лечение, сохранить"
-                                " здоровье и жизнь. ",
+                            text: "c1_30text2".tr(),
                             style: TextStyle(
                               fontWeight: FontWeight.w400,
                               fontSize: fontSize,

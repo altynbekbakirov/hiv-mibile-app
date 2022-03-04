@@ -76,10 +76,10 @@ class _ScreeningBodyState extends State<ScreeningBody> {
                           text: "Секс",
                         ),
                         Tab(
-                          text: "Кровь",
+                          text:"Кровь"
                         ),
                         Tab(
-                          text: "Симптомы",
+                          text: "Симптомы"
                         ),
                       ],
                     ),

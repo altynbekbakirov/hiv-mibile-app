@@ -63,13 +63,9 @@ class _NotTransmittedHivScreenState extends State<NotTransmittedHivScreen> {
         ListTile(
           title: RichText(
             text: TextSpan(children: [
-              TextSpan(text: "Как ВИЧ не передается\n\n", style: chapterStyle),
+              TextSpan(text:"hiv_info3text1".tr(), style: chapterStyle),
               TextSpan(
-                text:
-                    "Для каждого из нас важно знать, как ВИЧ не передается, чтобы перестать бояться того, что не опасно, "
-                    "а снижать риск там, где опасно; уметь обезопасить себя. Помните, что ВИЧ передается только тремя путями "
-                    "(посмотрите этот раздел). Не бойтесь людей, живущих с ВИЧ – они для Вас не несут никакой угрозы. "
-                    "Угроза в нашем незнании и неумении защитить себя.\n",
+                text:"hiv_info3text2".tr(),
                 style: contentItalic,
               ),
             ]),
@@ -81,10 +77,10 @@ class _NotTransmittedHivScreenState extends State<NotTransmittedHivScreen> {
             child: RichText(
                 text: TextSpan(children: [
               TextSpan(
-                text: "При объятии, рукопожатии, поцелуе\n\n",
+                text:"hiv_info3text3".tr(),
                 style: normalBoldForChapter,
               ),
-              TextSpan(text: "При кашле и чихании", style: contentNormal),
+              TextSpan(text:"hiv_info3text4".tr(), style: contentNormal),
             ]))),
         SizedBox(height: 20),
         Image.asset('assets/images/image_way5.png'),
@@ -94,11 +90,10 @@ class _NotTransmittedHivScreenState extends State<NotTransmittedHivScreen> {
             child: RichText(
                 text: TextSpan(children: [
                   TextSpan(
-                    text: "При приготовлении и принятии пищи\n\n",
+                    text: "hiv_info3text5".tr(),
                     style: normalBoldForChapter,
                   ),
-                  TextSpan(text: "При пользовании общей посудой, столовыми приборами, полотенцами и постельным бельем. "
-                      "При общении пользовании книгами,  бытовыми приборами.",
+                  TextSpan(text: "hiv_info3text6".tr(),
                       style: contentNormal),
                 ]))),
         SizedBox(height: 20),
@@ -109,10 +104,10 @@ class _NotTransmittedHivScreenState extends State<NotTransmittedHivScreen> {
             child: RichText(
                 text: TextSpan(children: [
                   TextSpan(
-                    text: "При пользовании туалетом, душем, ванной\n\n",
+                    text: "hiv_info3text7".tr(),
                     style: normalBoldForChapter,
                   ),
-                  TextSpan(text: "При плавании в бассейне, при занятиях спортом.",
+                  TextSpan(text:"hiv_info3text8".tr(),
                       style: contentNormal),
                 ]))),
         SizedBox(height: 20),
@@ -123,10 +118,10 @@ class _NotTransmittedHivScreenState extends State<NotTransmittedHivScreen> {
             child: RichText(
                 text: TextSpan(children: [
                   TextSpan(
-                    text: "При укусах насекомых (комаров, москитов, пчел)\n\n",
+                    text: "hiv_info3text9".tr(),
                     style: normalBoldForChapter,
                   ),
-                  TextSpan(text: "При общении и укусах животных.",
+                  TextSpan(text:"hiv_info3text10".tr(),
                       style: contentNormal),
                 ]))),
         SizedBox(height: 20),
@@ -137,8 +132,7 @@ class _NotTransmittedHivScreenState extends State<NotTransmittedHivScreen> {
               child: RichText(
                   text: TextSpan(children: [
                     TextSpan(
-                      text: "Человек, живущий с ВИЧ не опасен в быту. Вы можете общаться, проживать в одной комнате, учиться в одном классе, "
-                          "одной группе. Сидеть за одним столом. Ходить в клубы, в кафе, на дискотеки, вместе отдыхать.",
+                      text:  "hiv_info3text11".tr(),
                       style: normalBold,
                     ),
       ])),

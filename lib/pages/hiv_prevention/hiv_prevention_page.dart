@@ -47,7 +47,7 @@ class _HivPreventionPageState extends State<HivPreventionPage> {
               ),
               SizedBox(height: 16),
               ChevronButton(
-                height: MediaQuery.of(context).size.height < deviceHeight ? MediaQuery.of(context).size.height * 0.12 : MediaQuery.of(context).size.height * 0.075,
+                height: MediaQuery.of(context).size.height * 0.12,
                 fontSize: 18,
                 text: "pre_post_exposure_therapy".tr(),
                 onTap: () {

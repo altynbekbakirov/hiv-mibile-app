@@ -18,7 +18,8 @@ class SettingsWidget extends StatefulWidget {
 class _SettingsWidgetState extends State<SettingsWidget> {
 
   var url = Configs.ip+"/hiv_instruction.pdf";
-
+  var us = Prefs.getString(Prefs.USERNAME);
+  var to = Prefs.getString(Prefs.TOKEN);
   _launchURL() async {
     if (await canLaunch(url)) {
       await launch(url);
@@ -46,7 +47,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
           ),
           onTap: _launchURL,
         ),
-        Prefs.getString(Prefs.USERNAME) != null
+        Prefs.getString(Prefs.USERNAME) != null && Prefs.getString(Prefs.TOKEN) != null
             ? ListTile(
                 leading: Text(
                   'password_change'.tr(),
@@ -67,7 +68,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                 ),
               )
             : Container(),
-        ListTile(
+        Prefs.getString(Prefs.USERNAME) != null && Prefs.getString(Prefs.TOKEN) != null ? ListTile(
           leading: Text(
             'password_reset'.tr(),
             style: TextStyle(
@@ -86,7 +87,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
               builder: (context) => ForgotPasswordPage(),
             ),
           ),
-        ),
+        ) : Container(),
       ],
     );
   }
