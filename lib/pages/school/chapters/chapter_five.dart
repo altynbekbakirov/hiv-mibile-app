@@ -30,10 +30,10 @@ class _ChapterFiveState extends State<ChapterFive> {
     super.initState();
   }
 
-  String first =
-      'Сегодня мы поговорим об инфекциях, передаваемых половым путем, – мы их кратко называем ИППП, а также об основах планирования семьи – о сексуальном и репродуктивном здоровье.';
-  String second =
-      'Следует помнить, что только использование презерватива защищает от заражения ВИЧ/ ИППП. Другие барьерные методы снижают риск, а прочие методы контрацепции не защищают от заражения ВИЧ. Для обеспечения эффективной защиты нужно: пользоваться презервативом всегда, пользоваться правильно, дополнять использование презерватива спермицидами/ микробицидами; использовать двойной метод защиты.';
+
+  String first ="c5_text1".tr();
+  String second ="c5_text2".tr()
+      ;
 
   show() async {
     await Future.delayed(const Duration(seconds: 1), () async {
@@ -90,18 +90,16 @@ class _ChapterFiveState extends State<ChapterFive> {
           children: [
             RichText(
               text: TextSpan(children: [
-                header("Сексуальное и репродуктивное здоровье (СРЗ)"),
-                normalText(
-                    "СРЗ – это состояние полного благополучия в вопросах сексуальных отношений, планирования и рождения детей, отсутствия заболеваний половых органов."),
+                header("c5_1text1".tr()),
+                normalText("c5_1text2".tr()),
               ], style: TextStyle(fontSize: fontSize)),
             ),
             Image.asset("assets/images/profilactika1.png"),
             RichText(
               text: TextSpan(children: [
-                boldText("\n\nРепродукция – воспроизведение "),
-                normalText(
-                    "воспроизведение – т.е. это способность к зачатию и рождению потомства."),
-                boldText("\n\nЧто включает СРЗ? "),
+                boldText("c5_1text3".tr()),
+                normalText("c5_1text4".tr()),
+                boldText("c5_1text5".tr()),
               ], style: TextStyle(fontSize: fontSize)),
             ),
             Row(
@@ -117,8 +115,7 @@ class _ChapterFiveState extends State<ChapterFive> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text:
-                              "Отсутствие ИППП (инфекций, передаваемых половым путем).",
+                          text:"c5_1text6".tr(),
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -139,7 +136,7 @@ class _ChapterFiveState extends State<ChapterFive> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text: "Гармоничные сексуальные отношения.",
+                          text: "c5_1text7".tr(),
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -160,8 +157,7 @@ class _ChapterFiveState extends State<ChapterFive> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text:
-                              "Решение вопроса о количестве детей и времени их рождения (планирование семьи).",
+                          text:"c5_1text8".tr(),
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -183,7 +179,7 @@ class _ChapterFiveState extends State<ChapterFive> {
           children: [
             RichText(
               text: TextSpan(children: [
-                boldText("Почему важно СРЗ?\n"),
+                boldText("c5_2text1".tr()),
               ], style: TextStyle(fontSize: fontSize)),
             ),
             Row(
@@ -199,8 +195,7 @@ class _ChapterFiveState extends State<ChapterFive> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text:
-                              "СРЗ – это одна из важнейших сторон жизни каждого человека.",
+                          text:"c5_2text2".tr(),
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -221,8 +216,7 @@ class _ChapterFiveState extends State<ChapterFive> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text:
-                              "Это сохранение своего здоровья, счастливой семейной жизни; благополучия.",
+                          text:"c5_2text3".tr(),
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -243,8 +237,7 @@ class _ChapterFiveState extends State<ChapterFive> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text:
-                              "Это ответственность перед людьми, которых мы любим.",
+                          text:"c5_2text4".tr(),
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -265,7 +258,7 @@ class _ChapterFiveState extends State<ChapterFive> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text: "Это ответственность перед своими детьми.",
+                          text:"c5_2text5".tr(),
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -286,8 +279,7 @@ class _ChapterFiveState extends State<ChapterFive> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text:
-                              "Для семейных пар, живущих с ВИЧ, важно также решить вопрос о профилактике передачи ВИЧ от родителей – ребенку.",
+                          text:"c5_2text6".tr(),
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -297,10 +289,8 @@ class _ChapterFiveState extends State<ChapterFive> {
             ),
             RichText(
               text: TextSpan(children: [
-                boldText("Планирование семьи "),
-                normalText(
-                    "позволяет людям иметь желаемое число детей и определять интервалы времени между их "
-                    "рождением. Это достигается благодаря использованию методов контрацепции и лечения бесплодия."),
+                boldText("c5_2text6".tr()),
+                normalText("c5_2text8".tr()),
               ], style: TextStyle(fontSize: fontSize)),
             ),
             SizedBox(height: 90),
@@ -317,7 +307,7 @@ class _ChapterFiveState extends State<ChapterFive> {
           children: [
             RichText(
               text: TextSpan(children: [
-                boldText("Планирование семьи позволяет:\n"),
+                boldText("c5_3text1".tr()),
               ], style: TextStyle(fontSize: fontSize)),
             ),
             Row(
@@ -333,8 +323,7 @@ class _ChapterFiveState extends State<ChapterFive> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text:
-                              "Предотвратить заболевания или ухудшение здоровья матери, связанное с частыми родами и или тяжелыми заболеваниями матери.",
+                          text:"c5_3text2".tr(),
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -355,8 +344,7 @@ class _ChapterFiveState extends State<ChapterFive> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text:
-                              "Предотвратить искусственное прерывание беременности (аборт), в случае ее нежелательности.",
+                          text:"c5_3text3".tr(),
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -377,8 +365,7 @@ class _ChapterFiveState extends State<ChapterFive> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text:
-                              "Улучшить здоровье новорожденных детей. Частые или нежелательные роды увеличивают риск детской и материнской смертности. Дети, матери которых умерли в результате родов, также подвергаются повышенному риску смерти и плохого состояния здоровья.",
+                          text:"c5_3text4".tr(),
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -388,9 +375,8 @@ class _ChapterFiveState extends State<ChapterFive> {
             ),
             RichText(
               text: TextSpan(children: [
-                boldText("Контрацепция "),
-                normalText(
-                    "– это предупреждение нежелательной беременности, один из методов планирования семьи."),
+                boldText("c5_3text5".tr()),
+                normalText("c5_3text6".tr()),
               ], style: TextStyle(fontSize: fontSize)),
             ),
             SizedBox(height: 90),
@@ -416,15 +402,14 @@ class _ChapterFiveState extends State<ChapterFive> {
                     children: <Widget>[
                       Align(
                           alignment: Alignment.centerLeft,
-                          child: Text('Существует много методов контрацепции: ',
+                          child: Text("c5_4text1".tr(),
                               style: TextStyle(
                                   color: Colors.black,
                                   fontSize: fontSize - 4,
                                   fontWeight: FontWeight.w600))),
                       Align(
                           alignment: Alignment.centerLeft,
-                          child: Text(
-                            '•	Барьерные методы;',
+                          child: Text("c5_4text2".tr(),
                             style: TextStyle(
                                 color: Colors.black,
                                 fontSize: fontSize - 4,
@@ -433,8 +418,7 @@ class _ChapterFiveState extends State<ChapterFive> {
                           )),
                       Align(
                           alignment: Alignment.centerLeft,
-                          child: Text(
-                            '•	Внутриматочные средства;',
+                          child: Text("c5_4text3".tr(),
                             style: TextStyle(
                                 color: Colors.black,
                                 fontSize: fontSize - 4,
@@ -442,8 +426,7 @@ class _ChapterFiveState extends State<ChapterFive> {
                           )),
                       Align(
                           alignment: Alignment.centerLeft,
-                          child: Text(
-                            '•	Гормональные контрацептивы;',
+                          child: Text("c5_4text4".tr(),
                             style: TextStyle(
                                 color: Colors.black,
                                 fontSize: fontSize - 4,
@@ -451,8 +434,7 @@ class _ChapterFiveState extends State<ChapterFive> {
                           )),
                       Align(
                           alignment: Alignment.centerLeft,
-                          child: Text(
-                            '•	Хирургический метод;',
+                          child: Text("c5_4text5".tr(),
                             style: TextStyle(
                                 color: Colors.black,
                                 fontSize: fontSize - 4,
@@ -460,8 +442,7 @@ class _ChapterFiveState extends State<ChapterFive> {
                           )),
                       Align(
                           alignment: Alignment.centerLeft,
-                          child: Text(
-                            '•	Биологический (календарный) метод контрацепции',
+                          child: Text("c5_4text6".tr(),
                             style: TextStyle(
                                 color: Colors.black,
                                 fontSize: fontSize - 4,
@@ -474,21 +455,12 @@ class _ChapterFiveState extends State<ChapterFive> {
             ),
             RichText(
               text: TextSpan(children: [
-                boldText(
-                    "Для выбора подходящего для тебя метода контрацепции нужно посоветоваться с врачом."),
-                boldText("\n\nЧто такое двойная контрацепция?"),
-                normalText(
-                    "\nЭто использование одновременно средств барьерной контрацепции для профилактики ИППП "
-                    "и ВИЧ-инфекции (презерватив желательно совместно со спермицидами /микробицидами) и"
-                    " наиболее эффективных методов контрацепции (гормональная, хирургическая контрацепция)."),
-                boldText(
-                    "\n\nТолько использование презерватива защищает от заражения ВИЧ/ИППП. "),
-                normalText(
-                    "\nДругие барьерные методы снижают риск, а прочие методы контрацепции не защищают от "
-                    "заражения ВИЧ. Для обеспечения эффективной защиты нужно: пользоваться презервативом всегда, "
-                    "пользоваться правильно, дополнять использование презерватива спермицидами/микробицидами; "
-                    "использовать двойной метод защиты."),
-                boldText("\n\nКак предупредить заражение ВИЧ своих детей?"),
+                boldText("c5_4text7".tr()),
+                boldText("c5_4text8".tr()),
+                normalText("c5_4text9".tr()),
+                boldText("c5_4text10".tr()),
+                normalText("c5_4text11".tr()),
+                boldText("c5_4text12".tr()),
               ], style: TextStyle(fontSize: fontSize)),
             ),
             SizedBox(height: 10),
@@ -499,10 +471,10 @@ class _ChapterFiveState extends State<ChapterFive> {
                 Expanded(
                   child: Column(
                     children: <Widget>[
-                      Text("1.	Предупреждение ВИЧ-инфекции",
+                      Text("c5_4text13".tr(),
                           style:
                               TextStyle(color: Colors.red, fontSize: fontSize)),
-                      Text("2.	Профилактика нежелательной беременности",
+                      Text("c5_4text14".tr(),
                           style: TextStyle(
                               color: kDarkModerateBlue, fontSize: fontSize)),
                     ],
@@ -511,12 +483,10 @@ class _ChapterFiveState extends State<ChapterFive> {
                 Expanded(
                   child: Column(
                     children: <Widget>[
-                      Text(
-                          "3.	Профилактика передачи ВИЧ от ВИЧ+ матери ребенку",
+                      Text("c5_4text15".tr(),
                           style: TextStyle(
                               color: Colors.orange, fontSize: fontSize)),
-                      Text(
-                          "4.	Предоставление лечения, помощи и поддержки ВИЧ-позитивным женщинам, их детям и семьям",
+                      Text( "c5_4text16".tr(),
                           style: TextStyle(
                               color: kDarkModerateBlue, fontSize: fontSize)),
                     ],
@@ -540,21 +510,16 @@ class _ChapterFiveState extends State<ChapterFive> {
             RichText(
               text: TextSpan(children: [
                 TextSpan(
-                    text: "ИППП ",
+                    text:"c5_5text1".tr(),
                     style: TextStyle(
                         color: Colors.red,
                         fontWeight: FontWeight.w600,
                         fontSize: fontSize + 6)),
-                boldText("- инфекции, передаваемые половым путем"),
-                boldText("\n\nЧто такое ИППП?"),
-                normalText(
-                    "\nЭто заболевания, которые вызываются микроорганизмами. Микроорганизм обычно попадает в организм "
-                    "человека при половом контакте (реже бывает при бытовом контакте при переливании крови или использовании "
-                    "нестерильного инструментария, а также от матери ребенку во время беременности и родов)."),
-                normalText(
-                    "\n\nВсего существует более 20 ИППП, но наиболее известны – это сифилис, гонорея, трихомониаз. "
-                    "Некоторые ИППП имеют сходные проявления"),
-                boldText("\n\nЧем опасны ИППП? "),
+                boldText("c5_5text2".tr()),
+                boldText("c5_5text3".tr()),
+                normalText("c5_5text4".tr()),
+                normalText("c5_5text5".tr()),
+                boldText("c5_5text6".tr()),
               ], style: TextStyle(fontSize: fontSize)),
             ),
             Row(
@@ -570,8 +535,7 @@ class _ChapterFiveState extends State<ChapterFive> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text:
-                              "Они не вырабатывают иммунитета (т.е. если человек переболел любым из ИППП, он может им заразиться повторно).",
+                          text:"c5_5text7".tr(),
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -592,7 +556,7 @@ class _ChapterFiveState extends State<ChapterFive> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text: "Не излечиваются самостоятельно.",
+                          text:"c5_5text8".tr(),
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -613,8 +577,7 @@ class _ChapterFiveState extends State<ChapterFive> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text:
-                              "Иногда ничем не проявляются и случайно выявляются при медицинском осмотре или обследовании полового партнера.",
+                          text:"c5_5text9".tr(),
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -646,7 +609,7 @@ class _ChapterFiveState extends State<ChapterFive> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text: "Передаются половому партнеру.",
+                          text: "c5_6text1".tr(),
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -667,7 +630,7 @@ class _ChapterFiveState extends State<ChapterFive> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text: "Увеличивают риск инфицирования ВИЧ.",
+                          text: "c5_6text2".tr(),
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -688,7 +651,7 @@ class _ChapterFiveState extends State<ChapterFive> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text: "Приводят к бесплодию.",
+                          text: "c5_6text3".tr(),
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -709,8 +672,7 @@ class _ChapterFiveState extends State<ChapterFive> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text:
-                              "Приводят к заражению младенцев во время беременности или родов, иногда приводят к слепоте, вызывают уродства или смерть плода.",
+                          text:"c5_6text4".tr(),
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -731,8 +693,50 @@ class _ChapterFiveState extends State<ChapterFive> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text:
-                              "Некоторые из них передаются бытовым путем при пользовании предметами гигиены, через постельное белье и полотенца.",
+                          text:"c5_6text5".tr(),
+                          style: TextStyle(
+                              color: Colors.black, fontSize: fontSize)),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            // Row(
+            //   crossAxisAlignment: CrossAxisAlignment.start,
+            //   children: <Widget>[
+            //     Expanded(
+            //         child: Padding(
+            //       padding: const EdgeInsets.only(top: 10),
+            //       child: MyBullet(),
+            //     )),
+            //     Expanded(
+            //       flex: 5,
+            //       child: ListTile(
+            //         title: RichText(
+            //           text: TextSpan(
+            //               text:
+            //                   "Некоторые из них передаются бытовым путем при пользовании предметами гигиены, через постельное белье и полотенца.",
+            //               style: TextStyle(
+            //                   color: Colors.black, fontSize: fontSize)),
+            //         ),
+            //       ),
+            //     ),
+            //   ],
+            // ),
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Expanded(
+                    child: Padding(
+                  padding: const EdgeInsets.only(top: 10),
+                  child: MyBullet(),
+                )),
+                Expanded(
+                  flex: 5,
+                  child: ListTile(
+                    title: RichText(
+                      text: TextSpan(
+                          text:"c5_6text6".tr(),
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -753,51 +757,7 @@ class _ChapterFiveState extends State<ChapterFive> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text:
-                              "Некоторые из них передаются бытовым путем при пользовании предметами гигиены, через постельное белье и полотенца.",
-                          style: TextStyle(
-                              color: Colors.black, fontSize: fontSize)),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Expanded(
-                    child: Padding(
-                  padding: const EdgeInsets.only(top: 10),
-                  child: MyBullet(),
-                )),
-                Expanded(
-                  flex: 5,
-                  child: ListTile(
-                    title: RichText(
-                      text: TextSpan(
-                          text:
-                              "Сифилис при отсутствии или некачественном лечении приводит к разрушению костей и слабоумию.",
-                          style: TextStyle(
-                              color: Colors.black, fontSize: fontSize)),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Expanded(
-                    child: Padding(
-                  padding: const EdgeInsets.only(top: 10),
-                  child: MyBullet(),
-                )),
-                Expanded(
-                  flex: 5,
-                  child: ListTile(
-                    title: RichText(
-                      text: TextSpan(
-                          text: "У ЛЖВ могут протекать тяжело. ",
+                          text: "c5_6text7".tr(),
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -819,8 +779,7 @@ class _ChapterFiveState extends State<ChapterFive> {
           children: [
             RichText(
               text: TextSpan(children: [
-                boldText(
-                    "На что нужно обратить внимание и срочно обратиться к врачу?"),
+                boldText("c5_7text1".tr()),
               ], style: TextStyle(fontSize: fontSize)),
             ),
             Row(
@@ -836,7 +795,7 @@ class _ChapterFiveState extends State<ChapterFive> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text: "язвы на половых органах; ",
+                          text: "c5_7text2".tr(),
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -858,7 +817,7 @@ class _ChapterFiveState extends State<ChapterFive> {
                     title: RichText(
                       text: TextSpan(
                           text:
-                              "необычные выделения из половых органов у женщин и просто выделения из половых органов у мужчин (которых в норме быть не должно); ",
+                          "c5_7text3".tr(),
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -879,7 +838,7 @@ class _ChapterFiveState extends State<ChapterFive> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text: "боли внизу живота;",
+                          text: "c5_7text4".tr(),
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -900,7 +859,7 @@ class _ChapterFiveState extends State<ChapterFive> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text: "у мужчин отек мошонки.",
+                          text: "c5_7text5".tr(),
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -912,7 +871,7 @@ class _ChapterFiveState extends State<ChapterFive> {
               alignment: Alignment.centerLeft,
               child: RichText(
                 text: TextSpan(children: [
-                  boldText("Что нужно делать?\n"),
+                  boldText("c5_7text6".tr()),
                 ], style: TextStyle(fontSize: fontSize)),
               ),
             ),
@@ -931,8 +890,7 @@ class _ChapterFiveState extends State<ChapterFive> {
                       text: TextSpan(
                           children: [
                             TextSpan(
-                                text:
-                                    "Лечение только у квалифицированного врача.",
+                                text:"c5_7text7".tr(),
                                 style: TextStyle(
                                   fontSize: fontSize,
                                   fontWeight: FontWeight.w600,
@@ -940,8 +898,7 @@ class _ChapterFiveState extends State<ChapterFive> {
                                   decoration: TextDecoration.underline,
                                 )),
                             TextSpan(
-                                text:
-                                    "Только врач знает, какое лекарство назначить.")
+                                text:"c5_7text8".tr())
                           ],
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
@@ -964,8 +921,7 @@ class _ChapterFiveState extends State<ChapterFive> {
                     title: RichText(
                       text: TextSpan(
                           children: [
-                            normalText(
-                                "Лечиться совместно с половым партнером.")
+                            normalText("c5_7text9".tr())
                           ],
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
@@ -988,8 +944,7 @@ class _ChapterFiveState extends State<ChapterFive> {
                     title: RichText(
                       text: TextSpan(
                           children: [
-                            normalText(
-                                "Чем раньше начато ИППП, тем быстрее и легче излечивается.")
+                            normalText("c5_7text10".tr())
                           ],
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
@@ -1012,8 +967,7 @@ class _ChapterFiveState extends State<ChapterFive> {
                     title: RichText(
                       text: TextSpan(
                           children: [
-                            normalText(
-                                "После излечения использовать методы профилактики, презервативы.")
+                            normalText("c5_7text11".tr())
                           ],
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
@@ -1036,8 +990,7 @@ class _ChapterFiveState extends State<ChapterFive> {
                     title: RichText(
                       text: TextSpan(
                           children: [
-                            normalText(
-                                "Самолечение не излечивает и может привести к тяжелым последствиям.")
+                            normalText("c5_7text12".tr())
                           ],
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
@@ -1060,7 +1013,7 @@ class _ChapterFiveState extends State<ChapterFive> {
           children: [
             RichText(
               text: TextSpan(children: [
-                boldText("Профилактика ИППП (Стратегия 3 В)"),
+                boldText("c5_8text1".tr()),
               ], style: TextStyle(fontSize: fontSize)),
             ),
             Row(
@@ -1077,8 +1030,8 @@ class _ChapterFiveState extends State<ChapterFive> {
                     title: RichText(
                       text: TextSpan(
                           children: [
-                            boldText("В"),
-                            normalText("оздержание от половых контактов.")
+
+                            normalText("c5_8text2".tr())
                           ],
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
@@ -1102,9 +1055,8 @@ class _ChapterFiveState extends State<ChapterFive> {
                     title: RichText(
                       text: TextSpan(
                           children: [
-                            boldText("В"),
-                            normalText(
-                                "ерность своему верному половому партнеру.")
+
+                            normalText("c5_8text3".tr())
                           ],
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
@@ -1128,11 +1080,8 @@ class _ChapterFiveState extends State<ChapterFive> {
                     title: RichText(
                       text: TextSpan(
                           children: [
-                            boldText("В"),
-                            normalText(
-                                "сегда и правильно используйте презерватив – это надежно защитит от заражения ВИЧ, вирусным "
-                                "гепатитом В и другими инфекциями, передающимися половым путем. Поскольку никакой половой акт не может"
-                                " быть безопасным на 100%.")
+
+                            normalText("c5_8text4".tr())
                           ],
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
@@ -1158,7 +1107,7 @@ class _ChapterFiveState extends State<ChapterFive> {
             RichText(
               text: TextSpan(children: [
                 TextSpan(
-                    text: "Инструкция по использованию презерватива \n",
+                    text:"c5_9text1".tr(),
                     style: TextStyle(
                         color: kDesaturatedBlue,
                         fontSize: fontSize + 6,
@@ -1178,8 +1127,7 @@ class _ChapterFiveState extends State<ChapterFive> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text:
-                              "Покупайте презерватив в надежных местах (в крупных магазинах или аптеках), храните его в прохладном месте, защищенном от солнца и других источников тепла. ",
+                          text:"c5_9text2".tr(),
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -1200,8 +1148,7 @@ class _ChapterFiveState extends State<ChapterFive> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text:
-                              "Не используйте презерватив, если упаковка вскрыта, повреждена или истёк срок годности.",
+                          text:"c5_9text3".tr(),
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -1222,8 +1169,7 @@ class _ChapterFiveState extends State<ChapterFive> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text:
-                              "Открывайте и доставайте презерватив аккуратно, не сжимая его ногтями.",
+                          text:"c5_9text4".tr(),
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -1257,8 +1203,7 @@ class _ChapterFiveState extends State<ChapterFive> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text:
-                              "Используйте презерватив до контакта пениса с половыми органами партнера. ",
+                          text:"c5_10text1".tr(),
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -1281,8 +1226,7 @@ class _ChapterFiveState extends State<ChapterFive> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text:
-                              "Возьмите презерватив за кончик и сожмите, чтобы оставить место для спермы.",
+                          text:"c5_10text2".tr(),
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -1303,8 +1247,7 @@ class _ChapterFiveState extends State<ChapterFive> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text:
-                              "Продолжая придерживать кончик презерватива, раскрутите его на пенисе до основания полового члена.",
+                          text:"c5_10text3".tr(),
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -1338,8 +1281,7 @@ class _ChapterFiveState extends State<ChapterFive> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text:
-                              "Прекратите любые движения, если презерватив сполз или порвался. Немедленно извлеките половой член, и замените поврежденный презерватив новым.",
+                          text:"c5_11text1".tr(),
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -1360,8 +1302,7 @@ class _ChapterFiveState extends State<ChapterFive> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text:
-                              "Меняйте презерватив с каждым повторным введением пениса после семяизвержения.",
+                          text:"c5_11text2".tr(),
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -1382,8 +1323,7 @@ class _ChapterFiveState extends State<ChapterFive> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text:
-                              "Меняйте презерватив, если решили заняться другим видом секса (оральным или анальным). Для каждого нового отверстия — новый презерватив.",
+                          text:"c5_11text3".tr(),
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -1404,8 +1344,7 @@ class _ChapterFiveState extends State<ChapterFive> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text:
-                              "Извлеките пенис как можно быстрее после семяизвержения, придерживая презерватив у основания члена, чтобы не разлить сперму.",
+                          text:"c5_11text4".tr(),
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -1439,8 +1378,7 @@ class _ChapterFiveState extends State<ChapterFive> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text:
-                              "Аккуратно снимите презерватив,  стараясь не разлить сперму.",
+                          text:"c5_12text1".tr(),
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -1453,7 +1391,7 @@ class _ChapterFiveState extends State<ChapterFive> {
             RichText(
               text: TextSpan(children: [
                 TextSpan(
-                  text: "Ошибки при использовании презерватива:",
+                  text: "c5_12text2".tr(),
                   style: TextStyle(
                     color: kModerateBlue,
                     fontSize: fontSize,
@@ -1475,8 +1413,7 @@ class _ChapterFiveState extends State<ChapterFive> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text:
-                              "открытие упаковки острыми предметами или зубами;",
+                          text:"c5_12text3".tr(),
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -1497,8 +1434,7 @@ class _ChapterFiveState extends State<ChapterFive> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text:
-                              "невнимательность при проверке продукции на целостность;",
+                          text:"c5_12text4".tr(),
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -1519,8 +1455,7 @@ class _ChapterFiveState extends State<ChapterFive> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text:
-                              "надевание в процессе полового акта, а не перед его началом;",
+                          text:"c5_12text5".tr(),
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -1541,8 +1476,7 @@ class _ChapterFiveState extends State<ChapterFive> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text:
-                              "отсутствие свободного места или воздуха на накопителе (на кончике презерватива);",
+                          text:"c5_12text6".tr(),
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -1563,7 +1497,7 @@ class _ChapterFiveState extends State<ChapterFive> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text: "надевание изнаночной стороной наружу;",
+                          text: "c5_12text7".tr(),
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -1584,8 +1518,7 @@ class _ChapterFiveState extends State<ChapterFive> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text:
-                              "неполное разворачивание презерватива на половом члене;",
+                          text:"c5_12text8".tr(),
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -1606,8 +1539,7 @@ class _ChapterFiveState extends State<ChapterFive> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text:
-                              "использование двух презервативов, надетых один на другой;",
+                          text:"c5_12text9".tr(),
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -1628,8 +1560,7 @@ class _ChapterFiveState extends State<ChapterFive> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text:
-                              "использование жировых смазок (вазелин, глицерин, растительное масло и др).",
+                          text:"c5_12text10".tr(),
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -1662,8 +1593,7 @@ class _ChapterFiveState extends State<ChapterFive> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text:
-                              "Покупайте презерватив только в надежном месте – лучше в аптеке или в супермаркете. Избегайте покупать в киосках, где может нарушаться температурный режим.",
+                          text:"c5_13text1".tr(),
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -1684,9 +1614,7 @@ class _ChapterFiveState extends State<ChapterFive> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text:
-                              "Не пользуйтесь презервативом, если его упаковка повреждена. Убедитесь, что презерватив в упаковке упругий и "
-                              "свободно перемещается при нажатии на упаковку. ",
+                          text:"c5_13text2".tr(),
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -1707,10 +1635,7 @@ class _ChapterFiveState extends State<ChapterFive> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text:
-                              "Бережно храните презерватив до его использования. Нельзя хранить презерватив на солнце, на свету, "
-                              "вблизи источников тепла, в сырости, "
-                              "а также постоянно носить в кармане брюк, где он также долго подвергается воздействию тепла.",
+                          text:"c5_13text3".tr(),
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -1731,8 +1656,7 @@ class _ChapterFiveState extends State<ChapterFive> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text:
-                              "Если Вы вскрыли презерватив, а он липкий и легко рвется (расползается в руках)  – его использовать нельзя.",
+                          text:"c5_13text4".tr(),
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -1765,8 +1689,7 @@ class _ChapterFiveState extends State<ChapterFive> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text:
-                              "Презервативы обычно имеют смазку (кроме некоторых специальных презервативов), но для снижения риска повреждения во время половых контактов следует использовать дополнительно специальную смазку на водной основе. Нельзя использовать для смазки жирные кремы, вазелин или бытовые жиры, поскольку жир растворяет латекс, из которого сделан презерватив, что может привести к нарушению его целостности. ",
+                          text:"c5_14text1".tr(),
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -1787,8 +1710,7 @@ class _ChapterFiveState extends State<ChapterFive> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text:
-                              "Аккуратно разорвите упаковку, потянув за насечки в упаковке. Будьте осторожны с ногтями, не открывайте упаковку презерватива ножницами. Презерватив изготавливается из очень прочного латекса, но его можно легко повредить при воздействии острых предметов (ножницы, ногти).",
+                          text:"c5_14text2".tr(),
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -1809,8 +1731,7 @@ class _ChapterFiveState extends State<ChapterFive> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text:
-                              "Не разворачивайте презерватив заранее и не надувайте его.",
+                          text:"c5_14text3".tr(),
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -1843,8 +1764,7 @@ class _ChapterFiveState extends State<ChapterFive> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text:
-                              "Надевайте презерватив с самого начала полового акта лишь при полной эрекции, т.е. когда половой член стал твердым.",
+                          text:"c5_15text1".tr(),
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -1865,8 +1785,7 @@ class _ChapterFiveState extends State<ChapterFive> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text:
-                              "Сожмите верхушку презерватива большим и указательными пальцами, чтобы в ней не было воздуха.",
+                          text:"c5_15text2".tr(),
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -1887,8 +1806,7 @@ class _ChapterFiveState extends State<ChapterFive> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text:
-                              "Приложите свернутый презерватив к головке члена и разверните другой рукой по всей длине полового члена.",
+                          text:"c5_15text3".tr(),
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -1909,8 +1827,7 @@ class _ChapterFiveState extends State<ChapterFive> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text:
-                              "После окончания полового акта, придерживая презерватив за кольцо, выньте член из влагалища, пока он не расслабился.",
+                          text:"c5_15text4".tr(),
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -1931,8 +1848,7 @@ class _ChapterFiveState extends State<ChapterFive> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text:
-                              "После использования презерватива, завяжите его и выбросите в мусорное ведро.",
+                          text:"c5_15text5".tr(),
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -1953,7 +1869,7 @@ class _ChapterFiveState extends State<ChapterFive> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text: "Используйте презерватив только один раз.",
+                          text:"c5_15text6".tr(),
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -1974,8 +1890,7 @@ class _ChapterFiveState extends State<ChapterFive> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text:
-                              "Если во время полового акта произошел разрыв презерватива, необходимо использовать методы экстренной контрацепции и постконтактную профилактику ВИЧ и ИППП.",
+                          text:"c5_15text7".tr(),
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),

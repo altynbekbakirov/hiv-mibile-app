@@ -61,10 +61,8 @@ class _ChapterFourState extends State<ChapterFour> {
     show();
   }
 
-  String textAza =
-      'Специфические инфекционные заболевания у людей с ВИЧ называют оппортунистическими инфекциями (ОИ).';
-  String textNadya =
-      'Важно помнить, что специалистам, вовлеченным в процесс оказания услуг по вопросам лечения и ухода для ЛЖВ, следует предлагать все усилия для максимально раннего начала АРТ, как только в этом возникнет необходимость (при числе лимфоцитов CД4 менее 500 клеток/мкл). Раннее начало АРТ позволяет избежать возникновения таких серьезных ОИ, как ПЦП, а также таких дополнительных вмешательств, как профилактическое лечение котримоксазолом.';
+  String textAza = "c4_text1".tr();
+  String textNadya = "c4_text1".tr();
 
   show() async {
     await Future.delayed(const Duration(seconds: 1), () {
@@ -90,23 +88,20 @@ class _ChapterFourState extends State<ChapterFour> {
           children: [
             RichText(
               text: TextSpan(children: [
-                header("Оппортунистические инфекции (ОИ)"),
-                normalText(
-                    "Оппортунистические инфекции (ОИ) – это особые заболевания, которые развиваются только при снижении иммунитета. Вирус иммунодефицита человека (ВИЧ), убивает клетки иммунной системы, в результате иммунитет снижается и присоединяются оппортунистические инфекции, которые не вызывают заболевания у человека с сильной иммунной системой. "),
+                header("c4_1text1".tr()),
+                normalText("c4_1text2".tr()),
               ], style: TextStyle(fontSize: fontSize)),
             ),
             SizedBox(height: 20),
             Image.asset("assets/images/oportunisticheskie1.png"),
             RichText(
               text: TextSpan(children: [
-                normalText(
-                    "\n\nОсновным показателем состояния иммунной системы – является количество иммунных клеток – СД4 лимфоцитов. Снижение числа СД4  ниже 350 клеток/мкл, говорит о существенном снижении иммунитета и высоком риске возникновении оппортунистических инфекций. "),
+                normalText("c4_1text3".tr()),
               ], style: TextStyle(fontSize: fontSize)),
             ),
             RichText(
               text: TextSpan(children: [
-                normalText(
-                    "\n\nЧаще всего из ОИ встречается туберкулез, пневмоцистная пневмония, токсоплазмоз, саркома Капоши (рак кожи), грибковые поражения и другое."),
+                normalText("c4_1text4".tr()),
               ], style: TextStyle(fontSize: fontSize)),
             ),
             SizedBox(height: 90),
@@ -124,30 +119,24 @@ class _ChapterFourState extends State<ChapterFour> {
           children: [
             RichText(
               text: TextSpan(children: [
-                header("Основные проявления ОИ:"),
+                header("c4_2text1".tr()),
               ], style: TextStyle(fontSize: fontSize)),
             ),
             Image.asset("assets/images/oportunisticheskie2.png"),
             SizedBox(height: 20),
             RichText(
               text: TextSpan(children: [
-                normalText(
-                    "Проявления и время проявления ОИ у каждого человека разное. У ВИЧ-позитивного человека с хорошим состоянием иммунитета, оппортунистические инфекции не возникают или протекают в легкой форме. Основные проявления:"),
-                normalText(
-                    "\n - постоянная слабость, усталость, повышенная утомляемость;"),
-                normalText("\n - увеличение лимфатических узлов;"),
-                normalText("\n - потеря массы тела (исхудание);"),
-                normalText(
-                    "\n - длительная лихорадка (повышение температуры тела);"),
-                normalText("\n - ночная потливость;"),
-                normalText("\n - постоянные головные боли;"),
-                normalText("\n - кашель и одышка (затрудненное дыхание);"),
-                normalText(
-                    "\n - стоматит (воспаление и язвы слизистой оболочки полости рта);"),
-                normalText(
-                    "\n - заболевания ЛОР-органов (ангина, отит, синусит);"),
-                normalText(
-                    "\n - поражения кожи (герпес, опоясывающий лишай, грибок ногтей и др.)."),
+                normalText("c4_2text2".tr()),
+                normalText("c4_2text3".tr()),
+                normalText("c4_2text4".tr()),
+                normalText("c4_2text5".tr()),
+                normalText("c4_2text6".tr()),
+                normalText("c4_2text7".tr()),
+                normalText("c4_2text8".tr()),
+                normalText("c4_2text9".tr()),
+                normalText("c4_2text10".tr()),
+                normalText("c4_2text11".tr()),
+                normalText("c4_2text12".tr()),
               ], style: TextStyle(fontSize: fontSize)),
             ),
             SizedBox(height: 90),
@@ -165,13 +154,8 @@ class _ChapterFourState extends State<ChapterFour> {
           children: [
             RichText(
               text: TextSpan(children: [
-                header("Чем опасны оппортунистические инфекции"),
-                normalText(
-                    "Оппортунистические инфекции при развитии иммунодефицита могут привести"
-                    " к серьезным проблемам здоровья у ВИЧ-инфицированных людей. "
-                    "Некоторые инфекции могут развиваться только у людей с ВИЧ (например, токсоплазмоз), другие – в сочетании с "
-                    "ВИЧ протекают очень тяжело и (например, туберкулез).   ОИ являются основной причиной смерти людей, живущих "
-                    "с ВИЧ."),
+                header("c4_3text1".tr()),
+                normalText("c4_3text2".tr()),
               ], style: TextStyle(fontSize: fontSize)),
             ),
             SizedBox(height: 90),
@@ -189,13 +173,10 @@ class _ChapterFourState extends State<ChapterFour> {
           children: [
             RichText(
               text: TextSpan(children: [
-                header("Как предупредить развитие ОИ"),
-                normalText(
-                    "Раннее начало лечения ВИЧ-инфекции АРВ препаратами, высокая приверженность к терапии является основным способом предупреждения ОИ."),
-                normalText(
-                    "\n\nПлохое питание, нарушение режима сна и отдыха, потребление алкоголя и наркотиков приводит к снижению иммунитета и повышает риск развития ОИ."),
-                normalText(
-                    "\n\nКонтакт с животными, употребление в пищу некипяченого молока, сырых яиц или плохо проваренного мяса; уход за животными; контакт с больными инфекционными заболеваниями, незащищенные половые контакты повышают риск заражения ОИ. "),
+                header("c4_4text1".tr()),
+                normalText("c4_4text2".tr()),
+                normalText("c4_4text3".tr()),
+                normalText("c4_4text4".tr()),
               ], style: TextStyle(fontSize: fontSize)),
             ),
             SizedBox(height: 90),
@@ -213,31 +194,22 @@ class _ChapterFourState extends State<ChapterFour> {
           children: [
             RichText(
               text: TextSpan(children: [
-                boldText("Для сохранения здоровья нужно:"),
-                normalText(
-                    "\n- пить бутилированную или кипяченую воду для профилактики кишечных инфекций;"),
-                normalText(
-                    "\n- избегать контакта с людьми с инфекционными заболеваниями, часто и правильно мыть руки; носить защитную маску в общественных местах или при контакте с больными;"),
-                normalText(
-                    "\n- проветривать помещение, соблюдать личную гигиену (содержать руки и тело в чистоте); регулярно гулять на свежем воздухе;"),
-                normalText(
-                    "\n- женщинам с ВИЧ ежегодно проходить гинекологическое обследование, что позволит предотвратить либо вовремя выявить онкологические заболевания. "),
-                normalText(
-                    "\n- избегать стрессов, потребления алкоголя, никотина и наркотиков;"),
-                normalText(
-                    "\n- получать прививки для детей и взрослых по назначению врача. Они помогут защититься от инфекций;"),
-                normalText(
-                    "\n- при половых контактах всегда использовать презерватив."),
+                boldText("c4_5text1".tr()),
+                normalText("c4_5text2".tr()),
+                normalText("c4_5text3".tr()),
+                normalText("c4_5text4".tr()),
+                normalText("c4_5text5".tr()),
+                normalText("c4_5text6".tr()),
+                normalText("c4_5text7".tr()),
+                normalText("c4_5text8".tr()),
               ], style: TextStyle(fontSize: fontSize)),
             ),
             SizedBox(height: 20),
             Image.asset("assets/images/prava2.png"),
             RichText(
               text: TextSpan(children: [
-                boldText(
-                    "\n\nОппортунистические инфекции появляются при ослаблении иммунитета. "),
-                normalText(
-                    "Поэтому важно обследоваться на СД4-клетки и своевременно получить лекарства для профилактики ОИ при низком уровне СД4. ")
+                boldText("c4_5text9".tr()),
+                normalText("c4_5text10".tr())
               ], style: TextStyle(fontSize: fontSize)),
             ),
             SizedBox(height: 90),
@@ -255,13 +227,11 @@ class _ChapterFourState extends State<ChapterFour> {
           children: [
             RichText(
               text: TextSpan(children: [
-                header("Туберкулез у людей с ВИЧ"),
-                boldText("Как передается туберкулез"),
-                normalText(
-                    "\n    Туберкулез – инфекционное заболевание, передающееся от больного туберкулезом здоровому человеку при кашле, чихании и разговоре. Туберкулезом можно также заразиться через продукты (некипяченое молоко, сырые яйца, не проваренное мясо). Туберкулез является одной из причин смертности среди людей, живущих с ВИЧ."),
-                boldText("\n\nКак проявляется туберкулез у людей с ВИЧ"),
-                normalText(
-                    "\n    Туберкулез – это одна из основных оппортунистических инфекций при ВИЧ-инфекция, что связано со снижением иммунитета. У людей с ВИЧ туберкулез протекает более тяжело. При числе СД4 менее 200 клеток/мкл, туберкулез может поражать не только легкие, но также позвоночник, головной мозг, сердце, почки, кости и другие органы. Туберкулез также приводит к ухудшению течения ВИЧ-инфекции – повышению вирусной нагрузки ВИЧ, что приводит к еще большему снижению иммунитета и ухудшению здоровья. "),
+                header("c4_6text1".tr()),
+                boldText("c4_6text2".tr()),
+                normalText("c4_6text3".tr()),
+                boldText("c4_6text4".tr()),
+                normalText("c4_6text5".tr()),
               ], style: TextStyle(fontSize: fontSize)),
             ),
             SizedBox(height: 90),
@@ -279,21 +249,11 @@ class _ChapterFourState extends State<ChapterFour> {
           children: [
             RichText(
               text: TextSpan(children: [
-                boldText("    Как проявляется туберкулез у людей с ВИЧ"),
-                normalText(
-                    "\n\nК наиболее частым проявлениям туберкулеза обносятся:"),
-                normalText(
-                  "\n- кашель на протяжении двух недель и более; "
-                  "\n- кровохарканье (появление крови в мокроте или при кашле); "
-                  "\n- затрудненное дыхание (одышка); "
-                  "\n- потеря веса (похудание); "
-                  "\n- повышенная температура тела (37ͦС – 37,5 ͦС и выше); "
-                  "\n- повышенная ночная потливость; "
-                  "\n- усталость, утомляемость; "
-                  "\n- увеличение лимфатических узлов.",
+                boldText("c4_7text1".tr()),
+                normalText("c4_7text2".tr()),
+                normalText("c4_7text3".tr()
                 ),
-                normalText(
-                    "\n\n  Если у человека с ВИЧ отмечается хотя бы один из таких проявлений, то следует срочно обратиться к врачу. Проводится консультация фтизиатра, рентгенологическое и лабораторное исследование мокроты."),
+                normalText("c4_7text4".tr()),
               ], style: TextStyle(fontSize: fontSize)),
             ),
             SizedBox(height: 90),
@@ -311,29 +271,21 @@ class _ChapterFourState extends State<ChapterFour> {
           children: [
             RichText(
               text: TextSpan(children: [
-                boldText("Лечение туберкулеза у людей с ВИЧ"),
-                normalText(
-                    "\n\n   Лечение туберкулеза следует начинать немедленно. Жизненно важно завершить полный курс лечения и строго следовать предписаниям врача"),
+                boldText("c4_8text1".tr()),
+                normalText("c4_8text2".tr()),
                 TextSpan(
-                  text: '\n   Внимание: туберкулез излечим! ',
+                  text: "c4_8text3".tr(),
                   style: TextStyle(
                     color: Colors.red,
                     fontSize: fontSize,
                     fontWeight: FontWeight.w600,
                   ),
                 ),
-                normalText(
-                    "При соблюдении режима лечения с момента выявления заболевания и до полного излечения,"
-                    'необходимо быть в контакте с врачом, вовремя проходить лабораторные исследования и '
-                    'ограничить контакты, чтобы не заразить близких при бытовом общении. '),
-                normalText(
-                    "\n    При выявлении ТБ сначала начинают лечить туберкулез, затем (в течение 2 недель) подключают АРВ терапию. "),
-                normalText(
-                    "\n    У людей с ВИЧ повышен риск заболеть туберкулезом и, чтобы избежать заражения, всем ЛЖВ назначается профилактическое лечение изониазидом, которое нужно принимать 6 месяцев. "),
-                boldText("\n\nДля чего нужно принимать котримаксазол"),
-                normalText(
-                    "\n\nПри сочетании туберкулеза с ВИЧ-инфекцией пациентам также назначают котримаксазол. Это препятствует "
-                    "развитию одной из часто встречающейся оппортунистической инфекции – пневмоцистной пневмонии. ")
+                normalText("c4_8text4".tr()),
+                normalText("c4_8text5".tr()),
+                normalText("c4_8text6".tr()),
+                boldText("c4_8text7".tr()),
+                normalText("c4_8text8".tr())
               ], style: TextStyle(fontSize: fontSize)),
             ),
             SizedBox(height: 90),
@@ -351,20 +303,11 @@ class _ChapterFourState extends State<ChapterFour> {
           children: [
             RichText(
               text: TextSpan(children: [
-                boldText("Что такое вирусные гепатиты?"),
-                normalText(
-                    "\n\nПечень выполняет важные функции в организме. Гепатит – это воспаление печени в результате действия вирусов, химических веществ, алкоголя. "),
-                normalText(
-                    "\n\nНаиболее опасны вирусные гепатиты В и С. Их основные проявления – желтуха "
-                    "(пожелтение кожи, белков глаз, мочи), увеличение печени, боли в животе, плохой сон, "
-                    "быстрая утомляемость, снижение веса, плохой аппетит, тошнота. Гепатит С может протекать "
-                    "незаметно, но приводит к тяжелым последствиям (его еще называют «ласковый убийца»)."),
-                normalText(
-                    "\n\nЛюди заражаются гепатитами В и С, также как ВИЧ, через кровь (часто при использовании загрязненных игл и шприцев). "
-                    "Поэтому многие ЛЖВ инфицированы также гепатитами В и С. "),
-                normalText(
-                    "\n\nРиск заражения гепатитом В значительно выше, чем ВИЧ. Вирус гепатита В очень устойчив во внешней среде. Им можно также заразиться "
-                    "бытовым путем при пользовании общим полотенцем, бритвенным прибором или половым путем. ")
+                boldText("c4_9text1".tr()),
+                normalText("c4_9text2".tr()),
+                normalText("c4_9text3".tr()),
+                normalText("c4_9text4".tr()),
+                normalText("c4_9text5".tr())
               ], style: TextStyle(fontSize: fontSize)),
             ),
             SizedBox(height: 90),
@@ -382,19 +325,13 @@ class _ChapterFourState extends State<ChapterFour> {
           children: [
             RichText(
               text: TextSpan(children: [
-                boldText("Как выявить вирусный гепатит?"),
-                normalText(
-                    "\n\nОбследование на гепатиты В и С проводится сразу после выявления ВИЧ-инфекции. "),
-                normalText(
-                    "\n\nЕсли у человека с ВИЧ сохраняется опасное поведение (секс без презерватива с "
-                    "разными половыми партнерами, совместное использование шприцев), то обследование проводят ежегодно."),
-                italicText(
-                    "\n\nВ случае появления признаков вирусного гепатита, сразу обратитесь к врачу, пройдите обследование и лечение."),
-                boldText("\n\nКак защитить себя от вирусных гепатитов?\n\n"),
-                normalText(
-                    "Профилактика вирусных гепатитов В и С такая же, как и для ВИЧ-инфекции. "),
-                normalText(
-                    "\n- При употреблении наркотиков, откажитесь от внутривенного использования или пользуйтесь только своим шприцом и приспособлениями для изготовления наркотика.")
+                boldText("c4_10text1".tr()),
+                normalText("c4_10text2".tr()),
+                normalText("c4_10text3".tr()),
+                italicText("c4_10text4".tr()),
+                boldText("c4_10text5".tr()),
+                normalText("c4_10text6".tr()),
+                normalText("c4_10text7".tr())
               ], style: TextStyle(fontSize: fontSize)),
             ),
             Image.asset("assets/images/prophylaxis/1/6.gif"),
@@ -413,39 +350,31 @@ class _ChapterFourState extends State<ChapterFour> {
           children: [
             RichText(
               text: TextSpan(children: [
-                normalText(
-                    "\n- При половых контактах всегда и правильно используйте презерватив."),
+                normalText("c4_11text1".tr()),
               ], style: TextStyle(fontSize: fontSize)),
             ),
             SizedBox(height: 20),
             Image.asset("assets/images/prophylaxis/1/3.gif"),
             RichText(
               text: TextSpan(children: [
-                normalText(
-                    "\n- Пользуйтесь индивидуальными предметами личной гигиены (зубной щеткой, бритвенным станком, полотенцем и др.)."),
-                normalText(
-                    "\n- При проведении татуировки или пирсинга, используйте одноразовые (стерильные) инструменты."),
+                normalText("c4_11text2".tr()),
+                normalText("c4_11text3".tr()),
               ], style: TextStyle(fontSize: fontSize)),
             ),
             Image.asset("assets/images/prophylaxis/1/8.gif"),
             RichText(
               text: TextSpan(children: [
-                normalText(
-                    "\n- От гепатита В защищает прививка, которую ЛЖВ могут получить бесплатно. "),
+                normalText("c4_11text4".tr()),
               ], style: TextStyle(fontSize: fontSize)),
             ),
             Image.asset("assets/images/prophylaxis/2/2.gif"),
             RichText(
               text: TextSpan(children: [
-                boldText("\n\nКак жить с вирусными гепатитами?"),
-                normalText(
-                    "\nВирусные гепатиты В и С нужно обязательно лечить – без лечения развиаются тяжелые осложнения (цирроз или рак печени)."),
-                boldText(
-                    "\n\nЛЖВ могут бесплатно получить лечение гепатита С, "),
-                normalText(
-                    "и более 90% людей излечиваются от него.  Курс лечения длится 3-6 месяцев."),
-                normalText(
-                    "\n\nДля гепатита В также существует лечение, но оно длительное. Некоторые АРВ-препараты (тенофовир, ламивудин, эмтрицитабин) помогают в лечении гепатита В."),
+                boldText("c4_11text5".tr()),
+                normalText("c4_11text6".tr()),
+                boldText("c4_11text7".tr()),
+                normalText("c4_11text8".tr()),
+                normalText("c4_11text9".tr()),
               ], style: TextStyle(fontSize: fontSize)),
             ),
             SizedBox(height: 90),
@@ -463,17 +392,12 @@ class _ChapterFourState extends State<ChapterFour> {
           children: [
             RichText(
               text: TextSpan(children: [
-                boldText("Рекомендации для больных гепатитами:"),
-                normalText(
-                    "\n- ограничить чрезмерные физические нагрузки, соблюдать режим дня;"),
-                normalText(
-                    "\n- не употреблять (или сильно ограничить) наркотики, алкоголь, курение;"),
-                normalText(
-                    "\n- отказаться от некоторых продуктов (жирного, жаренного, острого);"),
-                normalText(
-                    "\n- сообщить половому партнеру и членам семьи о своем заболевании, а также о мерах безопасности и соблюдать их."),
-                normalText(
-                    "\n- дополнительную информацию, вопросы обследования, профилактики и лечения обсуждать с врачом."),
+                boldText( "c4_12text1".tr()),
+                normalText("c4_12text2".tr()),
+                normalText("c4_12text3".tr()),
+                normalText("c4_12text4".tr()),
+                normalText("c4_12text5".tr()),
+                normalText("c4_12text6".tr()),
               ], style: TextStyle(fontSize: fontSize)),
             ),
             SizedBox(height: 90),

@@ -70,7 +70,7 @@ class _TreatmentDrugsState extends State<TreatmentDrugs> {
         ListTile(
           title: RichText(
             text: TextSpan(
-              text: "Антиретровирусные препараты",
+              text: "presence_of_hiv_2text1".tr(),
               style: chapterStyle,
             ),
           ),
@@ -81,43 +81,28 @@ class _TreatmentDrugsState extends State<TreatmentDrugs> {
             text: TextSpan(
               children: [
                 TextSpan(
-                  text: 'Антиретровирусные препараты (АРВП)',
+                  text:"presence_of_hiv_2text2".tr(),
                   style: normalBold,
                 ),
                 TextSpan(
-                  text: ' – это лекарства, которые действуют против '
-                      'ретровируса – то есть вируса, который вызывает ВИЧ-инфекцию.\n',
+                  text: "presence_of_hiv_2text3".tr(),
                 ),
                 TextSpan(
-                  text:
-                  '\nВ настоящее время существует много эффективных препаратов для лечения ВИЧ-инфекции. '
-                      'Важно получать одновременно несколько препаратов, которые действуют на разные этапы развития '
-                      'вируса. Современные лекарства включают три разных препарата в одной таблетке.\n',
+                  text:"presence_of_hiv_2text4".tr(),
                 ),
                 TextSpan(
-                  text:
-                  '\nДо настоящего времени не разработано лекарство, которое могло бы полностью излечить человека '
-                      'от ВИЧ-инфекции, и нет вакцины, которая могла бы защитить от заражения ВИЧ. Поэтому человек '
-                      'с ВИЧ должен постоянно получать лечение.\n',
+                  text:"presence_of_hiv_2text5".tr(),
                   style: contentItalic,
                 ),
                 TextSpan(
-                  text: '\nКак действуют антиретровирусные препараты?',
+                  text: "presence_of_hiv_2text6".tr(),
                   style: normalBoldForChapter,
                 ),
                 TextSpan(
-                  text:
-                  '\n\nАнтиретровирусные препараты не излечивают от ВИЧ-инфекции, а лишь подавляют размножение '
-                      'вируса. В результате применения АРТ, содержание ВИЧ в организме уменьшается в тысячи и '
-                      'миллионы раз, ВИЧ перестает размножаться и не разрушает иммунные клетки. С этого времени '
-                      'иммунная система начинает восстанавливаться.\n',
+                  text:"presence_of_hiv_2text7".tr(),
                 ),
                 TextSpan(
-                  text:
-                  '\nВ настоящее время в мире применяется более 20 антиретровирусных препаратов. Каждый препарат'
-                      ' действует на один из этапов размножения вируса. Поэтому врачи подбирают схему лечения, '
-                      'которая включает несколько препаратов. АРВП, дополняя друг друга, обеспечивают защиту '
-                      'организма от ВИЧ.\n',
+                  text:"presence_of_hiv_2text8".tr(),
                 ),
               ],
               style: contentNormal,
@@ -133,7 +118,7 @@ class _TreatmentDrugsState extends State<TreatmentDrugs> {
               child: ListTile(
                 title: RichText(
                   text: TextSpan(
-                    text: "Схема АРТ всегда содержит три разных АРВ-препарата.",
+                    text:"presence_of_hiv_2text9".tr(),
                     style: contentNormal,
                   ),
                 ),
@@ -150,7 +135,7 @@ class _TreatmentDrugsState extends State<TreatmentDrugs> {
               child: ListTile(
                 title: RichText(
                   text: TextSpan(
-                    text: "Схему лечения определяет врач, с учетом особенностей здоровья и результатов лабораторного исследования.",
+                    text:"presence_of_hiv_2text10".tr(),
                     style: contentNormal,
                   ),
                 ),
@@ -167,7 +152,7 @@ class _TreatmentDrugsState extends State<TreatmentDrugs> {
               child: ListTile(
                 title: RichText(
                   text: TextSpan(
-                    text: "В одной таблетке может содержаться 1, 2, или 3 препарата.",
+                    text:"presence_of_hiv_2text11".tr(),
                     style: contentNormal,
                   ),
                 ),
@@ -184,8 +169,7 @@ class _TreatmentDrugsState extends State<TreatmentDrugs> {
               child: ListTile(
                 title: RichText(
                   text: TextSpan(
-                    text: "Ежедневно принимают от одной до трех (иногда до шести) таблеток. Это зависит от "
-                        "состояния иммунитета и устойчивости вируса к препаратам.",
+                    text:"presence_of_hiv_2text12".tr(),
                     style: contentNormal,
                   ),
                 ),
@@ -198,12 +182,11 @@ class _TreatmentDrugsState extends State<TreatmentDrugs> {
             text: TextSpan(
               children: [
                 TextSpan(
-                  text: 'Для того, чтобы контролировать лечение, нужно регулярно сдавать кровь на вирусную '
-                      'нагрузку – то есть узнавать о количестве вируса в крови.\n',
+                  text:"presence_of_hiv_2text13".tr(),
                   style: normalBold,
                 ),
                 TextSpan(
-                  text: '\nКогда АРТ перестает работать (не снижается вирусная нагрузка)?\n',
+                  text: "presence_of_hiv_2text14".tr(),
                   style: normalBold,
                 ),
               ],
@@ -220,8 +203,7 @@ class _TreatmentDrugsState extends State<TreatmentDrugs> {
               child: ListTile(
                 title: RichText(
                   text: TextSpan(
-                    text: "Чаще всего это связано с низкой приверженностью к лечению - когда ЛЖВ по разным причинам "
-                        "пропускают прием препаратов.",
+                    text:"presence_of_hiv_2text15".tr(),
                     style: contentNormal,
                   ),
                 ),
@@ -238,7 +220,7 @@ class _TreatmentDrugsState extends State<TreatmentDrugs> {
               child: ListTile(
                 title: RichText(
                   text: TextSpan(
-                    text: "Иногда сам ВИЧ приспосабливается и становится невосприимчивым (устойчивым) к действию лекарств.",
+                    text: "presence_of_hiv_2text16".tr(),
                     style: contentNormal,
                   ),
                 ),
@@ -251,16 +233,15 @@ class _TreatmentDrugsState extends State<TreatmentDrugs> {
             text: TextSpan(
               children: [
                 TextSpan(
-                  text: '\nТакие случаи нужно обсудить с врачом и совместно решать проблему.\n',
+                  text: "presence_of_hiv_2text17".tr(),
                   style: normalBold,
                 ),
                 TextSpan(
-                  text: '\nНазначение АРВП проводится в строгом соответствии с инструкциями, которые утверждаются '
-                      'Министерством здравоохранения (они называются Клинические протоколы).\n',
+                  text:"presence_of_hiv_2text18".tr(),
                   style: normalBold,
                 ),
                 TextSpan(
-                  text: '\nВ мире ведется постоянная работа по созданию новых более эффективных лекарств для лечения ВИЧ-инфекции.\n',
+                  text: "presence_of_hiv_2text19".tr(),
                   style: normalBold,
                 ),
               ],

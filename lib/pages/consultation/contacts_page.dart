@@ -219,7 +219,7 @@ class _ContactsPageState extends State<ContactsPage>
               // TODO Add telegram Profile Name
               contentBuilder('+996558558980', "", 'contact_to_doctor', "doctor_consultation"),
               contentBuilder('+996558558981', "", 'contact_to_equal_consultant', 'equal_consultant'),
-              contentBuilder('+996558558982', "", 'contact_to_psychologist', 'Психолог'),
+              contentBuilder('+996555558982', "", 'contact_to_psychologist', 'Психолог'),
               contentBuilder('+996558558983', "", 'contact_to_lawyer', 'Юрист'),
             ],
           ),

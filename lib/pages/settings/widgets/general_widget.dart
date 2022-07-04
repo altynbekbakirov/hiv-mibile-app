@@ -84,20 +84,20 @@ class _GeneralWidgetState extends State<GeneralWidget> {
             ),
           ),
         ),
-       ListTile(
-            leading: Text(
-              'about_app'.tr(),
-              style: TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.w500,
-              ),
+        ListTile(
+          leading: Text(
+            'about_app'.tr(),
+            style: TextStyle(
+              fontSize: 16,
+              fontWeight: FontWeight.w500,
             ),
-            onTap: () => Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => AboutApp(),
-                )),
           ),
+          onTap: () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => AboutApp(),
+              )),
+        ),
         ListTile(
           leading: Text(
             'language'.tr(),
@@ -134,7 +134,10 @@ class _GeneralWidgetState extends State<GeneralWidget> {
               _checkInternetConnection().then((value) {
                 if (value) {
                   logout().then((value) {
-                    Navigator.pushAndRemoveUntil<void>(context, MaterialPageRoute(builder: (context) => LoginPage()), ModalRoute.withName('/'));
+                    Prefs.setString(Prefs.TOKEN, null);
+                    Prefs.setString(Prefs.USERNAME, null);
+                    Navigator.pushAndRemoveUntil<void>(
+                        context, MaterialPageRoute(builder: (context) => LoginPage()), ModalRoute.withName('/'));
                   });
                 } else {
                   _showErrorDialog('connect_to_internet_to_logout'.tr());
@@ -145,11 +148,10 @@ class _GeneralWidgetState extends State<GeneralWidget> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                "logout".tr(),
-                style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w500,
-                    color: kDesaturatedBlue),
+                Prefs.getString(Prefs.USERNAME) != null && Prefs.getString(Prefs.TOKEN) != null
+                    ? "logout".tr()
+                    : 'SignIn'.tr(),
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500, color: kDesaturatedBlue),
               ),
               FaIcon(Icons.exit_to_app, color: kDesaturatedBlue),
             ],

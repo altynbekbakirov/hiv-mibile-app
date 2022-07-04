@@ -23,9 +23,8 @@ class _ChapterSixState extends State<ChapterSix> {
   int showChapterSixDialog;
 
   String first =
-      'Право – это один из видов регуляции отношений в обществе; это система обязательных для граждан прописанных, гарантированных государством правил поведения.';
-  String second =
-      'Привлечение лиц, живущих с ВИЧ, в качестве объектов для испытаний лекарственных средств, научного исследования или учебного процесса, фотографирования, видеоили киносъемки производится только с их или их законных представителей письменного согласия.';
+  "c6_text1".tr();
+  String second ="c6_text2".tr();
 
   @override
   void initState() {
@@ -103,11 +102,9 @@ class _ChapterSixState extends State<ChapterSix> {
             RichText(
               text: TextSpan(
                 children: [
-                  header("Права ЛЖВ "),
-                  normalText(
-                      "Права человека гарантируются законами Кыргызской Республики; они предоставляются каждому человеку от рождения и не могут ущемляться в связи с ВИЧ-статусом. Люди, живущие с ВИЧ, обладают всей полнотой социально-экономических, политических, личных прав и свобод, а также несут обязанности, закрепленные законодательством Кыргызской Республики."),
-                  italicText(
-                      "\n\nУслуги профилактики, лечения, ухода и поддержки оказываются на принципах уважения и соблюдения прав человека, потребностях и интересах этих людей. "),
+                  header("c6_1text1".tr()),
+                  normalText("c6_1text2".tr()),
+                  italicText("c6_1text3".tr()),
                 ],
               ),
             ),
@@ -115,20 +112,17 @@ class _ChapterSixState extends State<ChapterSix> {
             RichText(
               text: TextSpan(
                 children: [
-                  boldText("\n\nГарантии государства для ЛЖВ "),
-                  normalText(
-                      "\nЗакон «О ВИЧ/СПИДе в Кыргызской Республике» предусматривает медицинскую и социальную помощь ЛЖВ и членам их семей. Закон запрещает "),
-                  boldText(
-                      "какое-либо принуждение при проведении тестирования на ВИЧ, проведение его без согласия обследуемого лица либо с использованием методов физического, психологического и морального давления."),
-                  boldText(
-                      "\n\nСведения о заражении того или иного лица вирусом иммунодефицита человека составляют служебную тайну, охраняемую законом. За разглашение служебной тайны "),
+                  boldText("c6_1text4".tr()),
+                  normalText("c6_1text5".tr()),
+                  boldText("c6_1text6".tr()),
+                  boldText("c6_1text7".tr()),
                   TextSpan(
-                      text: "предусмотрена уголовная ответственность ",
+                      text: "c6_1text8".tr(),
                       style: TextStyle(
                           color: Colors.red,
                           fontSize: fontSize,
                           fontWeight: FontWeight.w600)),
-                  boldText("(Ст. 160 УК КР)."),
+                  boldText("c6_1text9".tr()),
                 ],
               ),
             ),
@@ -149,7 +143,7 @@ class _ChapterSixState extends State<ChapterSix> {
               child: RichText(
                 text: TextSpan(
                   children: [
-                    boldText("Люди, живущие с ВИЧ, имеют право:"),
+                    boldText("c6_2text1".tr()),
                   ],
                 ),
               ),
@@ -167,8 +161,7 @@ class _ChapterSixState extends State<ChapterSix> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text:
-                              "на уважительное и гуманное отношение, исключающее унижение человеческого достоинства в связи с данным заболеванием;",
+                          text:"c6_2text2".tr(),
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -189,8 +182,7 @@ class _ChapterSixState extends State<ChapterSix> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text:
-                              "на получение качественной медицинской и лекарственной помощи; на добровольное, анонимное и конфиденциальное медицинское освидетельствование; на дотестовое и послетестовое психосоциальное консультирование;",
+                          text:"c6_2text3".tr(),
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -211,8 +203,7 @@ class _ChapterSixState extends State<ChapterSix> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                        text:
-                            "на получение достоверной и полной информации о своих правах, характере имеющегося у них заболевания и применяемых методах наблюдения и лечения;",
+                        text:"c6_2text4".tr(),
                         style: TextStyle(
                             color: Colors.black,
                             fontSize: fontSize,
@@ -236,8 +227,7 @@ class _ChapterSixState extends State<ChapterSix> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                        text:
-                            "на социальное обеспечение и обслуживание в порядке, предусмотренном законодательством; ",
+                        text:"c6_2text5".tr(),
                         style:
                             TextStyle(color: Colors.black, fontSize: fontSize),
                       ),
@@ -260,7 +250,7 @@ class _ChapterSixState extends State<ChapterSix> {
                     title: RichText(
                       text: TextSpan(
                         text:
-                            "на получение бесплатной квалифицированной юридической помощи и психологической поддержки;",
+                        "c6_2text6".tr(),
                         style:
                             TextStyle(color: Colors.black, fontSize: fontSize),
                       ),
@@ -294,8 +284,7 @@ class _ChapterSixState extends State<ChapterSix> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text:
-                              "на реализацию сексуальных и репродуктивных прав;",
+                          text:"c6_3text1".tr(),
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -316,8 +305,7 @@ class _ChapterSixState extends State<ChapterSix> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text:
-                              "на профессиональное образование, переквалификацию и трудовую деятельность по избранной профессии, за исключением работы по специальностям и на должностях, установленных специальным перечнем, утвержденным Правительством Кыргызской Республики;",
+                          text:"c6_3text2".tr(),
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -338,8 +326,7 @@ class _ChapterSixState extends State<ChapterSix> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                        text:
-                            "на свободный выбор врача и организации здравоохранения при проведении медицинского освидетельствования, лечения и наблюдения. ",
+                        text:"c6_3text3".tr(),
                         style: TextStyle(
                             color: Colors.black,
                             fontSize: fontSize,
@@ -354,8 +341,7 @@ class _ChapterSixState extends State<ChapterSix> {
             RichText(
               text: TextSpan(
                 children: [
-                  italicText(
-                      "Привлечение лиц, живущих с ВИЧ, в качестве объектов для испытаний лекарственных средств, научного исследования или учебного процесса, фотографирования, видео- или киносъемки производится только с их или их законных представителей письменного согласия. "),
+                  italicText("c6_3text4".tr()),
                 ],
               ),
             ),
@@ -376,12 +362,11 @@ class _ChapterSixState extends State<ChapterSix> {
               child: RichText(
                 text: TextSpan(
                   children: [
-                    header("Социальная защита ЛЖВ"),
-                    normalText(
-                      "Лицам, заражение которых произошло вследствие выполнения медицинских манипуляций, предусмотрено возмещение вреда в порядке, установленном законодательством Кыргызской Республики.",
+                    header("c6_4text1".tr()),
+                    normalText("c6_4text2".tr(),
                     ),
                     normalText(
-                      "\n\nЛицам, живущим с ВИЧ, которым установлена инвалидность, назначается пенсия по инвалидности, а при отсутствии права на пенсионное обеспечение – социальное пособие в соответствии с законодательством Кыргызской Республики.",
+                      "c6_4text3".tr(),
                     )
                   ],
                 ),
@@ -405,24 +390,15 @@ class _ChapterSixState extends State<ChapterSix> {
               child: RichText(
                 text: TextSpan(
                   children: [
-                    header(
-                        "ОТВЕТСТВЕННОСТЬ и ОГРАНИЧЕНИЯ, ПРЕДУСМОТРЕННЫЕ ЗАКОНОМ"),
+                    header( "c6_5text1".tr()),
+                    normalText( "c6_5text2".tr(),),
+                    boldText( "c6_5text3".tr(),),
+                    normalText( "c6_5text4".tr(),),
+                    boldText( "c6_5text5".tr()),
+                    normalText( "c6_5text6".tr()),
+                    boldText( "c6_5text7".tr()),
                     normalText(
-                      "Если человек имеет права, то он обладает и обязанностями. ",
-                    ),
-                    boldText(
-                      "Наши права заканчиваются там, где начинаются права других людей. ",
-                    ),
-                    normalText(
-                      "Поэтому, законом внесены ограничения. ЛЖВ обязаны принимать меры по предотвращению передачи ВИЧ-инфекции.",
-                    ),
-                    boldText("\n\nОграничения, связанные с работой:"),
-                    normalText(
-                        "\nЛЖВ имеют право на работу по выбранным специальностям. Однако существует запрет на работу на некоторых медицинских должностях, которые связаны с кровью (т.е. работа хирургов, акушер-гинекологов, работников отделений переливания крови и другие). Список ограничений утвержден Правительством Кыргызской Республики и направлен на профилактику передачи ВИЧ при проведении медицинских процедур. "),
-                    boldText(
-                        "Любые другие ограничения при приеме на работу не допускаются."),
-                    normalText(
-                        "\n\nЕсли Вас просят принести справку о тестировании на ВИЧ, когда Вы поступаете на работу, не связанную с указанными выше медицинскими специальностями – это нарушение Ваших прав."),
+                        "c6_5text8".tr()),
                   ],
                 ),
               ),
@@ -444,24 +420,18 @@ class _ChapterSixState extends State<ChapterSix> {
               child: RichText(
                 text: TextSpan(
                   children: [
-                    boldText(
-                        "ЛЖВ не могут быть донорами крови, органов и тканей, "),
-                    normalText(
-                      "поскольку ВИЧ передается через кровь и таким образом человек, получающий кровь (реципиент), может быть инфицирован ВИЧ.",
+                    boldText("c6_6text1".tr()),
+                    normalText("c6_6text2".tr(),
                     ),
-                    boldText(
-                      "\n\nОграничения, связанные с передачей ВИЧ половым путем:",
+                    boldText("c6_6text3".tr(),
                     ),
+                    normalText("c6_6text4".tr()),
+                    boldText("c6_6text5".tr()),
+                    normalText("c6_6text6".tr()),
+                    normalText("c6_6text7".tr()),
+                    boldText("c6_6text8".tr()),
                     normalText(
-                        "\nЗаконом не ограничены права на сексуальные отношения, но не должны нарушаться права полового партнера. Ваш партнер (как мужчина, так и женщина) должны быть информированы о Вашем ВИЧ-статусе. "),
-                    boldText(
-                        "Каждый человек должен самостоятельно принять решение о продолжении сексуальных отношений в случае инфицирования ВИЧ его полового партнера.  "),
-                    normalText(
-                        "Врач или сотрудники НПО, по Вашей просьбе, могут помочь в вопросах информирования партнера."),
-                    normalText("\n\nСуществует "),
-                    boldText("дискордантные "),
-                    normalText(
-                        "пары, в которых один из партнеров ВИЧ-позитивный. За многие годы наблюдения не установлено факта заражения ВИЧ партнера в случаях, когда применяются более безопасные сексуальные практики; используется презерватива и принимается АРТ, что снижает риск передачи ВИЧ. "),
+                        "c6_6text9".tr()),
                   ],
                 ),
               ),
@@ -483,15 +453,11 @@ class _ChapterSixState extends State<ChapterSix> {
               child: RichText(
                 text: TextSpan(
                   children: [
-                    boldItalicText(
-                        "В соответствии с законодательством Кыргызской Республики, ЛЖВ несут уголовную ответственность за поставление в опасность заражения либо заражение ВИЧ другого человека (Ст. 149 УК КР). "),
-                    normalText(
-                      "\n\nК сожалению, в Кыргызстане известно много случаев, когда ЛЖВ с известным ВИЧ-статусом не информировали своих половых партнеров, не использовали средств защиты – в результате происходила передача ВИЧ при половом контакте. ",
+                    boldItalicText("c6_7text1".tr()),
+                    normalText("c6_7text2".tr(),
                     ),
-                    boldText(
-                        "\n\nОграничения для родителей ВИЧ-позитивных детей:"),
-                    normalText(
-                        "\nИногда ВИЧ-позитивные женщины отказываются от приема АРТ для профилактики передачи ВИЧ от матери ребенку, не проводят обследование и лечение детей. В результате дети отстают в физическом развитии, часто болеют, выявляются в запущенных стадиях ВИЧ-инфекции либо умирают. В соответствии с законодательством, родители могут быть привлечены к ответственности за нарушение права детей на здоровье и жизнь. "),
+                    boldText("c6_7text3".tr()),
+                    normalText("c6_7text4".tr()),
                   ],
                 ),
               ),
@@ -513,10 +479,9 @@ class _ChapterSixState extends State<ChapterSix> {
               child: RichText(
                 text: TextSpan(
                   children: [
-                    boldText(
-                        "Некоторые международные ограничения, касающиеся ЛЖВ"),
+                    boldText("c6_8text1".tr()),
                     normalText(
-                        "\nНекоторые международные ограничения, касающиеся ЛЖВ В ряде стран существует запрет на въезд и пребывание иностранных граждан, живущих с ВИЧ. Количество таких стран уменьшилось с 68 стран в 2008 до 19 – в 2016 году. Однако, Россия сохраняет ограничения на работу и на получение гражданства для ЛЖВ и не предоставляет АРТ иностранным гражданам. "),
+                        "c6_8text2".tr()),
                   ],
                 ),
               ),
@@ -539,15 +504,12 @@ class _ChapterSixState extends State<ChapterSix> {
               child: RichText(
                 text: TextSpan(
                   children: [
-                    header(
-                        "Социальная защита детей, живущих с ВИЧ (Ст. 12 закона о ВИЧ/СПИДе)"),
-                    normalText(
-                      "Дети в возрасте до двух лет, которым установлен диагноз ВИЧ-инфекции и/или СПИД, признаются инвалидами с детства.",
+                    header("c6_9text1".tr()),
+                    normalText("c6_9text2".tr(),
                     ),
+                    normalText("c6_9text3".tr()),
                     normalText(
-                        "\n\nДетям с ВИЧ-инфекцией и больным СПИДом устанавливается государственное пособие с момента регистрации, а детям, рожденным от матерей, живущих с ВИЧ, – с момента рождения до достижения 18 месяцев, в порядке, установленном законодательством Кыргызской Республики. Пособие выдается в размере 4000 сомов ежемесячно."),
-                    normalText(
-                      "\n\nДети, рожденные от матерей, живущих с ВИЧ, обеспечиваются заменителями грудного молока до достижения возраста одного года за счет средств местного бюджета. ",
+                      "c6_9text4".tr(),
                     ),
                   ],
                 ),
@@ -570,12 +532,10 @@ class _ChapterSixState extends State<ChapterSix> {
               child: RichText(
                 text: TextSpan(
                   children: [
+                    normalText("c6_10text1".tr()),
+                    normalText("c6_10text2".tr()),
                     normalText(
-                        "\nДети, живущие с ВИЧ, находящиеся в клиниках, реабилитационных центрах или по состоянию здоровья в домашних условиях, имеют право на обучение по специальным программам курса средней общеобразовательной школы и начального профессионального образования, утвержденной Министерством образования и Министерством труда и социальной защиты Кыргызской Республики."),
-                    normalText(
-                        "\n\nНе допускается отказ в приеме в детские дошкольные учреждения, школы, интернаты и санаторно-оздоровительные учреждения детей, живущих с ВИЧ."),
-                    normalText(
-                        "\n\nДети, живущие с ВИЧ, имеют все остальные права, предусмотренные законодательством Кыргызской Республики: на право жить в семье; защиту от насилия; на информацию; на учет его мнения, относительно лечения и профилактики ВИЧ, на наличие документов, удостоверяющих личность, уважение достоинства ребенка и, естественно, на личную тайну.  "),
+                        "c6_10text3".tr()),
                   ],
                 ),
               ),
@@ -597,18 +557,16 @@ class _ChapterSixState extends State<ChapterSix> {
               child: RichText(
                 text: TextSpan(
                   children: [
-                    header("СТИГМА И ДИСКРИМИНАЦИЯ"),
-                    boldText("Стигма"),
-                    normalText(
-                        "– дословно «ярлык», «клеймо», «пятно» – это сильный негативный ярлык, который полностью меняет отношение людей к другим людям и самим себе, заставляя относиться к человеку как к носителю нежелательного качества. "),
-                    boldText("\n\nСтигматизация"),
-                    normalText(
-                        " – это процесс обесценивания личности – присвоение человеку унижающих его достоинство свойств, связанных с его особенностями, например, цветом кожи, занятием какой-либо деятельностью, сексуальной ориентацией, фактом употребления наркотиков или заражения ВИЧ. "),
-                    boldText("Она "),
-                    normalText(
-                        "опасна не только тем, что вызывает у человека чувство стыда, вины и изоляции, но и потому, что вызывает бездействие или действия со стороны других людей, которые могут нанести вред людям, или привести к ущемлению их прав. Такие действия являются "),
-                    boldText("дискриминацией."),
-                    boldText("\n\nПричины стигмы"),
+                    header("c6_11text1".tr()),
+                    boldText("c6_11text2".tr()),
+                    normalText("c6_11text3".tr()),
+                    boldText("c6_11text4".tr()),
+                    normalText("c6_11text5".tr()),
+                    boldText("c6_11text6".tr()),
+                    normalText("c6_11text7".tr()),
+                    boldText("c6_11text8".tr()),
+                    normalText("c6_11text85".tr()),
+                    boldText("c6_11text9".tr()),
                   ],
                 ),
               ),
@@ -626,8 +584,7 @@ class _ChapterSixState extends State<ChapterSix> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text:
-                              "Стигма, основана на страхе людей перед последствиями ВИЧ-инфекции из-за мифа о смертельности этого заболевания",
+                          text:"c6_11text10".tr(),
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -648,7 +605,7 @@ class _ChapterSixState extends State<ChapterSix> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text: "Незнание и непонимание путей передачи ВИЧ.",
+                          text: "c6_11text11".tr(),
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -681,8 +638,7 @@ class _ChapterSixState extends State<ChapterSix> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text:
-                              "Существование стереотипов о людях, подвергшихся заражению ВИЧ-инфекцией.",
+                          text:"c6_12text1".tr(),
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -703,8 +659,7 @@ class _ChapterSixState extends State<ChapterSix> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text:
-                              "Обвинение людей, живущих с ВИЧ, в «неправильном поведении».",
+                          text:"c6_12text2".tr(),
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -725,8 +680,7 @@ class _ChapterSixState extends State<ChapterSix> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text:
-                              "Формирование негативного отношения в обществе к людям, при распространении мифов и недостоверной информации.",
+                          text:"c6_12text3".tr(),
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -747,8 +701,7 @@ class _ChapterSixState extends State<ChapterSix> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text:
-                              "Гендерные и другие виды неравенства, усиливающие стигму.",
+                          text:"c6_12text4".tr(),
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -759,12 +712,11 @@ class _ChapterSixState extends State<ChapterSix> {
             RichText(
               text: TextSpan(
                 children: [
-                  normalText(
-                      "Нередко ЛЖВ испытывают не одну, двойную, тройную стигму. Например, в результате бедности и ВИЧ; в результате отнесения к меньшинствам (люли) и ВИЧ; как наркопотребители /заключенные (или бывшие заключенные) и "),
-                  boldText(" ВИЧ."),
-                  boldText("\n\nДискриминация – "),
-                  normalText(
-                      "это намеренные действия или бездействие, совершаемые для того, чтобы унизить других людей, отказать им в предоставлении услуг или реализации их прав. Она сопровождается установлением различия между людьми, приводящим к пристрастному и несправедливому отношению к некоторым из них из-за того, что они принадлежат к определенной группе, имеют особенности здоровья, поведения, а также по другим причинам. "),
+                  normalText("c6_12text5".tr()),
+                  boldText("c6_12text6".tr()),
+                  normalText("c6_12text65".tr()),
+                  boldText("c6_12text7".tr()),
+                  normalText("c6_12text8".tr()),
                 ],
               ),
             ),
@@ -783,10 +735,9 @@ class _ChapterSixState extends State<ChapterSix> {
             RichText(
               text: TextSpan(
                 children: [
-                  boldText("Дискриминация "),
-                  normalText(
-                      "может привести к ограничению доступ к образованию, здравоохранению, жилищным условиям и занятости по сравнению с другими людьми. \n\nСтигматизация и дискриминация, связанные с ВИЧ, являются главными препятствиями на пути предотвращения новых случаев инфицирования ВИЧ в стране."),
-                  boldText("\n\nПоследствия стигмы и дискриминации: "),
+                  boldText("c6_13text1".tr()),
+                  normalText("c6_13text2".tr()),
+                  boldText("c6_13text3".tr()),
                 ],
               ),
             ),
@@ -803,8 +754,7 @@ class _ChapterSixState extends State<ChapterSix> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text:
-                              "Позднее выявление ВИЧ-инфекции (в продвинутых стадиях ВИЧ-инфекции с тяжелым поражением иммунитета).",
+                          text:"c6_13text4".tr(),
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -825,8 +775,7 @@ class _ChapterSixState extends State<ChapterSix> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text:
-                              "Отказ от лечения, прерывание лечения, высокий уровень смертности.",
+                          text:"c6_13text5".tr(),
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -847,7 +796,7 @@ class _ChapterSixState extends State<ChapterSix> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text: "Отказ от лечения детей.",
+                          text: "c6_13text6".tr(),
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -868,7 +817,7 @@ class _ChapterSixState extends State<ChapterSix> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text: "Отрицание проблемы (ВИЧ-статуса).",
+                          text: "c6_13text7".tr(),
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -889,7 +838,7 @@ class _ChapterSixState extends State<ChapterSix> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text: "Отказ от пособий на детей.",
+                          text:"c6_13text8".tr(),
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -910,7 +859,7 @@ class _ChapterSixState extends State<ChapterSix> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text: "Отсутствие групп поддержки.",
+                          text: "c6_13text9".tr(),
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -933,11 +882,9 @@ class _ChapterSixState extends State<ChapterSix> {
             RichText(
               text: TextSpan(
                 children: [
-                  header("КАК ЗАЩИТИТЬ СВОИ ПРАВА?"),
-                  boldText(
-                      "Запрет на ограничение прав и стигматизацию людей, живущих с ВИЧ, предусмотрен законом «О ВИЧ/СПИДе в Кыргызской Республике» (ст. 13). "),
-                  italicText(
-                      "\n\nНе допускается дискриминация и стигматизация ЛЖВ и ЛПВ, а также ущемление их законных интересов, прав и свобод на основании наличия у них ВИЧ-инфекции. Не допускается отказ:"),
+                  header("c6_14text1".tr()),
+                  boldText("c6_14text2".tr()),
+                  italicText("c6_14text3".tr()),
                 ],
               ),
             ),
@@ -953,8 +900,7 @@ class _ChapterSixState extends State<ChapterSix> {
                   flex: 5,
                   child: ListTile(
                     title: RichText(
-                        text: italicText(
-                            "в заключении либо прекращение трудового договора, кроме отдельных видов профессиональной деятельности, установленных специальным перечнем;")),
+                        text: italicText("c6_14text4".tr())),
                   ),
                 ),
               ],
@@ -971,8 +917,7 @@ class _ChapterSixState extends State<ChapterSix> {
                   flex: 5,
                   child: ListTile(
                     title: RichText(
-                        text: italicText(
-                            "в приеме в образовательные организации и организации здравоохранения.")),
+                        text: italicText("c6_14text5".tr())),
                   ),
                 ),
               ],
@@ -980,8 +925,7 @@ class _ChapterSixState extends State<ChapterSix> {
             RichText(
               text: TextSpan(
                 children: [
-                  italicText(
-                      "Нарушение положений настоящего Закона влечет за собой дисциплинарную, административную, уголовную и гражданскую правовую ответственность."),
+                  italicText("c6_14text6".tr()),
                 ],
               ),
             ),
@@ -1000,14 +944,12 @@ class _ChapterSixState extends State<ChapterSix> {
             RichText(
               text: TextSpan(
                 children: [
-                  normalText(
-                      "Для ЛЖВ и их близкого окружения важно знать о том, какие права они имеют и как обеспечить, чтобы все, что им принадлежит по праву и гарантируется государством, непременно выполнялось. "),
-                  boldText("\n\nЗнание"),
-                  normalText(
-                      "\nКаждый человек должен знать свои права, а также знать где он может получить помощь для защиты своих прав. Информация о правах дается в этом модуле (аудиоверсии в этом приложении); получить у сотрудников НПО или в медицинских организациях.  "),
-                  boldText("\n\nПрактика"),
-                  normalText(
-                      "\nУмение отстаивать свои права. Вы можете потребовать изменить отношение к себе, например, со стороны медицинских или социальных и других работников. Но для этого следует прежде преодолеть свою собственную стигму. Вы должны быть сами уверены в своей ценности и потребовать ее уважать со стороны окружающих."),
+                  normalText("c6_15text1".tr()),
+                  boldText("c6_15text2".tr()),
+                  normalText("c6_15text3".tr()),
+                  boldText("c6_15text4".tr()),
+                  normalText("c6_15text5".tr()
+                      ),
                 ],
               ),
             ),
@@ -1026,11 +968,9 @@ class _ChapterSixState extends State<ChapterSix> {
             RichText(
               text: TextSpan(
                 children: [
-                  boldText("Защита"),
-                  normalText(
-                      "\nЕсли Ваши права нарушены, нужно их защитить. Каким образом? Обратиться с жалобой к вышестоящему начальству или в правоохранительные органы. Если Вы готовы идти до конца и действовать жестко, то отстаивать права через суд. Это трудный процесс: (1) это финансовые затраты (нужно оплачивать судебные пошлины и адвоката); (2) это морально-психологические издержки – поскольку другая сторона тоже будет защищаться. Здесь важна помощь НПО и юристов.Обращение в суд по поводу нарушения прав важно, но многие к этому не готовы. Можно, также обратиться в прокуратуру с жалобой на неправомерные действия государственных служб. "),
-                  normalText(
-                      "\n\nСогласно закону о ВИЧ/СПИДе (Ст. 17), неправомерные действия или бездействие должностных лиц, нарушающие права ЛЖВ и ЛПВ могут быть обжалованы в суде в порядке, установленном законодательством Кыргызской Республики."),
+                  boldText("c6_16text1".tr()),
+                  normalText("c6_16text2".tr()),
+                  normalText("c6_16text3".tr()),
                 ],
               ),
             ),
@@ -1049,13 +989,10 @@ class _ChapterSixState extends State<ChapterSix> {
             RichText(
               text: TextSpan(
                 children: [
-                  boldText("Поддержка"),
-                  normalText(
-                      "\nПоддержку могут оказать сотрудники центров СПИД; НПО; правозащитные организации; институт Омбудсмена; некоторые международные организации (например, ОБСЕ). Вы можете обратиться за помощью в юридическую клинику при университете, но не все они могут оказать поддержку в суде). По закону суд может предоставить Вам бесплатного адвоката, но это не гарантирует успеха. "),
-                  normalText(
-                      "\n\nНПО документируют нарушение прав и включают это в отчеты государству и международным институтам. НПО могут оказать поддержку в правильной подготовке жалобы и вынести ее на уровень Правительства, депутатов Жогорку Кенеша и Омбудсмена. "),
-                  normalText(
-                      "\n\nНПО также проводят обучение ЛЖВ и лиц, оказывающих помощь, по вопросам прав человека, а также предоставляет правовую поддержку. Важную информацию Вы можете также получить от консультантов из сообщества. "),
+                  boldText("c6_17text1".tr()),
+                  normalText("c6_17text2".tr()),
+                  normalText("c6_17text3".tr()),
+                  normalText("c6_17text4".tr()),
                 ],
               ),
             ),

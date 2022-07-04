@@ -63,60 +63,54 @@ class _SelfProtectInfoScreenState extends State<SelfProtectInfoScreen> {
   List listOne = [
     [
       "assets/images/prevent1.png",
-      "Воздержание: Отказ от сексуальных контактов"
+      "hiv_prevention_car1_text1".tr()
     ],
     [
       "assets/images/prevent5.png",
-      "Верность одному неинфицированному \nВИЧ половому партнеру\n",
-      "Это означает отказ от случайных половых контактов, химсекса, и иных форм опасного "
-          "сексуального поведения. Насильственный секс усиливает риск инфицирования ВИЧ"
+      "hiv_prevention_car1_text2".tr()
     ],
     [
       "assets/images/prevent6.png",
-      "Всегда использовать презерватив и смазки на водной основе (лубриканты) при половых контактах"
+      "hiv_prevention_car1_text3".tr()
     ],
     [
       "assets/images/prevent7.png",
-      "Выявление и лечение ИППП совместно с половым партнером"
+      "hiv_prevention_car1_text4".tr()
     ]
   ];
 
   List listTwo = [
-    ["assets/images/prevent2.png", "Отказ от употребления наркотиков"],
+    ["assets/images/prevent2.png", "hiv_prevention_car2_text1".tr()],
     [
       "assets/images/prevent.png",
-      "Если Вы употребляете наркотики, то снижайте риск: \n",
-      "\nпользуйтесь только своим чистым шприцем; не набирайте наркотик из общей посуды; от инъекционного потребления – "
-          "переходите на неинъекционные пути потребления (курение, прием через рот) или примите участие в программе "
-          "поддерживающей терапии метадоном. "
+      "hiv_prevention_car2_text2".tr()
     ],
     [
       "assets/images/prevent8.png",
-      "Не проводите медицинские манипуляции у случайных людей вне медицинского учреждения"
+      "hiv_prevention_car2_text3".tr()
     ],
     [
       "assets/images/prevent9.png",
-      "При проведении процедур, связанных с повреждением кожи ",
-      "(иглоукалывание; татуировки, пирсинг), следите, чтобы использовалось стерильное оборудование"
+      "hiv_prevention_car2_text4".tr()
     ],
   ];
 
   List listThree = [
     [
       "assets/images/prevent3.png",
-      "Пройдите вместе с половым партнером тест на ВИЧ при планировании или на ранней стадии беременности"
+      "hiv_prevention_car3_text1".tr()
     ],
     [
       "assets/images/prevent10.png",
-      "Если у Вас ВИЧ, строго соблюдайте назначения по лечению ВИЧ-инфекции (АРТ), которое предупредит передачу ВИЧ ребенку",
+      "hiv_prevention_car3_text2".tr(),
     ],
     [
       "assets/images/prevent11.png",
-      "Проведите обследование на ВИЧ новорожденного ребенка и его лечение против ВИЧ сразу после родов"
+      "hiv_prevention_car3_text3".tr()
     ],
     [
       "assets/images/prevent12.png",
-      "Наблюдайтесь у врача и следуйте рекомендациям о родах и кормлении ребенка"
+      "hiv_prevention_car3_text4".tr()
     ],
   ];
 
@@ -159,12 +153,12 @@ class _SelfProtectInfoScreenState extends State<SelfProtectInfoScreen> {
                 CarouselPage(
                   list: list[1],
                   height: fontSize.toInt() == 24
-                      ? 450
+                      ? 505
                       : fontSize.toInt() == 20
-                          ? 360
+                          ? 450
                           : fontSize.toInt() == 18
-                              ? 330
-                              : 400,
+                              ? 400
+                              : 490,
                   fontSize: fontSize,
                   textStyle: contentNormal,
                 ),
@@ -344,18 +338,14 @@ class _SelfProtectInfoScreenState extends State<SelfProtectInfoScreen> {
           title: RichText(
             textAlign: TextAlign.center,
             text: TextSpan(
-                text: "Как предотвратить заражение ВИЧ", style: chapterStyle),
+                text: "hiv_prevention1text1".tr(), style: chapterStyle),
           ),
         ),
         ListTile(
           title: RichText(
             text: TextSpan(children: [
               TextSpan(
-                text:
-                    "Предупредить заражение ВИЧ легче, чем лечить. Соблюдение мер профилактики защитит Вас от заражения "
-                    "вирусными гепатитами или инфекциями, которые передаются половым путем (ИППП). Инфицирование ИППП "
-                    "увеличивает риск заражения ВИЧ половым путем. \n\nПоскольку ВИЧ передается только тремя путями – можно"
-                    " защитить себя от заражения используя следующие правила.\n",
+                text:"hiv_prevention1text2".tr(),
                 style: contentNormal,
               ),
             ]),
@@ -370,8 +360,7 @@ class _SelfProtectInfoScreenState extends State<SelfProtectInfoScreen> {
                 textAlign: TextAlign.center,
                 text: TextSpan(children: [
                   TextSpan(
-                      text:
-                          "Профилактика полового пути \nпередачи ВИЧ строится на стратегии четыре В:",
+                      text:"hiv_prevention1text3".tr(),
                       style: normalBold),
                 ]),
               ),
@@ -381,17 +370,14 @@ class _SelfProtectInfoScreenState extends State<SelfProtectInfoScreen> {
         Container(
           height: 50,
           child: Row(
+            mainAxisAlignment: MainAxisAlignment.end,
             children: <Widget>[
-              Expanded(
-                flex: 4,
-                child: Container(),
-              ),
-              Expanded(
+              Container(
                 child: listOne.length - 1 == _current
                     ? Container()
                     : Container(
                         child: Row(children: [
-                          Text("ЛИСТАЙ"),
+                          Text("hiv_prevention1text4".tr()),
                           Container(
                               width: 10.0,
                               height: 10.0,
@@ -429,7 +415,7 @@ class _SelfProtectInfoScreenState extends State<SelfProtectInfoScreen> {
                 textAlign: TextAlign.center,
                 text: TextSpan(children: [
                   TextSpan(
-                      text: "Профилактика инъекционного пути передачи ВИЧ",
+                      text: "hiv_prevention1text5".tr(),
                       style: TextStyle(
                           fontWeight: FontWeight.w600,
                           fontSize: fontSize + 2,
@@ -442,17 +428,15 @@ class _SelfProtectInfoScreenState extends State<SelfProtectInfoScreen> {
         Container(
           height: 50,
           child: Row(
+            mainAxisAlignment: MainAxisAlignment.end,
             children: <Widget>[
-              Expanded(
-                flex: 4,
-                child: Container(),
-              ),
-              Expanded(
+              Container(
                 child: listTwo.length - 1 == _currentSecond
                     ? Container()
                     : Container(
-                  child: Row(children: [
-                    Text("ЛИСТАЙ"),
+                  child: Row(
+                      children: [
+                    Text("hiv_prevention1text4".tr()),
                     Container(
                         width: 10.0,
                         height: 10.0,
@@ -491,8 +475,7 @@ class _SelfProtectInfoScreenState extends State<SelfProtectInfoScreen> {
                 textAlign: TextAlign.center,
                 text: TextSpan(children: [
                   TextSpan(
-                      text:
-                          "Профилактика передачи ВИЧ от ВИЧ-позитивной матери ребенку",
+                      text:"hiv_prevention1text6".tr(),
                       style: TextStyle(
                           fontWeight: FontWeight.w600,
                           fontSize: fontSize + 2,
@@ -505,17 +488,14 @@ class _SelfProtectInfoScreenState extends State<SelfProtectInfoScreen> {
         Container(
           height: 50,
           child: Row(
+            mainAxisAlignment: MainAxisAlignment.end,
             children: <Widget>[
-              Expanded(
-                flex: 4,
-                child: Container(),
-              ),
-              Expanded(
+              Container(
                 child: listThree.length - 1 == _currentThird
                     ? Container()
                     : Container(
                   child: Row(children: [
-                    Text("ЛИСТАЙ"),
+                    Text("hiv_prevention1text4".tr()),
                     Container(
                         width: 10.0,
                         height: 10.0,
@@ -549,22 +529,17 @@ class _SelfProtectInfoScreenState extends State<SelfProtectInfoScreen> {
             text: TextSpan(
               children: [
                 TextSpan(
-                    text:
-                        "Даже, если человек живет с ВИЧ, ему нужно соблюдать меры профилактики",
+                    text:"hiv_prevention1text7".tr(),
                     style: TextStyle(
                         fontSize: fontSize + 4,
                         color: Colors.black,
                         fontWeight: FontWeight.w600)),
                 TextSpan(
-                    text:
-                        " для предупреждения передачи ВИЧ другим людям. Это защитит самого человека с ВИЧ от заражения "
-                        "вирусными гепатитами, ИППП, а также от повторного заражения другим измененным вирусом "
-                        "иммунодефицита человека. ",
+                    text:"hiv_prevention1text8".tr(),
                     style:
                         TextStyle(fontSize: fontSize + 4, color: Colors.black)),
                 TextSpan(
-                    text:
-                        "Повторное заражение, а также заражение другими инфекциями ухудшит его состояние здоровья.",
+                    text:"hiv_prevention1text9".tr(),
                     style: TextStyle(
                         fontSize: fontSize + 4,
                         color: Colors.black,
@@ -580,10 +555,7 @@ class _SelfProtectInfoScreenState extends State<SelfProtectInfoScreen> {
               padding: const EdgeInsets.all(16),
               child: RichText(
                 text: TextSpan(
-                    text:
-                        "Для предупреждения ВИЧ-инфекции можно также проводить профилактическое лечение до контакта – "
-                        "называется доконтактная профилактика (ДКП), а также после опасного \nконтакта  –  постконтактая "
-                        "профилактика (ПКП).",
+                    text:"hiv_prevention1text10".tr(),
                     style: TextStyle(
                         fontSize: fontSize + 4, fontWeight: FontWeight.w600)),
               ),

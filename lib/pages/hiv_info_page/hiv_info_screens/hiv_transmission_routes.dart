@@ -65,12 +65,10 @@ class _HivTransmissionRoutesScreenState
           title: RichText(
             text: TextSpan(children: [
               TextSpan(
-                  text: "Как вирус попадает в организм человека\n\n",
+                  text:"hiv_info2text1".tr(),
                   style: chapterStyle),
               TextSpan(
-                text:
-                    "Спасибо, что остаетесь на связи с нами.  В этом разделе содержится важная информация, "
-                    "которая поможет определить собственные риски заражения ВИЧ и как этого можно избежать.\n",
+                text:"hiv_info2text2".tr(),
                 style: contentItalic,
               ),
             ]),
@@ -79,10 +77,9 @@ class _HivTransmissionRoutesScreenState
         ListTile(
           title: RichText(
             text: TextSpan(children: [
-              TextSpan(text: "ВИЧ", style: normalBold),
+              TextSpan(text:"hiv_info2text3".tr(), style: normalBold),
               TextSpan(
-                text: " – это вирус иммунодефицита человека. "
-                    "Это означает, что им болеет только человек и вирус передается от человека к человеку.\n",
+                text:"hiv_info2text4".tr(),
                 style: contentNormal,
               ),
             ]),
@@ -92,7 +89,7 @@ class _HivTransmissionRoutesScreenState
           title: RichText(
             text: TextSpan(children: [
               TextSpan(
-                  text: "Существует только 3 пути передачи ВИЧ: \n",
+                  text: "hiv_info2text5".tr(),
                   style: normalBoldForChapter),
             ]),
           ),
@@ -111,7 +108,7 @@ class _HivTransmissionRoutesScreenState
               child: ListTile(
                   title: RichText(
                 text: TextSpan(children: [
-                  TextSpan(text: "Половой путь", style: contentNormal),
+                  TextSpan(text:"hiv_info2text6".tr(), style: contentNormal),
                 ]),
               )),
             ),
@@ -131,7 +128,7 @@ class _HivTransmissionRoutesScreenState
               child: ListTile(
                   title: RichText(
                 text: TextSpan(children: [
-                  TextSpan(text: "Инъекционный", style: contentNormal),
+                  TextSpan(text:"hiv_info2text7".tr(), style: contentNormal),
                 ]),
               )),
             ),
@@ -152,8 +149,7 @@ class _HivTransmissionRoutesScreenState
                   title: RichText(
                 text: TextSpan(children: [
                   TextSpan(
-                      text:
-                          "От ВИЧ-позитивной матери ребенку во время беременности, родов и при кормлении грудью",
+                      text:"hiv_info2text8".tr(),
                       style: contentNormal),
                 ]),
               )),
@@ -166,12 +162,9 @@ class _HivTransmissionRoutesScreenState
         ListTile(
           title: RichText(
             text: TextSpan(children: [
-              TextSpan(text: "Половой путь: ", style: normalBold),
+              TextSpan(text: "hiv_info2text9".tr(), style: normalBold),
               TextSpan(
-                  text: "ВИЧ передается при всех видах сексуальных контактов. "
-                      "Особенно опасны анальные половые контакты; частая смена половых партнеров; "
-                      "случайные половые контакты; насильственный и групповой секс. Увеличивают риск "
-                      "инфицирования ИППП – инфекции, которые передаются половым путем (сифилис, гонорея и др.). ",
+                  text: "hiv_info2text10".tr(),
                   style: contentNormal),
             ]),
           ),
@@ -181,11 +174,9 @@ class _HivTransmissionRoutesScreenState
           title: RichText(
             text: TextSpan(children: [
               TextSpan(
-                  text: "Снижает риск инфицирования ВИЧ: ", style: normalBold),
+                  text:"hiv_info2text11".tr(), style: normalBold),
               TextSpan(
-                  text: "Воздержание от половых контактов; "
-                      "верность одному неинфицированному партнеру; использование презервативов и "
-                      "специальных смазок на водной основе (лубрикантов).",
+                  text:"hiv_info2text12".tr(),
                   style: contentNormal),
             ]),
           ),
@@ -197,14 +188,10 @@ class _HivTransmissionRoutesScreenState
           title: RichText(
             text: TextSpan(children: [
               TextSpan(
-                  text: "Инъекционый путь передачи ВИЧ возможен: ",
+                  text:"hiv_info2text13".tr(),
                   style: normalBold),
               TextSpan(
-                  text:
-                      "при совместном употреблении наркотиков путем инъекций; "
-                      "получении медицинских услуг у случайных лиц (переливание крови; хирургические операции; инъекции; "
-                      "лечение у табибов, сопровождающееся повреждением кожи – насечки; кровопускание; обрезание); "
-                      "при проведении татуировок, пирсинга, иглоукалывания нестерильным инструментом.",
+                  text:"hiv_info2text14".tr(),
                   style: contentNormal),
             ]),
           ),
@@ -213,13 +200,9 @@ class _HivTransmissionRoutesScreenState
         ListTile(
           title: RichText(
             text: TextSpan(children: [
-              TextSpan(text: "Снижает риск ", style: normalBold),
+              TextSpan(text: "hiv_info2text15".tr(), style: normalBold),
               TextSpan(
-                  text:
-                      "отказ от употребления наркотиков, использование индивидуального шприца "
-                      "и посуды для приготовления наркотиков; получение медицинских услуг только в медицинских учреждениях; "
-                      "использование стерильного инструментария при проведении татуировок, пирсинга "
-                      "и других процедур вне организаций здравоохранения.",
+                  text:"hiv_info2text16".tr(),
                   style: contentNormal),
             ]),
           ),
@@ -231,15 +214,10 @@ class _HivTransmissionRoutesScreenState
           title: RichText(
             text: TextSpan(children: [
               TextSpan(
-                  text: "От ВИЧ-позитивной матери – ребенку. ",
+                  text:"hiv_info2text17".tr(),
                   style: normalBold),
               TextSpan(
-                  text:
-                      "Своевременное выявление \nВИЧ-инфекции и лечение \nВИЧ-инфекции"
-                      " снижает риск передачи ВИЧ ребенку. \n\nПредлагаем Вам получить консультацию по оценке и снижению риска у "
-                      "консультантов НПО или в медицинском центре. \n\nВы можете сами определить риски инфицирования. Для этого ответьте "
-                      "на следующие несколько вопросов. Если хотя бы по одному вопросу Вы ответили «да», то Вам нужно пройти "
-                      "консультирование и тестирование на ВИЧ, а также предпринять меры по собственной безопасности:",
+                  text:"hiv_info2text18".tr(),
                   style: contentNormal),
             ]),
           ),
@@ -259,7 +237,7 @@ class _HivTransmissionRoutesScreenState
                   title: RichText(
                 text: TextSpan(children: [
                   TextSpan(
-                      text: "Были ли у Вас сексуальные отношения?",
+                      text: "hiv_info2text19".tr(),
                       style: contentNormal),
                 ]),
               )),
@@ -281,8 +259,7 @@ class _HivTransmissionRoutesScreenState
                   title: RichText(
                 text: TextSpan(children: [
                   TextSpan(
-                      text:
-                          "Всегда ли Вы использовали презерватив при сексуальных контактах?",
+                      text:"hiv_info2text20".tr(),
                       style: contentNormal),
                 ]),
               )),
@@ -304,7 +281,7 @@ class _HivTransmissionRoutesScreenState
                   title: RichText(
                 text: TextSpan(children: [
                   TextSpan(
-                      text: "Было ли у Вас более одного полового партнера?",
+                      text:"hiv_info2text21".tr(),
                       style: contentNormal),
                 ]),
               )),
@@ -326,10 +303,7 @@ class _HivTransmissionRoutesScreenState
                   title: RichText(
                 text: TextSpan(children: [
                   TextSpan(
-                      text:
-                          "Были ли у Вас или Вашего полового партнера язвы на половых органах, необычные выделения "
-                          "из половых органов, боли внизу живота, либо проходили ли Вы лечение инфекций, которые передаются "
-                          "половым путем (сифилис, гонорея, трихомониаз)?",
+                      text:"hiv_info2text22".tr(),
                       style: contentNormal),
                 ]),
               )),
@@ -351,8 +325,7 @@ class _HivTransmissionRoutesScreenState
                   title: RichText(
                 text: TextSpan(children: [
                   TextSpan(
-                      text:
-                          "Принимали ли вы когда-либо наркотики путем инъекций, хотя бы раз?",
+                      text:"hiv_info2text23".tr(),
                       style: contentNormal),
                 ]),
               )),
@@ -374,8 +347,7 @@ class _HivTransmissionRoutesScreenState
                   title: RichText(
                 text: TextSpan(children: [
                   TextSpan(
-                      text:
-                          "Принимали ли Вы наркотики совместно с Вашим партнером /партнерами?",
+                      text:"hiv_info2text24".tr(),
                       style: contentNormal),
                 ]),
               )),
@@ -397,7 +369,7 @@ class _HivTransmissionRoutesScreenState
                   title: RichText(
                 text: TextSpan(children: [
                   TextSpan(
-                      text: "Болели ли Вы гепатитом?", style: contentNormal),
+                      text: "hiv_info2text25".tr(), style: contentNormal),
                 ]),
               )),
             ),

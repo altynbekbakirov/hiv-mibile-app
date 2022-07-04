@@ -24,7 +24,7 @@ class WarningPage extends StatelessWidget {
               ),
               SizedBox(height: 20),
               Text(
-                'Внимание',
+                "test_warning".tr(),
                 style: TextStyle(fontSize: 24, color: Colors.black),
               ),
               SizedBox(height: 20),

@@ -23,352 +23,344 @@ class Option {
 List<Question> data = [
   Question(
     id: 0,
-    question: "Что такое  ВИЧ (отметьте один правильный ответ)",
-    correctAnswers: ["ВИЧ – это вирус иммунодефицита человека"],
-    incorrectAnswers: [
-      "ВИЧ – это конечная стадия ВИЧ-инфекции",
-      "ВИЧ – это заболевание, вызванное вирусом иммунодефицита человека",
-      "Все перечисленное",
-      "Не знаю"
-    ],
+    question: "test_hiv_question0",
+    correctAnswers: ["test_hiv_answer1"],
+    incorrectAnswers: [],
     options: [
       Option(
-          selected: false, answer: "ВИЧ – это вирус иммунодефицита человека"),
-      Option(selected: false, answer: "ВИЧ – это конечная стадия ВИЧ-инфекции"),
+          selected: false, answer: "test_hiv_answer1"),
+      Option(selected: false, answer: "test_hiv_0answer2"),
       Option(
           selected: false,
-          answer:
-              "ВИЧ – это заболевание, вызванное вирусом иммунодефицита человека"),
-      Option(selected: false, answer: "Все перечисленное"),
-      Option(selected: false, answer: "Не знаю"),
+          answer:"test_hiv_0answer3"),
+      Option(selected: false, answer:"test_hiv_0answer4"),
+      Option(selected: false, answer: "answer0"),
     ],
   ),
   Question(
     id: 1,
-    question: "Что такое СПИД (отметьте один правильный ответ)",
+    question: "test_hiv_question1",
     correctAnswers: [
-      "Это конечная стадия ВИЧ-инфекции, которая наступает при тяжелом поражении иммунной системы"
+      "test_hiv_1answer1"
     ],
     incorrectAnswers: [],
     options: [
       Option(
           selected: false,
-          answer: "Это заболевание, вызванное вирусом иммунодефицита человека"),
+          answer: "test_hiv_1answer2"),
       Option(
           selected: false,
           answer:
-              "Это конечная стадия ВИЧ-инфекции, которая наступает при тяжелом поражении иммунной системы"),
+          "test_hiv_1answer1"),
       Option(
           selected: false,
-          answer: "Это инфекционное заболевание, вызванное вирусом"),
-      Option(selected: false, answer: "Все перечисленное"),
-      Option(selected: false, answer: "Не знаю"),
+          answer: "test_hiv_1answer3"),
+      Option(selected: false, answer: "test_hiv_1answer4"),
+      Option(selected: false, answer: "answer0"),
     ],
   ),
   Question(
     id: 2,
-    question: "Какие Вы знаете  пути передачи ВИЧ (Отметьте все возможные варианты)",
+    question: "test_hiv_question2",
     correctAnswers: [
-      "ВИЧ передается через кровь",
-      "ВИЧ передается от инфицированной матери ребенку",
-      "ВИЧ передается при половом контакте",
-      "ВИЧ передается при совместном потреблении наркотиков через шприц",
+      "test_hiv_2answer1",
+      "test_hiv_2answer3",
+      "test_hiv_2answer4",
+      "test_hiv_2answer5",
     ],
     incorrectAnswers: [],
     options: [
       Option(
           selected: false,
-          answer: "ВИЧ передается через кровь"),
+          answer: "test_hiv_2answer1"),
       Option(
           selected: false,
           answer:
-              "ВИЧ передается при укусе комара"),
+          "test_hiv_2answer2"),
       Option(
           selected: false,
-          answer: "ВИЧ передается от инфицированной матери ребенку"),
-      Option(selected: false, answer: "ВИЧ передается при половом контакте"),
-      Option(selected: false, answer: "ВИЧ передается при совместном потреблении наркотиков через шприц"),
-      Option(selected: false, answer: "ВИЧ передается через пищу"),
-      Option(selected: false, answer: "Все перечисленное"),
-      Option(selected: false, answer: "Не знаю"),
+          answer: "test_hiv_2answer3"),
+      Option(selected: false, answer: "test_hiv_2answer4"),
+      Option(selected: false, answer: "test_hiv_2answer5"),
+      Option(selected: false, answer: "test_hiv_2answer6"),
+      Option(selected: false, answer: "test_hiv_2answer7"),
+      Option(selected: false, answer: "answer0"),
     ],
   ),
   Question(
     id: 3,
-    question: "Как можно снизить риск передачи ВИЧ половым путем (Отметьте все возможные варианты)",
+    question: "test_hiv_question3",
     correctAnswers: [
-      "Если не вступать в половые контакты",
-      "Если иметь половые контакты с одним неинфицированным партнером",
-      "Если всегда и правильно использовать презерватив",
+      "test_hiv_3answer1",
+      "test_hiv_3answer3",
+      "test_hiv_3answer4",
     ],
     incorrectAnswers: [],
     options: [
       Option(
           selected: false,
-          answer: "Если не вступать в половые контакты"),
+          answer: "test_hiv_3answer1"),
       Option(
           selected: false,
           answer:
-              "Если хорошо помыться перед сексом"),
+          "test_hiv_3answer2"),
       Option(
           selected: false,
-          answer: "Если иметь половые контакты с одним неинфицированным партнером"),
-      Option(selected: false, answer: "Если всегда и правильно использовать презерватив"),
-      Option(selected: false, answer: "Все перечисленное"),
-      Option(selected: false, answer: "Не знаю"),
+          answer: "test_hiv_3answer3"),
+      Option(selected: false, answer: "test_hiv_3answer4"),
+      Option(selected: false, answer: "test_hiv_3answer5"),
+      Option(selected: false, answer: "answer0"),
     ],
   ),
   Question(
     id: 4,
-    question: "Меры профилактики передачи ВИЧ  (Отметьте все возможные варианты)",
+    question: "test_hiv_question4",
     correctAnswers: [
-      "Всегда использовать презерватив",
-      "При проведении медицинских манипуляций использовать только стерильные инструменты",
-      "Прием АРТ для снижения риска передачи ВИЧ",
-      "Назначение АРТ беременным ВИЧ-позитивным женщинам для снижения риска передачи ВИЧ ребенку",
+      "test_hiv_4answer1",
+      "test_hiv_4answer2",
+      "test_hiv_4answer4",
+      "test_hiv_4answer5"
     ],
     incorrectAnswers: [],
     options: [
       Option(
           selected: false,
-          answer: "Всегда использовать презерватив"),
+          answer: "test_hiv_4answer1"),
       Option(
           selected: false,
-          answer:
-              "При проведении медицинских манипуляций использовать только стерильные инструменты"),
+          answer:"test_hiv_4answer2"),
       Option(
           selected: false,
-          answer: "Бороться с кровососущими насекомыми (комары, москиты и др.)"),
-      Option(selected: false, answer: "Прием АРТ для снижения риска передачи ВИЧ"),
-      Option(selected: false, answer: "Назначение АРТ беременным ВИЧ-позитивным женщинам для снижения риска передачи ВИЧ ребенку"),
+          answer: "test_hiv_4answer3"),
+      Option(selected: false, answer:"test_hiv_4answer4"),
+      Option(selected: false, answer:"test_hiv_4answer5"),
     ],
   ),
   Question(
     id: 5,
-    question: "Какие проявления инфекций, передаваемых половым путем (ИППП), Вы знаете (Отметьте все возможные варианты)",
+    question: "test_hiv_question5",
     correctAnswers: [
-      "Зуд в области половых органов",
-      "Необычные выделения из половых органов",
-      "Язвы на половых органах",
+      "test_hiv_5answer1",
+      "test_hiv_5answer2",
+      "test_hiv_5answer3",
     ],
     incorrectAnswers: [],
     options: [
       Option(
           selected: false,
-          answer: "Зуд в области половых органов"),
+          answer: "test_hiv_5answer1"),
       Option(
           selected: false,
           answer:
-              "Необычные выделения из половых органов"),
+          "test_hiv_5answer2"),
       Option(
           selected: false,
-          answer: "Язвы на половых органах"),
-      Option(selected: false, answer: "Ничего из вышеперечисленного"),
-      Option(selected: false, answer: "Не знаю"),
+          answer: "test_hiv_5answer3"),
+      Option(selected: false, answer: "test_hiv_5answer4"),
+      Option(selected: false, answer: "answer0"),
     ],
   ),
   Question(
     id: 6,
-    question: "Как следует действовать при ИППП (Отметьте все возможные варианты)",
+    question: "test_hiv_question6",
     correctAnswers: [
-      "Следует обратиться к врачу и выполнить все назначения",
-      "Нужно сообщить своему половому партнеру / партнерше о своих проблемах и совместно пройти лечение",
-      "Следует воздержаться от половых контактов во время лечения",
+      "test_hiv_6answer3",
+      "test_hiv_6answer6",
+      "test_hiv_6answer7",
     ],
     incorrectAnswers: [],
     options: [
       Option(
           selected: false,
-          answer: "Нужно посоветоваться с подругой /другом и узнать, как он/она лечились, когда у них были такие проявления"),
+          answer: "test_hiv_6answer1"),
       Option(
           selected: false,
           answer:
-              "Нужно сходить в аптеку и спросить, какие лекарства следует принимать"),
+          "test_hiv_6answer2"),
       Option(
           selected: false,
-          answer: "Следует обратиться к врачу и выполнить все назначения"),
-      Option(selected: false, answer: "Не нужно говорить своему половому партнеру / партнерше, а то он/она будут плохо думать о Вас"),
-      Option(selected: false, answer: "Нужно подождать, возможно, все само пройдет"),
-      Option(selected: false, answer: "Нужно сообщить своему половому партнеру / партнерше о своих проблемах и совместно пройти лечение"),
-      Option(selected: false, answer: "Следует воздержаться от половых контактов во время лечения"),
-      Option(selected: false, answer: "Не знаю"),
+          answer: "test_hiv_6answer3"),
+      Option(selected: false, answer: "test_hiv_6answer4"),
+      Option(selected: false, answer: "test_hiv_6answer5"),
+      Option(selected: false, answer: "test_hiv_6answer6"),
+      Option(selected: false, answer: "test_hiv_6answer1"),
+      Option(selected: false, answer: "answer0"),
     ],
   ),
   Question(
     id: 7,
-    question: "Как действует АРТ на организм (Отметьте все возможные варианты)",
+    question: "test_hiv_question7",
     correctAnswers: [
-      "Снижает количества вируса в крови (снижает вирусную нагрузку)",
-      "Улучшает общее состояние здоровья",
-      "Снижает риск передачи ВИЧ при половом контакте",
+      "test_hiv_7answer2",
+      "test_hiv_7answer4",
+      "test_hiv_7answer5",
     ],
     incorrectAnswers: [],
     options: [
       Option(
           selected: false,
-          answer: "Излечивает от ВИЧ-инфекции"),
+          answer: "test_hiv_7answer1"),
       Option(
           selected: false,
-          answer:
-          "Снижает количества вируса в крови (снижает вирусную нагрузку)"),
+          answer:"test_hiv_7answer2"),
       Option(
           selected: false,
-          answer: "Позволяет предотвратить заражение гепатитом"),
-      Option(selected: false, answer: "Улучшает общее состояние здоровья"),
-      Option(selected: false, answer: "Снижает риск передачи ВИЧ при половом контакте"),
-      Option(selected: false, answer: "Защищает от заражения сифилисом"),
-      Option(selected: false, answer: "Все вышеперечисленное"),
-      Option(selected: false, answer: "Не знаю"),
+          answer: "test_hiv_7answer3"),
+      Option(selected: false, answer: "test_hiv_7answer4"),
+      Option(selected: false, answer: "test_hiv_7answer5"),
+      Option(selected: false, answer: "test_hiv_7answer6"),
+      Option(selected: false, answer: "test_hiv_7answer7"),
+      Option(selected: false, answer: "answer0"),
     ],
   ),
   Question(
     id: 8,
-    question: "Как следует принимать АРТ (Отметьте один правильный ответ)",
+    question: "test_hiv_question8",
     correctAnswers: [
-      "Нужно принимать лекарство (АРТ) по назначению врача строго в назначенное время",
+      "test_hiv_8answer4",
     ],
     incorrectAnswers: [],
     options: [
       Option(
           selected: false,
-          answer: "Можно принимать АРТ по назначению врача в любое удобное время"),
+          answer: "test_hiv_8answer1"),
       Option(
           selected: false,
           answer:
-          "Если я пропущу прием препаратов, то я выпью в следующий раз 2 таблетки вместо одной"),
+          "test_hiv_8answer2"),
       Option(
           selected: false,
-          answer: "Если мое состояние здоровья улучшится я могу прекратить прием таблеток"),
-      Option(selected: false, answer: "Нужно принимать лекарство (АРТ) по назначению врача строго в назначенное время"),
-      Option(selected: false, answer: "Если у меня закончатся таблетки, я попрошу их у своих друзей"),
-      Option(selected: false, answer: "Не знаю"),
-      Option(selected: false, answer: "Все вышеперечисленное"),
-      Option(selected: false, answer: "Ничего из вышеперечисленного"),
+          answer: "test_hiv_8answer3"),
+      Option(selected: false, answer: "test_hiv_8answer4"),
+      Option(selected: false, answer: "test_hiv_8answer5"),
+      Option(selected: false, answer: "answer0" ),
+      Option(selected: false, answer: "test_hiv_8answer6"),
+      Option(selected: false, answer: "test_hiv_8answer7"),
     ],
   ),
   Question(
     id: 9,
-    question: "Оппортунистические заболевания или инфекции (Отметьте один правильный ответ)",
+    question: "test_hiv_question9",
     correctAnswers: [
-      "Развиваться только у людей с пониженным иммунитетом",
+      "test_hiv_9answer2",
     ],
     incorrectAnswers: [],
     options: [
       Option(
           selected: false,
-          answer: "Развиваются при КОВИД"),
+          answer: "test_hiv_9answer1"),
       Option(
           selected: false,
           answer:
-          "Развиваться только у людей с пониженным иммунитетом"),
+          "test_hiv_9answer2"),
       Option(
           selected: false,
-          answer: "Развиваются у людей, которые занимаются профессиональным спортом"),
-      Option(selected: false, answer: "Все вышеперечисленное"),
-      Option(selected: false, answer: "Ничего из вышеперечисленного"),
-      Option(selected: false, answer: "Не знаю"),
+          answer: "test_hiv_9answer3"),
+      Option(selected: false, answer: "test_hiv_8answer6"),
+      Option(selected: false, answer: "test_hiv_8answer7"),
+      Option(selected: false, answer: "answer0" ),
     ],
   ),
   Question(
     id: 10,
-    question: "Человек с ВИЧ опасен для окружающих, поэтому все должны знать о его ВИЧ статусе (Отметьте один правильный ответ)",
+    question: "test_hiv_question10",
     correctAnswers: [
-      "Нет",
+      "test_hiv_10answer2",
     ],
     incorrectAnswers: [],
     options: [
       Option(
           selected: false,
-          answer: "Да"),
+          answer: "test_hiv_10answer1"),
       Option(
           selected: false,
           answer:
-          "Нет"),
+          "test_hiv_10answer2"),
       Option(
           selected: false,
-          answer: "Может быть"),
-      Option(selected: false, answer: "Не знаю"),
+          answer: "test_hiv_10answer3"),
+      Option(selected: false, answer: "answer0"),
     ],
   ),
   Question(
     id: 11,
-    question: "Какие права ЛЖВ могут быть ограничены в связи с ВИЧ (Отметьте все возможные варианты)",
+    question: "test_hiv_question11",
     correctAnswers: [
-      "Право быть донором крови, спермы, почки",
-      "Право на работу по некоторым медицинским специальностям, установленным Правительством",
+      "test_hiv_11answer4",
+      "test_hiv_11answer5",
     ],
     incorrectAnswers: [],
     options: [
       Option(
           selected: false,
-          answer: "Право на труд"),
+          answer: "test_hiv_11answer1"),
       Option(
           selected: false,
           answer:
-          "Право создавать семью"),
+          "test_hiv_11answer2"),
       Option(
           selected: false,
-          answer: "Право иметь детей"),
-      Option(selected: false, answer: "Право быть донором крови, спермы, почки"),
-      Option(selected: false, answer: "Право на работу по некоторым медицинским специальностям, установленным Правительством"),
-      Option(selected: false, answer: "Право на отдых на Иссык-Куле"),
-      Option(selected: false, answer: "Все вышеперечисленное"),
-      Option(selected: false, answer: "Ничего из вышеперечисленного"),
-      Option(selected: false, answer: "Не знаю"),
+          answer: "test_hiv_11answer3"),
+      Option(selected: false, answer: "test_hiv_11answer4"),
+      Option(selected: false, answer: "test_hiv_11answer5"),
+      Option(selected: false, answer: "test_hiv_11answer6"),
+      Option(selected: false, answer: "test_hiv_8answer6"),
+      Option(selected: false, answer: "test_hiv_8answer7"),
+      Option(selected: false, answer: "answer0"),
     ],
   ),
   Question(
     id: 12,
-    question: "Каковы позитивные моменты раскрытия Вашего ВИЧ статуса близким людям (Отметьте все возможные варианты)",
+    question: "test_hiv_question12",
     correctAnswers: [
-      "Они окажут Вам помощь и поддержку",
-      "Они помогут Вам справиться с принятием статуса и наладить прием АРТ",
-      "Ваши супруг/супруга смогут сами принять решение о продолжении сексуальных отношений и о их безопасности",
-      "Вы сможете планировать рождение здорового ребенка",
+      "test_hiv_12answer1",
+      "test_hiv_12answer3",
+      "test_hiv_12answer4",
+      "test_hiv_12answer5",
     ],
     incorrectAnswers: [],
     options: [
       Option(
           selected: false,
-          answer: "Они окажут Вам помощь и поддержку"),
+          answer: "test_hiv_12answer1"),
       Option(
           selected: false,
           answer:
-          "Они перестанут с Вами общаться"),
+          "test_hiv_12answer2"),
       Option(
           selected: false,
-          answer: "Они помогут Вам справиться с принятием статуса и наладить прием АРТ"),
-      Option(selected: false, answer: "Ваши супруг/супруга смогут сами принять решение о продолжении сексуальных отношений и о их безопасности"),
-      Option(selected: false, answer: "Вы сможете планировать рождение здорового ребенка"),
-      Option(selected: false, answer: "Они не будут с Вами обедать за одним столом"),
-      Option(selected: false, answer: "Все вышеперечисленное"),
-      Option(selected: false, answer: "Ничего из вышеперечисленного"),
-      Option(selected: false, answer: "Не знаю"),
+          answer: "test_hiv_12answer3"),
+      Option(selected: false, answer: "test_hiv_12answer4"),
+      Option(selected: false, answer: "test_hiv_12answer5"),
+      Option(selected: false, answer: "test_hiv_12answer6"),
+      Option(selected: false, answer: "test_hiv_8answer6"),
+      Option(selected: false, answer: "test_hiv_8answer7"),
+      Option(selected: false, answer: "answer0"),
     ],
   ),
   Question(
     id: 13,
-    question: "Если у Вашего ребенка ВИЧ (Отметьте один правильный ответ)",
+    question: "test_hiv_question13",
     correctAnswers: [
-      "Воспитание и образование ребенка с ВИЧ не отличается от здорового ребенка, только он должен всегда и правильно принимать АРТ",
+      "test_hiv_13answer5",
     ],
     incorrectAnswers: [],
     options: [
       Option(
           selected: false,
-          answer: "Надо оградить его от помощи по дому – он же больной"),
+          answer: "test_hiv_13answer1"),
       Option(
           selected: false,
           answer:
-          "Ему нельзя посещать школу"),
+          "test_hiv_13answer2"),
       Option(
           selected: false,
-          answer: "Ему не нужно дружить с другими детьми"),
-      Option(selected: false, answer: "Ему не нужно принимать АРТ – это вредно для его здоровья"),
-      Option(selected: false, answer: "Воспитание и образование ребенка с ВИЧ не отличается от здорового ребенка, только он должен всегда и правильно принимать АРТ"),
-      Option(selected: false, answer: "Все вышеперечисленное"),
-      Option(selected: false, answer: "Ничего из вышеперечисленного"),
-      Option(selected: false, answer: "Не знаю"),
+          answer: "test_hiv_13answer3"),
+      Option(selected: false, answer: "test_hiv_13answer4"),
+      Option(selected: false, answer: "test_hiv_13answer5"),
+      Option(selected: false, answer: "test_hiv_8answer6"),
+      Option(selected: false, answer: "test_hiv_8answer7"),
+      Option(selected: false, answer: "answer0"),
     ],
   ),
 ];

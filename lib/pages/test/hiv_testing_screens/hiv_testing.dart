@@ -69,12 +69,9 @@ class _HIVTestingScreenState extends State<HIVTestingScreen> {
         ListTile(
           title: RichText(
             text: TextSpan(children: [
-              TextSpan(text: "Тестирование на ВИЧ\n\n", style: chapterStyle),
+              TextSpan(text:"hiv_test1text1".tr(), style: chapterStyle),
               TextSpan(
-                text:
-                    "Тестирование на ВИЧ – это простая процедура, которую важно проходить каждому человеку. "
-                    "Многие никогда не проходили тест на ВИЧ из-за незнания. Некоторые думает, что это их не касается,"
-                    "или боятся тестирования. Почему важно знать свой ВИЧ статус, Вы узнаете на этой страничке.  \n",
+                text:"hiv_test1text2".tr(),
                 style: contentItalic,
               ),
             ]),
@@ -84,7 +81,7 @@ class _HIVTestingScreenState extends State<HIVTestingScreen> {
           title: RichText(
             text: TextSpan(children: [
               TextSpan(
-                  text: "Для чего нужно пройти тест на ВИЧ?\n\n",
+                  text:"hiv_test1text3".tr(),
                   style: normalBoldForChapter),
             ]),
           ),
@@ -103,10 +100,7 @@ class _HIVTestingScreenState extends State<HIVTestingScreen> {
                   title: RichText(
                 text: TextSpan(children: [
                   TextSpan(
-                      text:
-                          "Если человек знает, что он инфицирован ВИЧ, он может своевременно начать лечение, "
-                          "которое сохраняет здоровье и позволяет людям, живущим с ВИЧ, дожить до глубокой старости."
-                          "Лечение ВИЧ-инфекции проводится бесплатно и его можно получить во всех городах и селах Кыргызской Республики",
+                      text:"hiv_test1text4".tr(),
                       style: contentNormal),
                 ]),
               )),
@@ -127,9 +121,7 @@ class _HIVTestingScreenState extends State<HIVTestingScreen> {
                   title: RichText(
                 text: TextSpan(children: [
                   TextSpan(
-                      text:
-                          "Если человек знает, что он инфицирован ВИЧ, он будет предпринимать меры предосторожности, "
-                          "чтобы не передать ВИЧ своему половому партнеру и/или своему будущему ребенку.",
+                      text:"hiv_test1text5".tr(),
                       style: contentNormal),
                 ]),
               )),
@@ -150,12 +142,11 @@ class _HIVTestingScreenState extends State<HIVTestingScreen> {
                   title: RichText(
                 text: TextSpan(children: [
                   TextSpan(
-                      text: "Если человек знает, что он ",
+                      text:"hiv_test1text6".tr(),
                       style: contentNormal),
-                  TextSpan(text: "не инфицирован ВИЧ, ", style: normalBold),
+                  TextSpan(text:"hiv_test1text7".tr(), style: normalBold),
                   TextSpan(
-                      text:
-                          "он успокоится, но всегда будет использовать меры защиты от ВИЧ.",
+                      text:"hiv_test1text8".tr(),
                       style: contentNormal),
                 ]),
               )),
@@ -167,7 +158,7 @@ class _HIVTestingScreenState extends State<HIVTestingScreen> {
           title: RichText(
             text: TextSpan(children: [
               TextSpan(
-                  text: "Как проводится тест на ВИЧ?\n\n",
+                  text:"hiv_test1text9".tr(),
                   style: normalBoldForChapter),
             ]),
           ),
@@ -186,9 +177,7 @@ class _HIVTestingScreenState extends State<HIVTestingScreen> {
                   title: RichText(
                 text: TextSpan(children: [
                   TextSpan(
-                      text:
-                          "Определить наличие в организме ВИЧ можно только при помощи лабораторного обследования, "
-                          "которое называется тестированием на ВИЧ или тест на ВИЧ.",
+                      text:"hiv_test1text10".tr(),
                       style: contentNormal),
                 ]),
               )),
@@ -209,8 +198,7 @@ class _HIVTestingScreenState extends State<HIVTestingScreen> {
                   title: RichText(
                 text: TextSpan(children: [
                   TextSpan(
-                      text: "Тестирование на ВИЧ проводится добровольно, "
-                          "то есть никто не вправе заставить человека пройти тест на ВИЧ без его согласия.",
+                      text:"hiv_test1text11".tr(),
                       style: contentNormal),
                 ]),
               )),
@@ -231,18 +219,16 @@ class _HIVTestingScreenState extends State<HIVTestingScreen> {
                   title: RichText(
                 text: TextSpan(children: [
                   TextSpan(
-                      text: "Сведения об обращении за тестированием и его результаты ",
+                      text: "hiv_test1text12".tr(),
                       style: contentNormal),
                   TextSpan(
-                      text: "являются медицинской тайной ", style: normalBold),
+                      text: "hiv_test1text13".tr(), style: normalBold),
                   TextSpan(
-                      text:
-                          "и не могут разглашаться другим лицам без согласия ЛЖВ. Это называется ",
+                      text:"hiv_test1text14".tr(),
                       style: contentNormal),
-                  TextSpan(text: "конфиденциальность. ", style: normalBold),
+                  TextSpan(text:"hiv_test1text15".tr(), style: normalBold),
                   TextSpan(
-                      text:
-                          "Они могут использоваться только медицинскими работниками, которые проводят наблюдение за ЛЖВ.",
+                      text:"hiv_test1text16".tr(),
                       style: contentNormal),
                 ]),
               )),
@@ -263,15 +249,15 @@ class _HIVTestingScreenState extends State<HIVTestingScreen> {
                   title: RichText(
                 text: TextSpan(children: [
                   TextSpan(
-                      text: "Тестирование на ВИЧ можно пройти в ",
+                      text: "hiv_test1text17".tr(),
                       style: contentNormal),
-                  TextSpan(text: "Центрах СПИД ", style: linkedStyle),
-                  TextSpan(text: "и ", style: contentNormal),
+                  TextSpan(text: "hiv_test1text18".tr(), style: linkedStyle),
+                  TextSpan(text: "hiv_test1text19".tr(), style: contentNormal),
                   TextSpan(
-                      text: "любой медицинской организации. ",
+                      text:"hiv_test1text20".tr(),
                       style: linkedStyle),
                   TextSpan(
-                      text: "Тестирование на ВИЧ можно пройти в некоторых НПО.",
+                      text: "hiv_test1text21".tr(),
                       style: contentNormal),
                 ]),
               )),
@@ -294,12 +280,9 @@ class _HIVTestingScreenState extends State<HIVTestingScreen> {
                   RichText(
                     text: TextSpan(children: [
                       TextSpan(
-                          text: "Самотестирование на ВИЧ ", style: normalBold),
+                          text:"hiv_test1text22".tr(), style: normalBold),
                       TextSpan(
-                          text:
-                              "– \nВы можете сделать тест на ВИЧ самостоятельно. Детальную информацию об этом "
-                              "Вы можете найти на сайте Республиканского центра СПИД по ссылке: "
-                              "",
+                          text:"hiv_test1text23".tr(),
                           style: contentNormal),
                       TextSpan(
                         text: "www.aidscenter.kg. ",
@@ -308,9 +291,7 @@ class _HIVTestingScreenState extends State<HIVTestingScreen> {
                           ..onTap = () => {launch("http://aidscenter.kg/")},
                       ),
                       TextSpan(
-                          text:
-                              "Эти тесты Вы можете получить бесплатно с понедельника по пятницу по адресу: г. Бишкек, "
-                              "улица Логвиненко 8, 7-8-9 кабинет. Телефон для справок: 0774 42-08-66.",
+                          text:"hiv_test1text24".tr(),
                           style: contentNormal),
                     ]),
                   ),
@@ -333,9 +314,49 @@ class _HIVTestingScreenState extends State<HIVTestingScreen> {
                   title: RichText(
                 text: TextSpan(children: [
                   TextSpan(
-                      text:
-                          "Для тестирования на ВИЧ, обычно берут кровь из вены; но может использоваться кровь из пальца. "
-                          "В НПО тестирование проходят по слюне.",
+                      text:"hiv_test1text25".tr(),
+                      style: contentNormal),
+                ]),
+              )),
+            ),
+          ],
+        ),
+        Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Expanded(
+                child: Padding(
+              padding: const EdgeInsets.only(top: 10),
+              child: MyBullet(),
+            )),
+            Expanded(
+              flex: 4,
+              child: ListTile(
+                  title: RichText(
+                text: TextSpan(children: [
+                  TextSpan(
+                      text:"hiv_test1text26".tr(),
+                      style: contentNormal),
+                ]),
+              )),
+            ),
+          ],
+        ),
+        Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Expanded(
+                child: Padding(
+              padding: const EdgeInsets.only(top: 10),
+              child: MyBullet(),
+            )),
+            Expanded(
+              flex: 4,
+              child: ListTile(
+                  title: RichText(
+                text: TextSpan(children: [
+                  TextSpan(
+                      text:"hiv_test1text27".tr(),
                       style: contentNormal),
                 ]),
               )),
@@ -357,57 +378,7 @@ class _HIVTestingScreenState extends State<HIVTestingScreen> {
                 text: TextSpan(children: [
                   TextSpan(
                       text:
-                          "Проведение анализа занимает от 30 минут до суток, в зависимости от используемого метода.",
-                      style: contentNormal),
-                ]),
-              )),
-            ),
-          ],
-        ),
-        Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Expanded(
-                child: Padding(
-              padding: const EdgeInsets.only(top: 10),
-              child: MyBullet(),
-            )),
-            Expanded(
-              flex: 4,
-              child: ListTile(
-                  title: RichText(
-                text: TextSpan(children: [
-                  TextSpan(
-                      text:
-                          "Если первый тест указывает на наличие в организме ВИЧ (то есть результат теста на ВИЧ положительный), "
-                          "то его перепроверяют не менее 3 раз, чтобы не ошибиться. Человеку сообщают только полностью подтвержденный результат. "
-                          "Иногда тест на ВИЧ дает неопределенный (сомнительный) результат – тогда Вам предложат пройти тест повторно через 14 дней. "
-                          "Это может быть связано с недавним заражением ВИЧ либо с другими причинами.",
-                      style: contentNormal),
-                ]),
-              )),
-            ),
-          ],
-        ),
-        Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Expanded(
-                child: Padding(
-              padding: const EdgeInsets.only(top: 10),
-              child: MyBullet(),
-            )),
-            Expanded(
-              flex: 4,
-              child: ListTile(
-                  title: RichText(
-                text: TextSpan(children: [
-                  TextSpan(
-                      text:
-                          "Каждое тестирование на ВИЧ сопровождается беседой с врачом /социальным работником, "
-                          "которая называется консультированием. При консультировании определяют возможные риски заражения, "
-                          "дают рекомендации по безопасному поведению, предоставляют адреса профилактических программ, "
-                          "а также рассказывают о процедуре тестирования.",
+                      "hiv_test1text28".tr(),
                       style: contentNormal),
                 ]),
               )),
@@ -419,10 +390,7 @@ class _HIVTestingScreenState extends State<HIVTestingScreen> {
           title: RichText(
             text: TextSpan(children: [
               TextSpan(
-                  text:
-                      "Следует помнить, что результаты тестов, проведенных на базе НПО или при самотестировании на ВИЧ "
-                      "являются предварительными и требуют обязательного подтверждения в медицинских организациях."
-                      "Человек, у которого впервые обнаружена ВИЧ-инфекция, может получить поддержку от своих близких или представителей НПО.",
+                  text:"hiv_test1text29".tr(),
                   style: TextStyle(color: kModerateBlue, fontSize: fontSize)),
             ]),
           ),

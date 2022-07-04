@@ -61,13 +61,10 @@ class _HivActionsScreenState extends State<HivActionsScreen> {
           title: RichText(
             text: TextSpan(children: [
               TextSpan(
-                  text: "Что делать, если у Вас выявили ВИЧ\n\n",
+                  text:"presence_of_hiv_1text1".tr(),
                   style: chapterStyle),
               TextSpan(
-                text:
-                    "Сегодня ВИЧ-инфекция, это хроническое инфекционное заболевание, "
-                    "при получении лечения которого человек может сохранить здоровье и "
-                    "прожить долгую жизнь, как и человек без ВИЧ.",
+                text:"presence_of_hiv_1text2".tr(),
                 style: normalBold,
               ),
             ]),
@@ -85,10 +82,7 @@ class _HivActionsScreenState extends State<HivActionsScreen> {
                   title: RichText(
                 text: TextSpan(children: [
                   TextSpan(
-                      text:
-                          "Следует успокоиться и получить больше информации о ВИЧ-инфекции, которую Вы найдете в этом "
-                              "приложении в разделе «Школа пациента». Вы можете получить эту же информацию у врача или "
-                              "сотрудников НПО.",
+                      text:"presence_of_hiv_1text3".tr(),
                       style: contentNormal),
                 ]),
               )),
@@ -107,9 +101,7 @@ class _HivActionsScreenState extends State<HivActionsScreen> {
                   title: RichText(
                     text: TextSpan(children: [
                       TextSpan(
-                          text:
-                          "Врач может подсказать Вам адреса НПО или групп поддержки людей, которые живут с ВИЧ (их называют ЛЖВ). "
-                              "Они могут дать Вам информацию о ВИЧ и оказать помощь на этапе принятия статуса и начала лечения.",
+                          text:"presence_of_hiv_1text4".tr(),
                           style: contentNormal),
                     ]),
                   )),
@@ -128,8 +120,7 @@ class _HivActionsScreenState extends State<HivActionsScreen> {
                   title: RichText(
                     text: TextSpan(children: [
                       TextSpan(
-                          text:
-                          "Вам нужно сообщить о своем статусе своим половым партнерам и принять меры, чтобы не передать им ВИЧ.",
+                          text:"presence_of_hiv_1text5".tr(),
                           style: contentNormal),
                     ]),
                   )),
@@ -148,8 +139,7 @@ class _HivActionsScreenState extends State<HivActionsScreen> {
                   title: RichText(
                     text: TextSpan(children: [
                       TextSpan(
-                          text:
-                          "Нужно определить людей, которым Вы доверяете, чтобы поделиться с ними информацией и получить поддержку.",
+                          text:"presence_of_hiv_1text6".tr(),
                           style: contentNormal),
                     ]),
                   )),
@@ -168,10 +158,7 @@ class _HivActionsScreenState extends State<HivActionsScreen> {
                   title: RichText(
                     text: TextSpan(children: [
                       TextSpan(
-                          text:
-                          "Вы можете еще не чувствовать какие-то проявления ВИЧ-инфекции, но ВИЧ находится в организме и "
-                              "медленно уничтожает клетки иммунной (защитной) системы. Поэтому нужно как можно скорее начать"
-                              " защищаться себя от ВИЧ.",
+                          text:"presence_of_hiv_1text7".tr(),
                           style: contentNormal),
                     ]),
                   )),
@@ -190,10 +177,7 @@ class _HivActionsScreenState extends State<HivActionsScreen> {
                   title: RichText(
                     text: TextSpan(children: [
                       TextSpan(
-                          text:
-                          "Встаньте на учет в Центре СПИД или другой медицинской организации (ЦСМ, ГСВ); "
-                              "пройдите необходимое обследование и начните лечение ВИЧ-инфекции. "
-                              "Чем раньше Вы начнете лечение, тем меньший вред ВИЧ окажет на Ваше здоровье.",
+                          text:"presence_of_hiv_1text8".tr(),
                           style: contentNormal),
                     ]),
                   )),
@@ -212,10 +196,7 @@ class _HivActionsScreenState extends State<HivActionsScreen> {
                   title: RichText(
                     text: TextSpan(children: [
                       TextSpan(
-                          text:
-                          "При раннем начале и правильно проводимом лечении (строгое соблюдение дозы препарата, непрерывности"
-                              " лечения) антиретровирусными препаратами у ВИЧ-позитивных людей иммунная система не разрушается,"
-                              " поэтому СПИД не развивается, не присоединятся также и оппортунистические инфекции.",
+                          text:"presence_of_hiv_1text9".tr(),
                           style: contentNormal),
                     ]),
                   )),
@@ -234,8 +215,7 @@ class _HivActionsScreenState extends State<HivActionsScreen> {
                   title: RichText(
                     text: TextSpan(children: [
                       TextSpan(
-                          text:
-                          "Получите информацию какие меры профилактики для собственной защиты и защиты близких нужно использовать.",
+                          text:"presence_of_hiv_1text10".tr(),
                           style: contentNormal),
                     ]),
                   )),
@@ -254,11 +234,7 @@ class _HivActionsScreenState extends State<HivActionsScreen> {
                   title: RichText(
                     text: TextSpan(children: [
                       TextSpan(
-                          text:
-                          "При необходимости Вы можете включиться в профилактические программы для того, чтобы защитить "
-                              "себя от инфекций, которые передаются половым или инъекционным путем. Это особенно важно, "
-                              "если Вы потребляете наркотики, имеете случайные половые контакты или вступаете в контакты "
-                              "с людьми одного с Вами пола.",
+                          text: "presence_of_hiv_1text11".tr(),
                           style: contentNormal),
                     ]),
                   )),
