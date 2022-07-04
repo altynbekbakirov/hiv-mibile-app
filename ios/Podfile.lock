@@ -15,6 +15,8 @@ PODS:
   - ext_video_player (0.0.3):
     - Flutter
   - Flutter (1.0.0)
+  - flutter_hls_parser (0.0.1):
+    - Flutter
   - flutter_inappwebview (0.0.1):
     - Flutter
   - flutter_local_notifications (0.0.1):
@@ -69,6 +71,7 @@ DEPENDENCIES:
   - device_info (from `.symlinks/plugins/device_info/ios`)
   - ext_video_player (from `.symlinks/plugins/ext_video_player/ios`)
   - Flutter (from `Flutter`)
+  - flutter_hls_parser (from `.symlinks/plugins/flutter_hls_parser/ios`)
   - flutter_inappwebview (from `.symlinks/plugins/flutter_inappwebview/ios`)
   - flutter_local_notifications (from `.symlinks/plugins/flutter_local_notifications/ios`)
   - flutter_native_timezone (from `.symlinks/plugins/flutter_native_timezone/ios`)
@@ -111,6 +114,8 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/ext_video_player/ios"
   Flutter:
     :path: Flutter
+  flutter_hls_parser:
+    :path: ".symlinks/plugins/flutter_hls_parser/ios"
   flutter_inappwebview:
     :path: ".symlinks/plugins/flutter_inappwebview/ios"
   flutter_local_notifications:
@@ -155,6 +160,7 @@ SPEC CHECKSUMS:
   device_info: d7d233b645a32c40dfdc212de5cf646ca482f175
   ext_video_player: 725a141c13227c84efe4f5df259c6cf3cbf03f7d
   Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
+  flutter_hls_parser: be41df963ec4f909fb5c318d483c4483556553e0
   flutter_inappwebview: 69dfbac46157b336ffbec19ca6dfd4638c7bf189
   flutter_local_notifications: 0c0b1ae97e741e1521e4c1629a459d04b9aec743
   flutter_native_timezone: e72ff1900460ff57cfd331d1758050c9269f3e99
@@ -180,4 +186,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: aafe91acc616949ddb318b77800a7f51bffa2a4c
 
-COCOAPODS: 1.11.2
+COCOAPODS: 1.11.3
