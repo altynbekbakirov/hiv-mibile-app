@@ -25,8 +25,6 @@ class _MoodTotalWidgetState extends State<MoodTotalWidget> {
   List<TimeType> _timeList = new List<TimeType>();
   TimeType timeType = new TimeType();
   DateTime initialDate = DateTime.now();
-  Color _color;
-  var _isDark = Prefs.getBool(Prefs.DARKTHEME, def: false);
   String asset_path = "assets/images/moods/";
 
   getList() async {

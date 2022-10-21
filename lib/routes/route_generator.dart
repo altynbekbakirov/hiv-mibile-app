@@ -14,6 +14,7 @@ import 'package:HIVApp/pages/hiv_prevention/hiv_prevention_page.dart';
 import 'package:HIVApp/pages/hiv_prevention/hiv_prevention_screens/how_to_protect_yourself.dart';
 import 'package:HIVApp/pages/hiv_prevention/hiv_prevention_screens/methadone_therapy_screen.dart';
 import 'package:HIVApp/pages/hiv_prevention/hiv_prevention_screens/pre_post_exposure_therapy.dart';
+import 'package:HIVApp/pages/home/home.dart';
 import 'package:HIVApp/pages/home/home_new.dart';
 import 'package:HIVApp/pages/information_on%20_arv/schema_page.dart';
 import 'package:HIVApp/pages/language/change_laguage_page.dart';
@@ -96,8 +97,8 @@ class RouteGenerator {
       case Routes.home:
         return CupertinoPageRoute(builder: (_) => HomeNew());
 
-      // case Routes.home:
-      //   return CupertinoPageRoute(builder: (_) => Home());
+      /*case Routes.home:
+        return CupertinoPageRoute(builder: (_) => Home());*/
 
       case Routes.basic_information:
         return CupertinoPageRoute(builder: (_) => BasicInformationPage());

@@ -32,7 +32,6 @@ class HomeNew extends StatefulWidget {
 }
 
 class _HomeNewState extends State<HomeNew> with SingleTickerProviderStateMixin {
-  int _selectedIndex = 0;
   String appBarName = '';
 
   DateTime currentBackPressTime;
@@ -43,7 +42,6 @@ class _HomeNewState extends State<HomeNew> with SingleTickerProviderStateMixin {
   void initState() {
     _tabController = new TabController(vsync: this, length: 5);
     if (widget.index != null) {
-      _selectedIndex = widget.index;
       _selectPage(widget.index);
     }
     isLoggedIn();
@@ -160,16 +158,14 @@ class _HomeNewState extends State<HomeNew> with SingleTickerProviderStateMixin {
                 style: TextStyle(color: Colors.black)),
             backgroundColor: Colors.white,
             actions: <Widget>[
-              GestureDetector(
-                onTap: () {
+              IconButton(
+                icon: Icon(Icons.more_vert, size: 18, color: Colors.black),
+                onPressed: () {
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => SettingsPage()),
                   );
                 },
-                child: IconButton(
-                  icon: Icon(Icons.more_vert, size: 18, color: Colors.black),
-                ),
               ),
             ],
           ),

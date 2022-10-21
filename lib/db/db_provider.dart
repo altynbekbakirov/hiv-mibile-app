@@ -603,6 +603,19 @@ class DBProvider {
     });
   }
 
+  Future<List<UserMood>> getAllUserMoodsByDate(String currentDate) async {
+    final db = await database;
+    List<UserMood> list = new List<UserMood>();
+    return getUserId().then((value) async {
+      var res = await db.query("user_moods", where: "user_id = ? and date(date_time) = ?", whereArgs: [value, currentDate], orderBy: "date_time DESC");
+      // var res = await db.query("user_moods", orderBy: "date_time DESC");
+      for (var r in res) {
+        list.add(UserMood.fromJson(r));
+      }
+      return list.isNotEmpty ? list : null;
+    });
+  }
+
   Future<List<UserMoodTotal>> getAllUserMoodsGroupedByTitle(int type) async {
     String queryStr = '';
     if (type == 1) {
@@ -651,6 +664,11 @@ class DBProvider {
   deleteUserMood(int id) async {
     final db = await database;
     db.delete("user_moods", where: "id = ?", whereArgs: [id]);
+  }
+
+  deleteUserMoodByDate(String currentDate) async {
+    final db = await database;
+    db.delete("user_moods", where: "date(date_time) = ?", whereArgs: [currentDate]);
   }
 
   deleteAllUserMoods() async {

@@ -217,10 +217,10 @@ class _ContactsPageState extends State<ContactsPage>
             controller: _nestedTabController,
             children: [
               // TODO Add telegram Profile Name
-              contentBuilder('+996558558980', "", 'contact_to_doctor', "doctor_consultation"),
-              contentBuilder('+996558558981', "", 'contact_to_equal_consultant', 'equal_consultant'),
-              contentBuilder('+996555558982', "", 'contact_to_psychologist', 'Психолог'),
-              contentBuilder('+996558558983', "", 'contact_to_lawyer', 'Юрист'),
+              contentBuilder('+996558558980', "996558558980", 'contact_to_doctor', 'Врач'),
+              contentBuilder('+996558558981', "996558558981", 'contact_to_equal_consultant', 'Равный консультант'),
+              contentBuilder('+996555558982', "996555558982", 'contact_to_psychologist', 'Психолог'),
+              contentBuilder('+996558558983', "996558558983", 'contact_to_lawyer', 'Юрист'),
             ],
           ),
         ),

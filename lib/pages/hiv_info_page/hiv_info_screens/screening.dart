@@ -73,13 +73,13 @@ class _ScreeningBodyState extends State<ScreeningBody> {
                           TextStyle(fontSize: 14, fontWeight: FontWeight.w400),
                       tabs: [
                         Tab(
-                          text: "Секс",
+                          text: 'test_page6'.tr(),
                         ),
                         Tab(
-                          text:"Кровь"
+                          text:'test_page7'.tr()
                         ),
                         Tab(
-                          text: "Симптомы"
+                          text: "test_page8".tr()
                         ),
                       ],
                     ),

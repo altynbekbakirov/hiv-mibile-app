@@ -1,5 +1,4 @@
 import 'package:HIVApp/components/custom_button.dart';
-import 'package:HIVApp/data/pref_manager.dart';
 import 'package:HIVApp/db/db_provider.dart';
 import 'package:HIVApp/db/user_mood.dart';
 import 'package:HIVApp/routes/routes.dart';
@@ -8,7 +7,6 @@ import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:datetime_picker_formfield/datetime_picker_formfield.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-
 import '../../../utils/constants.dart';
 
 class AddMoodForm extends StatefulWidget {
@@ -24,13 +22,11 @@ class AddMoodForm extends StatefulWidget {
 class _AddMoodFormState extends State<AddMoodForm> {
   DateTime _dateTime = new DateTime.now();
   final format = DateFormat("yyyy-MM-dd");
-  String selectedSymptom = '';
-  String selectedSymptomTitle = '';
-  List<UserMood> _list = new List<UserMood>();
   String assetPath = "assets/images/moods/";
-  bool isSelected = false;
+  List<MoodModel> _moodList = List();
 
-  TextStyle emojiStyle = TextStyle(fontSize: 14, fontWeight: FontWeight.w500, color: kDarkModerateBlue);
+  TextStyle emojiStyle = TextStyle(
+      fontSize: 14, fontWeight: FontWeight.w500, color: kDarkModerateBlue);
 
   Widget dateTimePicker() {
     return Container(
@@ -63,6 +59,21 @@ class _AddMoodFormState extends State<AddMoodForm> {
   void initState() {
     super.initState();
     _dateTime = widget.selectedDate;
+    getList(format.format(_dateTime));
+  }
+
+  getList([String currentDate]) async {
+    await DBProvider.db.getAllUserMoodsByDate(currentDate).then((value) {
+      setState(() {
+        if (value != null) {
+          for (var i in value) {
+            setState(() {
+              _moodList.add(MoodModel(title: i.title, symptom: i.file_name));
+            });
+          }
+        }
+      });
+    });
   }
 
   @override
@@ -88,202 +99,233 @@ class _AddMoodFormState extends State<AddMoodForm> {
                 children: [
                   Column(children: [
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Container(
                           height: 96,
                           width: 104,
+                          margin: const EdgeInsets.only(bottom: 10),
                           child: InkWell(
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  Image.asset(
-                                    assetPath + 'angry.png',
-                                    height: 48,
-                                  ),
-                                  Text('angry'.tr(), style: emojiStyle),
-                                ],
-                              ),
+                              children: [
+                                Image.asset(
+                                  assetPath + 'angry.png',
+                                  height: 48,
+                                ),
+                                Text('angry'.tr(), style: emojiStyle),
+                              ],
+                            ),
                             onTap: () {
                               setState(() {
-                                print("focus");
-
-                                selectedSymptom = 'angry.png';
-                                selectedSymptomTitle = 'angry';
+                                if (moodExists(_moodList, 'angry')) {
+                                  _moodList
+                                      .removeAt(getMood(_moodList, "angry"));
+                                } else {
+                                  _moodList.add(MoodModel(
+                                      title: 'angry', symptom: 'angry.png'));
+                                }
                                 // isSelected = true;
                               });
                             },
-                            onTapCancel: (){
+                            onTapCancel: () {
                               print("cancel");
                             },
                           ),
                           decoration: BoxDecoration(
-                            color: selectedSymptomTitle == 'angry'
-                                ? kDesaturatedBlue
-                                : Colors.transparent,
-                            borderRadius: BorderRadius.circular(8.0)
-                          ),
+                              color: moodExists(_moodList, 'angry')
+                                  ? kDesaturatedBlue
+                                  : Colors.transparent,
+                              borderRadius: BorderRadius.circular(8.0)),
                         ),
                         Container(
+                          margin: const EdgeInsets.only(bottom: 10),
                           height: 96,
                           width: 104,
                           child: InkWell(
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  Image.asset(
-                                    assetPath + 'angry-1.png',
-                                    height: 48,
-                                  ),
-                                  Text('angry-1'.tr(), style: emojiStyle),
-                                ],
-                              ),
+                              children: [
+                                Image.asset(
+                                  assetPath + 'angry-1.png',
+                                  height: 48,
+                                ),
+                                Text('angry-1'.tr(), style: emojiStyle),
+                              ],
+                            ),
                             onTap: () {
                               setState(() {
-                                selectedSymptom = 'angry-1.png';
-                                selectedSymptomTitle = 'angry-1';
+                                if (moodExists(_moodList, 'angry-1')) {
+                                  _moodList
+                                      .removeAt(getMood(_moodList, "angry-1"));
+                                } else {
+                                  _moodList.add(MoodModel(
+                                      title: 'angry-1',
+                                      symptom: 'angry-1.png'));
+                                }
                               });
                             },
                           ),
                           decoration: BoxDecoration(
-                              color: selectedSymptomTitle == 'angry-1'
+                              color: moodExists(_moodList, 'angry-1')
                                   ? kDesaturatedBlue
                                   : Colors.transparent,
-                              borderRadius: BorderRadius.circular(8.0)
-                          ),
+                              borderRadius: BorderRadius.circular(8.0)),
                         ),
                         Container(
+                          margin: const EdgeInsets.only(bottom: 10),
                           height: 96,
                           width: 104,
                           child: InkWell(
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  Image.asset(
-                                    assetPath + 'bored.png',
-                                    height: 48,
-                                  ),
-                                  Text('bored'.tr(), style: emojiStyle),
-                                ],
-                              ),
+                              children: [
+                                Image.asset(
+                                  assetPath + 'bored.png',
+                                  height: 48,
+                                ),
+                                Text('bored'.tr(), style: emojiStyle),
+                              ],
+                            ),
                             onTap: () {
                               setState(() {
-                                selectedSymptom = 'bored.png';
-                                selectedSymptomTitle = 'bored';
+                                if (moodExists(_moodList, 'bored')) {
+                                  _moodList
+                                      .removeAt(getMood(_moodList, "bored"));
+                                } else {
+                                  _moodList.add(MoodModel(
+                                      title: 'bored', symptom: 'bored.png'));
+                                }
                               });
                             },
                           ),
                           decoration: BoxDecoration(
-                              color: selectedSymptomTitle == 'bored'
+                              color: moodExists(_moodList, 'bored')
                                   ? kDesaturatedBlue
                                   : Colors.transparent,
-                              borderRadius: BorderRadius.circular(8.0)
-                          ),
+                              borderRadius: BorderRadius.circular(8.0)),
                         ),
                       ],
                     ),
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Container(
+                          margin: const EdgeInsets.only(bottom: 10),
                           height: 96,
                           width: 104,
                           child: InkWell(
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  Image.asset(
-                                    assetPath + 'crying.png',
-                                    height: 48,
-                                  ),
-                                  Text('crying'.tr(), style: emojiStyle),
-                                ],
-                              ),
+                              children: [
+                                Image.asset(
+                                  assetPath + 'crying.png',
+                                  height: 48,
+                                ),
+                                Text('crying'.tr(), style: emojiStyle),
+                              ],
+                            ),
                             onTap: () {
                               setState(() {
-                                selectedSymptom = 'crying.png';
-                                selectedSymptomTitle = 'crying';
+                                if (moodExists(_moodList, 'crying')) {
+                                  _moodList
+                                      .removeAt(getMood(_moodList, "crying"));
+                                } else {
+                                  _moodList.add(MoodModel(
+                                      title: 'crying', symptom: 'crying.png'));
+                                }
                               });
                             },
                           ),
                           decoration: BoxDecoration(
-                              color: selectedSymptomTitle == 'crying'
+                              color: moodExists(_moodList, 'crying')
                                   ? kDesaturatedBlue
                                   : Colors.transparent,
-                              borderRadius: BorderRadius.circular(8.0)
-                          ),
+                              borderRadius: BorderRadius.circular(8.0)),
                         ),
                         Container(
+                          margin: const EdgeInsets.only(bottom: 10),
                           height: 96,
                           width: 104,
                           child: InkWell(
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  Image.asset(
-                                    assetPath + 'happy.png',
-                                    height: 48,
-                                  ),
-                                  Text('happy'.tr(), style: emojiStyle),
-                                ],
-                              ),
+                              children: [
+                                Image.asset(
+                                  assetPath + 'happy.png',
+                                  height: 48,
+                                ),
+                                Text('happy'.tr(), style: emojiStyle),
+                              ],
+                            ),
                             onTap: () {
                               setState(() {
-                                selectedSymptom = 'happy.png';
-                                selectedSymptomTitle = 'happy';
+                                if (moodExists(_moodList, 'happy')) {
+                                  _moodList
+                                      .removeAt(getMood(_moodList, "happy"));
+                                } else {
+                                  _moodList.add(MoodModel(
+                                      title: 'happy', symptom: 'happy.png'));
+                                }
                               });
                             },
                           ),
                           decoration: BoxDecoration(
-                              color: selectedSymptomTitle == 'happy'
+                              color: moodExists(_moodList, 'happy')
                                   ? kDesaturatedBlue
                                   : Colors.transparent,
-                              borderRadius: BorderRadius.circular(8.0)
-                          ),
+                              borderRadius: BorderRadius.circular(8.0)),
                         ),
                         Container(
+                          margin: const EdgeInsets.only(bottom: 10),
                           height: 96,
                           width: 104,
                           child: InkWell(
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  Image.asset(
-                                    assetPath + 'embarrassed.png',
-                                    height: 48,
-                                  ),
-                                  Text('embarrassed'.tr(), style: emojiStyle),
-                                ],
-                              ),
+                              children: [
+                                Image.asset(
+                                  assetPath + 'embarrassed.png',
+                                  height: 48,
+                                ),
+                                Text('embarrassed'.tr(), style: emojiStyle),
+                              ],
+                            ),
                             onTap: () {
                               setState(() {
-                                selectedSymptom = 'embarrassed.png';
-                                selectedSymptomTitle = 'embarrassed';
+                                if (moodExists(_moodList, 'embarrassed')) {
+                                  _moodList.removeAt(
+                                      getMood(_moodList, "embarrassed"));
+                                } else {
+                                  _moodList.add(MoodModel(
+                                      title: 'embarrassed',
+                                      symptom: 'embarrassed.png'));
+                                }
                               });
                             },
                           ),
                           decoration: BoxDecoration(
-                              color: selectedSymptomTitle == 'embarrassed'
+                              color: moodExists(_moodList, 'embarrassed')
                                   ? kDesaturatedBlue
                                   : Colors.transparent,
-                              borderRadius: BorderRadius.circular(8.0)
-                          ),
+                              borderRadius: BorderRadius.circular(8.0)),
                         ),
                       ],
                     ),
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Container(
+                          margin: const EdgeInsets.only(bottom: 10),
                           height: 96,
                           width: 104,
                           child: InkWell(
@@ -300,19 +342,25 @@ class _AddMoodFormState extends State<AddMoodForm> {
                             ),
                             onTap: () {
                               setState(() {
-                                selectedSymptom = 'happy-1.png';
-                                selectedSymptomTitle = 'happy-1';
+                                if (moodExists(_moodList, 'happy-1')) {
+                                  _moodList
+                                      .removeAt(getMood(_moodList, "happy-1"));
+                                } else {
+                                  _moodList.add(MoodModel(
+                                      title: 'happy-1',
+                                      symptom: 'happy-1.png'));
+                                }
                               });
                             },
                           ),
                           decoration: BoxDecoration(
-                              color: selectedSymptomTitle == 'happy-1'
+                              color: moodExists(_moodList, 'happy-1')
                                   ? kDesaturatedBlue
                                   : Colors.transparent,
-                              borderRadius: BorderRadius.circular(8.0)
-                          ),
+                              borderRadius: BorderRadius.circular(8.0)),
                         ),
                         Container(
+                          margin: const EdgeInsets.only(bottom: 10),
                           height: 96,
                           width: 104,
                           child: InkWell(
@@ -329,19 +377,23 @@ class _AddMoodFormState extends State<AddMoodForm> {
                             ),
                             onTap: () {
                               setState(() {
-                                selectedSymptom = 'ill.png';
-                                selectedSymptomTitle = 'ill';
+                                if (moodExists(_moodList, 'ill')) {
+                                  _moodList.removeAt(getMood(_moodList, "ill"));
+                                } else {
+                                  _moodList.add(MoodModel(
+                                      title: 'ill', symptom: 'ill.png'));
+                                }
                               });
                             },
                           ),
                           decoration: BoxDecoration(
-                              color: selectedSymptomTitle == 'ill'
+                              color: moodExists(_moodList, 'ill')
                                   ? kDesaturatedBlue
                                   : Colors.transparent,
-                              borderRadius: BorderRadius.circular(8.0)
-                          ),
+                              borderRadius: BorderRadius.circular(8.0)),
                         ),
                         Container(
+                          margin: const EdgeInsets.only(bottom: 10),
                           height: 96,
                           width: 104,
                           child: InkWell(
@@ -358,25 +410,29 @@ class _AddMoodFormState extends State<AddMoodForm> {
                             ),
                             onTap: () {
                               setState(() {
-                                selectedSymptom = 'sad.png';
-                                selectedSymptomTitle = 'sad';
+                                if (moodExists(_moodList, 'sad')) {
+                                  _moodList.removeAt(getMood(_moodList, "sad"));
+                                } else {
+                                  _moodList.add(MoodModel(
+                                      title: 'sad', symptom: 'sad.png'));
+                                }
                               });
                             },
                           ),
                           decoration: BoxDecoration(
-                              color: selectedSymptomTitle == 'sad'
+                              color: moodExists(_moodList, 'sad')
                                   ? kDesaturatedBlue
                                   : Colors.transparent,
-                              borderRadius: BorderRadius.circular(8.0)
-                          ),
+                              borderRadius: BorderRadius.circular(8.0)),
                         ),
                       ],
                     ),
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Container(
+                          margin: const EdgeInsets.only(bottom: 10),
                           height: 96,
                           width: 104,
                           child: InkWell(
@@ -393,19 +449,25 @@ class _AddMoodFormState extends State<AddMoodForm> {
                             ),
                             onTap: () {
                               setState(() {
-                                selectedSymptom = 'unhappy.png';
-                                selectedSymptomTitle = 'unhappy';
+                                if (moodExists(_moodList, 'unhappy')) {
+                                  _moodList
+                                      .removeAt(getMood(_moodList, "unhappy"));
+                                } else {
+                                  _moodList.add(MoodModel(
+                                      title: 'unhappy',
+                                      symptom: 'unhappy.png'));
+                                }
                               });
                             },
                           ),
                           decoration: BoxDecoration(
-                              color: selectedSymptomTitle == 'unhappy'
+                              color: moodExists(_moodList, 'unhappy')
                                   ? kDesaturatedBlue
                                   : Colors.transparent,
-                              borderRadius: BorderRadius.circular(8.0)
-                          ),
+                              borderRadius: BorderRadius.circular(8.0)),
                         ),
                         Container(
+                          margin: const EdgeInsets.only(bottom: 10),
                           height: 96,
                           width: 104,
                           child: InkWell(
@@ -422,19 +484,25 @@ class _AddMoodFormState extends State<AddMoodForm> {
                             ),
                             onTap: () {
                               setState(() {
-                                selectedSymptom = 'in-love.png';
-                                selectedSymptomTitle = 'in-love';
+                                if (moodExists(_moodList, 'in-love')) {
+                                  _moodList
+                                      .removeAt(getMood(_moodList, "in-love"));
+                                } else {
+                                  _moodList.add(MoodModel(
+                                      title: 'in-love',
+                                      symptom: 'in-love.png'));
+                                }
                               });
                             },
                           ),
                           decoration: BoxDecoration(
-                              color: selectedSymptomTitle == 'in-love'
+                              color: moodExists(_moodList, 'in-love')
                                   ? kDesaturatedBlue
                                   : Colors.transparent,
-                              borderRadius: BorderRadius.circular(8.0)
-                          ),
+                              borderRadius: BorderRadius.circular(8.0)),
                         ),
                         Container(
+                          margin: const EdgeInsets.only(bottom: 10),
                           height: 96,
                           width: 104,
                           child: InkWell(
@@ -449,17 +517,21 @@ class _AddMoodFormState extends State<AddMoodForm> {
                             ),
                             onTap: () {
                               setState(() {
-                                selectedSymptom = 'smile.png';
-                                selectedSymptomTitle = 'smile';
+                                if (moodExists(_moodList, 'smile')) {
+                                  _moodList
+                                      .removeAt(getMood(_moodList, "smile"));
+                                } else {
+                                  _moodList.add(MoodModel(
+                                      title: 'smile', symptom: 'smile.png'));
+                                }
                               });
                             },
                           ),
                           decoration: BoxDecoration(
-                              color: selectedSymptomTitle == 'smile'
+                              color: moodExists(_moodList, 'smile')
                                   ? kDesaturatedBlue
                                   : Colors.transparent,
-                              borderRadius: BorderRadius.circular(8.0)
-                          ),
+                              borderRadius: BorderRadius.circular(8.0)),
                         ),
                       ],
                     ),
@@ -467,29 +539,55 @@ class _AddMoodFormState extends State<AddMoodForm> {
                 ],
               ),
             ),
-            Container(
-              height: 56,
-              child: CustomButton(
-                fillColor: kDesaturatedBlue,
-                text: 'add_mood'.tr(),
-                onPressed: () async {
-                  DBProvider.db.getUserId().then((value) async {
+            CustomButton(
+              fillColor: kDesaturatedBlue,
+              text: 'add_mood'.tr(),
+              onPressed: () async {
+                await DBProvider.db
+                    .deleteUserMoodByDate(format.format(_dateTime));
+                await DBProvider.db.getUserId().then((value) async {
+                  for (int i = 0; i < _moodList.length; i++) {
                     UserMood userMood = new UserMood();
-                    userMood.title = selectedSymptomTitle;
-                    userMood.file_name = selectedSymptom;
+                    userMood.title = _moodList[i].title;
+                    userMood.file_name = _moodList[i].symptom;
                     userMood.date_time = _dateTime;
                     userMood.user_id = value;
                     await DBProvider.db.newUserMood(userMood);
-                    Navigator.pop(context);
-                    Navigator.pop(context);
-                    Navigator.pushNamed(context, Routes.mood);
-                  });
-                },
-              ),
+                  }
+                  Navigator.pop(context);
+                  Navigator.pop(context);
+                  Navigator.pushNamed(context, Routes.mood);
+                });
+              },
             ),
           ],
         ),
       ),
     );
   }
+
+  bool moodExists(List<MoodModel> list, String mood) {
+    for (int i = 0; i < list.length; i++) {
+      if (list[i].title == mood) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  int getMood(List<MoodModel> list, String mood) {
+    for (int i = 0; i < list.length; i++) {
+      if (list[i].title == mood) {
+        return i;
+      }
+    }
+    return -1;
+  }
+}
+
+class MoodModel {
+  String title;
+  String symptom;
+
+  MoodModel({this.title, this.symptom});
 }

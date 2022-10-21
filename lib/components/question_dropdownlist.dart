@@ -1,5 +1,4 @@
 import 'package:easy_localization/easy_localization.dart';
-
 import 'package:HIVApp/model/user_registrations.dart';
 import 'package:HIVApp/utils/constants.dart';
 import 'package:flutter/material.dart';
@@ -57,7 +56,7 @@ class _QuestionDropDownListState extends State<QuestionDropDownList> {
                       (UserQuestion value) {
                       return DropdownMenuItem<UserQuestion>(
                         value: value,
-                        child: Text(value.ru),
+                        child: Text(context.locale.toString().split('_')[0] == 'ky' ? value.ky : value.ru),
                       );
                     }).toList()
                   : null,

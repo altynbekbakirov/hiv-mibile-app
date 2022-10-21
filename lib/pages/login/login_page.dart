@@ -19,8 +19,7 @@ class LoginPage extends StatelessWidget {
       builder: (ctx) => Center(
         child: AlertDialog(
           title: Text(
-            'Уважаемый пользователь, \n'
-                'Спасибо, что установил наше мобильное приложение.',
+            'register_greeting_title'.tr(),
             textAlign: TextAlign.center,
             style: TextStyle(
               color: Colors.black,
@@ -30,13 +29,7 @@ class LoginPage extends StatelessWidget {
           ),
           content: SingleChildScrollView(
             scrollDirection: Axis.vertical,
-            child: Text("- Регистрация дает тебе возможность пользоваться всем функционалом приложения: "
-                "пройти Школу пациентов, получить сертификат, вести свой дневник, записывать состояние, устанавливать "
-                "напоминания о приеме лекарств, загружать анализы и формировать электронную медицинскую карту.\n"
-                "- Ты можешь пользоваться приложением без регистрации, но тогда его функционал будет значительно ограничен. \n"
-                "- При регистрации ты можешь не указывать свои реальные данные, а указать только свой НИК или неофициальную электронную почту. \n"
-                "Все полученные данные строго конфиденциальны, хранятся в соответствие с Законом КР «Об информации персонального характера», "
-                "не передаются и не обрабатываются третьими лицами.",
+            child: Text("register_definition".tr(),
               style: TextStyle(color: Colors.grey, fontWeight: FontWeight.w400, fontSize: 16),
             ),
           ),

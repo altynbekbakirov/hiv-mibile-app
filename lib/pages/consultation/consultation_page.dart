@@ -66,7 +66,6 @@ class _ConsultationPageState extends State<ConsultationPage> {
                     Expanded(
                       child: InkWell(
                         onTap: () {
-
                           setState(() {
                             selectedIndex = 1;
                           });

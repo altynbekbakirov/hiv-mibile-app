@@ -6,7 +6,6 @@ import 'package:HIVApp/pages/my_state/my_health.dart';
 import 'package:HIVApp/pages/presence_of_hiv/hiv_presence.dart';
 import 'package:HIVApp/pages/school/patient_school.dart';
 import 'package:HIVApp/pages/test/hiv_test_page.dart';
-import 'package:HIVApp/routes/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
 

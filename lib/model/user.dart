@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:HIVApp/data/configs.dart';
 import 'package:HIVApp/data/pref_manager.dart';
 import 'package:HIVApp/db/db_provider.dart';
@@ -13,8 +12,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:http/http.dart' as http;
 import 'http_exceptions.dart';
 
-class User extends ChangeNotifier{
-
+class User extends ChangeNotifier {
   int user_id;
   String username;
   String password;
@@ -29,32 +27,27 @@ class User extends ChangeNotifier{
   String pin_code;
   String token;
 
-
   Future<void> create() async {
-    final url =
-        Configs.ip+'api/users';
+    final url = Configs.ip + 'api/users';
     try {
       Map<String, String> headers = {"Content-type": "application/json"};
       final response = await http.post(
         url,
-        headers:headers,
-        body: json.encode(
-            userRequestBodyToJson(this)
-        ),
+        headers: headers,
+        body: json.encode(userRequestBodyToJson(this)),
       );
       final responseData = json.decode(response.body);
       if (responseData['status'] == 999) {
         throw HttpException(responseData['status'].toString());
-      }
-      else if (responseData['status'] == 888) {
+      } else if (responseData['status'] == 888) {
         throw HttpException(responseData['status'].toString());
-      }
-      else if(responseData['token'] != null) {
-//        Prefs.setString(Prefs.TOKEN, responseData['token']);
-//        Prefs.setInt(Prefs.USER_ID, responseData["id"]);
-//        Prefs.setString(Prefs.USERNAME, username);
-//        Prefs.setString('password', password);
-
+      } else if (responseData['token'] != null) {
+        Prefs.setString('username', username);
+        Prefs.setString('password', password);
+        Prefs.setString(Prefs.USERNAME, username);
+        Prefs.setString(Prefs.PASSWORD, password);
+        Prefs.setString(Prefs.TOKEN, responseData["token"]);
+        Prefs.setInt(Prefs.USER_ID, responseData["id"]);
         this.token = responseData['token'];
         this.token = responseData['token'];
         this.user_id = responseData['id'];
@@ -69,14 +62,12 @@ class User extends ChangeNotifier{
         await DBProvider.db.newUser(dbUser);
         notifyListeners();
       }
-    }
-    catch (error) {
+    } catch (error) {
       throw error;
     }
   }
 
-  Map<String, dynamic> userRequestBodyToJson(User user) =>
-      {
+  Map<String, dynamic> userRequestBodyToJson(User user) => {
         'username': user.username,
         'password': user.password,
         'question_id1': user.first_question,
@@ -94,27 +85,21 @@ class User extends ChangeNotifier{
     return token != null;
   }
 
-  Future<void> _authenticate(
-      String username, String password) async {
-    final url =
-        Configs.ip+'api/login';
+  Future<void> _authenticate(String username, String password) async {
+    final url = Configs.ip + 'api/login';
     try {
       Map<String, String> headers = {"Content-type": "application/json"};
       final response = await http.post(
         url,
-        headers:headers,
-        body: json.encode(
-            loginRequestBodyToJson(username, password)
-        ),
+        headers: headers,
+        body: json.encode(loginRequestBodyToJson(username, password)),
       );
       final responseData = json.decode(response.body);
       if (responseData['status'] == 999) {
         throw HttpException(responseData['status'].toString());
-      }
-      else if (responseData['status'] == 888) {
+      } else if (responseData['status'] == 888) {
         throw HttpException(responseData['status'].toString());
-      }
-      else if(responseData['token'] != null) {
+      } else if (responseData['token'] != null) {
         this.username = username;
         this.password = password;
         Prefs.setString('username', username);
@@ -140,29 +125,24 @@ class User extends ChangeNotifier{
         this.token = responseData["token"];
         notifyListeners();
       }
-    }
-    catch (error) {
+    } catch (error) {
       throw error;
     }
   }
 
   Future<bool> checkUsername(String username) async {
-    final url =
-        Configs.ip+'api/userexist';
+    final url = Configs.ip + 'api/userexist';
     try {
       Map<String, String> headers = {"Content-type": "application/json"};
       final response = await http.post(
         url,
-        headers:headers,
-        body: json.encode(
-            {
-              'username': username,
-            }
-        ),
+        headers: headers,
+        body: json.encode({
+          'username': username,
+        }),
       );
       return json.decode(response.body);
-    }
-    catch (error) {
+    } catch (error) {
       throw error;
     }
   }
@@ -173,24 +153,23 @@ class User extends ChangeNotifier{
 
   Future<void> setPinCode(String pinCode) async {
     DbUser user = await DBProvider.db.getUser();
-    final url =
-        Configs.ip+'api/set_pin_kod/'+ user.id.toString();
+    final url = Configs.ip + 'api/set_pin_kod/' + user.id.toString();
     try {
-      Map<String, String> headers = {"Content-type": "application/json","token": user.token};
+      Map<String, String> headers = {
+        "Content-type": "application/json",
+        "token": user.token
+      };
       final response = await http.post(
         url,
-        headers:headers,
-        body: json.encode(
-            {"pin_kod": pinCode}),
+        headers: headers,
+        body: json.encode({"pin_kod": pinCode}),
       );
       final responseData = json.decode(response.body);
       if (responseData['status'] == 999) {
         throw HttpException(responseData['status'].toString());
-      }
-      else if (responseData['status'] == 888) {
+      } else if (responseData['status'] == 888) {
         throw HttpException(responseData['status'].toString());
-      }
-      else if(responseData['token'] != null) {
+      } else if (responseData['token'] != null) {
         Prefs.setString('pin_code', pinCode);
         this.pin_code = pinCode;
         DbUser dbUser = await DBProvider.db.getUser();
@@ -198,15 +177,13 @@ class User extends ChangeNotifier{
         await DBProvider.db.updateUser(dbUser);
         notifyListeners();
       }
-    }
-    catch (error) {
+    } catch (error) {
       throw error;
     }
   }
 
   Future<User> getIdByUserName(String username) async {
-    final url =
-        Configs.ip+'api/get_id_by_username/' + username;
+    final url = Configs.ip + 'api/get_id_by_username/' + username;
 
     User user = User();
 
@@ -219,44 +196,42 @@ class User extends ChangeNotifier{
       final responseData = json.decode(response.body);
       if (responseData['success'] == false) {
         throw HttpException("User is not found");
-      }
-      else if(responseData['success'] == true) {
+      } else if (responseData['success'] == true) {
         this.user_id = responseData['id'];
         this.pin_code = responseData['pin'];
         user.user_id = responseData['id'];
         user.pin_code = responseData['pin'];
       }
-    }
-    catch (error) {
+    } catch (error) {
       throw error;
     }
     return user;
   }
 
-  Future<void> setPassword(String password, bool fromChangePassword, int userId) async {
-    final url =
-        Configs.ip+'api/change-password/'+ userId.toString();
+  Future<void> setPassword(
+      String password, bool fromChangePassword, int userId) async {
+    final url = Configs.ip + 'api/change-password/' + userId.toString();
     try {
-      Map<String, String> headers = {"Content-type": "application/json","token": Prefs.getString(Prefs.TOKEN)};
+      Map<String, String> headers = {
+        "Content-type": "application/json",
+        "token": Prefs.getString(Prefs.TOKEN)
+      };
       final response = await http.put(
         url,
-        headers:headers,
-        body: json.encode(
-            {"new_password": password}),
+        headers: headers,
+        body: json.encode({"new_password": password}),
       );
       final responseData = json.decode(response.body);
       if (responseData['status'] == 999) {
         throw HttpException(responseData['status'].toString());
-      }
-      else if (responseData['status'] == 888) {
+      } else if (responseData['status'] == 888) {
         throw HttpException(responseData['status'].toString());
-      }
-      else if(responseData['token'] != null) {
+      } else if (responseData['token'] != null) {
         Prefs.setString(Prefs.PASSWORD, password);
         Prefs.setInt(Prefs.USER_ID, responseData['id']);
         Prefs.setString(Prefs.TOKEN, responseData['token']);
         this.password = password;
-        if(fromChangePassword){
+        if (fromChangePassword) {
           DbUser dbUser = await DBProvider.db.getUser();
           dbUser.username = username;
           dbUser.token = responseData['token'];
@@ -266,28 +241,28 @@ class User extends ChangeNotifier{
 
         notifyListeners();
       }
-    }
-    catch (error) {
+    } catch (error) {
       throw error;
     }
   }
 
   Future<void> resetPassword(User user) async {
-    final url =
-        Configs.ip+'api/resetpassword/';
+    final url = Configs.ip + 'api/resetpassword/';
     try {
-      Map<String, String> headers = {"Content-type": "application/json","token": Prefs.getString(Prefs.TOKEN)};
+      Map<String, String> headers = {
+        "Content-type": "application/json",
+        "token": Prefs.getString(Prefs.TOKEN)
+      };
       final response = await http.post(
         url,
-        headers:headers,
-        body: json.encode(
-            {
-              "username": user.username,
-              "question1_id": user.first_question,
-              "answer1": user.first_question_answer,
-              "question2_id": user.second_question,
-              "answer2": user.second_question_answer,
-            }),
+        headers: headers,
+        body: json.encode({
+          "username": user.username,
+          "question1_id": user.first_question,
+          "answer1": user.first_question_answer,
+          "question2_id": user.second_question,
+          "answer2": user.second_question_answer,
+        }),
       );
       final responseData = json.decode(response.body);
       if (responseData == false) {
@@ -295,14 +270,11 @@ class User extends ChangeNotifier{
       }
       if (responseData['status'] == 999) {
         throw HttpException(responseData['status'].toString());
-      }
-      else if (responseData['status'] == 888) {
+      } else if (responseData['status'] == 888) {
         throw HttpException(responseData['status'].toString());
-      }
-      else if (responseData == "false") {
+      } else if (responseData == "false") {
         throw HttpException("Не совпадают ответы на вопросы");
-      }
-      else if(responseData['token'] != null) {
+      } else if (responseData['token'] != null) {
         Prefs.setString(Prefs.TOKEN, responseData['token']);
         Prefs.setInt(Prefs.USER_ID, responseData['id']);
 //        DbUser dbUser = await DBProvider.db.getUser();
@@ -311,29 +283,26 @@ class User extends ChangeNotifier{
 //        DBProvider.db.updateUser(dbUser);
         notifyListeners();
       }
-    }
-    catch (error) {
+    } catch (error) {
       throw error;
     }
   }
 
   void logout() async {
-    var userId=0;
+    var userId = 0;
     await DBProvider.db.getUser().then((value) async {
-      if(value != null) {
+      if (value != null) {
         userId = value.id;
-        final url =
-            Configs.ip+'api/logged';
+        final url = Configs.ip + 'api/logged';
         try {
           Map<String, String> headers = {"Content-type": "application/json"};
           final response = await http.post(
             url,
-            headers:headers,
-            body: json.encode(
-                {"id": value.id}),
+            headers: headers,
+            body: json.encode({"id": value.id}),
           );
           final responseData = json.decode(response.body);
-          if(responseData == "successfully") {
+          if (responseData == "successfully") {
             await DBProvider.db.sendNotSentUserSymptoms(userId, true);
             await DBProvider.db.sendNotSentNotifications();
             await DBProvider.db.sendNotSentUserMoods(userId, true);
@@ -343,45 +312,41 @@ class User extends ChangeNotifier{
 
             notifyListeners();
           }
-        }
-        catch (error) {
+        } catch (error) {
           throw error;
         }
       }
     });
   }
-  static void sendMapTestView(String type) async{
-    int testInt = type =='test'? 1: 0;
-    int mapInt = type =='map'? 1: 0;
-    final url =
-        Configs.ip+'api/statistics';
+
+  static void sendMapTestView(String type) async {
+    int testInt = type == 'test' ? 1 : 0;
+    int mapInt = type == 'map' ? 1 : 0;
+    final url = Configs.ip + 'api/statistics';
     try {
       Map<String, String> headers = {"Content-type": "application/json"};
       final response = await http.post(
         url,
-        headers:headers,
-        body: json.encode(
-            {
-              "test": testInt,
-              "map": mapInt
-            }),
+        headers: headers,
+        body: json.encode({"test": testInt, "map": mapInt}),
       );
       final responseData = json.decode(response.body);
       print(responseData);
-    }
-    catch (error) {
+    } catch (error) {
       throw error;
     }
   }
-  int getUserId(){
+
+  int getUserId() {
     return user_id;
   }
 
-  String getName(){
+  String getName() {
     return username;
   }
 
-  static Map<String, dynamic> loginRequestBodyToJson(String username, String password) =>
+  static Map<String, dynamic> loginRequestBodyToJson(
+          String username, String password) =>
       {
         'username': username,
         'password': password,

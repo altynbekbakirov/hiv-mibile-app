@@ -44,7 +44,7 @@ class _SchoolPatientContentState extends State<SchoolPatientContent> {
   }
 
   setPlHivTest() {
-    if(Prefs.getDouble("PL_HIV_TEST") == null){
+    if (Prefs.getDouble("PL_HIV_TEST") == null) {
       Prefs.setDouble("PL_HIV_TEST", 0);
     }
   }
@@ -153,7 +153,7 @@ class _SchoolPatientContentState extends State<SchoolPatientContent> {
         chapterEightPercent;
 
     var totalReadPercent = allPercent != null ? allPercent ~/ 8 : 0;
-    var plhivtest = Prefs.getDouble("PL_HIV_TEST");
+    // var plhivtest = Prefs.getDouble("PL_HIV_TEST");
 
     return Container(
       color: kLightGrayishBlue,
@@ -196,7 +196,8 @@ class _SchoolPatientContentState extends State<SchoolPatientContent> {
                       child: Center(
                         child: InkWell(
                             child: Text(
-                              totalReadPercent == 100 && Prefs.getDouble("PL_HIV_TEST") >= 80
+                              totalReadPercent == 100
+                                  // && Prefs.getDouble("PL_HIV_TEST") >= 80
                                   ? "my_certificate".tr().toUpperCase()
                                   : "continue_to_read".tr().toUpperCase(),
                               style: TextStyle(
@@ -206,7 +207,9 @@ class _SchoolPatientContentState extends State<SchoolPatientContent> {
                             ),
                             onTap: () {
                               Route route;
-                              if (totalReadPercent == 100 && Prefs.getDouble("PL_HIV_TEST") >= 80) {
+                              if (totalReadPercent == 100
+                                  // && Prefs.getDouble("PL_HIV_TEST") >= 80
+                                  ) {
                                 route = MaterialPageRoute(
                                     builder: (context) => CertificatePage());
                               } else {

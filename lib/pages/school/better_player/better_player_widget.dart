@@ -30,7 +30,7 @@ class _BetterPlayerWidgetState extends State<BetterPlayerWidget> {
     path = widget.path;
     title = widget.title;
     BetterPlayerDataSource betterPlayerDataSource = BetterPlayerDataSource(
-      BetterPlayerDataSourceType.NETWORK,
+      BetterPlayerDataSourceType.network,
       path,
     );
 

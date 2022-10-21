@@ -201,9 +201,9 @@ class _QuestionaryState extends State<Questionary> {
               fillColor: kLightGrayishBlue,
               focusedBorderColor: kDesaturatedBlue,
               borderRadius: 8.0,
-              hintText: '1999',
+              hintText: '2000',
               validator: (value) {
-                if (value.isEmpty) {
+                if (value.isEmpty || value.length != 4) {
                   return 'fillThisField'.tr();
                 }
               },
