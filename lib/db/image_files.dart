@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:HIVApp/data/configs.dart';
+import 'package:hiv/data/configs.dart';
 import 'package:http/http.dart' as http;
 import 'package:http/http.dart';
 import 'package:path_provider/path_provider.dart';
@@ -100,6 +100,7 @@ class UserImageFile {
       throw error;
     }
   }
+
   static Future<bool>  getList() async {
     await DBProvider.db.getUser().then((value) async {
       final url =
@@ -110,7 +111,7 @@ class UserImageFile {
           url,
           headers:headers,
         );
-        var rr = saveListToDatabase(json.decode(response.body));
+        saveListToDatabase(json.decode(response.body));
         return true;
       }
       catch (error) {
@@ -118,6 +119,7 @@ class UserImageFile {
       }
     });
   }
+
   static Future<List<UserImageFile>> saveListToDatabase(var responseBody ) async{
     List<UserImageFile> list = new List<UserImageFile>();
     for(var i in responseBody['data']){

@@ -1,5 +1,5 @@
-import 'package:HIVApp/Enums/chapter_type.dart';
-import 'package:HIVApp/data/pref_manager.dart';
+import 'package:hiv/Enums/chapter_type.dart';
+import 'package:hiv/data/pref_manager.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 

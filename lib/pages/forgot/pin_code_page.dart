@@ -1,7 +1,7 @@
-import 'package:HIVApp/model/user_registrations.dart';
-import 'package:HIVApp/pages/settings/widgets/change_password.dart';
-import 'package:HIVApp/pages/settings/widgets/reset_password.dart';
-import 'package:HIVApp/utils/constants.dart';
+import 'package:hiv/model/user_registrations.dart';
+import 'package:hiv/pages/settings/widgets/change_password.dart';
+import 'package:hiv/pages/settings/widgets/reset_password.dart';
+import 'package:hiv/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -51,10 +51,7 @@ class _OTPScreenState extends State<OTPScreen> {
     fontWeight: FontWeight.w600,
   );
   final LocalAuthentication auth = LocalAuthentication();
-  bool _canCheckBiometrics;
-  List<BiometricType> _availableBiometrics;
   String _authorized = 'Not Authorized';
-  bool _isAuthenticating = false;
   int pinIndex = 0;
   bool fingerprintPressed = false;
   bool deletePressed = false;
@@ -79,7 +76,7 @@ class _OTPScreenState extends State<OTPScreen> {
             child: Container(
               alignment: Alignment.bottomCenter,
               color: Colors.white,
-              child: Text("Введите ПИН-КОД", style: headStyle),
+              child: Text("pin_code_enter".tr(), style: headStyle),
             ),
           ),
           Expanded(
@@ -129,30 +126,24 @@ class _OTPScreenState extends State<OTPScreen> {
   }
 
   Future<void> _checkBiometrics() async {
-    bool canCheckBiometrics;
     try {
-      canCheckBiometrics = await auth.canCheckBiometrics;
     } on PlatformException catch (e) {
       print(e);
     }
     if (!mounted) return;
 
     setState(() {
-      _canCheckBiometrics = canCheckBiometrics;
     });
   }
 
   Future<void> _getAvailableBiometrics() async {
-    List<BiometricType> availableBiometrics;
     try {
-      availableBiometrics = await auth.getAvailableBiometrics();
     } on PlatformException catch (e) {
       print(e);
     }
     if (!mounted) return;
 
     setState(() {
-      _availableBiometrics = availableBiometrics;
     });
   }
 
@@ -160,7 +151,6 @@ class _OTPScreenState extends State<OTPScreen> {
     bool authenticated = false;
     try {
       setState(() {
-        _isAuthenticating = true;
         _authorized = 'Authenticating';
       });
       authenticated = await auth.authenticateWithBiometrics(
@@ -176,7 +166,6 @@ class _OTPScreenState extends State<OTPScreen> {
           useErrorDialogs: true,
           stickyAuth: true);
       setState(() {
-        _isAuthenticating = false;
         _authorized = 'Authenticating';
       });
     } on PlatformException catch (e) {
@@ -190,9 +179,6 @@ class _OTPScreenState extends State<OTPScreen> {
     });
   }
 
-  void _cancelAuthentication() {
-    auth.stopAuthentication();
-  }
 
   buildNumberPad() {
     return Container(

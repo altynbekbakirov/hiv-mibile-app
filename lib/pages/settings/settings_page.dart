@@ -1,9 +1,9 @@
-import 'package:HIVApp/components/app_bar_arrow_back.dart';
-import 'package:HIVApp/utils/constants.dart';
+import 'package:hiv/components/app_bar_arrow_back.dart';
+import 'package:hiv/utils/constants.dart';
 import 'package:flutter/material.dart';
 
 import '../../data/pref_manager.dart';
-import 'package:HIVApp/model/user_registrations.dart';
+import 'package:hiv/model/user_registrations.dart';
 import 'package:provider/provider.dart';
 import 'widgets/widgets.dart';
 import 'package:easy_localization/easy_localization.dart';

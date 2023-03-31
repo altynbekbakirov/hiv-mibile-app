@@ -1,5 +1,5 @@
-import 'package:HIVApp/model/questionnaire_provider.dart';
-import 'package:HIVApp/utils/constants.dart';
+import 'package:hiv/model/questionnaire_provider.dart';
+import 'package:hiv/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:easy_localization/easy_localization.dart';

@@ -1,6 +1,6 @@
-import 'package:HIVApp/model/audio.dart';
-import 'package:HIVApp/pages/basic_information/widgets/player_controller.dart';
-import 'package:HIVApp/utils/constants.dart';
+import 'package:hiv/model/audio.dart';
+import 'package:hiv/pages/basic_information/widgets/player_controller.dart';
+import 'package:hiv/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:provider/provider.dart';

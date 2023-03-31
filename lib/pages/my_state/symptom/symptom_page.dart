@@ -1,9 +1,9 @@
-import 'package:HIVApp/components/custom_button.dart';
-import 'package:HIVApp/db/db_provider.dart';
-import 'package:HIVApp/pages/my_state/symptom/chronology_widget.dart';
-import 'package:HIVApp/pages/my_state/symptom/total_widget.dart';
-import 'package:HIVApp/routes/routes.dart';
-import 'package:HIVApp/utils/constants.dart';
+import 'package:hiv/components/custom_button.dart';
+import 'package:hiv/db/db_provider.dart';
+import 'package:hiv/pages/my_state/symptom/chronology_widget.dart';
+import 'package:hiv/pages/my_state/symptom/total_widget.dart';
+import 'package:hiv/routes/routes.dart';
+import 'package:hiv/utils/constants.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';

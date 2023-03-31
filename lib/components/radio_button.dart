@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:HIVApp/model/radio_model.dart';
+import 'package:hiv/model/radio_model.dart';
 
 class RadioItem extends StatelessWidget {
 

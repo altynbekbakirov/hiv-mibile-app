@@ -1,6 +1,6 @@
 import 'dart:async';
-import 'package:HIVApp/routes/routes.dart';
-import 'package:HIVApp/utils/constants.dart';
+import 'package:hiv/routes/routes.dart';
+import 'package:hiv/utils/constants.dart';
 import 'package:connectivity/connectivity.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -8,7 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:latlong/latlong.dart';
-import 'package:HIVApp/data/pref_manager.dart';
+import 'package:hiv/data/pref_manager.dart';
 import '../../model/organization.dart';
 import '../../model/user.dart';
 
@@ -90,7 +90,7 @@ class _MapPageState extends State<MapPage> {
       locationType =
           "${organization.organization_name}\n${organization.city}. ${organization.street}.";
       locationName =
-          "${organization.phone_number}."; /*${organization.working_hours}*/
+          "${organization.working_hours}."; /*${organization.working_hours}*/
     }
     setState(() {
       pinTitle = locationName;

@@ -1,4 +1,4 @@
-import 'package:HIVApp/model/consultation.dart';
+import 'package:hiv/model/consultation.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -21,7 +21,6 @@ class ConsultantContactPage extends StatefulWidget {
 
 class _ConsultantContactPageState extends State<ConsultantContactPage> {
 
-  String _platformVersion = 'Unknown';
   ConsultantModel model = new ConsultantModel();
 
   @override
@@ -47,7 +46,6 @@ class _ConsultantContactPageState extends State<ConsultantContactPage> {
     if (!mounted) return;
 
     setState(() {
-      _platformVersion = platformVersion;
     });
   }
 

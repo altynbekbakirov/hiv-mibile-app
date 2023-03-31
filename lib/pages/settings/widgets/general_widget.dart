@@ -1,8 +1,8 @@
-import 'package:HIVApp/data/pref_manager.dart';
-import 'package:HIVApp/model/user.dart';
-import 'package:HIVApp/pages/login/login_page.dart';
-import 'package:HIVApp/pages/settings/about_app_page.dart';
-import 'package:HIVApp/utils/constants.dart';
+import 'package:hiv/data/pref_manager.dart';
+import 'package:hiv/model/user.dart';
+import 'package:hiv/pages/login/login_page.dart';
+import 'package:hiv/pages/settings/about_app_page.dart';
+import 'package:hiv/utils/constants.dart';
 import 'package:connectivity/connectivity.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';

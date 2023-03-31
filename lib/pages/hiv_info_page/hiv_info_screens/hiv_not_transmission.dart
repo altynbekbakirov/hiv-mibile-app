@@ -1,6 +1,6 @@
-import 'package:HIVApp/components/bullet.dart';
-import 'package:HIVApp/routes/routes.dart';
-import 'package:HIVApp/utils/constants.dart';
+import 'package:hiv/components/bullet.dart';
+import 'package:hiv/routes/routes.dart';
+import 'package:hiv/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
 

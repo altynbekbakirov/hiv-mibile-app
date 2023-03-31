@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'dart:io';
-import 'package:HIVApp/pages/school/video/video_model.dart';
-import 'package:HIVApp/utils/keys.dart';
+import 'package:hiv/pages/school/video/video_model.dart';
+import 'package:hiv/utils/keys.dart';
 import 'package:http/http.dart' as http;
 import 'hiv_channel_model.dart';
 

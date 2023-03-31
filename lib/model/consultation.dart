@@ -1,8 +1,5 @@
 import 'dart:convert';
-import 'dart:io';
-
-import 'package:HIVApp/data/configs.dart';
-import 'package:HIVApp/data/pref_manager.dart';
+import 'package:hiv/data/configs.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:http/http.dart' as http;
 
@@ -31,8 +28,6 @@ class ConsultantModel {
 
 class Consultation extends ChangeNotifier {
   List<ConsultantModel> _list = new List<ConsultantModel>();
-
-
   List<ConsultantModel> get list => _list;
 
   Future<void> getConsultants() async {
@@ -65,14 +60,16 @@ class Consultation extends ChangeNotifier {
       model.telegram = i['telegram'];
       model.messenger = i['messenger'];
       model.facebook = i['facebook'];
-      model.theme = JsonToTheme(i['theme']);
-      model.location = JsonToLocation(i['location']);
+      model.theme = jsonToTheme(i['theme']);
+      model.location = jsonToLocation(i['location']);
 
       _list.add(model);
     }
     notifyListeners();
+    return _list;
   }
-  ConsultationTheme JsonToTheme(var responseData){
+
+  ConsultationTheme jsonToTheme(var responseData){
     ConsultationTheme consultationTheme = new ConsultationTheme();
     consultationTheme.ky = responseData['ky'];
     consultationTheme.ru = responseData['ru'];
@@ -80,7 +77,7 @@ class Consultation extends ChangeNotifier {
     return consultationTheme;
   }
 
-  Location JsonToLocation(var responseData){
+  Location jsonToLocation(var responseData){
     Location location = new Location();
     location.longitude = responseData['longitude'];
     location.latitude = responseData['latitude'];

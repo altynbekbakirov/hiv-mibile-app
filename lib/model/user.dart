@@ -1,13 +1,14 @@
 import 'dart:convert';
-import 'package:HIVApp/data/configs.dart';
-import 'package:HIVApp/data/pref_manager.dart';
-import 'package:HIVApp/db/db_provider.dart';
-import 'package:HIVApp/db/image_files.dart';
-import 'package:HIVApp/db/model/user.dart';
-import 'package:HIVApp/db/notification.dart';
-import 'package:HIVApp/db/user_mood.dart';
-import 'package:HIVApp/db/user_symptom.dart';
-import 'package:HIVApp/pages/add/notification_form.dart';
+import 'package:hiv/data/configs.dart';
+import 'package:hiv/data/pref_manager.dart';
+import 'package:hiv/db/db_provider.dart';
+import 'package:hiv/db/image_files.dart';
+import 'package:hiv/db/model/user.dart';
+import 'package:hiv/db/notification.dart';
+import 'package:hiv/db/user_mood.dart';
+import 'package:hiv/db/user_symptom.dart';
+import 'package:hiv/model/rating_model.dart';
+import 'package:hiv/pages/add/notification_form.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:http/http.dart' as http;
 import 'http_exceptions.dart';
@@ -92,7 +93,7 @@ class User extends ChangeNotifier {
       final response = await http.post(
         url,
         headers: headers,
-        body: json.encode(loginRequestBodyToJson(username, password)),
+        body: json.encode(loginRequestBodyToJson(username.trim(), password.trim())),
       );
       final responseData = json.decode(response.body);
       if (responseData['status'] == 999) {
@@ -120,6 +121,7 @@ class User extends ChangeNotifier {
         UserSymptom.getList();
         UserImageFile.getList();
         NotificationDb.getList();
+        RatingModel.getList();
 
         this.user_id = responseData["id"];
         this.token = responseData["token"];
@@ -307,8 +309,10 @@ class User extends ChangeNotifier {
             await DBProvider.db.sendNotSentNotifications();
             await DBProvider.db.sendNotSentUserMoods(userId, true);
             await DBProvider.db.sendNotSentUserImages(user_id, true);
+            await DBProvider.db.deleteAllRatings();
             await DBProvider.db.deleteAllUsers();
             NotificationFormState.cancelAllNotifications();
+            Prefs.clear();
 
             notifyListeners();
           }

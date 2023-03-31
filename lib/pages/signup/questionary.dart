@@ -3,12 +3,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import 'package:HIVApp/components/dots_indicator.dart';
-import 'package:HIVApp/components/next_button.dart';
-import 'package:HIVApp/components/custom_appbar.dart';
-import 'package:HIVApp/model/user.dart';
-import 'package:HIVApp/model/user_registrations.dart';
-import 'package:HIVApp/routes/routes.dart';
+import 'package:hiv/components/dots_indicator.dart';
+import 'package:hiv/components/next_button.dart';
+import 'package:hiv/components/custom_appbar.dart';
+import 'package:hiv/model/user.dart';
+import 'package:hiv/model/user_registrations.dart';
+import 'package:hiv/routes/routes.dart';
 import '../../components/text_form_field.dart';
 import '../../utils/constants.dart';
 //enum Gender { male, female }

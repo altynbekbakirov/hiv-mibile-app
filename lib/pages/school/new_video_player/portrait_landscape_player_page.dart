@@ -1,5 +1,5 @@
-import 'package:HIVApp/pages/school/new_video_player/video_player_both_widget.dart';
-import 'package:HIVApp/pages/school/youtube/video_player.dart';
+import 'package:hiv/pages/school/new_video_player/video_player_both_widget.dart';
+import 'package:hiv/pages/school/youtube/video_player.dart';
 import 'package:ext_video_player/ext_video_player.dart';
 import 'package:flutter/material.dart';
 

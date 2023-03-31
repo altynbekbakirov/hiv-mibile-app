@@ -1,10 +1,10 @@
-import 'package:HIVApp/utils/constants.dart';
+import 'package:hiv/utils/constants.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 import 'package:http/http.dart' as http;
-import 'package:HIVApp/data/configs.dart';
-import 'package:HIVApp/data/pref_manager.dart';
+import 'package:hiv/data/configs.dart';
+import 'package:hiv/data/pref_manager.dart';
 
 import 'dart:convert';
 

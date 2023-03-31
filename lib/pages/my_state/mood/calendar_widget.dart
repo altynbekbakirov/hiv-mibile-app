@@ -1,7 +1,7 @@
-import 'package:HIVApp/db/db_provider.dart';
-import 'package:HIVApp/db/user_mood.dart';
-import 'package:HIVApp/routes/routes.dart';
-import 'package:HIVApp/utils/constants.dart';
+import 'package:hiv/db/db_provider.dart';
+import 'package:hiv/db/user_mood.dart';
+import 'package:hiv/routes/routes.dart';
+import 'package:hiv/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:table_calendar/table_calendar.dart';
 import 'package:easy_localization/easy_localization.dart';

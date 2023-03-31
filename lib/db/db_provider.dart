@@ -1,17 +1,16 @@
 import 'dart:io';
-
-import 'package:HIVApp/db/image_files.dart';
-import 'package:HIVApp/db/map_point.dart';
-import 'package:HIVApp/db/model/answer.dart';
-import 'package:HIVApp/db/notification.dart';
-import 'package:HIVApp/db/user_mood.dart';
-import 'package:HIVApp/db/user_symptom.dart';
-import 'package:HIVApp/db/audio_db.dart';
+import 'package:hiv/db/image_files.dart';
+import 'package:hiv/db/map_point.dart';
+import 'package:hiv/db/model/answer.dart';
+import 'package:hiv/db/notification.dart';
+import 'package:hiv/db/user_mood.dart';
+import 'package:hiv/db/user_symptom.dart';
+import 'package:hiv/db/audio_db.dart';
+import 'package:hiv/model/rating_model.dart';
 import 'package:path/path.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:connectivity/connectivity.dart';
-
 import 'model/category.dart';
 import 'model/consultation.dart';
 import 'model/question.dart';
@@ -34,11 +33,9 @@ class DBProvider {
 
   initDB() async {
     Directory documentsDirectory = await getApplicationDocumentsDirectory();
-    String path = join(documentsDirectory.path, "hivapp.db");
-    return await openDatabase(path, version: 1, onOpen: (db) {},
+    String path = join(documentsDirectory.path, "hiv.db");
+    return await openDatabase(path, version: 2, onOpen: (db) {},
         onCreate: (Database db, int version) async {
-      //region Models on create
-      //region User
       await db.execute("CREATE TABLE users ("
           "id INTEGER PRIMARY KEY AUTOINCREMENT,"
           "username TEXT,"
@@ -46,15 +43,13 @@ class DBProvider {
           "token TEXT,"
           "pin_code TEXT"
           ")");
-      //endregion
-      //region Categories
+
       await db.execute("CREATE TABLE test_categories ("
           "id INTEGER PRIMARY KEY AUTOINCREMENT,"
           "name_ky TEXT,"
           "name_ru TEXT"
           ")");
-      //endregion
-      //region Questions
+
       await db.execute("CREATE TABLE test_questions ("
           "id INTEGER PRIMARY KEY AUTOINCREMENT,"
           "name_ky TEXT,"
@@ -64,8 +59,7 @@ class DBProvider {
           "FOREIGN KEY(category_id)\n "
           "REFERENCES test_categories(id)"
           ")");
-      //endregion
-      //region Answers
+
       await db.execute("CREATE TABLE test_answers ("
           "id INTEGER PRIMARY KEY AUTOINCREMENT,"
           "name_ky TEXT,"
@@ -75,8 +69,7 @@ class DBProvider {
           "FOREIGN KEY (question_id)\n"
           "REFERENCES test_questions(id)"
           ")");
-      //endregion
-      //region Consultation
+
       await db.execute("CREATE TABLE consultation ("
           "id INTEGER PRIMARY KEY AUTOINCREMENT,"
           "consultant_id INTEGER,"
@@ -90,8 +83,7 @@ class DBProvider {
           "latitude REAL,"
           "longitude REAL"
           ")");
-      //endregion
-      //region Notifications
+
       await db.execute("CREATE TABLE notifications ("
           "id INTEGER PRIMARY KEY AUTOINCREMENT,"
           "description TEXT,"
@@ -100,8 +92,7 @@ class DBProvider {
           "type TEXT CHECK( type IN ('NotificationDbType.Drug','NotificationDbType.Visit','NotificationDbType.Analysis') )   NOT NULL,"
           "sent INTEGER NOT NULL DEFAULT 1"
           ")");
-      //endregion
-      //region Map Points
+
       await db.execute("CREATE TABLE map_points ("
           "id INTEGER PRIMARY KEY AUTOINCREMENT,"
           "name_ky TEXT,"
@@ -111,8 +102,7 @@ class DBProvider {
           "longitude REAL,"
           "type INTEGER"
           ")");
-      //endregion
-      //region User Symptoms
+
       await db.execute("CREATE TABLE user_symptoms ("
           "id INTEGER PRIMARY KEY AUTOINCREMENT,"
           "user_id INTEGER,"
@@ -125,8 +115,7 @@ class DBProvider {
           "FOREIGN KEY (user_id)\n"
           "REFERENCES users(id)\n"
           ")");
-      //endregion
-      //region User Moods
+
       await db.execute("CREATE TABLE user_moods ("
           "id INTEGER PRIMARY KEY AUTOINCREMENT,"
           "user_id INTEGER,"
@@ -138,8 +127,7 @@ class DBProvider {
           "FOREIGN KEY (user_id)\n"
           "REFERENCES users(id)\n"
           ")");
-      //endregion
-      //region User Images
+
       await db.execute("CREATE TABLE user_images ("
           "id INTEGER PRIMARY KEY AUTOINCREMENT,"
           "user_id INTEGER,"
@@ -152,8 +140,7 @@ class DBProvider {
           "FOREIGN KEY (user_id)\n"
           "REFERENCES users(id)\n"
           ")");
-      //endregion
-      //region Audio files
+
       await db.execute("CREATE TABLE audio_files ("
           "id INTEGER PRIMARY KEY AUTOINCREMENT,"
           "local_path TEXT,"
@@ -161,8 +148,28 @@ class DBProvider {
           "category_name TEXT,"
           "remote_path TEXT"
           ")");
-      //endregion
-      //endregion
+
+      await db.execute(
+        "CREATE TABLE hiv(id INTEGER PRIMARY KEY, name TEXT, age INTEGER)",
+      );
+
+      await db.execute("CREATE TABLE ratings ("
+          "id INTEGER,"
+          "consultant_id INTEGER,"
+          "consultant_name TEXT,"
+          "user_id INTEGER,"
+          "user_name TEXT,"
+          "rating REAL)");
+    }, onUpgrade: (Database db, int version, int lastVersion) async {
+      if (lastVersion > version) {
+        await db.execute("CREATE TABLE ratings ("
+            "id INTEGER,"
+            "consultant_id INTEGER,"
+            "consultant_name TEXT,"
+            "user_id INTEGER,"
+            "user_name TEXT,"
+            "rating REAL)");
+      }
     });
   }
 
@@ -199,8 +206,14 @@ class DBProvider {
 
   Future<DbUser> getUser() async {
     final db = await database;
-    var res = await db.query("users", limit: 1);
-    return res.isNotEmpty ? DbUser.fromJson(res.first) : null;
+    var res;
+    await db.query("users", limit: 1).then((value) {
+      if (value.length > 0) {
+        res = DbUser.fromJson(value.first);
+      }
+      // res = value.firstWhere((a) => a != null, orElse: () => null);
+    });
+    return res;
   }
 
   Future<int> getUserId() async {
@@ -384,6 +397,29 @@ class DBProvider {
     db.rawDelete("Delete * from consultation");
   }
 
+  insertRating(RatingModel model) async {
+    final db = await database;
+    await db.insert(ratingTable, model.toJson());
+  }
+
+  updateRating(RatingModel model) async {
+    final db = await database;
+    await db.update(ratingTable, model.toJson(),
+        where: 'id = ?', whereArgs: [model.id]);
+  }
+
+  Future<List<RatingModel>> getRatingsByUser(int userID) async {
+    final db = await database;
+    final result =
+        await db.query(ratingTable, where: 'user_id = ?', whereArgs: [userID]);
+    return result.map((e) => RatingModel.fromJson(e)).toList();
+  }
+
+  deleteAllRatings() async {
+    final db = await database;
+    db.rawDelete("Delete from ratings");
+  }
+
   //endregion
   //region Notifications
   Future<int> newNotification(NotificationDb model) async {
@@ -439,24 +475,26 @@ class DBProvider {
   Future<List<NotificationDb>> getNotificationsByType(
       NotificationDbType type) async {
     final db = await database;
-    var res = await db.query("notifications",
-        where: "type = ?", whereArgs: [type.toString()]);
     List<NotificationDb> list = new List<NotificationDb>();
-    for (var r in res) {
-      list.add(NotificationDb.fromJson(r));
-    }
-    return res.isNotEmpty ? list : Null;
+    await db.query("notifications",
+        where: "type = ?", whereArgs: [type.toString()]).then((value) {
+      for (var r in value) {
+        list.add(NotificationDb.fromJson(r));
+      }
+    });
+    return list;
   }
 
   Future<List<NotificationDb>> getNotificationsBySent() async {
-    final db = await database;
-    var res =
-        await db.query("notifications", where: "sent = ?", whereArgs: [0]);
     List<NotificationDb> list = new List<NotificationDb>();
-    for (var r in res) {
-      list.add(NotificationDb.fromJson(r));
-    }
-    return res.isNotEmpty ? list : Null;
+    final db = await database;
+    await db.query("notifications", where: "sent = ?", whereArgs: [0]).then(
+        (value) {
+      for (var r in value) {
+        list.add(NotificationDb.fromJson(r));
+      }
+    });
+    return list;
   }
 
   updateNotification(NotificationDb newModel) async {
@@ -547,15 +585,14 @@ class DBProvider {
           model.file_name,
           model.date_time.toString()
         ]);
-    sendNotSentUserMoods(model.user_id, false);
     return raw;
   }
 
-  Future<void> sendNotSentUserMoods(int user_id, bool logout) async {
+  Future<void> sendNotSentUserMoods(int userId, bool logout) async {
     _checkInternetConnection().then((value) async {
       if (value) {
         getUserMoodsBySent().then((list) {
-          UserMood.sendList(list, user_id).then((value) {
+          UserMood.sendList(list, userId).then((value) {
             for (var i in list) {
               if (!logout) {
                 i.sent = 1;
@@ -594,7 +631,8 @@ class DBProvider {
     final db = await database;
     List<UserMood> list = new List<UserMood>();
     return getUserId().then((value) async {
-      var res = await db.query("user_moods", where: "user_id = ?", whereArgs: [value], orderBy: "date_time DESC");
+      var res = await db.query("user_moods",
+          where: "user_id = ?", whereArgs: [value], orderBy: "date_time DESC");
       // var res = await db.query("user_moods", orderBy: "date_time DESC");
       for (var r in res) {
         list.add(UserMood.fromJson(r));
@@ -607,7 +645,10 @@ class DBProvider {
     final db = await database;
     List<UserMood> list = new List<UserMood>();
     return getUserId().then((value) async {
-      var res = await db.query("user_moods", where: "user_id = ? and date(date_time) = ?", whereArgs: [value, currentDate], orderBy: "date_time DESC");
+      var res = await db.query("user_moods",
+          where: "user_id = ? and date(date_time) = ?",
+          whereArgs: [value, currentDate],
+          orderBy: "date_time DESC");
       // var res = await db.query("user_moods", orderBy: "date_time DESC");
       for (var r in res) {
         list.add(UserMood.fromJson(r));
@@ -633,15 +674,19 @@ class DBProvider {
     }
 
     final db = await database;
-    var res = await db.rawQuery(
-        "select s.file_name, s.title, count() as count from user_moods s where s.date_time > datetime('now'," +
-            queryStr +
-            ") group by s.file_name");
     List<UserMoodTotal> list = new List<UserMoodTotal>();
-    for (var r in res) {
-      list.add(UserMoodTotal.fromJson(r));
-    }
-    return res.isNotEmpty ? list : Null;
+    await db
+        .rawQuery(
+            "select s.file_name, s.title, count() as count from user_moods s where s.date_time > datetime('now'," +
+                queryStr +
+                ") group by s.file_name")
+        .then((value) {
+      for (var r in value) {
+        list.add(UserMoodTotal.fromJson(r));
+      }
+    });
+
+    return list;
   }
 
   Future<List<UserMood>> getUserMoodsBySent() async {
@@ -668,7 +713,8 @@ class DBProvider {
 
   deleteUserMoodByDate(String currentDate) async {
     final db = await database;
-    db.delete("user_moods", where: "date(date_time) = ?", whereArgs: [currentDate]);
+    db.delete("user_moods",
+        where: "date(date_time) = ?", whereArgs: [currentDate]);
   }
 
   deleteAllUserMoods() async {
@@ -692,19 +738,16 @@ class DBProvider {
           model.rating,
           0
         ]);
-    await sendNotSentUserSymptoms(model.user_id, false);
     return raw;
   }
 
-  Future<void> sendNotSentUserSymptoms(int user_id, bool logout) async {
+  Future<void> sendNotSentUserSymptoms(int userId, bool logout) async {
     _checkInternetConnection().then((value) async {
       if (value) {
         getUserSymptomsBySent().then((list) {
-          UserSymptom.sendList(list, user_id).then((value) {
+          UserSymptom.sendList(list, userId).then((value) {
             for (var i in list) {
-              if (logout) {
-//                deleteUserSymptom(i.id);
-              } else {
+              if (!logout) {
                 i.sent = 1;
                 updateUserSymptom(i);
               }
@@ -724,7 +767,7 @@ class DBProvider {
         " VALUES (?,?,?,?,?,?,1)",
         [
           model.id,
-          1,
+          model.user_id,
           model.title,
           model.file_name,
           model.date_time.toString(),
@@ -741,8 +784,7 @@ class DBProvider {
 
   Future<List<UserSymptom>> getUserSymptomsBySent() async {
     final db = await database;
-    var res =
-        await db.query("user_symptoms", where: "sent = ?", whereArgs: [0]);
+    var res = await db.query("user_symptoms", orderBy: "date_time DESC");
     List<UserSymptom> list = new List<UserSymptom>();
     for (var r in res) {
       list.add(UserSymptom.fromJson(r));
@@ -758,6 +800,21 @@ class DBProvider {
       list.add(UserSymptom.fromJson(r));
     }
     return list;
+  }
+
+  Future<List<UserSymptom>> getAllUserSymptomsByDate(String currentDate) async {
+    final db = await database;
+    List<UserSymptom> list = new List<UserSymptom>();
+    return getUserId().then((value) async {
+      var res = await db.query("user_symptoms",
+          where: "user_id = ? and date(date_time) = ?",
+          whereArgs: [value, currentDate],
+          orderBy: "date_time DESC");
+      for (var r in res) {
+        list.add(UserSymptom.fromJson(r));
+      }
+      return list.isNotEmpty ? list : null;
+    });
   }
 
   Future<List<UserSymptomTotal>> getAllGroupedByTitle(int type) async {
@@ -777,15 +834,18 @@ class DBProvider {
     }
 
     final db = await database;
-    var res = await db.rawQuery(
-        "select s.file_name, s.title, count() as count from user_symptoms s where s.date_time > datetime('now'," +
-            queryStr +
-            ") group by s.title");
     List<UserSymptomTotal> list = new List<UserSymptomTotal>();
-    for (var r in res) {
-      list.add(UserSymptomTotal.fromJson(r));
-    }
-    return res.isNotEmpty ? list : Null;
+    await db
+        .rawQuery(
+            "select s.file_name, s.title, count() as count from user_symptoms s where s.date_time > datetime('now'," +
+                queryStr +
+                ") group by s.title")
+        .then((value) {
+      for (var r in value) {
+        list.add(UserSymptomTotal.fromJson(r));
+      }
+    });
+    return list;
   }
 
   updateUserSymptom(UserSymptom newModel) async {
@@ -803,6 +863,12 @@ class DBProvider {
   deleteAllUserSymptom() async {
     final db = await database;
     db.rawDelete("Delete from user_symptoms");
+  }
+
+  deleteUserSymptomsByDate(String currentDate) async {
+    final db = await database;
+    db.delete("user_symptoms",
+        where: "date(date_time) = ?", whereArgs: [currentDate]);
   }
 
   //endregion
@@ -985,6 +1051,4 @@ class DBProvider {
     final db = await database;
     db.rawDelete("Delete from audio_files");
   }
-//endregion
-//endregion
 }

@@ -1,7 +1,8 @@
-import 'package:HIVApp/components/custom_button.dart';
-import 'package:HIVApp/db/db_provider.dart';
-import 'package:HIVApp/db/user_mood.dart';
-import 'package:HIVApp/routes/routes.dart';
+import 'package:hiv/components/custom_button.dart';
+import 'package:hiv/db/db_provider.dart';
+import 'package:hiv/db/model/user.dart';
+import 'package:hiv/db/user_mood.dart';
+import 'package:hiv/routes/routes.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -24,6 +25,7 @@ class _AddMoodFormState extends State<AddMoodForm> {
   final format = DateFormat("yyyy-MM-dd");
   String assetPath = "assets/images/moods/";
   List<MoodModel> _moodList = List();
+  DbUser dbUser = new DbUser();
 
   TextStyle emojiStyle = TextStyle(
       fontSize: 14, fontWeight: FontWeight.w500, color: kDarkModerateBlue);
@@ -59,7 +61,16 @@ class _AddMoodFormState extends State<AddMoodForm> {
   void initState() {
     super.initState();
     _dateTime = widget.selectedDate;
+    getUser();
     getList(format.format(_dateTime));
+  }
+
+  Future getUser() async {
+    await DBProvider.db.getUser().then((value) {
+      setState(() {
+        dbUser = value;
+      });
+    });
   }
 
   getList([String currentDate]) async {
@@ -545,19 +556,20 @@ class _AddMoodFormState extends State<AddMoodForm> {
               onPressed: () async {
                 await DBProvider.db
                     .deleteUserMoodByDate(format.format(_dateTime));
-                await DBProvider.db.getUserId().then((value) async {
-                  for (int i = 0; i < _moodList.length; i++) {
-                    UserMood userMood = new UserMood();
-                    userMood.title = _moodList[i].title;
-                    userMood.file_name = _moodList[i].symptom;
-                    userMood.date_time = _dateTime;
-                    userMood.user_id = value;
-                    await DBProvider.db.newUserMood(userMood);
-                  }
-                  Navigator.pop(context);
-                  Navigator.pop(context);
-                  Navigator.pushNamed(context, Routes.mood);
-                });
+
+                for (int i = 0; i < _moodList.length; i++) {
+                  UserMood userMood = new UserMood();
+                  userMood.title = _moodList[i].title;
+                  userMood.file_name = _moodList[i].symptom;
+                  userMood.date_time = _dateTime;
+                  userMood.user_id = dbUser.id;
+                  await DBProvider.db.newUserMood(userMood);
+                }
+                DBProvider.db.sendNotSentUserMoods(dbUser.id, false);
+
+                Navigator.pop(context);
+                Navigator.pop(context);
+                Navigator.pushNamed(context, Routes.mood);
               },
             ),
           ],
@@ -590,4 +602,9 @@ class MoodModel {
   String symptom;
 
   MoodModel({this.title, this.symptom});
+
+  @override
+  String toString() {
+    return 'MoodModel{title: $title, symptom: $symptom}';
+  }
 }

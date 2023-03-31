@@ -1,4 +1,4 @@
-import 'package:HIVApp/utils/constants.dart';
+import 'package:hiv/utils/constants.dart';
 import 'package:flutter/material.dart';
 
 class CardListTile extends StatefulWidget {

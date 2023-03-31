@@ -1,4 +1,4 @@
-import 'package:HIVApp/components/app_bar_arrow_back.dart';
+import 'package:hiv/components/app_bar_arrow_back.dart';
 import 'package:flutter/material.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 import 'package:easy_localization/easy_localization.dart';

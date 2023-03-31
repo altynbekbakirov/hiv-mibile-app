@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 
 import '../data/pref_manager.dart';
 import '../Enums/language-type.dart';
-import 'package:HIVApp/components/radio_button.dart';
-import 'package:HIVApp/model/radio_model.dart';
+import 'package:hiv/components/radio_button.dart';
+import 'package:hiv/model/radio_model.dart';
 
 class ChangeLanguageButton extends StatefulWidget {
   const ChangeLanguageButton({Key key}) : super(key: key);

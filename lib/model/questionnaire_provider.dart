@@ -1,4 +1,4 @@
-import 'package:HIVApp/model/plhiv_question_model.dart';
+import 'package:hiv/model/plhiv_question_model.dart';
 import 'package:flutter/cupertino.dart';
 
 class Questionnaire extends ChangeNotifier {

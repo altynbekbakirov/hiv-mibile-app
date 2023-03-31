@@ -1,6 +1,6 @@
-import 'package:HIVApp/data/configs.dart';
-import 'package:HIVApp/pages/basic_information/widgets/video.dart';
-import 'package:HIVApp/utils/constants.dart';
+import 'package:hiv/data/configs.dart';
+import 'package:hiv/pages/basic_information/widgets/video.dart';
+import 'package:hiv/utils/constants.dart';
 import 'package:flutter/material.dart';
 
 import 'better_player_widget.dart';

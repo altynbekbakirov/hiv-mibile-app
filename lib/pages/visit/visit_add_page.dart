@@ -2,11 +2,11 @@ import 'dart:async';
 import 'dart:io';
 import 'dart:ui';
 
-import 'package:HIVApp/components/text_form_field.dart';
-import 'package:HIVApp/db/db_provider.dart';
-import 'package:HIVApp/db/notification.dart';
-import 'package:HIVApp/pages/add/notification_form.dart';
-import 'package:HIVApp/pages/my_state/mood/add_mood_form.dart';
+import 'package:hiv/components/text_form_field.dart';
+import 'package:hiv/db/db_provider.dart';
+import 'package:hiv/db/notification.dart';
+import 'package:hiv/pages/add/notification_form.dart';
+import 'package:hiv/pages/my_state/mood/add_mood_form.dart';
 import 'package:datetime_picker_formfield/datetime_picker_formfield.dart';
 import 'package:device_info/device_info.dart';
 import 'package:flutter/cupertino.dart';

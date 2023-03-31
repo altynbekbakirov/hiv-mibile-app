@@ -1,11 +1,11 @@
 import 'dart:async';
 import 'dart:ui';
 
-import 'package:HIVApp/Enums/select_notification_operation.dart';
-import 'package:HIVApp/db/db_provider.dart';
-import 'package:HIVApp/db/notification.dart';
-import 'package:HIVApp/pages/add/notification_form.dart';
-import 'package:HIVApp/routes/routes.dart';
+import 'package:hiv/Enums/select_notification_operation.dart';
+import 'package:hiv/db/db_provider.dart';
+import 'package:hiv/db/notification.dart';
+import 'package:hiv/pages/add/notification_form.dart';
+import 'package:hiv/routes/routes.dart';
 import 'package:datetime_picker_formfield/datetime_picker_formfield.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -29,14 +29,10 @@ class _AddPageState extends State<AddPage> {
 
   @override
   initState() {
-    isLoggedIn();
     super.initState();
+    isLoggedIn();
   }
 
-  @override
-  void dispose() {
-    super.dispose();
-  }
 
   void _showErrorDialog(String message) {
     showDialog(

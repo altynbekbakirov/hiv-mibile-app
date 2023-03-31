@@ -1,7 +1,7 @@
-import 'package:HIVApp/date_time/date_time_formatter.dart';
-import 'package:HIVApp/db/db_provider.dart';
-import 'package:HIVApp/db/user_symptom.dart';
-import 'package:HIVApp/utils/constants.dart';
+import 'package:hiv/date_time/date_time_formatter.dart';
+import 'package:hiv/db/db_provider.dart';
+import 'package:hiv/db/user_symptom.dart';
+import 'package:hiv/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:grouped_list/grouped_list.dart';
 import 'package:smooth_star_rating/smooth_star_rating.dart';

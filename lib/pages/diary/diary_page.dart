@@ -1,15 +1,15 @@
 import 'dart:io';
 
-import 'package:HIVApp/data/pref_manager.dart';
-import 'package:HIVApp/db/db_provider.dart';
-import 'package:HIVApp/db/image_files.dart';
-import 'package:HIVApp/db/notification.dart';
-import 'package:HIVApp/db/user_mood.dart';
-import 'package:HIVApp/db/user_symptom.dart';
-import 'package:HIVApp/pages/test/test_page.dart';
-import 'package:HIVApp/pages/visit/visit_page.dart';
-import 'package:HIVApp/routes/routes.dart';
-import 'package:HIVApp/utils/constants.dart';
+import 'package:hiv/data/pref_manager.dart';
+import 'package:hiv/db/db_provider.dart';
+import 'package:hiv/db/image_files.dart';
+import 'package:hiv/db/notification.dart';
+import 'package:hiv/db/user_mood.dart';
+import 'package:hiv/db/user_symptom.dart';
+import 'package:hiv/pages/test/test_page.dart';
+import 'package:hiv/pages/visit/visit_page.dart';
+import 'package:hiv/routes/routes.dart';
+import 'package:hiv/utils/constants.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';

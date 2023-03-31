@@ -1,7 +1,7 @@
-import 'package:HIVApp/components/text_form_field.dart';
-import 'package:HIVApp/db/db_provider.dart';
-import 'package:HIVApp/db/notification.dart';
-import 'package:HIVApp/utils/constants.dart';
+import 'package:hiv/components/text_form_field.dart';
+import 'package:hiv/db/db_provider.dart';
+import 'package:hiv/db/notification.dart';
+import 'package:hiv/utils/constants.dart';
 import 'package:datetime_picker_formfield/datetime_picker_formfield.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';

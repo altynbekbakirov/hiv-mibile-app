@@ -1,5 +1,5 @@
-import 'package:HIVApp/model/audio.dart';
-import 'package:HIVApp/utils/constants.dart';
+import 'package:hiv/model/audio.dart';
+import 'package:hiv/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';

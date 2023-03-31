@@ -1,4 +1,4 @@
-# HIVApp
+# hiv
 
 Mobile application for testing, support and treatment of HIV related issues
 

@@ -1,4 +1,4 @@
-import 'package:HIVApp/utils/constants.dart';
+import 'package:hiv/utils/constants.dart';
 import 'package:flutter/material.dart';
 
 /// Карты для меню
@@ -79,15 +79,24 @@ class _HomeMenuCardState extends State<HomeMenuCard> {
           ],
         ),
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(8.0),
-            color: isTapped ? kModerateBlue : Colors.white,
-            boxShadow: [
-              BoxShadow(
-                  color: Colors.grey.withOpacity(0.5),
-                  spreadRadius: 1,
-                  blurRadius: 8.0,
-                  offset: Offset(0, 1))
-            ]),
+          borderRadius: BorderRadius.circular(8.0),
+          color: isTapped ? kModerateBlue : Colors.white,
+          boxShadow: [
+            BoxShadow(
+                color: Colors.grey.withOpacity(0.5),
+                spreadRadius: 1,
+                blurRadius: 8.0,
+                offset: Offset(0, 1))
+          ],
+          /*gradient: LinearGradient(
+            colors: [
+              kColorLightBlue,
+              kDesaturatedBlue,
+            ],
+            begin: Alignment.centerLeft,
+            end: Alignment.centerRight,
+          ),*/
+        ),
       ),
     );
   }

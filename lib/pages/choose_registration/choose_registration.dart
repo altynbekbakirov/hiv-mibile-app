@@ -1,8 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-
 import '../../data/pref_manager.dart';
-
 import '../../components/custom_button.dart';
 import '../../components/text_form_field.dart';
 import '../../routes/routes.dart';

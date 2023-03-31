@@ -1,10 +1,8 @@
 import 'dart:async';
-
-import 'package:HIVApp/db/db_provider.dart';
-import 'package:HIVApp/db/model/user.dart';
+import 'package:hiv/db/db_provider.dart';
+import 'package:hiv/db/model/user.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import '../data/pref_manager.dart';
 import '../routes/routes.dart';
 import '../utils/app_themes.dart';
@@ -18,17 +16,23 @@ class SplashPage extends StatefulWidget {
 
 class _SplashPageState extends State<SplashPage> {
   DbUser user;
-  String logoAnimation;
+  Timer _timer;
 
   @override
   void initState() {
     super.initState();
-    logoAnimation = "assets/images/logo-animation.gif";
     getUser();
-    Timer(Duration(seconds: 4), () => {_loadScreen()});
+    _timer = Timer(const Duration(seconds: 5), () => {
+      _loadScreen()});
   }
 
-  getUser() async {
+  @override
+  void dispose() {
+    super.dispose();
+    _timer.cancel();
+  }
+
+  Future getUser() async {
     await DBProvider.db.getUser().then((value) {
       setState(() {
         user = value;
@@ -36,26 +40,27 @@ class _SplashPageState extends State<SplashPage> {
     });
   }
 
-  _loadScreen() async {
-    await Prefs.load();
-    context.bloc<ThemeBloc>().add(ThemeChanged(
-        theme: Prefs.getBool(Prefs.DARKTHEME, def: false)
-            ? AppTheme.DarkTheme
-            : AppTheme.LightTheme));
-    Prefs.setString('ribbon',
-        Prefs.getBool(Prefs.DARKTHEME, def: false) ? 'ribbon11' : 'ribbon');
-    if (Prefs.getString('language') == null)
-      Navigator.of(context).pushReplacementNamed(Routes.auth);
-    else {
-      if (user != null) {
-        if (user.pin_code != null)
-          Navigator.of(context).pushReplacementNamed(Routes.pin_code_screen);
-        else
-          Navigator.of(context).pushReplacementNamed(Routes.home);
-      } else {
-        Navigator.of(context).pushReplacementNamed(Routes.chooseRegistration);
+  Future _loadScreen() async {
+    await Prefs.load().then((value) {
+      context.bloc<ThemeBloc>().add(ThemeChanged(
+          theme: Prefs.getBool(Prefs.DARKTHEME, def: false)
+              ? AppTheme.DarkTheme
+              : AppTheme.LightTheme));
+      Prefs.setString('ribbon',
+          Prefs.getBool(Prefs.DARKTHEME, def: false) ? 'ribbon11' : 'ribbon');
+      if (Prefs.getString('language') == null)
+        Navigator.of(context).pushReplacementNamed(Routes.auth);
+      else {
+        if (user != null) {
+          if (user.pin_code != null)
+            Navigator.of(context).pushReplacementNamed(Routes.pin_code_screen);
+          else
+            Navigator.of(context).pushReplacementNamed(Routes.home);
+        } else {
+          Navigator.of(context).pushReplacementNamed(Routes.chooseRegistration);
+        }
       }
-    }
+    });
   }
 
   @override
@@ -72,7 +77,7 @@ class _SplashPageState extends State<SplashPage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   Image.asset(
-                    logoAnimation,
+                    'assets/images/logo-animation.gif',
                     height: 104,
                     width: 104,
                   ),

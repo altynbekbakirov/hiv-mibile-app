@@ -1,4 +1,4 @@
-package ulut.soft.HIVApp;
+package com.soft.hiv;
 
 import androidx.annotation.NonNull;
 

@@ -1,11 +1,11 @@
-import 'package:HIVApp/components/dots_indicator.dart';
+import 'package:hiv/components/dots_indicator.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../utils/constants.dart';
-import 'package:HIVApp/components/sign_up_form.dart';
-import 'package:HIVApp/components/custom_appbar.dart';
+import 'package:hiv/components/sign_up_form.dart';
+import 'package:hiv/components/custom_appbar.dart';
 
 
 enum Gender { male, female }

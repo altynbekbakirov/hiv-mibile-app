@@ -1,5 +1,5 @@
-import 'package:HIVApp/model/videoUI_provider.dart';
-import 'package:HIVApp/utils/constants.dart';
+import 'package:hiv/model/videoUI_provider.dart';
+import 'package:hiv/utils/constants.dart';
 import 'package:auto_orientation/auto_orientation.dart';
 import 'package:ext_video_player/ext_video_player.dart';
 import 'package:flutter/material.dart';

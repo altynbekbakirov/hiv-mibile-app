@@ -1,4 +1,4 @@
-import 'package:HIVApp/routes/routes.dart';
+import 'package:hiv/routes/routes.dart';
 import 'package:flutter/material.dart';
 
 class BottomNavBar extends StatelessWidget {

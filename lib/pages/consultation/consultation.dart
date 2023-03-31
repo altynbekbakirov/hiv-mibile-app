@@ -1,6 +1,6 @@
-import 'package:HIVApp/model/consultation.dart';
-import 'package:HIVApp/pages/consultation/consultant_contacts.dart';
-import 'package:HIVApp/routes/routes.dart';
+import 'package:hiv/model/consultation.dart';
+import 'package:hiv/pages/consultation/consultant_contacts.dart';
+import 'package:hiv/routes/routes.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';

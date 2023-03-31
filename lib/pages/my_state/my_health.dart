@@ -1,8 +1,8 @@
-import 'package:HIVApp/components/app_bar_arrow_back.dart';
-import 'package:HIVApp/components/square_button.dart';
-import 'package:HIVApp/pages/my_state/result/results_tests.dart';
-import 'package:HIVApp/routes/routes.dart';
-import 'package:HIVApp/utils/constants.dart';
+import 'package:hiv/components/app_bar_arrow_back.dart';
+import 'package:hiv/components/square_button.dart';
+import 'package:hiv/pages/my_state/result/results_tests.dart';
+import 'package:hiv/routes/routes.dart';
+import 'package:hiv/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
 
@@ -14,7 +14,7 @@ class MyHealth extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: ArrowBackAppBar(
-        text: "consultation".tr().toUpperCase(),
+        text: "my_condition".tr().toUpperCase(),
       ),
       body: Container(
         padding: EdgeInsets.symmetric(horizontal: 16, vertical: 24),

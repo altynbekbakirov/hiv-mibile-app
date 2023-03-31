@@ -1,5 +1,5 @@
-import 'package:HIVApp/components/custom_outline_button.dart';
-import 'package:HIVApp/components/next_button.dart';
+import 'package:hiv/components/custom_outline_button.dart';
+import 'package:hiv/components/next_button.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 

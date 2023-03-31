@@ -1,5 +1,5 @@
-import 'package:HIVApp/pages/settings/settings_page.dart';
-import 'package:HIVApp/utils/constants.dart';
+import 'package:hiv/pages/settings/settings_page.dart';
+import 'package:hiv/utils/constants.dart';
 import 'package:flutter/material.dart';
 
 /// Универсальный APPBAR

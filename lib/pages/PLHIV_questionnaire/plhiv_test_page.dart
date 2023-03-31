@@ -1,10 +1,10 @@
-import 'package:HIVApp/components/app_bar_arrow_back.dart';
-import 'package:HIVApp/components/next_button.dart';
-import 'package:HIVApp/data/pref_manager.dart';
-import 'package:HIVApp/model/plhiv_question_model.dart';
-import 'package:HIVApp/model/questionnaire_provider.dart';
-import 'package:HIVApp/model/test_model.dart';
-import 'package:HIVApp/pages/PLHIV_questionnaire/plhiv_result_page.dart';
+import 'package:hiv/components/app_bar_arrow_back.dart';
+import 'package:hiv/components/next_button.dart';
+import 'package:hiv/data/pref_manager.dart';
+import 'package:hiv/model/plhiv_question_model.dart';
+import 'package:hiv/model/questionnaire_provider.dart';
+import 'package:hiv/model/test_model.dart';
+import 'package:hiv/pages/PLHIV_questionnaire/plhiv_result_page.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:easy_localization/easy_localization.dart';

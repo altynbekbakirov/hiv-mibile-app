@@ -1,20 +1,19 @@
-import 'package:HIVApp/model/audio.dart';
-import 'package:HIVApp/model/consultation.dart';
-import 'package:HIVApp/model/symptoms_model.dart';
-import 'package:HIVApp/model/text_provider.dart';
-import 'package:HIVApp/model/user.dart';
-import 'package:HIVApp/model/user_registrations.dart';
-import 'package:HIVApp/model/videoUI_provider.dart';
-import 'package:HIVApp/utils/connection/connectivity_service.dart';
+import 'package:hiv/model/audio.dart';
+import 'package:hiv/model/consultation.dart';
+import 'package:hiv/model/symptoms_model.dart';
+import 'package:hiv/model/text_provider.dart';
+import 'package:hiv/model/user.dart';
+import 'package:hiv/model/user_registrations.dart';
+import 'package:hiv/model/videoUI_provider.dart';
+import 'package:hiv/utils/connection/connectivity_service.dart';
 import 'package:data_connection_checker/data_connection_checker.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:path/path.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
-import 'package:sqflite/sqflite.dart';
 import 'model/questionnaire_provider.dart';
 import 'routes/route_generator.dart';
 import 'routes/routes.dart';
@@ -22,16 +21,15 @@ import 'utils/themebloc/theme_bloc.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  final Future<Database> database = openDatabase(
-    join(await getDatabasesPath(), 'hiv_app.db'),
-    onCreate: (db, version) {
-      // Run the CREATE TABLE statement on the database.
-      return db.execute(
-        "CREATE TABLE hiv(id INTEGER PRIMARY KEY, name TEXT, age INTEGER)",
-      );
-    },
-    version: 1,
+
+  await SystemChrome.setPreferredOrientations(
+    [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown],
   );
+
+  /// Initializing the AppMetrica SDK.
+  /*await AppmetricaSdk()
+      .activate(apiKey: 'f1eabf67-0227-41fc-82a2-da9423a6d86b');*/
+
   runApp(
     EasyLocalization(
       child: MyApp(),
@@ -65,8 +63,8 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider.value(
           value: Audio(),
         ),
-        ChangeNotifierProvider.value(
-          value: Symptoms(),
+        ChangeNotifierProvider(
+          create: (BuildContext context) => Symptoms(),
         ),
         ChangeNotifierProvider.value(
           value: VideoUI(),
@@ -96,7 +94,7 @@ class MyApp extends StatelessWidget {
             child: child,
           );
         },
-        title: 'HIVAPP',
+        title: 'Здоровье +',
         initialRoute: Routes.splash,
         onGenerateRoute: RouteGenerator.generateRoute,
         localizationsDelegates: [

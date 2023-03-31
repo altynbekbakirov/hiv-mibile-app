@@ -1,8 +1,8 @@
-import 'package:HIVApp/components/text_form_field.dart';
-import 'package:HIVApp/model/user.dart';
-import 'package:HIVApp/model/user_registrations.dart';
-import 'package:HIVApp/pages/signup/questionnaire.dart';
-import 'package:HIVApp/utils/constants.dart';
+import 'package:hiv/components/text_form_field.dart';
+import 'package:hiv/model/user.dart';
+import 'package:hiv/model/user_registrations.dart';
+import 'package:hiv/pages/signup/questionnaire.dart';
+import 'package:hiv/utils/constants.dart';
 import 'package:connectivity/connectivity.dart';
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -120,6 +120,7 @@ class _WidgetSignupState extends State<WidgetSignup> {
     return Focus(
       child: CustomTextFormField(
         controller: controller,
+        inputAction: TextInputAction.next,
         obscureText: isObscure,
         hintText: hint,
         fillColor: kLightGrayishBlue,

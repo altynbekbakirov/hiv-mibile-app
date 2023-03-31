@@ -1,5 +1,5 @@
-import 'package:HIVApp/components/custom_button.dart';
-import 'package:HIVApp/model/test_model.dart';
+import 'package:hiv/components/custom_button.dart';
+import 'package:hiv/model/test_model.dart';
 import 'package:flutter/material.dart';
 
 class SexBody extends StatefulWidget {

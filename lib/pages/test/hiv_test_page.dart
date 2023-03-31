@@ -1,10 +1,11 @@
-import 'package:HIVApp/components/app_bar_arrow_back.dart';
-import 'package:HIVApp/components/button_with_chevron.dart';
-import 'package:HIVApp/components/next_button.dart';
-import 'package:HIVApp/routes/routes.dart';
-import 'package:HIVApp/utils/constants.dart';
+import 'package:hiv/components/app_bar_arrow_back.dart';
+import 'package:hiv/components/button_with_chevron.dart';
+import 'package:hiv/components/next_button.dart';
+import 'package:hiv/routes/routes.dart';
+import 'package:hiv/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class HivTestPage extends StatefulWidget {
   const HivTestPage({Key key}) : super(key: key);
@@ -33,6 +34,16 @@ class _HivTestPageState extends State<HivTestPage> {
                 text: "hiv_testing".tr(),
                 onTap: () {
                   Navigator.pushNamed(context, Routes.hiv_testing_screen);
+                },
+              ),
+              SizedBox(height: 20),
+              ChevronButton(
+                height: 56,
+                fontSize: 18,
+                text: "information_about_rapid_test".tr(),
+                onTap: () async {
+                  const url = "https://youtu.be/EL1YV-mnFpM";
+                  await launch(url);
                 },
               ),
               SizedBox(height: 20),

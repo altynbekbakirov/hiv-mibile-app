@@ -1,5 +1,5 @@
-import 'package:HIVApp/model/symptoms_model.dart';
-import 'package:HIVApp/utils/constants.dart';
+import 'package:hiv/model/symptoms_model.dart';
+import 'package:hiv/utils/constants.dart';
 import 'package:date_picker_timeline/date_picker_timeline.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -12,14 +12,17 @@ class CalendarWidget extends StatefulWidget {
 }
 
 class _CalendarWidgetState extends State<CalendarWidget> {
-
   DatePickerController _controller = DatePickerController();
   DateTime firstDate = DateTime.now().subtract(Duration(days: 30));
+
   // DateTime firstDate = DateTime.now();
 
   @override
   void initState() {
     super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      _controller.animateToDate(DateTime.parse(Provider.of<Symptoms>(context, listen: false).dateTime));
+    });
   }
 
   @override
@@ -38,7 +41,7 @@ class _CalendarWidgetState extends State<CalendarWidget> {
                 daysCount: 31,
                 monthTextStyle: TextStyle(color: Colors.transparent),
                 dateTextStyle: TextStyle(color: kDarkGrayishBlue, fontSize: 20),
-                initialSelectedDate: DateTime.now(),
+                initialSelectedDate: DateTime.parse(Provider.of<Symptoms>(context, listen: false).dateTime),
                 selectionColor: kDesaturatedBlue,
                 selectedTextColor: kColorWhite,
                 onDateChange: (date) {

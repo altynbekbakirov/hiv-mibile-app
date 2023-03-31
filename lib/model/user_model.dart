@@ -1,4 +1,4 @@
-import 'package:HIVApp/model/user.dart';
+import 'package:hiv/model/user.dart';
 import 'package:flutter/cupertino.dart';
 
 class UserDataProvider extends InheritedWidget {

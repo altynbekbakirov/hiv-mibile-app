@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:HIVApp/db/db_provider.dart';
+import 'package:hiv/db/db_provider.dart';
 import 'package:sqflite/sqflite.dart';
 
 Client clientFromJson(String str) {

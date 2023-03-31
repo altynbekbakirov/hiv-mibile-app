@@ -1,5 +1,5 @@
 import 'dart:convert';
-import 'package:HIVApp/data/configs.dart';
+import 'package:hiv/data/configs.dart';
 import 'package:http/http.dart' as http;
 
 import 'db_provider.dart';
@@ -13,100 +13,98 @@ class UserMood {
   String file_name;
   DateTime date_time;
 
+  UserMood(
+      {this.id,
+      this.user_id,
+      this.title,
+      this.file_name,
+      this.date_time,
+      this.sent});
 
-  UserMood({this.id, this.user_id, this.title, this.file_name, this.date_time, this.sent});
-
-  factory UserMood.fromJson(Map<String, dynamic> json) => new UserMood(
+   static UserMood fromJson(Map<String, dynamic> json) => UserMood(
       id: json["id"],
       user_id: json["user_id"],
       title: json["title"],
       file_name: json["file_name"],
       date_time: DateTime.parse(json["date_time"]),
-      sent: json['sent']
-  );
+      sent: json['sent']);
 
   Map<String, dynamic> toJson() => {
-    "id": id,
-    "user_id": user_id,
-    "title": title,
-    "file_name": file_name,
-    "date_time": date_time.toString(),
-    "sent": sent
-  };
+        "id": id,
+        "user_id": user_id,
+        "title": title,
+        "file_name": file_name,
+        "date_time": date_time.toString(),
+        "sent": sent
+      };
 
   Map<String, dynamic> toJsonForServer() => {
-    "patient_id": user_id,
-    "title": title,
-    "file_name": file_name,
-    "date": date_time,
-  };
+        "patient_id": user_id,
+        "title": title,
+        "file_name": file_name,
+        "date": date_time,
+      };
 
   Future<bool> get() async {
-    final url =
-        Configs.ip+'api/patientmoods';
+    final url = Configs.ip + 'api/patientmoods';
     DbUser userDb = await DBProvider.db.getUser();
     try {
       Map<String, String> headers = {"Content-type": "application/json"};
       final response = await http.post(
         url,
-        headers:headers,
-        body: json.encode(
-            {
-              "patient_id": userDb.id,
-              "title": title,
-              "file_name": file_name,
-              "date": date_time,
-            }),
+        headers: headers,
+        body: json.encode({
+          "patient_id": userDb.id,
+          "title": title,
+          "file_name": file_name,
+          "date": date_time,
+        }),
       );
       var rr = json.decode(response.body);
       return true;
-    }
-    catch (error) {
+    } catch (error) {
       throw error;
     }
   }
 
   static Future<bool> sendList(List<UserMood> list, int user_id) async {
-    final url =
-        Configs.ip+'api/patientmoods';
+    final url = Configs.ip + 'api/patientmoods';
     try {
       Map<String, String> headers = {"Content-type": "application/json"};
-      final response = await http.post(
+      await http.post(
         url,
-        headers:headers,
-        body: json.encode(
-            {
-              "data": userMoodList(list, user_id)
-            }),
+        headers: headers,
+        body: json.encode({"data": userMoodList(list, user_id)}),
       );
-      var rr = json.decode(response.body);
       return true;
-    }
-    catch (error) {
+    } catch (error) {
       throw error;
     }
   }
+
   static Future<bool> getList() async {
     await DBProvider.db.getUser().then((value) async {
-      final url =
-          Configs.ip+'api/patientmoods/'+value.id.toString();
+      final url = Configs.ip + 'api/patientmoods/' + value.id.toString();
       try {
-        Map<String, String> headers = {"Content-type": "application/json","token": value.token};
+        Map<String, String> headers = {
+          "Content-type": "application/json",
+          "token": value.token
+        };
         final response = await http.get(
           url,
-          headers:headers,
+          headers: headers,
         );
-        var rr = saveListToDatabase(json.decode(response.body));
+        saveListToDatabase(json.decode(response.body));
         return true;
-      }
-      catch (error) {
+      } catch (error) {
         throw error;
       }
     });
   }
-  static List<UserMood> saveListToDatabase(var responseBody){
+
+  static List<UserMood> saveListToDatabase(var responseBody) {
     List<UserMood> list = new List<UserMood>();
-    for(var i in responseBody){
+    for (var i in responseBody) {
       UserMood model = new UserMood();
 
       model.user_id = i['patient_id'];
@@ -121,19 +119,22 @@ class UserMood {
     return list;
   }
 
-  static List<Map<String, dynamic>> userMoodList(List<UserMood> list, int user_id) {
+  static List<Map<String, dynamic>> userMoodList(
+      List<UserMood> list, int userId) {
     List<Map<String, dynamic>> result = new List<Map<String, dynamic>>();
-    for(var i in list){
+    for (var i in list) {
       result.add({
-        "patient_id": user_id,
+        "patient_id": userId,
         "title": i.title,
         "file_name": i.file_name,
-        "date": "${i.date_time.year}-${i.date_time.month.toString().padLeft(2, '0')}-${i.date_time.day.toString().padLeft(2, '0')}",
+        "date":
+            "${i.date_time.year}-${i.date_time.month.toString().padLeft(2, '0')}-${i.date_time.day.toString().padLeft(2, '0')}",
       });
     }
     return result;
   }
 }
+
 UserMood userMoodFromJson(String str) {
   final jsonData = json.decode(str);
   return UserMood.fromJson(jsonData);
@@ -143,17 +144,17 @@ String userMoodToJson(UserMood data) {
   final dyn = data.toJson();
   return json.encode(dyn);
 }
-class UserMoodTotal{
+
+class UserMoodTotal {
   String file_name;
   String title;
   int count;
 
-
   UserMoodTotal({this.file_name, this.title, this.count});
 
-  factory UserMoodTotal.fromJson(Map<String, dynamic> json) => new UserMoodTotal(
-      title: json["title"],
-      file_name: json["file_name"],
-      count: json["count"]
-  );
+  factory UserMoodTotal.fromJson(Map<String, dynamic> json) =>
+      new UserMoodTotal(
+          title: json["title"],
+          file_name: json["file_name"],
+          count: json["count"]);
 }

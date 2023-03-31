@@ -1,8 +1,8 @@
-import 'package:HIVApp/components/app_bar_arrow_back.dart';
-import 'package:HIVApp/components/next_button.dart';
-import 'package:HIVApp/data/pref_manager.dart';
-import 'package:HIVApp/routes/routes.dart';
-import 'package:HIVApp/utils/constants.dart';
+import 'package:hiv/components/app_bar_arrow_back.dart';
+import 'package:hiv/components/next_button.dart';
+import 'package:hiv/data/pref_manager.dart';
+import 'package:hiv/routes/routes.dart';
+import 'package:hiv/utils/constants.dart';
 import 'package:connectivity/connectivity.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';

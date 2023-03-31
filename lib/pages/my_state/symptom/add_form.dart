@@ -1,8 +1,8 @@
-import 'package:HIVApp/components/custom_button.dart';
-import 'package:HIVApp/db/db_provider.dart';
-import 'package:HIVApp/db/user_symptom.dart';
-import 'package:HIVApp/model/symptoms_model.dart';
-import 'package:HIVApp/routes/routes.dart';
+import 'package:hiv/components/custom_button.dart';
+import 'package:hiv/db/db_provider.dart';
+import 'package:hiv/db/user_symptom.dart';
+import 'package:hiv/model/symptoms_model.dart';
+import 'package:hiv/routes/routes.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -42,49 +42,84 @@ class _AddSymptomFormState extends State<AddSymptomForm> {
   final format = DateFormat("yyyy-MM-dd");
   final assetPath = 'assets/images/symptoms/';
   List<SymptomViewModel> symptomsList = new List<SymptomViewModel>();
+  List<UserSymptom> list = new List<UserSymptom>();
   DbUser dbUser = new DbUser();
   PageController _pageController = PageController();
   int pageIndex = 0;
 
   fillTheSymptomList() {
     SymptomViewModel model =
-        SymptomViewModel(fileName: 'acne.png', title: 'acne', rating: 0.0);
+        SymptomViewModel(fileName: 'acne.png', title: 'acne', rating: 0);
     symptomsList.add(model);
     model = SymptomViewModel(
-        fileName: 'dizziness.png', title: 'dizziness', rating: 0.0);
+        fileName: 'dizziness.png', title: 'dizziness', rating: 0);
     symptomsList.add(model);
-    model =
-        SymptomViewModel(fileName: 'fever.png', title: 'fever', rating: 0.0);
+    model = SymptomViewModel(fileName: 'fever.png', title: 'fever', rating: 0);
     symptomsList.add(model);
     model = SymptomViewModel(
         fileName: 'frontal-headaches.png',
         title: 'frontal-headaches',
-        rating: 0.0);
+        rating: 0);
     symptomsList.add(model);
     model = SymptomViewModel(
-        fileName: 'headache.png', title: 'headache', rating: 0.0);
+        fileName: 'headache.png', title: 'headache', rating: 0);
     symptomsList.add(model);
     model = SymptomViewModel(
-        fileName: 'inflammation.png', title: 'inflammation', rating: 0.0);
+        fileName: 'inflammation.png', title: 'inflammation', rating: 0);
     symptomsList.add(model);
     model = SymptomViewModel(
-        fileName: 'shoulder.png', title: 'shoulder', rating: 0.0);
+        fileName: 'shoulder.png', title: 'shoulder', rating: 0);
     symptomsList.add(model);
   }
 
-  getUser() async {
-    DBProvider.db.getUser().then((value) {
+  Future getUser() async {
+    await DBProvider.db.getUser().then((value) {
       setState(() {
         dbUser = value;
       });
     });
   }
 
+  Future getList() async {
+    await DBProvider.db
+        .getAllUserSymptomsByDate(
+            format.format(DateTime.parse(context.watch<Symptoms>().dateTime)))
+        .then((value) {
+      setState(() {
+        if (value != null) {
+          list = value;
+          for (var item in symptomsList) {
+            for (var itemSelected in list) {
+              if (item.title == itemSelected.title) {
+                item.rating = itemSelected.rating;
+              }
+            }
+          }
+        }
+      });
+    });
+  }
+
+  resetSymptomList() {
+    for (var item in symptomsList) {
+      setState(() {
+        item.rating = 0;
+      });
+    }
+  }
+
   @override
   void initState() {
     super.initState();
-    fillTheSymptomList();
     getUser();
+    fillTheSymptomList();
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    resetSymptomList();
+    getList();
   }
 
   /// Карусель симптомов
@@ -215,20 +250,6 @@ class _AddSymptomFormState extends State<AddSymptomForm> {
                         itemCount: 5,
                         itemPadding: const EdgeInsets.symmetric(horizontal: 5),
                       ),
-                      /*SmoothStarRating(
-                          allowHalfRating: false,
-                          onRated: (v) {
-                            setState(() {
-                              symptomsList[pageIndex].rating = v;
-                            });
-                          },
-                          rating: symptomsList[pageIndex].rating ?? 0,
-                          color: kDesaturatedBlue,
-                          filledIconData: Icons.star,
-                          borderColor: kDesaturatedBlue,
-                          spacing: 12,
-                          size: 40,
-                        ),*/
                       decoration: BoxDecoration(
                           color: kColorWhite,
                           borderRadius: BorderRadius.circular(8)),
@@ -249,6 +270,8 @@ class _AddSymptomFormState extends State<AddSymptomForm> {
                         fillColor: kDesaturatedBlue,
                         text: 'set_symptom'.tr().toUpperCase(),
                         onPressed: () async {
+                          await DBProvider.db.deleteUserSymptomsByDate(
+                              format.format(DateTime.parse(Provider.of<Symptoms>(context, listen: false).dateTime)));
                           for (var i in symptomsList) {
                             if (i.rating != 0.0) {
                               _dateTime = DateTime.parse(model.dateTime);
@@ -261,6 +284,8 @@ class _AddSymptomFormState extends State<AddSymptomForm> {
                               await DBProvider.db.newUserSymptom(userSymptom);
                             }
                           }
+                          await DBProvider.db.sendNotSentUserSymptoms(dbUser.id, false);
+
                           Navigator.pop(context);
                           Navigator.pop(context);
                           Navigator.pushNamed(context, Routes.symptom);

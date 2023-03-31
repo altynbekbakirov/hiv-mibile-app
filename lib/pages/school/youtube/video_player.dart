@@ -1,4 +1,4 @@
-import 'package:HIVApp/pages/school/youtube/youtube_video.dart';
+import 'package:hiv/pages/school/youtube/youtube_video.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:native_device_orientation/native_device_orientation.dart';

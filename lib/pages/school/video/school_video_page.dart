@@ -1,6 +1,6 @@
-import 'package:HIVApp/pages/school/video/video_model.dart';
-import 'package:HIVApp/pages/school/video/video_screen.dart';
-import 'package:HIVApp/utils/keys.dart';
+import 'package:hiv/pages/school/video/video_model.dart';
+import 'package:hiv/pages/school/video/video_screen.dart';
+import 'package:hiv/utils/keys.dart';
 import 'package:flutter/material.dart';
 
 import 'video_api_service.dart';

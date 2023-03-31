@@ -7,5 +7,6 @@ class Symptoms extends ChangeNotifier{
 
   void setDateTimeState(String dateTime){
     _dateTime = dateTime;
+    notifyListeners();
   }
 }

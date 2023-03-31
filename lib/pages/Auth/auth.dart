@@ -1,10 +1,10 @@
-import 'package:HIVApp/components/change_language_button.dart';
-import 'package:HIVApp/components/custom_button.dart';
-import 'package:HIVApp/components/custom_outline_button.dart';
-import 'package:HIVApp/data/configs.dart';
-import 'package:HIVApp/data/pref_manager.dart';
-import 'package:HIVApp/routes/routes.dart';
-import 'package:HIVApp/utils/constants.dart';
+import 'package:hiv/components/change_language_button.dart';
+import 'package:hiv/components/custom_button.dart';
+import 'package:hiv/components/custom_outline_button.dart';
+import 'package:hiv/data/configs.dart';
+import 'package:hiv/data/pref_manager.dart';
+import 'package:hiv/routes/routes.dart';
+import 'package:hiv/utils/constants.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';

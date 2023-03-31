@@ -1,4 +1,4 @@
-import 'package:HIVApp/pages/school/video/video_model.dart';
+import 'package:hiv/pages/school/video/video_model.dart';
 
 class Channel {
 

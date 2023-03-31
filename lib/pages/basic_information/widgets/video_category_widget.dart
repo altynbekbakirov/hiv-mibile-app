@@ -1,11 +1,11 @@
-import 'package:HIVApp/pages/basic_information/widgets/ex_audio.dart';
-import 'package:HIVApp/pages/school/better_player/better_player_list.dart';
-import 'package:HIVApp/pages/school/new_video_player/portrait_landscape_player_page.dart';
-import 'package:HIVApp/pages/school/video/hiv_channel_model.dart';
-import 'package:HIVApp/pages/school/video/video_api_service.dart';
-import 'package:HIVApp/pages/school/youtube/video_player.dart';
-import 'package:HIVApp/utils/constants.dart';
-import 'package:HIVApp/utils/keys.dart';
+import 'package:hiv/pages/basic_information/widgets/ex_audio.dart';
+import 'package:hiv/pages/school/better_player/better_player_list.dart';
+import 'package:hiv/pages/school/new_video_player/portrait_landscape_player_page.dart';
+import 'package:hiv/pages/school/video/hiv_channel_model.dart';
+import 'package:hiv/pages/school/video/video_api_service.dart';
+import 'package:hiv/pages/school/youtube/video_player.dart';
+import 'package:hiv/utils/constants.dart';
+import 'package:hiv/utils/keys.dart';
 import 'package:flutter/material.dart';
 
 import 'video.dart';
@@ -20,8 +20,6 @@ class _VideoCategoryWidgetState extends State<VideoCategoryWidget> {
   List<VideoFileModel> _videos = List<VideoFileModel>();
   bool showVideos = false;
   int index;
-  Channel _channel;
-  bool _isLoading = false;
   List<YoutubeVideoModel> videos = List<YoutubeVideoModel>();
 
   getListOfVideos() async {

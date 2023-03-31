@@ -2,10 +2,10 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:HIVApp/data/configs.dart';
-import 'package:HIVApp/data/pref_manager.dart';
-import 'package:HIVApp/model/audio.dart';
-import 'package:HIVApp/utils/constants.dart';
+import 'package:hiv/data/configs.dart';
+import 'package:hiv/data/pref_manager.dart';
+import 'package:hiv/model/audio.dart';
+import 'package:hiv/utils/constants.dart';
 import 'package:audioplayers/audio_cache.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/cupertino.dart';
@@ -20,7 +20,7 @@ import '../../../db/audio_db.dart';
 typedef void OnError(Exception exception);
 
 const kUrl1 =
-    'http://vich.ulut.kg/storage/audios/%D0%92%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5/202012021512481.mp3';
+    'http://vich.com.kg/storage/audios/%D0%92%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5/202012021512481.mp3';
 
 class AudioCategoryModel {
   String category_name;

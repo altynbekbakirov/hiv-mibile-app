@@ -1,5 +1,5 @@
-import 'package:HIVApp/pages/test/test_page.dart';
-import 'package:HIVApp/utils/constants.dart';
+import 'package:hiv/pages/test/test_page.dart';
+import 'package:hiv/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
 

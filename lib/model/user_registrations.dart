@@ -1,7 +1,7 @@
 import 'dart:convert';
 
-import 'package:HIVApp/data/configs.dart';
-import 'package:HIVApp/data/pref_manager.dart';
+import 'package:hiv/data/configs.dart';
+import 'package:hiv/data/pref_manager.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:http/http.dart' as http;
 

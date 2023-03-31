@@ -5,7 +5,7 @@ import 'package:easy_localization/easy_localization.dart';
 import '../../db/notification.dart';
 import '../../db/db_provider.dart';
 import '../../components/custom_button.dart';
-import 'package:HIVApp/routes/routes.dart';
+import 'package:hiv/routes/routes.dart';
 
 class VisitPage extends StatefulWidget {
   @override

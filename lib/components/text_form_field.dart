@@ -11,7 +11,10 @@ class CustomTextFormField extends StatefulWidget {
   final bool suffixIconTap;
   final String error;
   final TextInputType keyboardType;
+  final TextInputAction inputAction;
   final Function validator;
+  final Function onFieldSubmitted;
+  final Function onEditingComplete;
   final FormFieldSetter<String> onSaved;
   final ValueChanged<String> onChanged;
   final double borderValue;
@@ -23,18 +26,23 @@ class CustomTextFormField extends StatefulWidget {
   final TextStyle hintStyle;
   final Color enabledBorderColor;
   final Color textColor;
+  final int maxLength;
+
 
   const CustomTextFormField({
     Key key,
     this.controller,
     @required this.hintText,
     this.keyboardType,
+    this.inputAction,
     this.obscureText,
     this.enabled,
     this.suffixIcon,
     this.suffixIconTap,
     this.error,
     this.validator,
+    this.onFieldSubmitted,
+    this.onEditingComplete,
     this.onSaved,
     this.onChanged,
     this.borderValue,
@@ -46,6 +54,7 @@ class CustomTextFormField extends StatefulWidget {
     this.hintStyle,
     this.enabledBorderColor,
     this.textColor,
+    this.maxLength
   }) : super(key: key);
 
   @override
@@ -64,6 +73,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      textInputAction: widget.inputAction,
       keyboardType: widget.keyboardType,
       obscureText: _obscureText ?? false,
       controller: widget.controller,
@@ -71,6 +81,9 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
       onSaved: widget.onSaved,
       onChanged: widget.onChanged,
       validator: widget.validator,
+      onFieldSubmitted: widget.onFieldSubmitted,
+      onEditingComplete: widget.onEditingComplete,
+      maxLength: widget.maxLength,
       decoration: InputDecoration(
         enabledBorder: OutlineInputBorder(
             borderSide: widget.enabledBorderColor != null

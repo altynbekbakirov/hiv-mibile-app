@@ -1,5 +1,5 @@
 import 'dart:convert';
-import 'package:HIVApp/data/configs.dart';
+import 'package:hiv/data/configs.dart';
 import 'package:http/http.dart' as http;
 
 import '../db/db_provider.dart';

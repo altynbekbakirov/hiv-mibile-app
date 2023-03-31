@@ -1,29 +1,29 @@
 import 'dart:async';
-import 'package:HIVApp/components/app_bar_arrow_back.dart';
-import 'package:HIVApp/components/custom_appbar.dart';
-import 'package:HIVApp/db/db_provider.dart';
-import 'package:HIVApp/pages/add/add_page.dart';
-import 'package:HIVApp/pages/consultation/consultation_page.dart';
-import 'package:HIVApp/pages/hiv_info_page/hiv_info_page.dart';
-import 'package:HIVApp/pages/hiv_prevention/hiv_prevention_page.dart';
-import 'package:HIVApp/pages/home/widgets/bottom_nav_bar.dart';
-import 'package:HIVApp/pages/home/widgets/home_widget.dart';
-import 'package:HIVApp/pages/my_state/my_health.dart';
-import 'package:HIVApp/pages/my_state/my_state.dart';
-import 'package:HIVApp/pages/notification/all_notifications.dart';
-import 'package:HIVApp/pages/presence_of_hiv/hiv_presence.dart';
-import 'package:HIVApp/pages/school/patient_school.dart';
-import 'package:HIVApp/pages/settings/settings_page.dart';
-import 'package:HIVApp/pages/test/hiv_test_page.dart';
-import 'package:HIVApp/routes/routes.dart';
-import 'package:HIVApp/utils/constants.dart';
+import 'package:hiv/components/app_bar_arrow_back.dart';
+import 'package:hiv/components/custom_appbar.dart';
+import 'package:hiv/db/db_provider.dart';
+import 'package:hiv/pages/add/add_page.dart';
+import 'package:hiv/pages/consultation/consultation_page.dart';
+import 'package:hiv/pages/hiv_info_page/hiv_info_page.dart';
+import 'package:hiv/pages/hiv_prevention/hiv_prevention_page.dart';
+import 'package:hiv/pages/home/widgets/bottom_nav_bar.dart';
+import 'package:hiv/pages/home/widgets/home_widget.dart';
+import 'package:hiv/pages/my_state/my_health.dart';
+import 'package:hiv/pages/my_state/my_state.dart';
+import 'package:hiv/pages/notification/all_notifications.dart';
+import 'package:hiv/pages/presence_of_hiv/hiv_presence.dart';
+import 'package:hiv/pages/school/patient_school.dart';
+import 'package:hiv/pages/settings/settings_page.dart';
+import 'package:hiv/pages/test/hiv_test_page.dart';
+import 'package:hiv/routes/routes.dart';
+import 'package:hiv/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:easy_localization/easy_localization.dart';
 
 class HomeNew extends StatefulWidget {
-  int index;
+  final int index;
 
   HomeNew({this.index});
 
@@ -41,18 +41,15 @@ class _HomeNewState extends State<HomeNew> with SingleTickerProviderStateMixin {
   @override
   void initState() {
     _tabController = new TabController(vsync: this, length: 5);
-    if (widget.index != null) {
-      _selectPage(widget.index);
-    }
     isLoggedIn();
     super.initState();
   }
 
-  // @override
-  // void dispose() {
-  //   _tabController.dispose();
-  //   super.dispose();
-  // }
+  @override
+  void dispose() {
+    _tabController.dispose();
+    super.dispose();
+  }
 
   String mainActive = "assets/images/icons/Main/Active.png";
   String schoolActive = "assets/images/icons/School/Active.png";
@@ -67,46 +64,6 @@ class _HomeNewState extends State<HomeNew> with SingleTickerProviderStateMixin {
           logged = true;
         });
     });
-  }
-
-  Widget _selectPage(int index) {
-    switch (index) {
-      case 0:
-        return HomeWidget(
-            // callback: (val) => {
-            //       setState(() {
-            //         _selectedIndex = val;
-            //       })
-            //     }
-            );
-      case 1:
-        break;
-      case 2:
-        return AddPage();
-      case 3:
-
-      case 4:
-        return AllNotifications();
-      case 5:
-        return HivInformationPage();
-      case 6:
-        return HivTestPage();
-      case 7:
-        return HivPreventionPage();
-      case 8:
-        return PresenceOfHivPage();
-      case 9:
-        return ConsultationPage();
-      case 10:
-      // return MyHealth(
-      //     callback: (val) => {
-      //           setState(() {
-      //             _selectedIndex = val;
-      //           })
-      //         });
-      case 11:
-        return MyStatePage();
-    }
   }
 
   Future<bool> _onWillPop() async {

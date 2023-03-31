@@ -20,6 +20,7 @@ class DbUser {
   Map<String, dynamic> toJson() => {
     "username": username,
     "password": password,
+    "pin_code": pin_code
   };
 }
 

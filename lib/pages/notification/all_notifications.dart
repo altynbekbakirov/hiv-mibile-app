@@ -1,9 +1,9 @@
-import 'package:HIVApp/Enums/select_notification_operation.dart';
-import 'package:HIVApp/db/notification.dart';
-import 'package:HIVApp/pages/add/add_page.dart';
-import 'package:HIVApp/pages/add/general_notification_form.dart';
-import 'package:HIVApp/pages/add/notification_form.dart';
-import 'package:HIVApp/utils/constants.dart';
+import 'package:hiv/Enums/select_notification_operation.dart';
+import 'package:hiv/db/notification.dart';
+import 'package:hiv/pages/add/add_page.dart';
+import 'package:hiv/pages/add/general_notification_form.dart';
+import 'package:hiv/pages/add/notification_form.dart';
+import 'package:hiv/utils/constants.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';

@@ -1,10 +1,10 @@
-import 'package:HIVApp/data/pref_manager.dart';
-import 'package:HIVApp/db/db_provider.dart';
-import 'package:HIVApp/db/model/user.dart';
-import 'package:HIVApp/model/user.dart';
-import 'package:HIVApp/pages/diary/diary_page.dart';
-import 'package:HIVApp/pages/home/widgets/nav_bar_item_widget.dart';
-import 'package:HIVApp/pages/map/map_page.dart';
+import 'package:hiv/data/pref_manager.dart';
+import 'package:hiv/db/db_provider.dart';
+import 'package:hiv/db/model/user.dart';
+import 'package:hiv/model/user.dart';
+import 'package:hiv/pages/diary/diary_page.dart';
+import 'package:hiv/pages/home/widgets/nav_bar_item_widget.dart';
+import 'package:hiv/pages/map/map_page.dart';
 import 'package:connectivity/connectivity.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';

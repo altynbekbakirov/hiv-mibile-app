@@ -1,13 +1,13 @@
 import 'dart:async';
 
-import 'package:HIVApp/Enums/select_notification_operation.dart';
-import 'package:HIVApp/components/app_bar_arrow_back.dart';
-import 'package:HIVApp/db/db_provider.dart';
-import 'package:HIVApp/db/notification.dart';
-import 'package:HIVApp/pages/add/add_page.dart';
-import 'package:HIVApp/pages/add/general_notification_form.dart';
-import 'package:HIVApp/routes/routes.dart';
-import 'package:HIVApp/utils/constants.dart';
+import 'package:hiv/Enums/select_notification_operation.dart';
+import 'package:hiv/components/app_bar_arrow_back.dart';
+import 'package:hiv/db/db_provider.dart';
+import 'package:hiv/db/notification.dart';
+import 'package:hiv/pages/add/add_page.dart';
+import 'package:hiv/pages/add/general_notification_form.dart';
+import 'package:hiv/routes/routes.dart';
+import 'package:hiv/utils/constants.dart';
 import 'package:custom_switch/custom_switch.dart';
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';

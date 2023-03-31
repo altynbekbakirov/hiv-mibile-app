@@ -1,10 +1,10 @@
 import 'dart:io';
 
-import 'package:HIVApp/components/custom_button.dart';
-import 'package:HIVApp/data/pref_manager.dart';
-import 'package:HIVApp/db/db_provider.dart';
-import 'package:HIVApp/db/image_files.dart';
-import 'package:HIVApp/pages/my_state/result/results_tests.dart';
+import 'package:hiv/components/custom_button.dart';
+import 'package:hiv/data/pref_manager.dart';
+import 'package:hiv/db/db_provider.dart';
+import 'package:hiv/db/image_files.dart';
+import 'package:hiv/pages/my_state/result/results_tests.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';

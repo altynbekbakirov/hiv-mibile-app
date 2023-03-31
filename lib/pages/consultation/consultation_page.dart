@@ -1,7 +1,7 @@
-import 'package:HIVApp/components/app_bar_arrow_back.dart';
-import 'package:HIVApp/pages/consultation/contacts_page.dart';
-import 'package:HIVApp/pages/map/map_page.dart';
-import 'package:HIVApp/utils/constants.dart';
+import 'package:hiv/components/app_bar_arrow_back.dart';
+import 'package:hiv/pages/consultation/contacts_page.dart';
+import 'package:hiv/pages/map/map_page.dart';
+import 'package:hiv/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
 
@@ -19,7 +19,7 @@ class _ConsultationPageState extends State<ConsultationPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: ArrowBackAppBar(
-        text: "my_condition".tr().toUpperCase(),
+        text: "consultation".tr().toUpperCase(),
       ),
       body: Container(
         padding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),

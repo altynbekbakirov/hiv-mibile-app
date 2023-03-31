@@ -1,5 +1,5 @@
-import 'package:HIVApp/components/custom_button.dart';
-import 'package:HIVApp/pages/test/result_page.dart';
+import 'package:hiv/components/custom_button.dart';
+import 'package:hiv/pages/test/result_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';

@@ -1,10 +1,10 @@
-import 'package:HIVApp/components/next_button.dart';
-import 'package:HIVApp/components/dots_indicator.dart';
-import 'package:HIVApp/components/question_dropdownlist.dart';
-import 'package:HIVApp/components/custom_appbar.dart';
-import 'package:HIVApp/model/user.dart';
-import 'package:HIVApp/model/user_registrations.dart';
-import 'package:HIVApp/pages/signup/questionary.dart';
+import 'package:hiv/components/next_button.dart';
+import 'package:hiv/components/dots_indicator.dart';
+import 'package:hiv/components/question_dropdownlist.dart';
+import 'package:hiv/components/custom_appbar.dart';
+import 'package:hiv/model/user.dart';
+import 'package:hiv/model/user_registrations.dart';
+import 'package:hiv/pages/signup/questionary.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';

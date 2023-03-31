@@ -1,5 +1,5 @@
 import 'dart:io';
-import 'package:HIVApp/pages/home/home_new.dart';
+import 'package:hiv/pages/home/home_new.dart';
 import 'package:connectivity/connectivity.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -8,8 +8,8 @@ import '../../components/text_form_field.dart';
 import '../../routes/routes.dart';
 import '../../utils/constants.dart';
 import 'package:provider/provider.dart';
-import 'package:HIVApp/components/next_button.dart';
-import 'package:HIVApp/model/user.dart';
+import 'package:hiv/components/next_button.dart';
+import 'package:hiv/model/user.dart';
 
 class LoginPage extends StatelessWidget {
   /// Всплывающее окно регистрации
@@ -29,11 +29,14 @@ class LoginPage extends StatelessWidget {
           ),
           content: SingleChildScrollView(
             scrollDirection: Axis.vertical,
-            child: Text("register_definition".tr(),
-              style: TextStyle(color: Colors.grey, fontWeight: FontWeight.w400, fontSize: 16),
+            child: Text(
+              "register_definition".tr(),
+              style: TextStyle(
+                  color: Colors.grey,
+                  fontWeight: FontWeight.w400,
+                  fontSize: 16),
             ),
           ),
-
           actions: <Widget>[
             FlatButton(
               child: Text('back'.tr()),
@@ -185,13 +188,15 @@ class _WidgetSignInState extends State<WidgetSignIn> {
         try {
           await Provider.of<User>(context, listen: false)
               .login(
-                _authData['username'],
-                _authData['password'],
-              )
+            _authData['username'],
+            _authData['password'],
+          )
               .then((value) {
-            Navigator.push(context, MaterialPageRoute(
-              builder: (context) => HomeNew(index: 0),
-            ));
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => HomeNew(index: 0),
+                ));
           });
         } on HttpException catch (error) {
           var errorMessage = 'Аутентификация не выполнено!';
@@ -250,6 +255,7 @@ class _WidgetSignInState extends State<WidgetSignIn> {
             fillColor: kLightGrayishBlue,
             focusedBorderColor: kDesaturatedBlue,
             controller: _usernameController,
+            inputAction: TextInputAction.next,
             hintText: 'login'.tr(),
             hintStyle: TextStyle(
                 color: kGrayishBlue, fontSize: 16, fontWeight: FontWeight.w400),
