@@ -256,7 +256,8 @@ class _ChapterTwoState extends State<ChapterTwo> {
                 boldText("c2_6text1".tr()),
               ], style: TextStyle(fontSize: fontSize)),
             ),
-            Image.asset("assets/images/atreavirus.png"),
+            // Image.asset("assets/images/atreavirus.png"),
+            const SizedBox(height: 8,),
             RichText(
               text: TextSpan(children: [
                 normalText("c2_6text2".tr()),

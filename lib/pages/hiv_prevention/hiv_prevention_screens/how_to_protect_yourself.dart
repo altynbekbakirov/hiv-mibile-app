@@ -549,7 +549,6 @@ class _SelfProtectInfoScreenState extends State<SelfProtectInfoScreen> {
           ),
         ),
         Container(
-            height: 180,
             color: kBrightRed,
             child: Padding(
               padding: const EdgeInsets.all(16),

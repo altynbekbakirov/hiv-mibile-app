@@ -383,25 +383,25 @@ class _MapPageState extends State<MapPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading: GestureDetector(
-          onTap: () {
-            Navigator.of(context).pop();
-            Navigator.pushNamed(
-              context,
-              Routes.home,
-            );
-          },
-          child: Icon(
-            Icons.arrow_back_ios_outlined,
-            color: Colors.black,
-            size: 18,
-          ),
-        ),
-        backgroundColor: Colors.white,
-        centerTitle: false,
-        title: Text('where_can_testing'.tr()),
-      ),
+      // appBar: AppBar(
+      //   leading: GestureDetector(
+      //     onTap: () {
+      //       Navigator.of(context).pop();
+      //       Navigator.pushNamed(
+      //         context,
+      //         Routes.home,
+      //       );
+      //     },
+      //     child: Icon(
+      //       Icons.arrow_back_ios_outlined,
+      //       color: Colors.black,
+      //       size: 18,
+      //     ),
+      //   ),
+      //   backgroundColor: Colors.white,
+      //   centerTitle: false,
+      //   title: Text('where_can_testing'.tr()),
+      // ),
       body: Stack(children: [
         FlutterMap(
           mapController: mapController,

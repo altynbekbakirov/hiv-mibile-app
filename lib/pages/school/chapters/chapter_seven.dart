@@ -910,16 +910,6 @@ class _ChapterSevenState extends State<ChapterSeven> {
     );
   }
 
-  // ///Good news
-  // Widget _page11(BuildContext context) {
-  //   return Column(
-  //     children: [
-  //       Container(
-  //         child: Image.asset("assets/images/good_news.png"),
-  //       ),
-  //     ],
-  //   );
-  // }
 
   Widget _appBar() {
     return AppBar(

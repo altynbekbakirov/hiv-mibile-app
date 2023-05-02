@@ -158,37 +158,22 @@ class _PrePostExposureTherapyScreenState extends State<PrePostExposureTherapyScr
         SizedBox(height: 20),
         Image.asset("assets/images/ДКП.png"),
         ListTile(
-          title: RichText(
-            text: TextSpan(children: [
-              TextSpan(
-                  text:"hiv_prevention3text2".tr(),
+          title: Column(children: [
+              Text(
+                  "hiv_prevention3text2".tr(),
                   style: normalBoldForChapter),
-              TextSpan(
-                  text:"hiv_prevention3text3".tr(),
+              Text(
+                  "hiv_prevention3text3".tr(),
                   style: contentNormal),
-              TextSpan(
-                  text:"hiv_prevention3text4".tr(),
+              Text(
+                  "hiv_prevention3text4".tr(),
                   style: normalBoldForChapter),
-              TextSpan(
-                  text:"hiv_prevention3text5".tr(),
-                  style: contentNormal),
-              TextSpan(
-                  text:"hiv_prevention3text6".tr(),
-                  style: normalBold),
-              TextSpan(
-                  text:"hiv_prevention3text7".tr(),
-                  style: contentNormal),
-              TextSpan(
-                  text:"hiv_prevention3text8".tr(),
-                  style: contentNormal),
-              TextSpan(
-                  text:"hiv_prevention3text9".tr(),
-                  style: normalBold),
-              TextSpan(
-                  text:"hiv_prevention3text10".tr(),
+              Image.asset('assets/images/image_dkp.png'),
+              const SizedBox(height: 12),
+              Text(
+                  "hiv_prevention3text18".tr(),
                   style: contentNormal),
             ]),
-          ),
         ),
         SizedBox(height: 20),
         Container(

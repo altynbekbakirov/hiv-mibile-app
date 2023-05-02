@@ -64,20 +64,19 @@ class _ChapterThreeState extends State<ChapterThree> {
   String text = "c3_text1".tr();
 
   show() async {
-    await Future.delayed(
-      const Duration(seconds: 1),
-      () {
-        showChapterThreeDialog == null ? Doctor.showDialogFunc(
-          context: context,
-          text: text,
-          doctor: Doctors.Nadezhda,
-          fontSize: 20,
-        ).then((value) async {
-          await Doctor.showInstruction(context);
-        }) : Container();
-        Prefs.setInt("show_chapter_three_dialog", 1);
-      }
-    );
+    await Future.delayed(const Duration(seconds: 1), () {
+      showChapterThreeDialog == null
+          ? Doctor.showDialogFunc(
+              context: context,
+              text: text,
+              doctor: Doctors.Nadezhda,
+              fontSize: 20,
+            ).then((value) async {
+              await Doctor.showInstruction(context);
+            })
+          : Container();
+      Prefs.setInt("show_chapter_three_dialog", 1);
+    });
   }
 
   //region Pages
@@ -89,8 +88,8 @@ class _ChapterThreeState extends State<ChapterThree> {
           children: [
             RichText(
               text: TextSpan(children: [
-                header( "c3_1text1".tr()),
-                boldText( "c3_1text2".tr())
+                header("c3_1text1".tr()),
+                boldText("c3_1text2".tr())
               ], style: TextStyle(fontSize: fontSize)),
             ),
             Row(
@@ -100,20 +99,30 @@ class _ChapterThreeState extends State<ChapterThree> {
                 Expanded(
                   child: Column(
                     children: <Widget>[
-                      Text( "c3_1text3".tr(), style: TextStyle(color: Colors.red, fontSize: fontSize)),
+                      Text("c3_1text3".tr(),
+                          style:
+                              TextStyle(color: Colors.red, fontSize: fontSize)),
                       SizedBox(height: 20),
-                      Text( "c3_1text4".tr(), style: TextStyle(color: kDarkModerateBlue, fontSize: fontSize)),
+                      Text("c3_1text4".tr(),
+                          style: TextStyle(
+                              color: kDarkModerateBlue, fontSize: fontSize)),
                       SizedBox(height: 20),
-                      Text( "c3_1text5".tr(), style: TextStyle(color: kModerateBlue, fontSize: fontSize)),
+                      Text("c3_1text5".tr(),
+                          style: TextStyle(
+                              color: kModerateBlue, fontSize: fontSize)),
                     ],
                   ),
                 ),
                 Expanded(
                   child: Column(
                     children: <Widget>[
-                      Text( "c3_1text6".tr(), style: TextStyle(color: Colors.orange, fontSize: fontSize)),
+                      Text("c3_1text6".tr(),
+                          style: TextStyle(
+                              color: Colors.orange, fontSize: fontSize)),
                       SizedBox(height: 20),
-                      Text( "c3_1text7".tr(), style: TextStyle(color: Colors.deepPurple, fontSize: fontSize)),
+                      Text("c3_1text7".tr(),
+                          style: TextStyle(
+                              color: Colors.deepPurple, fontSize: fontSize)),
                     ],
                   ),
                 ),
@@ -124,9 +133,9 @@ class _ChapterThreeState extends State<ChapterThree> {
             SizedBox(height: 20),
             RichText(
               text: TextSpan(children: [
-                normalText( "c3_1text8".tr()),
-                boldText( "c3_1text9".tr()),
-                normalText( "c3_1text10".tr())
+                normalText("c3_1text8".tr()),
+                boldText("c3_1text9".tr()),
+                normalText("c3_1text10".tr())
               ], style: TextStyle(fontSize: fontSize)),
             ),
             Image.asset('assets/images/prophylaxis/1/3.gif'),
@@ -136,6 +145,7 @@ class _ChapterThreeState extends State<ChapterThree> {
       ),
     );
   }
+
   /// Страница 2 Планирование беременности в семьях, живущих с ВИЧ
   Widget _page2(BuildContext context) {
     return ListTile(
@@ -145,7 +155,7 @@ class _ChapterThreeState extends State<ChapterThree> {
             RichText(
               text: TextSpan(children: [
                 normalText("c3_2text1".tr()),
-               ], style: TextStyle(fontSize: fontSize)),
+              ], style: TextStyle(fontSize: fontSize)),
             ),
             Image.asset("assets/images/beremennost3.gif"),
             RichText(
@@ -161,7 +171,7 @@ class _ChapterThreeState extends State<ChapterThree> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text:"c3_2text4".tr(),
+                          text: "c3_2text4".tr(),
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -176,7 +186,7 @@ class _ChapterThreeState extends State<ChapterThree> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text:"c3_2text5".tr(),
+                          text: "c3_2text5".tr(),
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -190,6 +200,7 @@ class _ChapterThreeState extends State<ChapterThree> {
       ),
     );
   }
+
   /// Страница 3 Планирование беременности в семьях, живущих с ВИЧ
   Widget _page3(BuildContext context) {
     return ListTile(
@@ -203,7 +214,7 @@ class _ChapterThreeState extends State<ChapterThree> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text:"c3_3text1".tr(),
+                          text: "c3_3text1".tr(),
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -212,9 +223,9 @@ class _ChapterThreeState extends State<ChapterThree> {
               ],
             ),
             RichText(
-              text: TextSpan(children: [
-                boldText("c3_3text2".tr())
-              ], style: TextStyle(fontSize: fontSize)),
+              text: TextSpan(
+                  children: [boldText("c3_3text2".tr())],
+                  style: TextStyle(fontSize: fontSize)),
             ),
             SizedBox(height: 86),
           ],
@@ -222,6 +233,7 @@ class _ChapterThreeState extends State<ChapterThree> {
       ),
     );
   }
+
   /// Страница 4 Планирование беременности в семьях, живущих с ВИЧ
   Widget _page4(BuildContext context) {
     return ListTile(
@@ -231,7 +243,7 @@ class _ChapterThreeState extends State<ChapterThree> {
             RichText(
               text: TextSpan(children: [
                 header("c3_4text1".tr()),
-               ], style: TextStyle(fontSize: fontSize)),
+              ], style: TextStyle(fontSize: fontSize)),
             ),
             Image.asset('assets/images/profilactika1.png'),
             RichText(
@@ -249,6 +261,7 @@ class _ChapterThreeState extends State<ChapterThree> {
       ),
     );
   }
+
   /// Страница 5 Планирование беременности в семьях, живущих с ВИЧ
   Widget _page5(BuildContext context) {
     return ListTile(
@@ -260,7 +273,8 @@ class _ChapterThreeState extends State<ChapterThree> {
                 normalText("c3_5text1".tr()),
                 boldText("c3_5text2".tr()),
                 normalText("c3_5text3".tr()),
-                boldText("c3_5text4".tr()),], style: TextStyle(fontSize: fontSize)),
+                boldText("c3_5text4".tr()),
+              ], style: TextStyle(fontSize: fontSize)),
             ),
             Image.asset("assets/images/beremennost4.gif"),
             SizedBox(height: 20),
@@ -275,6 +289,7 @@ class _ChapterThreeState extends State<ChapterThree> {
       ),
     );
   }
+
   /// Страница 6 Планирование беременности в семьях, живущих с ВИЧ
   Widget _page6(BuildContext context) {
     return ListTile(
@@ -294,7 +309,7 @@ class _ChapterThreeState extends State<ChapterThree> {
               textAlign: TextAlign.center,
               text: TextSpan(children: [
                 TextSpan(
-                    text:"c3_6text3".tr(),
+                    text: "c3_6text3".tr(),
                     style: TextStyle(
                         color: kDesaturatedBlue,
                         fontSize: fontSize,
@@ -312,21 +327,21 @@ class _ChapterThreeState extends State<ChapterThree> {
                         fontStyle: FontStyle.italic,
                         fontWeight: FontWeight.w600)),
                 TextSpan(
-                    text:"c3_6text5".tr(),
+                    text: "c3_6text5".tr(),
                     style: TextStyle(
                         color: kDesaturatedBlue,
                         fontSize: fontSize,
                         fontStyle: FontStyle.italic,
                         fontWeight: FontWeight.w600)),
                 TextSpan(
-                    text:"c3_6text6".tr(),
+                    text: "c3_6text6".tr(),
                     style: TextStyle(
                         color: kDesaturatedBlue,
                         fontSize: fontSize,
                         fontStyle: FontStyle.italic,
                         fontWeight: FontWeight.w600)),
                 TextSpan(
-                    text:"c3_6text7".tr(),
+                    text: "c3_6text7".tr(),
                     style: TextStyle(
                         color: kDesaturatedBlue,
                         fontSize: fontSize,
@@ -340,6 +355,7 @@ class _ChapterThreeState extends State<ChapterThree> {
       ),
     );
   }
+
   /// Страница 7 Планирование беременности в семьях, живущих с ВИЧ
   Widget _page7(BuildContext context) {
     return ListTile(
@@ -348,10 +364,8 @@ class _ChapterThreeState extends State<ChapterThree> {
           children: [
             RichText(
               text: TextSpan(children: [
-                header(
-                    "c3_7text1".tr()),
-                normalText(
-                    "c3_7text2".tr()),
+                header("c3_7text1".tr()),
+                normalText("c3_7text2".tr()),
               ], style: TextStyle(fontSize: fontSize)),
             ),
             Image.asset("assets/images/nabludenie1.png"),
@@ -373,8 +387,31 @@ class _ChapterThreeState extends State<ChapterThree> {
       ),
     );
   }
-  /// Страница 8 Планирование беременности в семьях, живущих с ВИЧ
+
+  /// Страница 8 Вскармливание новорожденного
   Widget _page8(BuildContext context) {
+    return ListTile(
+      title: SingleChildScrollView(
+        child: Column(
+          children: [
+            RichText(
+              text: TextSpan(children: [
+                header("c3_6text8".tr()),
+                normalText("c3_6text9".tr()),
+                normalText("c3_6text10".tr()),
+                normalText("c3_6text11".tr()),
+                normalText("c3_6text12".tr()),
+              ], style: TextStyle(fontSize: fontSize)),
+            ),
+            SizedBox(height: 100),
+          ],
+        ),
+      ),
+    );
+  }
+
+  /// Страница 9 Планирование беременности в семьях, живущих с ВИЧ
+  Widget _page9(BuildContext context) {
     return ListTile(
       title: SingleChildScrollView(
         child: Column(
@@ -393,8 +430,8 @@ class _ChapterThreeState extends State<ChapterThree> {
     );
   }
 
-  /// Страница 9 Планирование беременности в семьях, живущих с ВИЧ
-  Widget _page9(BuildContext context) {
+  /// Страница 10 Планирование беременности в семьях, живущих с ВИЧ
+  Widget _page10(BuildContext context) {
     return ListTile(
       title: SingleChildScrollView(
         child: Column(
@@ -402,7 +439,7 @@ class _ChapterThreeState extends State<ChapterThree> {
             RichText(
               text: TextSpan(children: [
                 TextSpan(
-                  text:"c3_9text1".tr(),
+                  text: "c3_9text1".tr(),
                   style: TextStyle(
                       color: kDesaturatedBlue,
                       fontSize: fontSize,
@@ -413,7 +450,8 @@ class _ChapterThreeState extends State<ChapterThree> {
             SizedBox(height: 20),
             Container(
               color: kGrayishBlue,
-              child: Text("c3_9text2".tr(),
+              child: Text(
+                "c3_9text2".tr(),
                 style: TextStyle(
                   color: Colors.black,
                   fontSize: fontSize,
@@ -481,6 +519,7 @@ class _ChapterThreeState extends State<ChapterThree> {
       _page7(context),
       _page8(context),
       _page9(context),
+      _page10(context),
     ];
     return Scaffold(
       appBar: AppBar(

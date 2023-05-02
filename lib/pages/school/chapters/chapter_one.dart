@@ -220,7 +220,7 @@ class _ChapterOneState extends State<ChapterOne> with AutomaticKeepAliveClientMi
                 ),
               ],
             ),
-            Image.asset('assets/images/prophylaxis/2/4.gif'),
+            // Image.asset('assets/images/prophylaxis/2/4.gif'),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
