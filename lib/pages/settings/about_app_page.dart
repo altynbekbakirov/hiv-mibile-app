@@ -15,26 +15,28 @@ class AboutApp extends StatelessWidget {
       backgroundColor: Colors.white,
       body: Container(
         padding: EdgeInsets.all(16),
-        child: Column(
-          children: <Widget>[
-            SizedBox(height: 5),
-            Text('about_app_text1'.tr(),
-              style: TextStyle(fontSize: 18, color: Colors.black),
-            ),
-            SizedBox(height: 20),
-            Text('about_app_text2'.tr(),
-              style: TextStyle(fontSize: 18, color: Colors.black),
-            ),
-            Text('about_app_text3'.tr(),
-              style: TextStyle(fontSize: 18, color: Colors.black),
-            ),
-            SizedBox(height: 20),
-            Text('about_app_text4'.tr(), style: TextStyle(fontSize: 18, color: Colors.black)),
-            SizedBox(height: 10),
-            Container(
-              child: Image.asset("assets/images/logo_about.png"),
-            ),
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            children: <Widget>[
+              SizedBox(height: 5),
+              Text('about_app_text1'.tr(),
+                style: TextStyle(fontSize: 18, color: Colors.black),
+              ),
+              SizedBox(height: 20),
+              Text('about_app_text2'.tr(),
+                style: TextStyle(fontSize: 18, color: Colors.black),
+              ),
+              Text('about_app_text3'.tr(),
+                style: TextStyle(fontSize: 18, color: Colors.black),
+              ),
+              SizedBox(height: 20),
+              Text('about_app_text4'.tr(), style: TextStyle(fontSize: 18, color: Colors.black)),
+              SizedBox(height: 10),
+              Container(
+                child: Image.asset("assets/images/logo_about.png"),
+              ),
+            ],
+          ),
         ),
       ),
     );

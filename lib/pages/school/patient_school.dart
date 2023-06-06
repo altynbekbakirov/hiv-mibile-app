@@ -4,14 +4,10 @@ import 'package:hiv/pages/basic_information/widgets/audio_category_widget.dart';
 import 'package:hiv/pages/basic_information/widgets/video.dart';
 import 'package:hiv/pages/basic_information/widgets/video_category_widget.dart';
 import 'package:hiv/pages/school/school_patient_content.dart';
-import 'package:hiv/pages/school/video/school_video_page.dart';
 import 'package:hiv/utils/constants.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
-import 'better_player/better_player_widget.dart';
-import 'better_player/chewie_video_player.dart';
 
 /// Страница Школы Пациентов
 class PatientSchoolPage extends StatefulWidget {
@@ -208,10 +204,6 @@ class _PatientSchoolPageState extends State<PatientSchoolPage> {
                   ? SchoolPatientContent()
                   : selectedIndex == 1
                       ? VideoCategoryWidget()
-              // ChewieVideoPlayerWidget()
-              // BetterPlayerWidget()
-              // VideoPage()
-              // VideoCategoryWidget()
                       : AudioCategoryWidget(),
             ),
           ],

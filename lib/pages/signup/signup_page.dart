@@ -2,7 +2,6 @@ import 'package:hiv/components/dots_indicator.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
 import '../../utils/constants.dart';
 import 'package:hiv/components/sign_up_form.dart';
 import 'package:hiv/components/custom_appbar.dart';

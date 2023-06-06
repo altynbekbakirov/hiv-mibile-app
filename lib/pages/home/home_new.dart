@@ -1,7 +1,9 @@
 import 'dart:async';
+import 'package:connectivity/connectivity.dart';
 import 'package:hiv/components/app_bar_arrow_back.dart';
 import 'package:hiv/components/custom_appbar.dart';
 import 'package:hiv/db/db_provider.dart';
+import 'package:hiv/model/user.dart';
 import 'package:hiv/pages/add/add_page.dart';
 import 'package:hiv/pages/consultation/consultation_page.dart';
 import 'package:hiv/pages/hiv_info_page/hiv_info_page.dart';
@@ -63,7 +65,25 @@ class _HomeNewState extends State<HomeNew> with SingleTickerProviderStateMixin {
         setState(() {
           logged = true;
         });
+      sendUserActivityStatistics(value);
     });
+  }
+
+  sendUserActivityStatistics(int userId) async {
+    await _checkInternetConnection().then((value) {
+      User.sendMapTestView(userId);
+    });
+  }
+
+  Future<bool> _checkInternetConnection() async {
+    var connectivityResult = await (Connectivity().checkConnectivity());
+    if (connectivityResult == ConnectivityResult.mobile) {
+      return true;
+    } else if (connectivityResult == ConnectivityResult.wifi) {
+      return true;
+    } else {
+      return false;
+    }
   }
 
   Future<bool> _onWillPop() async {

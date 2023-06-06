@@ -13,16 +13,16 @@ import '../../components/text_form_field.dart';
 import '../../utils/constants.dart';
 //enum Gender { male, female }
 
-class Questionary extends StatefulWidget {
+class Questionnaire extends StatefulWidget {
   final User user;
 
-  Questionary({this.user});
+  Questionnaire({this.user});
 
   @override
-  _QuestionaryState createState() => _QuestionaryState();
+  _QuestionnaireState createState() => _QuestionnaireState();
 }
 
-class _QuestionaryState extends State<Questionary> {
+class _QuestionnaireState extends State<Questionnaire> {
   final _birthYearController = TextEditingController();
   Gender _gender = new Gender();
   Sex _sex = new Sex();

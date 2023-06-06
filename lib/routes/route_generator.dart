@@ -83,7 +83,7 @@ class RouteGenerator {
         return CupertinoPageRoute(builder: (_) => QuestionnairePage());
 
       case Routes.questionary:
-        return CupertinoPageRoute(builder: (_) => Questionary());
+        return CupertinoPageRoute(builder: (_) => Questionnaire());
 
       case Routes.successfull_registration:
         return CupertinoPageRoute(builder: (_) => SuccessfullRegistrationPage());

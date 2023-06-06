@@ -130,7 +130,6 @@ class _ChapterSevenState extends State<ChapterSeven> {
                 ),
               ],
             ),
-            Image.asset("assets/images/что следует помнить 1.png", scale: 7),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
@@ -196,7 +195,6 @@ class _ChapterSevenState extends State<ChapterSeven> {
                 ),
               ],
             ),
-            Image.asset("assets/images/что следует помнить 3.png", scale: 7),
             SizedBox(height: 90),
           ],
         ),
@@ -343,7 +341,7 @@ class _ChapterSevenState extends State<ChapterSeven> {
                   child: ListTile(
                     title: RichText(
                       text: TextSpan(
-                          text:"c7_3text3".tr(),
+                          text:"c7_3text4".tr(),
                           style: TextStyle(
                               color: Colors.black, fontSize: fontSize)),
                     ),
@@ -351,7 +349,6 @@ class _ChapterSevenState extends State<ChapterSeven> {
                 ),
               ],
             ),
-            Image.asset("assets/images/что следует помнить 6.png", scale: 5),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[

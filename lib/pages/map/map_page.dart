@@ -121,14 +121,9 @@ class _MapPageState extends State<MapPage> {
     initMarkers();
     super.initState();
     mapController = new MapController();
-    sendMap();
   }
 
-  sendMap() async {
-    await _checkInternetConnection().then((value) {
-      User.sendMapTestView('map');
-    });
-  }
+
 
   String markerByOrgType(String type) {
     if (type == "Клиники")

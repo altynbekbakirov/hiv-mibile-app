@@ -153,7 +153,7 @@ class User extends ChangeNotifier {
     return _authenticate(email, password);
   }
 
-  Future<void> setPinCode(String pinCode) async {
+  Future setPinCode(String pinCode) async {
     DbUser user = await DBProvider.db.getUser();
     final url = Configs.ip + 'api/set_pin_kod/' + user.id.toString();
     try {
@@ -178,6 +178,54 @@ class User extends ChangeNotifier {
         dbUser.pin_code = pinCode;
         await DBProvider.db.updateUser(dbUser);
         notifyListeners();
+      }
+    } catch (error) {
+      throw error;
+    }
+  }
+
+  Future setLevelApi(String level) async {
+    DbUser user = await DBProvider.db.getUser();
+    final url = Configs.ip + 'api/set_level';
+    try {
+      Map<String, String> headers = {
+        "Content-type": "application/json",
+        "token": user.token
+      };
+      final response = await http.post(
+        url,
+        headers: headers,
+        body: json.encode({"id": user.id, "level": level}),
+      );
+      final responseData = json.decode(response.body);
+      if (responseData['status'] == 999) {
+        throw HttpException(responseData['status'].toString());
+      } else if (responseData['status'] == 888) {
+        throw HttpException(responseData['status'].toString());
+      }
+    } catch (error) {
+      throw error;
+    }
+  }
+
+  Future setFinishApi(String finish) async {
+    DbUser user = await DBProvider.db.getUser();
+    final url = Configs.ip + 'api/set_finish';
+    try {
+      Map<String, String> headers = {
+        "Content-type": "application/json",
+        "token": user.token
+      };
+      final response = await http.post(
+        url,
+        headers: headers,
+        body: json.encode({"id": user.id, "finish": finish}),
+      );
+      final responseData = json.decode(response.body);
+      if (responseData['status'] == 999) {
+        throw HttpException(responseData['status'].toString());
+      } else if (responseData['status'] == 888) {
+        throw HttpException(responseData['status'].toString());
       }
     } catch (error) {
       throw error;
@@ -323,16 +371,14 @@ class User extends ChangeNotifier {
     });
   }
 
-  static void sendMapTestView(String type) async {
-    int testInt = type == 'test' ? 1 : 0;
-    int mapInt = type == 'map' ? 1 : 0;
+  static void sendMapTestView(int userId) async {
     final url = Configs.ip + 'api/statistics';
     try {
       Map<String, String> headers = {"Content-type": "application/json"};
       final response = await http.post(
         url,
         headers: headers,
-        body: json.encode({"test": testInt, "map": mapInt}),
+        body: json.encode({"user_id": userId, }),
       );
       final responseData = json.decode(response.body);
       print(responseData);

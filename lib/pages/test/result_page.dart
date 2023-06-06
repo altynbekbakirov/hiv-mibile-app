@@ -25,17 +25,16 @@ class TestResultPage extends StatelessWidget {
     }
   }
 
-  sendMap() async{
-    await _checkInternetConnection().then((value) {
-      User.sendMapTestView('test');
-    });
-  }
+  // sendMap() async{
+  //   await _checkInternetConnection().then((value) {
+  //     User.sendMapTestView('test');
+  //   });
+  // }
 
   TestResultPage({this.value, this.total});
 
   @override
   Widget build(BuildContext context) {
-    sendMap();
     return Scaffold(
         appBar: AppBar(
           elevation: 1,

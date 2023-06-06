@@ -59,7 +59,6 @@ class _SendEmailState extends State<SendEmail> {
           alignment: Alignment.center,
           child: Form(
             key: formKey,
-            // autovalidateMode: AutovalidateMode.onUserInteraction,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -140,14 +139,14 @@ class _SendEmailState extends State<SendEmail> {
     final list = bytes.buffer.asUint8List();
 
     final tempDir = await getTemporaryDirectory();
-    final file = await File('${tempDir.path}/Certificate.jpg').create();
+    final file = await File('${tempDir.path}/Certificate.png').create(recursive: true);
     file.writeAsBytesSync(list);
 
     final Email email = Email(
-      body: '',
+      body: 'Сертифика об окончании курса',
       subject: subject,
       recipients: [emailTo],
-      attachmentPaths: ['${file.path}'],
+      // attachmentPaths: ['${file.path}'],
       isHTML: false,
     );
     await FlutterEmailSender.send(email);

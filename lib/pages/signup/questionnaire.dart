@@ -59,7 +59,7 @@ class _QuestionnairePageState extends State<QuestionnairePage> {
       Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (context) => Questionary(user: _user),
+          builder: (context) => Questionnaire(user: _user),
         ),
       );
     }
