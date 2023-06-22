@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'dart:ui';
 import 'package:hiv/components/app_bar_arrow_back.dart';
 import 'package:hiv/utils/constants.dart';
 import 'package:email_validator/email_validator.dart';
@@ -6,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_email_sender/flutter_email_sender.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:path_provider/path_provider.dart';
 
 class CertificatePage extends StatelessWidget {
@@ -19,8 +21,7 @@ class CertificatePage extends StatelessWidget {
         action: IconButton(
           icon: Icon(Icons.share),
           onPressed: () {
-            Navigator.of(context).push(MaterialPageRoute(
-                builder: (BuildContext context) => SendEmail()));
+            Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context) => SendEmail()));
           },
         ),
       ),
@@ -29,7 +30,10 @@ class CertificatePage extends StatelessWidget {
         alignment: Alignment.center,
         child: Padding(
           padding: const EdgeInsets.only(top: 20, bottom: 50),
-          child: Image.asset("assets/images/Certificate.png", fit: BoxFit.cover,),
+          child: Image.asset(
+            "assets/images/Certificate.png",
+            fit: BoxFit.cover,
+          ),
         ),
       ),
     );
@@ -44,8 +48,8 @@ class SendEmail extends StatefulWidget {
 class _SendEmailState extends State<SendEmail> {
   final formKey = GlobalKey<FormState>();
   final emailController = TextEditingController();
-  final subjectController =
-      TextEditingController(text: 'email_body'.tr());
+  final subjectController = TextEditingController(text: 'email_body'.tr());
+  List<String> attachment = [];
 
   @override
   Widget build(BuildContext context) {
@@ -77,8 +81,7 @@ class _SendEmailState extends State<SendEmail> {
                     labelText: 'email_to'.tr(),
                     prefixIcon: Icon(Icons.email_outlined),
                     border: OutlineInputBorder(),
-                    enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.blueAccent)),
+                    enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.blueAccent)),
                   ),
                   maxLength: 30,
                 ),
@@ -107,8 +110,7 @@ class _SendEmailState extends State<SendEmail> {
                       },
                     ),
                     border: OutlineInputBorder(),
-                    enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.blueAccent)),
+                    enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.blueAccent)),
                   ),
                 ),
                 SizedBox(
@@ -119,14 +121,18 @@ class _SendEmailState extends State<SendEmail> {
                   onPressed: () async {
                     if (formKey.currentState.validate()) {
                       FocusScope.of(context).unfocus();
-                      await sendEmail(
-                          emailTo: emailController.text,
-                          subject: subjectController.text);
+                      try {
+                        await sendEmail(emailTo: emailController.text, subject: subjectController.text).then((value) {
+                          Navigator.of(context).pop();
+                        });
+                      } catch (e) {
+                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                          content: Text(e.toString()),
+                        ));
+                      }
                     }
                   },
-                  style: ElevatedButton.styleFrom(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 30, vertical: 15)),
+                  style: ElevatedButton.styleFrom(padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 15)),
                 )
               ],
             ),
@@ -134,7 +140,7 @@ class _SendEmailState extends State<SendEmail> {
         ));
   }
 
-  Future<void> sendEmail({String emailTo, String subject}) async {
+  Future sendEmail({String emailTo, String subject}) async {
     final bytes = await rootBundle.load('assets/images/Certificate.png');
     final list = bytes.buffer.asUint8List();
 
@@ -142,14 +148,23 @@ class _SendEmailState extends State<SendEmail> {
     final file = await File('${tempDir.path}/Certificate.png').create(recursive: true);
     file.writeAsBytesSync(list);
 
+    String result = "<img src=\"${file.path}\" alt=\"image\" />";
+
     final Email email = Email(
-      body: 'Сертифика об окончании курса',
+      body: result,
       subject: subject,
       recipients: [emailTo],
       // attachmentPaths: ['${file.path}'],
-      isHTML: false,
+      isHTML: true,
     );
     await FlutterEmailSender.send(email);
   }
 
+  void _openImagePicker() async {
+    File pick = await ImagePicker.pickImage(source: ImageSource.gallery);
+    setState(() {
+      attachment.add(pick.path);
+    });
+    print(pick.path);
+  }
 }
